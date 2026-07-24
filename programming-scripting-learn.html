@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Module 03: Programming & Scripting — Interactive Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ════════════════ SIDEBAR ════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; color:var(--accent2); margin-bottom:10px;">← Back to Hub</a>
+    <div class="module-tag">Module 03</div>
+    <h1>Programming & <span>Scripting</span></h1>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Bash Scripting</div>
+    <a class="nav-item active" href="#shell-intro"><span class="dot"></span>Shell Fundamentals</a>
+    <a class="nav-item" href="#bash-operators"><span class="dot"></span>Variables & Operators</a>
+    <a class="nav-item" href="#bash-loops"><span class="dot"></span>Control Flow & Loops</a>
+    <a class="nav-item" href="#bash-functions"><span class="dot"></span>Functions & Debugging</a>
+    <a class="nav-item" href="#apis-ai"><span class="dot"></span>APIs & AI Code Review</a>
+
+    <div class="nav-section-label">Python for DevOps</div>
+    <a class="nav-item" href="#python-basics"><span class="dot"></span>Python Basics & Inventories</a>
+    <a class="nav-item" href="#python-logic"><span class="dot"></span>Logic & Server Loops</a>
+    <a class="nav-item" href="#file-handling"><span class="dot"></span>Files, Logs & Errors</a>
+    <a class="nav-item" href="#subprocess"><span class="dot"></span>OS & Subprocess CLI</a>
+    <a class="nav-item" href="#python-ecosystem"><span class="dot"></span>DevOps Python Ecosystem</a>
+  </div>
+
+  <div class="progress-dots">
+    <p>// 10 topics</p>
+    <div class="dots-row" id="progressDots"></div>
+  </div>
+</nav>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main class="main">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">Module 03 <span class="cursor-blink"></span></div>
+    <h1>Programming &<br><span class="highlight">Scripting</span><br>Automation</h1>
+    <p>Master Bash shell scripting and Python automation for DevOps — from environment variables and control flow to API integration, log parsing, and subprocess execution.</p>
+    <div class="hero-chips">
+      <span class="chip green">⚡ Bash Scripting</span>
+      <span class="chip blue">🐍 Python Automation</span>
+      <span class="chip amber">⚙️ Subprocess & APIs</span>
+    </div>
+  </header>
+
+  <!-- ─── 1. SHELL FUNDAMENTALS ─── -->
+  <section class="section" id="shell-intro">
+    <div class="section-header">
+      <div class="section-icon icon-green">🐚</div>
+      <div>
+        <div class="section-number">01 / 10</div>
+        <h2>Shell Scripting Fundamentals</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>What is Shell Scripting?</h3>
+      <p>A <strong style="color:var(--text-bright)">Shell Script</strong> is a text file containing a sequence of commands executed by the shell interpreter. Instead of manually typing commands one by one, scripts automate repetitive system administrative tasks.</p>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <h3 style="color:var(--accent)">Advantages</h3>
+        <p>Portable across Linux platforms, saves time, easily automates deployments, backups, and system monitoring tasks.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚠️</div>
+        <h3 style="color:var(--accent3)">Considerations</h3>
+        <p>Slower than compiled languages, creates a subshell process per command, and syntax errors can be costly if unverified.</p>
+      </div>
+    </div>
+
+    <div class="code-block">
+      <span class="prompt">#!/bin/bash</span> &nbsp;&nbsp;<span class="output"># Shebang: Path to interpreter</span><br/>
+      echo "Hello DevOps!" &nbsp;&nbsp;<span class="output"># Display output to screen</span>
+    </div>
+
+    <div class="callout tip">
+      <span class="callout-icon">💡</span>
+      <span>Always grant execution permissions before running a new script: <code style="font-family:var(--mono);color:var(--accent)">chmod +x script.sh</code>, then run with <code style="font-family:var(--mono);color:var(--accent)">./script.sh</code>.</span>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 2. BASH VARIABLES & OPERATORS ─── -->
+  <section class="section" id="bash-operators">
+    <div class="section-header">
+      <div class="section-icon icon-blue">🔢</div>
+      <div>
+        <div class="section-number">02 / 10</div>
+        <h2>Variables & Operators in Bash</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>Environment Variables & Operators</h3>
+      <p>Variables store dynamic values. Standard environment variables include <code style="font-family:var(--mono);color:var(--accent)">$HOME</code>, <code style="font-family:var(--mono);color:var(--accent2)">$PATH</code>, and <code style="font-family:var(--mono);color:var(--accent3)">$USER</code>. Use <code style="font-family:var(--mono);color:var(--accent)">export VAR="value"</code> to make variables available to child processes.</p>
+    </div>
+
+    <h3 style="font-family:var(--display);font-size:16px;color:var(--text-bright);margin:20px 0 10px;">Bash Operators Reference</h3>
+    <table class="cmd-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Operators</th>
+          <th>Description & Syntax Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Arithmetic</td><td>+ - * / % **</td><td><code style="font-family:var(--mono);color:var(--accent)">sum=$((a + b))</code></td></tr>
+        <tr><td>Assignment</td><td>= += -= *= /=</td><td><code style="font-family:var(--mono);color:var(--text-dim)">count=5; count+=2</code></td></tr>
+        <tr><td>Relational</td><td>-eq -ne -gt -ge -lt -le</td><td><code style="font-family:var(--mono);color:var(--accent2)">if [ $a -gt $b ]; then ...</code></td></tr>
+        <tr><td>String Comp</td><td>== != &lt; &gt; -z -n</td><td><code style="font-family:var(--mono);color:var(--text-dim)">if [ -z "$name" ]; then ...</code></td></tr>
+        <tr><td>Logical</td><td>&& || !</td><td><code style="font-family:var(--mono);color:var(--accent3)">if [[ $a -lt 15 && $b -gt 15 ]]; then ...</code></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 3. CONTROL FLOW & LOOPS ─── -->
+  <section class="section" id="bash-loops">
+    <div class="section-header">
+      <div class="section-icon icon-amber">🔄</div>
+      <div>
+        <div class="section-number">03 / 10</div>
+        <h2>Control Flow & Loops in Bash</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>Decision Making & Iteration</h3>
+      <p>Automate repetitive server tasks by combining conditional logic (<code style="font-family:var(--mono);color:var(--accent)">if-elif-else</code>) with iteration structures (<code style="font-family:var(--mono);color:var(--accent2)">for</code>, <code style="font-family:var(--mono);color:var(--accent3)">while</code>, <code style="font-family:var(--mono)">until</code>).</p>
+    </div>
+
+    <div class="two-col">
+      <div class="code-block">
+        <span class="output"># If-Else & File Check</span><br/>
+        <span class="prompt">if </span>[ -f "/var/log/syslog" ]; <span class="prompt">then</span><br/>
+        &nbsp;&nbsp;echo "Log file exists"<br/>
+        <span class="prompt">else</span><br/>
+        &nbsp;&nbsp;echo "Log missing!"<br/>
+        <span class="prompt">fi</span>
+      </div>
+      <div class="code-block">
+        <span class="output"># For Loop Over List</span><br/>
+        <span class="prompt">for </span>server <span class="prompt">in </span>web01 web02 db01; <span class="prompt">do</span><br/>
+        &nbsp;&nbsp;echo "Checking $server status..."<br/>
+        &nbsp;&nbsp;ping -c 1 $server<br/>
+        <span class="prompt">done</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 4. FUNCTIONS & DEBUGGING ─── -->
+  <section class="section" id="bash-functions">
+    <div class="section-header">
+      <div class="section-icon icon-purple">🛠️</div>
+      <div>
+        <div class="section-number">04 / 10</div>
+        <h2>Bash Functions & Script Debugging</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>Modular Code & Debugging Techniques</h3>
+      <p>Functions improve readability and avoid duplicate logic. Use execution flags to debug script failures.</p>
+    </div>
+
+    <div class="code-block">
+      <span class="prompt">function </span>backup_logs() {<br/>
+      &nbsp;&nbsp;echo "Creating backup for $1..."<br/>
+      &nbsp;&nbsp;tar -czf "$1-backup.tar.gz" /var/log/<br/>
+      }<br/>
+      <br/>
+      backup_logs "production"
+    </div>
+
+    <table class="cmd-table" style="margin-top:16px;">
+      <thead>
+        <tr>
+          <th>Debugging Command</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>bash -x script.sh</td><td>Runs script in print-trace mode, showing every line before execution</td></tr>
+        <tr><td>set -e</td><td>Exits script immediately if any command returns a non-zero exit status</td></tr>
+        <tr><td>set -u</td><td>Treats unset variables as an error and exits immediately</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 5. APIS & AI CODE REVIEW ─── -->
+  <section class="section" id="apis-ai">
+    <div class="section-header">
+      <div class="section-icon icon-red">🌐</div>
+      <div>
+        <div class="section-number">05 / 10</div>
+        <h2>API Interaction & AI Code Review Rule</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>Interacting with REST APIs</h3>
+      <p>DevOps automation relies on communicating with API endpoints using <code style="font-family:var(--mono);color:var(--accent2)">curl</code> for GET, POST, PUT, and DELETE HTTP requests.</p>
+    </div>
+
+    <div class="code-block">
+      <span class="output"># Fetch data from REST API</span><br/>
+      <span class="prompt">$ </span>curl -X GET https://api.github.com/repos/octocat/hello-world
+    </div>
+
+    <div class="callout warn">
+      <span class="callout-icon">⚠️</span>
+      <span><strong>Golden Rule for AI-Generated Scripts (Copilot/ChatGPT)</strong>: Never trust AI-generated code blindly! Always review for <strong>Correctness</strong>, <strong>Security</strong> (no hardcoded tokens), and <strong>Edge Case Performance</strong> before running in production.</span>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 6. PYTHON BASICS & INVENTORIES ─── -->
+  <section class="section" id="python-basics">
+    <div class="section-header">
+      <div class="section-icon icon-amber">🐍</div>
+      <div>
+        <div class="section-number">06 / 10</div>
+        <h2>Python Basics & Server Inventories</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>Why Python for DevOps?</h3>
+      <p>Python provides high-level data structures, clean syntax, and rich third-party libraries for cloud infrastructure, API automation, and log parsing.</p>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <h3>Data Types for Infrastructure</h3>
+        <ul>
+          <li><strong style="color:var(--accent)">Strings</strong>: IP addresses, hostnames</li>
+          <li><strong style="color:var(--accent2)">Integers</strong>: Port numbers, CPU limits</li>
+          <li><strong style="color:var(--accent3)">Lists</strong>: Server inventory arrays</li>
+          <li><strong style="color:var(--accent4)">Dicts</strong>: Key-value node configurations</li>
+        </ul>
+      </div>
+      <div class="code-block" style="margin-bottom:0">
+        <span class="output"># Server Inventory Dictionary</span><br/>
+        inventory = {<br/>
+        &nbsp;&nbsp;<span style="color:var(--accent)">"web1"</span>: <span style="color:var(--accent2)">"10.0.0.1"</span>,<br/>
+        &nbsp;&nbsp;<span style="color:var(--accent)">"web2"</span>: <span style="color:var(--accent2)">"10.0.0.2"</span>,<br/>
+        &nbsp;&nbsp;<span style="color:var(--accent)">"db1"</span>: <span style="color:var(--accent2)">"10.0.0.5"</span><br/>
+        }<br/>
+        print(inventory[<span style="color:var(--accent)">"web1"</span>])
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 7. PYTHON LOGIC & SERVER LOOPS ─── -->
+  <section class="section" id="python-logic">
+    <div class="section-header">
+      <div class="section-icon icon-green">⚙️</div>
+      <div>
+        <div class="section-number">07 / 10</div>
+        <h2>Python Logic & Server Loops</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>Automated Decision Logic & Server Fleet Loops</h3>
+      <p>Automate remediation actions across hundreds of servers simultaneously using Python loops and reusable functions.</p>
+    </div>
+
+    <div class="code-block">
+      <span class="prompt">def </span>restart_service(server_ip, service_name):<br/>
+      &nbsp;&nbsp;print(f<span style="color:var(--accent2)">"Restarting {service_name} on server {server_ip}..."</span>)<br/>
+      <br/>
+      servers = [<span style="color:var(--accent)">"10.0.0.1"</span>, <span style="color:var(--accent)">"10.0.0.2"</span>, <span style="color:var(--accent)">"10.0.0.3"</span>]<br/>
+      <span class="prompt">for </span>server <span class="prompt">in </span>servers:<br/>
+      &nbsp;&nbsp;restart_service(server, <span style="color:var(--accent)">"nginx"</span>)
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 8. FILES, LOGS & ERRORS ─── -->
+  <section class="section" id="file-handling">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📜</div>
+      <div>
+        <div class="section-number">08 / 10</div>
+        <h2>File Handling, Logs & Error Handling</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>Parsing Logs & Production Exception Handling</h3>
+      <p>Never let automation scripts crash unexpectedly in production. Wrap dangerous network/file operations inside <code style="font-family:var(--mono);color:var(--accent)">try-except</code> blocks.</p>
+    </div>
+
+    <div class="code-block">
+      <span class="output"># Safe Log Processing & Error Handling</span><br/>
+      <span class="prompt">try</span>:<br/>
+      &nbsp;&nbsp;<span class="prompt">with </span>open(<span style="color:var(--accent)">"/var/log/nginx/access.log"</span>) <span class="prompt">as </span>f:<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;logs = f.readlines()<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;print(f<span style="color:var(--accent2)">"Analyzed {len(logs)} log entries."</span>)<br/>
+      <span class="prompt">except </span>FileNotFoundError:<br/>
+      &nbsp;&nbsp;print(<span style="color:var(--red)">"Log file not found! Skipping..."</span>)
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 9. SUBPROCESS & OS CLI ─── -->
+  <section class="section" id="subprocess">
+    <div class="section-header">
+      <div class="section-icon icon-blue">🖥️</div>
+      <div>
+        <div class="section-number">09 / 10</div>
+        <h2>OS Interaction & Subprocess Execution</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>Executing CLI Commands via Subprocess</h3>
+      <p>Use Python's <code style="font-family:var(--mono);color:var(--accent)">subprocess.run()</code> module instead of outdated <code style="font-family:var(--mono)">os.system()</code> to safely invoke system binaries like <code style="font-family:var(--mono)">kubectl</code>, <code style="font-family:var(--mono)">docker</code>, or <code style="font-family:var(--mono)">git</code>.</p>
+    </div>
+
+    <div class="code-block">
+      <span class="prompt">import </span>subprocess<br/>
+      <br/>
+      <span class="output"># Run CLI command and capture output safely</span><br/>
+      result = subprocess.run([<span style="color:var(--accent)">"docker"</span>, <span style="color:var(--accent)">"ps"</span>], capture_output=<span class="prompt">True</span>, text=<span class="prompt">True</span>)<br/>
+      print(result.stdout)
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 10. DEVOPS PYTHON ECOSYSTEM ─── -->
+  <section class="section" id="python-ecosystem">
+    <div class="section-header">
+      <div class="section-icon icon-green">📦</div>
+      <div>
+        <div class="section-number">10 / 10</div>
+        <h2>DevOps Python Ecosystem & Cheat Sheet</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>Essential DevOps Libraries</h3>
+      <p>Python's ecosystem provides powerful packages for Cloud, Kubernetes, APIs, and CLI argument parsing.</p>
+    </div>
+
+    <table class="cmd-table">
+      <thead>
+        <tr>
+          <th>Library</th>
+          <th>Purpose in DevOps</th>
+          <th>Installation Command</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>requests</td><td>HTTP & REST API automation</td><td><code style="font-family:var(--mono);color:var(--text-dim)">pip install requests</code></td></tr>
+        <tr><td>boto3</td><td>AWS Cloud Infrastructure SDK</td><td><code style="font-family:var(--mono);color:var(--text-dim)">pip install boto3</code></td></tr>
+        <tr><td>paramiko</td><td>SSH & Remote server execution</td><td><code style="font-family:var(--mono);color:var(--text-dim)">pip install paramiko</code></td></tr>
+        <tr><td>kubernetes</td><td>Kubernetes Cluster API Client</td><td><code style="font-family:var(--mono);color:var(--text-dim)">pip install kubernetes</code></td></tr>
+        <tr><td>pyyaml</td><td>YAML configuration parsing</td><td><code style="font-family:var(--mono);color:var(--text-dim)">pip install pyyaml</code></td></tr>
+        <tr><td>argparse</td><td>CLI command line flags (built-in)</td><td><code style="font-family:var(--mono);color:var(--accent)">import argparse</code></td></tr>
+        <tr><td>logging</td><td>Production logging framework (built-in)</td><td><code style="font-family:var(--mono);color:var(--accent)">import logging</code></td></tr>
+      </tbody>
+    </table>
+
+    <div class="code-block" style="margin-top:20px;">
+      <span class="output"># Virtual Environment Workflow</span><br/>
+      <span class="prompt">$ </span>python3 -m venv venv &nbsp;&nbsp;<span class="output"># Create virtual environment</span><br/>
+      <span class="prompt">$ </span>source venv/bin/activate &nbsp;&nbsp;<span class="output"># Activate environment</span><br/>
+      <span class="prompt">$ </span>pip install -r requirements.txt
+    </div>
+
+    <div class="callout tip" style="margin-top:16px;">
+      <span class="callout-icon">🏁</span>
+      <span>You've completed Module 03: Programming & Scripting! You now master Bash shell scripting, variables, loops, functions, API requests, Python automation, and subprocess execution.</span>
+    </div>
+  </section>
+
+</main>
+
+<!-- ════════════════ SCRIPTS ════════════════ -->
+<script>
+  // Intersection Observer for scroll animations
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(s => observer.observe(s));
+
+  // Nav active state on scroll
+  const navItems = document.querySelectorAll('.nav-item');
+  const sectionEls = document.querySelectorAll('section.section');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navItems.forEach(n => n.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sectionEls.forEach(s => navObserver.observe(s));
+
+  // Progress dots
+  const dotsContainer = document.getElementById('progressDots');
+  const totalTopics = 10;
+  for (let i = 0; i < totalTopics; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot-prog';
+    dotsContainer.appendChild(dot);
+  }
+
+  // Fill progress dots based on scroll
+  const progressObserver = new IntersectionObserver((entries) => {
+    const allDots = document.querySelectorAll('.dot-prog');
+    let maxIndex = 0;
+    sectionEls.forEach((s, i) => {
+      if (s.classList.contains('visible')) maxIndex = i;
+    });
+    allDots.forEach((d, i) => {
+      d.classList.toggle('filled', i <= maxIndex);
+    });
+  }, { threshold: 0.1 });
+
+  sectionEls.forEach(s => progressObserver.observe(s));
+</script>
+
+</body>
+</html>

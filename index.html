@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>DevOps & Cloud Engineering Academy — Learning Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body class="hub-body">
+
+  <!-- ════════════════ HEADER ════════════════ -->
+  <header class="hub-header">
+    <nav class="hub-nav">
+      <a href="index.html" class="hub-brand">
+        <div class="hub-brand-icon">⚡</div>
+        <div class="hub-brand-text">
+          <h2>DevOps <span>Academy</span></h2>
+          <p>INTERACTIVE LEARNING HUB</p>
+        </div>
+      </a>
+
+      <div class="hub-search-wrapper">
+        <span class="hub-search-icon">🔍</span>
+        <input type="text" id="searchInput" class="hub-search-input" placeholder="Search modules, topics, or technologies..."/>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ════════════════ MAIN CONTAINER ════════════════ -->
+  <main class="hub-container">
+    
+    <!-- HERO SECTION -->
+    <section class="hub-hero">
+      <div class="hero-eyebrow">Complete DevOps & Cloud Roadmap <span class="cursor-blink"></span></div>
+      <h1>DevOps & <span style="color:var(--accent)">Cloud Engineering</span> Academy</h1>
+      <p>A structured 12-module learning path covering everything from OS foundations and version control to containers, Kubernetes, GitOps, Observability, and DevSecOps.</p>
+
+      <!-- STATS METRICS -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon icon-green">📚</div>
+          <div>
+            <div class="stat-val">12</div>
+            <div class="stat-lbl">Total Modules</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon icon-blue">⚡</div>
+          <div>
+            <div class="stat-val">13</div>
+            <div class="stat-lbl">Active Topics</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon icon-amber">🗺️</div>
+          <div>
+            <div class="stat-val">11</div>
+            <div class="stat-lbl">Roadmap Modules</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon icon-purple">🎯</div>
+          <div>
+            <div class="stat-val">100%</div>
+            <div class="stat-lbl">Interactive</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All Modules (12)</button>
+      <button class="filter-btn" data-filter="foundations">Foundations</button>
+      <button class="filter-btn" data-filter="automation">Automation & IaC</button>
+      <button class="filter-btn" data-filter="containers">Containers & K8s</button>
+      <button class="filter-btn" data-filter="cicd">CI/CD & GitOps</button>
+      <button class="filter-btn" data-filter="observability">Observability & Security</button>
+    </div>
+
+    <!-- MODULES GRID -->
+    <section class="module-grid" id="moduleGrid">
+
+      <!-- MODULE 01 (ACTIVE) -->
+      <div class="module-card" data-category="foundations" data-title="module 1 linux networking foundations os shell commands permissions osi tcp ip dns subnetting troubleshooting">
+        <div>
+          <div class="module-card-top">
+            <div class="module-icon-box icon-green">🐧</div>
+            <span class="status-badge status-active">● Available Now</span>
+          </div>
+          <h3>Module 01: Linux & Networking Foundations</h3>
+          <p>Master core OS fundamentals, Linux filesystem hierarchy, permissions model, shell commands, process management, OSI & TCP/IP stack, IP subnetting, DNS resolution, and networking troubleshooting tools.</p>
+          
+          <div class="module-tags">
+            <span class="chip green">Linux OS</span>
+            <span class="chip blue">Networking</span>
+            <span class="chip amber">OSI & DNS</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="module-meta">
+            <span>📖 13 Topics</span>
+            <span>⏱️ ~2.5 hrs</span>
+            <span>⚡ Interactive</span>
+          </div>
+          <a href="linux-networking-learn.html" class="btn-action btn-primary">Start Module 01 →</a>
+        </div>
+      </div>
+
+      <!-- MODULE 02 -->
+      <div class="module-card" data-category="foundations" data-title="module 2 git version control github branching merging rebase workflow pull requests">
+        <div>
+          <div class="module-card-top">
+            <div class="module-icon-box icon-blue">🌿</div>
+            <span class="status-badge status-active">● Available Now</span>
+          </div>
+          <h3>Module 02: Git & Version Control</h3>
+          <p>Master source code management, distributed version control, branching strategies (GitFlow, Trunk-Based), interactive rebasing, merge conflict resolution, and GitHub pull request workflows.</p>
+          
+          <div class="module-tags">
+            <span class="chip blue">Git</span>
+            <span class="chip green">GitHub</span>
+            <span class="chip amber">Branching</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="module-meta">
+            <span>📖 10 Topics</span>
+            <span>⏱️ ~2.0 hrs</span>
+            <span>⚡ Interactive</span>
+          </div>
+          <a href="git-version-control-learn.html" class="btn-action btn-primary">Start Module 02 →</a>
+        </div>
+      </div>
+
+      <!-- MODULE 03 -->
+      <div class="module-card" data-category="automation" data-title="module 3 programming scripting bash python automation cli text parsing json regex">
+        <div>
+          <div class="module-card-top">
+            <div class="module-icon-box icon-amber">🐍</div>
+            <span class="status-badge status-active">● Available Now</span>
+          </div>
+          <h3>Module 03: Programming & Scripting</h3>
+          <p>Build automation tooling using Bash and Python. Learn scripting fundamentals, data structures, REST API interaction, regex text parsing (awk/sed), JSON/YAML handling, and CLI utility development.</p>
+          
+          <div class="module-tags">
+            <span class="chip amber">Python</span>
+            <span class="chip green">Bash</span>
+            <span class="chip blue">Automation</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="module-meta">
+            <span>📖 10 Topics</span>
+            <span>⏱️ ~3.0 hrs</span>
+            <span>⚡ Interactive</span>
+          </div>
+          <a href="programming-scripting-learn.html" class="btn-action btn-primary">Start Module 03 →</a>
+        </div>
+      </div>
+
+      <!-- MODULE 04 -->
+      <div class="module-card" data-category="foundations" data-title="module 4 cloud fundamentals aws gcp azure vpc compute storage iam serverless cloud architecture">
+        <div>
+          <div class="module-card-top">
+            <div class="module-icon-box icon-purple">☁️</div>
+            <span class="status-badge status-active">● Available Now</span>
+          </div>
+          <h3>Module 04: Cloud Fundamentals (AWS Cloud)</h3>
+          <p>Explore core cloud computing concepts, AWS global infrastructure, IAM access control, EC2 virtual servers, Auto Scaling, S3/EBS/EFS storage, RDS/DynamoDB databases, VPC networking, Lambda serverless, and cost optimization.</p>
+          
+          <div class="module-tags">
+            <span class="chip purple">AWS Cloud</span>
+            <span class="chip blue">VPC & IAM</span>
+            <span class="chip green">Cloud Architecture</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="module-meta">
+            <span>📖 10 Topics</span>
+            <span>⏱️ ~3.5 hrs</span>
+            <span>⚡ Interactive</span>
+          </div>
+          <a href="aws-cloud-learn.html" class="btn-action btn-primary">Start Module 04 →</a>
+        </div>
+      </div>
+
+      <!-- MODULE 05 -->
+      <div class="module-card" data-category="containers" data-title="module 5 containers docker containerd dockerfile compose multi-stage microservices volumes networking">
+        <div>
+          <div class="module-card-top">
+            <div class="module-icon-box icon-amber">🐳</div>
+            <span class="status-badge status-active">● Available Now</span>
+          </div>
+          <h3>Module 05: Containers (Docker)</h3>
+          <p>Understand containerization concepts, Docker architecture, writing multi-stage Dockerfiles, managing container networks and persistent storage volumes, and orchestrating multi-container setups with Docker Compose.</p>
+          
+          <div class="module-tags">
+            <span class="chip amber">Docker</span>
+            <span class="chip blue">Containerd</span>
+            <span class="chip green">Docker Compose</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="module-meta">
+            <span>📖 10 Topics</span>
+            <span>⏱️ ~3.0 hrs</span>
+            <span>⚡ Interactive</span>
+          </div>
+          <a href="docker-containers-learn.html" class="btn-action btn-primary">Start Module 05 →</a>
+        </div>
+      </div>
+
+      <!-- MODULE 06 -->
+      <div class="module-card" data-category="containers" data-title="module 6 kubernetes cloud native k8s pods deployments services ingress helm cni cluster architecture">
+        <div>
+          <div class="module-card-top">
+            <div class="module-icon-box icon-blue">☸️</div>
+            <span class="status-badge status-active">● Available Now</span>
+          </div>
+          <h3>Module 06: Kubernetes & Cloud Native</h3>
+          <p>Deploy and manage scalable production applications using Kubernetes architecture, Pods, Deployments, StatefulSets, Services, Ingress controllers, Helm package manager, and Cloud Native ecosystem tools.</p>
+          
+          <div class="module-tags">
+            <span class="chip blue">Kubernetes</span>
+            <span class="chip purple">Helm</span>
+            <span class="chip green">Cloud Native</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="module-meta">
+            <span>📖 10 Topics</span>
+            <span>⏱️ ~4.0 hrs</span>
+            <span>⚡ Interactive</span>
+          </div>
+          <a href="kubernetes-cloud-native-learn.html" class="btn-action btn-primary">Start Module 06 →</a>
+        </div>
+      </div>
+
+      <!-- MODULE 07 -->
+      <div class="module-card" data-category="cicd" data-title="module 7 ci cd continuous integration delivery deployment github actions jenkins automated testing pipelines artifact registry">
+        <div>
+          <div class="module-card-top">
+            <div class="module-icon-box icon-green">🚀</div>
+            <span class="status-badge status-active">● Available Now</span>
+          </div>
+          <h3>Module 07: CI/CD</h3>
+          <p>Design end-to-end continuous integration and continuous deployment pipelines using GitHub Actions and Jenkins. Automate code testing, linting, image building, artifact management, and zero-downtime releases.</p>
+          
+          <div class="module-tags">
+            <span class="chip green">GitHub Actions</span>
+            <span class="chip blue">Jenkins</span>
+            <span class="chip amber">Pipelines</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="module-meta">
+            <span>📖 10 Topics</span>
+            <span>⏱️ ~3.0 hrs</span>
+            <span>⚡ Interactive</span>
+          </div>
+          <a href="cicd-pipelines-learn.html" class="btn-action btn-primary">Start Module 07 →</a>
+        </div>
+      </div>
+
+      <!-- MODULE 08 -->
+      <div class="module-card" data-category="automation" data-title="module 8 infrastructure as code iac terraform opentofu cloudformation state management modules declarative">
+        <div>
+          <div class="module-card-top">
+            <div class="module-icon-box icon-purple">🏗️</div>
+            <span class="status-badge status-active">● Available Now</span>
+          </div>
+          <h3>Module 08: Infrastructure as Code (IaC)</h3>
+          <p>Provision cloud infrastructure declaratively using Terraform and OpenTofu. Master HCL syntax, resource dependencies, remote state storage, state locking, workspaces, and reusable module creation.</p>
+          
+          <div class="module-tags">
+            <span class="chip purple">Terraform</span>
+            <span class="chip blue">OpenTofu</span>
+            <span class="chip green">IaC</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="module-meta">
+            <span>📖 10 Topics</span>
+            <span>⏱️ ~3.5 hrs</span>
+            <span>⚡ Interactive</span>
+          </div>
+          <a href="infrastructure-as-code-learn.html" class="btn-action btn-primary">Start Module 08 →</a>
+        </div>
+      </div>
+
+      <!-- MODULE 09 -->
+      <div class="module-card" data-category="automation" data-title="module 9 configuration management ansible puppet chef playbooks roles inventory automation server provisioning">
+        <div>
+          <div class="module-card-top">
+            <div class="module-icon-box icon-red">⚙️</div>
+            <span class="status-badge status-active">● Available Now</span>
+          </div>
+          <h3>Module 09: Configuration Management (Ansible)</h3>
+          <p>Automate server configuration and software installation across fleets of servers using Ansible playbooks, roles, dynamic inventories, agentless SSH execution, idempotency principles, and vault secrets.</p>
+          
+          <div class="module-tags">
+            <span class="chip red">Ansible</span>
+            <span class="chip amber">Playbooks</span>
+            <span class="chip green">Idempotency</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="module-meta">
+            <span>📖 10 Topics</span>
+            <span>⏱️ ~2.5 hrs</span>
+            <span>⚡ Interactive</span>
+          </div>
+          <a href="configuration-management-learn.html" class="btn-action btn-primary">Start Module 09 →</a>
+        </div>
+      </div>
+
+      <!-- MODULE 10 -->
+      <div class="module-card" data-category="cicd" data-title="module 10 gitops argocd fluxcd kubernetes declarative continuous delivery git single source of truth">
+        <div>
+          <div class="module-card-top">
+            <div class="module-icon-box icon-blue">🔄</div>
+            <span class="status-badge status-active">● Available Now</span>
+          </div>
+          <h3>Module 10: GitOps (ArgoCD & FluxCD)</h3>
+          <p>Implement GitOps deployment patterns for Kubernetes using ArgoCD and FluxCD. Manage cluster state directly from Git repositories as the single source of truth with automated drift reconciliation.</p>
+          
+          <div class="module-tags">
+            <span class="chip blue">ArgoCD</span>
+            <span class="chip green">FluxCD</span>
+            <span class="chip purple">GitOps</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="module-meta">
+            <span>📖 10 Topics</span>
+            <span>⏱️ ~2.5 hrs</span>
+            <span>⚡ Interactive</span>
+          </div>
+          <a href="gitops-argocd-learn.html" class="btn-action btn-primary">Start Module 10 →</a>
+        </div>
+      </div>
+
+      <!-- MODULE 11 -->
+      <div class="module-card" data-category="observability" data-title="module 11 observability prometheus grafana open-telemetry logging metrics tracing alertmanager slos slis">
+        <div>
+          <div class="module-card-top">
+            <div class="module-icon-box icon-amber">📊</div>
+            <span class="status-badge status-active">● Available Now</span>
+          </div>
+          <h3>Module 11: Observability</h3>
+          <p>Gain deep visibility into distributed systems using Prometheus, Grafana, OpenTelemetry, and ELK/Loki log aggregation. Configure metrics collection, dashboard creation, distributed tracing, and alerting.</p>
+          
+          <div class="module-tags">
+            <span class="chip amber">Prometheus</span>
+            <span class="chip green">Grafana</span>
+            <span class="chip blue">OpenTelemetry</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="module-meta">
+            <span>📖 10 Topics</span>
+            <span>⏱️ ~3.0 hrs</span>
+            <span>⚡ Interactive</span>
+          </div>
+          <a href="observability-monitoring-learn.html" class="btn-action btn-primary">Start Module 11 →</a>
+        </div>
+      </div>
+
+      <!-- MODULE 12 -->
+      <div class="module-card" data-category="observability" data-title="module 12 devsecops security vulnerability scanning trivy snyk vault secrets management container security compliance shift left">
+        <div>
+          <div class="module-card-top">
+            <div class="module-icon-box icon-purple">🔐</div>
+            <span class="status-badge status-active">● Available Now</span>
+          </div>
+          <h3>Module 12: DevSecOps</h3>
+          <p>Shift security left throughout the software development lifecycle. Implement static code analysis (SAST), container vulnerability scanning (Trivy), HashiCorp Vault secrets management, and compliance auditing.</p>
+          
+          <div class="module-tags">
+            <span class="chip purple">DevSecOps</span>
+            <span class="chip red">Trivy & Vault</span>
+            <span class="chip green">Shift-Left</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="module-meta">
+            <span>📖 10 Topics</span>
+            <span>⏱️ ~3.0 hrs</span>
+            <span>⚡ Interactive</span>
+          </div>
+          <a href="devsecops-security-learn.html" class="btn-action btn-primary">Start Module 12 →</a>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- ════════════════ FOOTER ════════════════ -->
+  <footer class="hub-footer">
+    <p>DevOps & Cloud Engineering Academy — Built with HTML5, CSS3, & Modern JS</p>
+  </footer>
+
+  <!-- ════════════════ INTERACTIVE FILTER SCRIPT ════════════════ -->
+  <script>
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const moduleCards = document.querySelectorAll('.module-card');
+    const searchInput = document.getElementById('searchInput');
+
+    // Filter by Category
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+        filterCards(filter, searchInput.value.toLowerCase().trim());
+      });
+    });
+
+    // Search by Keyword
+    searchInput.addEventListener('input', (e) => {
+      const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+      const query = e.target.value.toLowerCase().trim();
+      filterCards(activeFilter, query);
+    });
+
+    function filterCards(category, query) {
+      moduleCards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
+        const cardTitle = card.getAttribute('data-title').toLowerCase();
+
+        const matchesCategory = (category === 'all' || cardCategory === category);
+        const matchesSearch = query === '' || cardTitle.includes(query);
+
+        if (matchesCategory && matchesSearch) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

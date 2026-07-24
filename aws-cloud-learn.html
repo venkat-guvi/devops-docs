@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Module 04: AWS Cloud — Interactive Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ════════════════ SIDEBAR ════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; color:var(--accent2); margin-bottom:10px;">← Back to Hub</a>
+    <div class="module-tag">Module 04</div>
+    <h1>AWS <span>Cloud Architecture</span></h1>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Core Infrastructure</div>
+    <a class="nav-item active" href="#cloud-intro"><span class="dot"></span>Cloud & AWS Intro</a>
+    <a class="nav-item" href="#iam"><span class="dot"></span>IAM Security & Access</a>
+    <a class="nav-item" href="#ec2"><span class="dot"></span>EC2 & Instance Types</a>
+    <a class="nav-item" href="#scaling-elb"><span class="dot"></span>Auto Scaling & ELB</a>
+
+    <div class="nav-section-label">Storage & Databases</div>
+    <a class="nav-item" href="#storage"><span class="dot"></span>Storage (S3/EBS/EFS)</a>
+    <a class="nav-item" href="#databases"><span class="dot"></span>RDS & DynamoDB</a>
+
+    <div class="nav-section-label">Networking & DevOps</div>
+    <a class="nav-item" href="#vpc"><span class="dot"></span>VPC & Subnets</a>
+    <a class="nav-item" href="#cdn"><span class="dot"></span>Route 53 & CloudFront</a>
+    <a class="nav-item" href="#serverless-cicd"><span class="dot"></span>Lambda & AWS CI/CD</a>
+    <a class="nav-item" href="#monitoring-cost"><span class="dot"></span>Monitoring & Cost Optimization</a>
+  </div>
+
+  <div class="progress-dots">
+    <p>// 10 topics</p>
+    <div class="dots-row" id="progressDots"></div>
+  </div>
+</nav>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main class="main">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">Module 04 <span class="cursor-blink"></span></div>
+    <h1>AWS Cloud<br><span class="highlight">Architecture</span><br>& Services</h1>
+    <p>Master Amazon Web Services — IAM access control, EC2 compute, Auto Scaling, S3/EBS/EFS storage, RDS/DynamoDB databases, VPC networking, Lambda, and cost optimization.</p>
+    <div class="hero-chips">
+      <span class="chip green">☁️ AWS Global Infra</span>
+      <span class="chip blue">🔐 IAM & VPC</span>
+      <span class="chip amber">💰 Cost Optimization</span>
+    </div>
+  </header>
+
+  <!-- ─── 1. CLOUD & AWS INTRO ─── -->
+  <section class="section" id="cloud-intro">
+    <div class="section-header">
+      <div class="section-icon icon-green">☁️</div>
+      <div>
+        <div class="section-number">01 / 10</div>
+        <h2>Introduction to Cloud Computing & AWS</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>What is Cloud Computing?</h3>
+      <p>Cloud computing is the on-demand delivery of computing services — servers, storage, databases, networking, and software — over the internet with pay-as-you-go pricing.</p>
+    </div>
+
+    <div class="callout tip">
+      <span class="callout-icon">💡</span>
+      <span><strong>Simple Idea</strong>: Instead of buying and maintaining physical data center servers, you rent virtual computing resources online from Amazon Web Services (AWS).</span>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">💳</div>
+        <h3>Pay-As-You-Go</h3>
+        <p>No upfront hardware capital expenditure. Pay only for the exact compute time and storage you consume.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📈</div>
+        <h3>Elastic Scalability</h3>
+        <p>Instantly scale resources up or down automatically based on real-time application traffic demand.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌐</div>
+        <h3>High Availability</h3>
+        <p>Deploy applications across multiple global data centers to ensure fault tolerance and 99.99%+ uptime.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--display);font-size:16px;color:var(--text-bright);margin:24px 0 12px;">AWS Global Infrastructure Components</h3>
+    <div class="two-col">
+      <div class="info-block" style="margin-bottom:0">
+        <h4 style="color:var(--accent)">🌍 Regions</h4>
+        <p>Geographic locations around the world (e.g., us-east-1 N. Virginia, ap-south-1 Mumbai) containing multiple isolated data center clusters.</p>
+      </div>
+      <div class="info-block" style="margin-bottom:0">
+        <h4 style="color:var(--accent2)">🏢 Availability Zones (AZs)</h4>
+        <p>One or more discrete physical data centers inside a region with redundant power, networking, and connectivity.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 2. IAM SECURITY ─── -->
+  <section class="section" id="iam">
+    <div class="section-header">
+      <div class="section-icon icon-purple">🔐</div>
+      <div>
+        <div class="section-number">02 / 10</div>
+        <h2>AWS IAM (Identity and Access Management)</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>Secure Access Control</h3>
+      <p>AWS IAM securely controls authentication and authorization for users, applications, and services interacting with your AWS resources.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">👤</div>
+        <h3>IAM Users</h3>
+        <p>Individual identities created inside your account representing employees or services with long-term credentials.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">👥</div>
+        <h3>IAM Groups</h3>
+        <p>Collections of IAM users. Attaching permission policies to a group grants access to all member users.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎭</div>
+        <h3>IAM Roles</h3>
+        <p>Temporary permission credentials assumed by users or AWS services (e.g. EC2 assuming a role to read S3 buckets).</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📄</div>
+        <h3>IAM Policies</h3>
+        <p>JSON document definitions explicitly specifying allowed or denied actions on specific AWS resource ARNs.</p>
+      </div>
+    </div>
+
+    <div class="code-block">
+      <span class="output">// Sample IAM JSON Policy Document</span><br/>
+      {<br/>
+      &nbsp;&nbsp;<span style="color:var(--accent)">"Version"</span>: <span style="color:var(--accent2)">"2012-10-17"</span>,<br/>
+      &nbsp;&nbsp;<span style="color:var(--accent)">"Statement"</span>: [{<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--accent)">"Effect"</span>: <span style="color:var(--accent2)">"Allow"</span>,<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--accent)">"Action"</span>: [<span style="color:var(--accent2)">"ec2:DescribeInstances"</span>, <span style="color:var(--accent2)">"ec2:StartInstances"</span>],<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--accent)">"Resource"</span>: <span style="color:var(--accent2)">"*"</span><br/>
+      &nbsp;&nbsp;}]<br/>
+      }
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 3. EC2 MANAGEMENT ─── -->
+  <section class="section" id="ec2">
+    <div class="section-header">
+      <div class="section-icon icon-blue">🖥️</div>
+      <div>
+        <div class="section-number">03 / 10</div>
+        <h2>Amazon EC2 Instance Management</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>Virtual Servers in the Cloud</h3>
+      <p>Amazon Elastic Compute Cloud (EC2) provides resizable, on-demand virtual compute capacity in the cloud.</p>
+    </div>
+
+    <table class="cmd-table">
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>AMI (Amazon Machine Image)</td><td>Pre-configured template containing OS, application server, and software packages.</td></tr>
+        <tr><td>Instance Type</td><td>Hardware specification defining CPU cores, RAM size, storage performance, and networking speed.</td></tr>
+        <tr><td>Key Pair</td><td>Asymmetric security key pair (Public stored on EC2, Private `.pem` file stored locally for SSH login).</td></tr>
+        <tr><td>Security Group</td><td>Stateful virtual firewall regulating inbound and outbound port traffic.</td></tr>
+        <tr><td>Instance Store</td><td>Temporary, ephemeral block storage physically attached to the host server.</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="font-family:var(--display);font-size:16px;color:var(--text-bright);margin:24px 0 12px;">EC2 Instance Family Categories</h3>
+    <table class="subnet-table">
+      <thead>
+        <tr><th>Instance Family</th><th>Optimized For</th><th>Example Types</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>General Purpose</td><td>Balanced compute, memory, and networking performance</td><td>t2, t3, m4, m5</td></tr>
+        <tr><td>Compute Optimized</td><td>High-performance processors (batch, analytics, web servers)</td><td>c4, c5, c6g</td></tr>
+        <tr><td>Memory Optimized</td><td>Fast performance for workloads processing large datasets in RAM</td><td>r3, r5, x1</td></tr>
+        <tr><td>Storage Optimized</td><td>High sequential read/write access to massive local storage</td><td>i3, d2, d3</td></tr>
+        <tr><td>Accelerated (GPU)</td><td>3D graphics rendering, deep learning, machine learning</td><td>g4, p3</td></tr>
+      </tbody>
+    </table>
+
+    <div class="code-block" style="margin-top:16px;">
+      <span class="output"># Securely connect to your Linux EC2 instance via SSH</span><br/>
+      <span class="prompt">$ </span>chmod 400 my-key.pem<br/>
+      <span class="prompt">$ </span>ssh -i "my-key.pem" ec2-user@13.233.45.67
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 4. AUTO SCALING & ELB ─── -->
+  <section class="section" id="scaling-elb">
+    <div class="section-header">
+      <div class="section-icon icon-amber">⚖️</div>
+      <div>
+        <div class="section-number">04 / 10</div>
+        <h2>Auto Scaling & Elastic Load Balancing (ELB)</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>High Availability & High Traffic Management</h3>
+      <p>Ensure application fault tolerance by combining automated instance scaling with load balancing.</p>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-icon">📈</div>
+        <h3>Auto Scaling Groups</h3>
+        <p>Automatically launches or terminates EC2 instances based on custom CloudWatch metric thresholds (e.g. CPU &gt; 80%).</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚖️</div>
+        <h3>Elastic Load Balancer (ELB)</h3>
+        <p>Distributes incoming web traffic across multiple healthy targets across multiple Availability Zones.</p>
+      </div>
+    </div>
+
+    <table class="cmd-table" style="margin-top:16px;">
+      <thead>
+        <tr><th>Load Balancer Type</th><th>Protocol Layer</th><th>Best Use Case</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Application Load Balancer (ALB)</td><td>Layer 7 (HTTP/HTTPS)</td><td>Web applications, microservices, container routing</td></tr>
+        <tr><td>Network Load Balancer (NLB)</td><td>Layer 4 (TCP/UDP)</td><td>Ultra-high performance, low latency, static IP addresses</td></tr>
+        <tr><td>Gateway Load Balancer (GWLB)</td><td>Layer 3 (IP Gateway)</td><td>Third-party virtual network appliances and firewalls</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 5. STORAGE SERVICES ─── -->
+  <section class="section" id="storage">
+    <div class="section-header">
+      <div class="section-icon icon-green">📦</div>
+      <div>
+        <div class="section-number">05 / 10</div>
+        <h2>Amazon Storage Services (S3, EBS, EFS)</h2>
+      </div>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">🪣</div>
+        <h3 style="color:var(--accent)">Amazon S3 (Object Storage)</h3>
+        <p>Managed object storage designed for 99.999999999% (11 9s) durability. Stores unlimited files (photos, videos, logs) in global buckets. Supports static site hosting.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💽</div>
+        <h3 style="color:var(--accent2)">Amazon EBS (Block Storage)</h3>
+        <p>Persistent block storage volumes attached to a single EC2 instance. Ideal for OS boot drives and relational database storage (gp3, io2, st1).</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📁</div>
+        <h3 style="color:var(--accent3)">Amazon EFS (File Storage)</h3>
+        <p>Fully managed POSIX-compliant elastic file system shared concurrently across hundreds of EC2 instances over NFS protocol.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 6. DATABASES ─── -->
+  <section class="section" id="databases">
+    <div class="section-header">
+      <div class="section-icon icon-purple">🗄️</div>
+      <div>
+        <div class="section-number">06 / 10</div>
+        <h2>AWS Managed Databases (RDS & DynamoDB)</h2>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="ip-card">
+        <h4 style="color:var(--accent2)">🐘 Amazon RDS (Relational SQL)</h4>
+        <ul>
+          <li>Managed SQL database engine (MySQL, PostgreSQL, MariaDB, Oracle)</li>
+          <li>Automated backups, multi-AZ replication, software patching</li>
+          <li>Structured data schemas with foreign key relationships</li>
+        </ul>
+      </div>
+      <div class="ip-card">
+        <h4 style="color:var(--accent)">⚡ Amazon DynamoDB (NoSQL Key-Value)</h4>
+        <ul>
+          <li>Fully managed serverless NoSQL database</li>
+          <li>Single-digit millisecond latency at any scale</li>
+          <li>Schema-less tables containing JSON items and attributes</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 7. VPC & NETWORKING ─── -->
+  <section class="section" id="vpc">
+    <div class="section-header">
+      <div class="section-icon icon-blue">🌐</div>
+      <div>
+        <div class="section-number">07 / 10</div>
+        <h2>Amazon VPC & Cloud Networking</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>Virtual Private Cloud (VPC)</h3>
+      <p>An isolated virtual network dedicated to your AWS account. Allows complete control over IP address ranges, subnets, route tables, and network gateways.</p>
+    </div>
+
+    <table class="cmd-table">
+      <thead>
+        <tr><th>VPC Component</th><th>Role</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Public Subnet</td><td>Subnet associated with a route table targeting an Internet Gateway (IGW). Holds web servers.</td></tr>
+        <tr><td>Private Subnet</td><td>Subnet isolated from direct internet access. Uses NAT Gateways for outbound-only connectivity. Holds databases.</td></tr>
+        <tr><td>Internet Gateway (IGW)</td><td>VPC component enabling bidirectional communication between public instances and the internet.</td></tr>
+        <tr><td>Security Group</td><td>Stateful virtual firewall applied at the EC2 instance level. Automatic response return traffic.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 8. ROUTE 53 & CLOUDFRONT ─── -->
+  <section class="section" id="cdn">
+    <div class="section-header">
+      <div class="section-icon icon-amber">🚀</div>
+      <div>
+        <div class="section-number">08 / 10</div>
+        <h2>Route 53 DNS & CloudFront CDN</h2>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-icon">📖</div>
+        <h3>Amazon Route 53</h3>
+        <p>Scalable Cloud Domain Name System (DNS) web service. Manages domain registration, latency routing, health checks, and automatic failover.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <h3>Amazon CloudFront</h3>
+        <p>Global Content Delivery Network (CDN) that caches web content at worldwide Edge Locations to deliver low-latency responses to users.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 9. LAMBDA & AWS CI/CD ─── -->
+  <section class="section" id="serverless-cicd">
+    <div class="section-header">
+      <div class="section-icon icon-green">⚡</div>
+      <div>
+        <div class="section-number">09 / 10</div>
+        <h2>Serverless Lambda & AWS CI/CD Services</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>AWS Lambda (Serverless Compute)</h3>
+      <p>Run code without provisioning or managing servers. Lambda automatically executes code in response to events (e.g. file upload to S3) and scales continuously.</p>
+    </div>
+
+    <h3 style="font-family:var(--display);font-size:16px;color:var(--text-bright);margin:20px 0 10px;">AWS CI/CD Developer Suite</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">🔨</div>
+        <h3>AWS CodeBuild</h3>
+        <p>Fully managed build service that compiles code, runs unit tests, and produces ready-to-deploy build artifacts.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🚀</div>
+        <h3>AWS CodeDeploy</h3>
+        <p>Automates application deployments to EC2 instances, Lambda functions, or ECS container services.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔄</div>
+        <h3>AWS CodePipeline</h3>
+        <p>Continuous delivery service that models, visualizes, and automates software release stages.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 10. MONITORING & COST OPTIMIZATION ─── -->
+  <section class="section" id="monitoring-cost">
+    <div class="section-header">
+      <div class="section-icon icon-red">💰</div>
+      <div>
+        <div class="section-number">10 / 10</div>
+        <h2>Monitoring, Auditing & Cost Optimization</h2>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <h3>CloudWatch</h3>
+        <p>Monitors system metrics, collects log files, and triggers automated alarm notifications (e.g. high CPU alert via SNS).</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📜</div>
+        <h3>CloudTrail</h3>
+        <p>Governance and auditing service recording every API call and user action across your AWS infrastructure.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--display);font-size:16px;color:var(--text-bright);margin:24px 0 12px;">AWS EC2 Pricing Models Comparison</h3>
+    <table class="subnet-table">
+      <thead>
+        <tr><th>Pricing Model</th><th>Characteristics</th><th>Savings Potential</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>On-Demand</td><td>Pay per second/hour without commitment. Flexible for short-term workloads.</td><td>Baseline (0%)</td></tr>
+        <tr><td>Reserved Instances (RI)</td><td>1 or 3-year commitment for consistent, steady-state compute workloads.</td><td>Up to 72%</td></tr>
+        <tr><td>Savings Plans</td><td>Flexible commitment per hour ($/hr) across EC2, Fargate, and Lambda.</td><td>Up to 72%</td></tr>
+        <tr><td>Spot Instances</td><td>Bid on unused spare EC2 capacity. Subject to 2-minute termination notice.</td><td>Up to 90%</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout tip" style="margin-top:20px;">
+      <span class="callout-icon">🏁</span>
+      <span>You've completed Module 04: AWS Cloud Architecture! You now understand Cloud & AWS fundamentals, IAM security, EC2, Auto Scaling, S3/EBS storage, VPC networking, Lambda, and CloudWatch/Cost optimization.</span>
+    </div>
+  </section>
+
+</main>
+
+<!-- ════════════════ SCRIPTS ════════════════ -->
+<script>
+  // Intersection Observer for scroll animations
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(s => observer.observe(s));
+
+  // Nav active state on scroll
+  const navItems = document.querySelectorAll('.nav-item');
+  const sectionEls = document.querySelectorAll('section.section');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navItems.forEach(n => n.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sectionEls.forEach(s => navObserver.observe(s));
+
+  // Progress dots
+  const dotsContainer = document.getElementById('progressDots');
+  const totalTopics = 10;
+  for (let i = 0; i < totalTopics; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot-prog';
+    dotsContainer.appendChild(dot);
+  }
+
+  // Fill progress dots based on scroll
+  const progressObserver = new IntersectionObserver((entries) => {
+    const allDots = document.querySelectorAll('.dot-prog');
+    let maxIndex = 0;
+    sectionEls.forEach((s, i) => {
+      if (s.classList.contains('visible')) maxIndex = i;
+    });
+    allDots.forEach((d, i) => {
+      d.classList.toggle('filled', i <= maxIndex);
+    });
+  }, { threshold: 0.1 });
+
+  sectionEls.forEach(s => progressObserver.observe(s));
+</script>
+
+</body>
+</html>

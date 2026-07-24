@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Linux & Networking Foundations</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ════════════════ SIDEBAR ════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; color:var(--accent2); margin-bottom:10px;">← Back to Hub</a>
+    <div class="module-tag">Module 01</div>
+    <h1>Linux & <span>Networking</span> Foundations</h1>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Core Topics</div>
+    <a class="nav-item active" href="#os"><span class="dot"></span>OS Fundamentals</a>
+    <a class="nav-item" href="#linux"><span class="dot"></span>Linux Intro</a>
+    <a class="nav-item" href="#filesystem"><span class="dot"></span>File System</a>
+    <a class="nav-item" href="#commands"><span class="dot"></span>Shell & Commands</a>
+    <a class="nav-item" href="#permissions"><span class="dot"></span>Users & Permissions</a>
+    <a class="nav-item" href="#processes"><span class="dot"></span>Processes</a>
+    <a class="nav-item" href="#packages"><span class="dot"></span>Package Management</a>
+    <a class="nav-item" href="#monitoring"><span class="dot"></span>Monitoring & Logs</a>
+
+    <div class="nav-section-label">Networking</div>
+    <a class="nav-item" href="#networking"><span class="dot"></span>Network Fundamentals</a>
+    <a class="nav-item" href="#osi"><span class="dot"></span>OSI & TCP/IP</a>
+    <a class="nav-item" href="#ip"><span class="dot"></span>IP & Subnetting</a>
+    <a class="nav-item" href="#dns"><span class="dot"></span>DNS</a>
+    <a class="nav-item" href="#troubleshoot"><span class="dot"></span>Troubleshooting</a>
+  </div>
+
+  <div class="progress-dots">
+    <p>// 13 topics</p>
+    <div class="dots-row" id="progressDots"></div>
+  </div>
+</nav>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main class="main">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">Module 1 <span class="cursor-blink"></span></div>
+    <h1>Linux &<br><span class="highlight">Networking</span><br>Foundations</h1>
+    <p>Master the core building blocks of Linux systems and computer networking — from file systems and shell commands to OSI layers and DNS resolution.</p>
+    <div class="hero-chips">
+      <span class="chip green">⚡ Linux</span>
+      <span class="chip blue">🌐 Networking</span>
+      <span class="chip amber">🔐 Permissions</span>
+    </div>
+  </header>
+
+  <!-- ─── 1. OS FUNDAMENTALS ─── -->
+  <section class="section" id="os">
+    <div class="section-header">
+      <div class="section-icon icon-green">🖥️</div>
+      <div>
+        <div class="section-number">01 / 13</div>
+        <h2>Operating System Fundamentals</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>What is an OS?</h3>
+      <p>An Operating System is the core software that acts as a <strong style="color:var(--text-bright)">bridge between users and hardware</strong>. It ensures applications run smoothly by managing resources like CPU, memory, storage, and connected devices.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">⚙️</div>
+        <h3>Process Management</h3>
+        <p>Runs multiple programs simultaneously without crashing, deciding which process gets CPU time.</p>
+        <div class="example">$ music + browser running simultaneously</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🧠</div>
+        <h3>Memory Management</h3>
+        <p>Controls RAM allocation per program, prevents memory overlap, and frees memory on close.</p>
+        <div class="example">$ virtual memory enables multitasking</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">📁</div>
+        <h3>File System Management</h3>
+        <p>Organizes data in files and folders — enabling create, open, save, and delete operations.</p>
+        <div class="example">$ /home/user/Documents/report.txt</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🖨️</div>
+        <h3>Device Management</h3>
+        <p>Communicates with hardware (keyboard, printer, speakers) via special programs called <strong style="color:var(--accent)">drivers</strong>.</p>
+        <div class="example">$ printer driver → sends job data</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 2. LINUX INTRO ─── -->
+  <section class="section" id="linux">
+    <div class="section-header">
+      <div class="section-icon icon-blue">🐧</div>
+      <div>
+        <div class="section-number">02 / 13</div>
+        <h2>What is Linux?</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>🐧 The Linux Kernel</h3>
+      <p>Linux is a free, open-source operating system family built upon the <strong style="color:var(--text-bright)">Linux Kernel</strong> — the brain of the OS that manages how the computer interacts with hardware. Created by <strong style="color:var(--accent)">Linus Torvalds in 1991</strong>, its source code is open for anyone to explore and improve.</p>
+    </div>
+
+    <div class="callout tip">
+      <span class="callout-icon">💡</span>
+      <span>Linux runs on virtually all hardware — Windows PCs, Macs, tablets, Chromebooks, phones, and even gaming consoles. It's one of the most versatile operating systems ever built.</span>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-icon">🆓</div>
+        <h3>Free & Open Source</h3>
+        <p>Anyone can view, modify, and distribute the source code. This openness has built a massive global contributor community.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔒</div>
+        <h3>Secure by Design</h3>
+        <p>Linux's permission model and separation of user/root access makes it inherently harder to compromise than many other OS types.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🖥️</div>
+        <h3>Distributions (Distros)</h3>
+        <p>Ubuntu, Debian, CentOS, Fedora, Arch — different "flavors" of Linux bundled with different tools and package managers.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <h3>Powers the Internet</h3>
+        <p>The majority of web servers, cloud platforms (AWS, GCP, Azure), and DevOps infrastructure runs on Linux.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 3. FILESYSTEM ─── -->
+  <section class="section" id="filesystem">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📂</div>
+      <div>
+        <div class="section-number">03 / 13</div>
+        <h2>Linux File System</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>/ — The Root Directory</h3>
+      <p>Everything in Linux lives under <code style="color:var(--accent);font-family:var(--mono)">/</code> — the root. Every file and directory, regardless of physical disk location, is a child of root. Understanding the hierarchy unlocks how Linux works.</p>
+    </div>
+
+    <div class="dir-tree">
+      <div class="dir-item"><span class="dir-folder">/</span><span class="dir-desc">── root of the entire filesystem</span></div>
+      <div class="dir-item"><span class="dir-branch">├──</span><span class="dir-folder">/bin</span><span class="dir-desc">essential binaries (ls, bash, cp)</span></div>
+      <div class="dir-item"><span class="dir-branch">├──</span><span class="dir-folder">/sbin</span><span class="dir-desc">system admin binaries (root only)</span></div>
+      <div class="dir-item"><span class="dir-branch">├──</span><span class="dir-folder">/boot</span><span class="dir-desc">kernel + bootloader (vmlinuz, grub)</span></div>
+      <div class="dir-item"><span class="dir-branch">├──</span><span class="dir-folder">/dev</span><span class="dir-desc">device files (sda, null, tty)</span></div>
+      <div class="dir-item"><span class="dir-branch">├──</span><span class="dir-folder">/etc</span><span class="dir-desc">system-wide config files (passwd, fstab)</span></div>
+      <div class="dir-item"><span class="dir-branch">├──</span><span class="dir-folder">/home</span><span class="dir-desc">personal directories for each user</span></div>
+      <div class="dir-item"><span class="dir-branch">├──</span><span class="dir-folder">/lib</span><span class="dir-desc">shared libraries for /bin and /sbin</span></div>
+      <div class="dir-item"><span class="dir-branch">├──</span><span class="dir-folder">/mnt</span><span class="dir-desc">manual mount point (external drives)</span></div>
+      <div class="dir-item"><span class="dir-branch">├──</span><span class="dir-folder">/media</span><span class="dir-desc">auto-mounted removable media</span></div>
+      <div class="dir-item"><span class="dir-branch">├──</span><span class="dir-folder">/opt</span><span class="dir-desc">third-party optional software</span></div>
+      <div class="dir-item"><span class="dir-branch">├──</span><span class="dir-folder">/tmp</span><span class="dir-desc">temporary files (cleared on reboot)</span></div>
+      <div class="dir-item"><span class="dir-branch">├──</span><span class="dir-folder">/usr</span><span class="dir-desc">user programs and system resources</span></div>
+      <div class="dir-item"><span class="dir-branch">├──</span><span class="dir-folder">/var</span><span class="dir-desc">variable data — logs, caches, databases</span></div>
+      <div class="dir-item"><span class="dir-branch">├──</span><span class="dir-folder">/proc</span><span class="dir-desc">virtual FS — running process info</span></div>
+      <div class="dir-item"><span class="dir-branch">└──</span><span class="dir-folder">/sys</span><span class="dir-desc">virtual FS — kernel & device info</span></div>
+    </div>
+
+    <div class="callout warn">
+      <span class="callout-icon">⚠️</span>
+      <span>Never modify files in <code style="font-family:var(--mono);color:var(--accent3)">/boot</code> carelessly — mistakes can make your system unbootable.</span>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 4. COMMANDS ─── -->
+  <section class="section" id="commands">
+    <div class="section-header">
+      <div class="section-icon icon-green">💻</div>
+      <div>
+        <div class="section-number">04 / 13</div>
+        <h2>Shell & Basic Commands</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>What is a Shell?</h3>
+      <p>A shell is a special program that gives you an interface to talk to the OS. It accepts human-readable commands and converts them into something the <strong style="color:var(--text-bright)">kernel</strong> can understand. The most common shell is <strong style="color:var(--accent)">bash</strong>.</p>
+    </div>
+
+    <table class="cmd-table">
+      <thead>
+        <tr>
+          <th>Command</th>
+          <th>Purpose</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>ls</td><td>List files in current directory</td><td><code style="font-family:var(--mono);font-size:11px;color:var(--text-dim)">ls -la</code></td></tr>
+        <tr><td>pwd</td><td>Print working directory</td><td><code style="font-family:var(--mono);font-size:11px;color:var(--text-dim)">/home/ubuntu</code></td></tr>
+        <tr><td>cd</td><td>Change directory</td><td><code style="font-family:var(--mono);font-size:11px;color:var(--text-dim)">cd /var/log</code></td></tr>
+        <tr><td>mkdir</td><td>Create a new directory</td><td><code style="font-family:var(--mono);font-size:11px;color:var(--text-dim)">mkdir project</code></td></tr>
+        <tr><td>rmdir</td><td>Remove empty directory</td><td><code style="font-family:var(--mono);font-size:11px;color:var(--text-dim)">rmdir old_folder</code></td></tr>
+        <tr><td>touch</td><td>Create an empty file</td><td><code style="font-family:var(--mono);font-size:11px;color:var(--text-dim)">touch notes.txt</code></td></tr>
+        <tr><td>rm</td><td>Delete files</td><td><code style="font-family:var(--mono);font-size:11px;color:var(--text-dim)">rm -rf folder/</code></td></tr>
+        <tr><td>cat</td><td>View file contents</td><td><code style="font-family:var(--mono);font-size:11px;color:var(--text-dim)">cat file.txt</code></td></tr>
+        <tr><td>echo</td><td>Print text to terminal</td><td><code style="font-family:var(--mono);font-size:11px;color:var(--text-dim)">echo "Hello DevOps"</code></td></tr>
+        <tr><td>man</td><td>Show command manual</td><td><code style="font-family:var(--mono);font-size:11px;color:var(--text-dim)">man ls</code></td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout note">
+      <span class="callout-icon">📌</span>
+      <span>Use <code style="font-family:var(--mono);color:var(--accent2)">man &lt;command&gt;</code> to see the full manual for any Linux command — it's always available offline in your terminal.</span>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 5. USERS & PERMISSIONS ─── -->
+  <section class="section" id="permissions">
+    <div class="section-header">
+      <div class="section-icon icon-purple">🔐</div>
+      <div>
+        <div class="section-number">05 / 13</div>
+        <h2>Users, Groups & Permissions</h2>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="info-block" style="margin-bottom:0">
+        <h3>👤 Users</h3>
+        <p>Each user has a unique <strong style="color:var(--accent)">UID</strong>. Root = <code style="font-family:var(--mono);color:var(--accent)">0</code>. System users = <code style="font-family:var(--mono)">1–999</code>. Local users start from <code style="font-family:var(--mono)">1000</code>.</p>
+      </div>
+      <div class="info-block" style="margin-bottom:0">
+        <h3>👥 Groups</h3>
+        <p>Collections of users that share common permissions. Every user has a <strong style="color:var(--accent2)">Primary Group</strong> (auto-created) and can join Secondary Groups.</p>
+      </div>
+    </div>
+
+    <br/>
+
+    <table class="cmd-table">
+      <thead><tr><th>Command</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td>sudo useradd username</td><td>Add a new user</td></tr>
+        <tr><td>passwd username</td><td>Set user password</td></tr>
+        <tr><td>cat /etc/passwd</td><td>View all user info</td></tr>
+        <tr><td>sudo usermod -u 1982 user1</td><td>Change user ID</td></tr>
+        <tr><td>sudo groupadd testgp</td><td>Create a group</td></tr>
+        <tr><td>usermod -G testgp ubuntu</td><td>Add user to group</td></tr>
+        <tr><td>cat /etc/gshadow</td><td>View group passwords</td></tr>
+      </tbody>
+    </table>
+
+    <!-- PERMISSION VISUALIZER -->
+    <div class="perm-viz">
+      <h3 style="font-family:var(--display);font-size:17px;font-weight:700;color:var(--text-bright);margin-bottom:8px;">🔑 File Permission Structure</h3>
+      <p style="font-size:13px;color:var(--text-dim);margin-bottom:4px;">Example: <code style="font-family:var(--mono);color:var(--accent)">rwxr-xr--</code> → octal <strong style="color:var(--accent3)">754</strong></p>
+
+      <div class="perm-row">
+        <div class="perm-group">
+          <div class="perm-bits">
+            <div class="perm-bit on">r</div>
+            <div class="perm-bit on">w</div>
+            <div class="perm-bit on">x</div>
+          </div>
+          <div class="perm-label">User (7)</div>
+        </div>
+        <div class="perm-sep">|</div>
+        <div class="perm-group">
+          <div class="perm-bits">
+            <div class="perm-bit on">r</div>
+            <div class="perm-bit off">-</div>
+            <div class="perm-bit on">x</div>
+          </div>
+          <div class="perm-label">Group (5)</div>
+        </div>
+        <div class="perm-sep">|</div>
+        <div class="perm-group">
+          <div class="perm-bits">
+            <div class="perm-bit on">r</div>
+            <div class="perm-bit off">-</div>
+            <div class="perm-bit off">-</div>
+          </div>
+          <div class="perm-label">Others (4)</div>
+        </div>
+      </div>
+
+      <table class="cmd-table" style="margin-top:16px;">
+        <thead><tr><th>Symbol</th><th>Meaning</th><th>Octal</th></tr></thead>
+        <tbody>
+          <tr><td>r</td><td>Read — view file contents</td><td>4</td></tr>
+          <tr><td>w</td><td>Write — modify file contents</td><td>2</td></tr>
+          <tr><td>x</td><td>Execute — run as a program</td><td>1</td></tr>
+        </tbody>
+      </table>
+
+      <div class="code-block" style="margin-top:16px;">
+        <span class="prompt">$ </span>chmod u+x file.txt &nbsp;&nbsp;&nbsp;<span class="output"># add execute for user</span><br/>
+        <span class="prompt">$ </span>chmod 755 script.sh &nbsp;&nbsp;<span class="output"># rwxr-xr-x via octal</span><br/>
+        <span class="prompt">$ </span>chmod ug+rw,o-x abc.txt <span class="output"># symbolic notation</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 6. PROCESSES ─── -->
+  <section class="section" id="processes">
+    <div class="section-header">
+      <div class="section-icon icon-red">⚡</div>
+      <div>
+        <div class="section-number">06 / 13</div>
+        <h2>Process & Service Management</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>What is a Process?</h3>
+      <p>Every command you run creates a <strong style="color:var(--text-bright)">process</strong> — a running instance of a program, tracked by a unique <strong style="color:var(--accent)">PID (Process ID)</strong>. Linux tracks up to 5-digit PIDs and reuses them when exhausted.</p>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-icon">🖥️</div>
+        <h3>Foreground Process</h3>
+        <p>Runs in the terminal, blocks other commands until done. Use <strong style="color:var(--accent)">Ctrl+C</strong> to stop it.</p>
+        <div class="example">$ ls -la /var/log</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌙</div>
+        <h3>Background Process</h3>
+        <p>Runs independently, freeing the terminal. Append <strong style="color:var(--accent)">&amp;</strong> to any command to background it.</p>
+        <div class="example">$ long-task.sh &amp;</div>
+      </div>
+    </div>
+
+    <table class="cmd-table">
+      <thead><tr><th>Command</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td>ps aux</td><td>List all running processes</td></tr>
+        <tr><td>kill &lt;PID&gt;</td><td>Terminate a process gracefully</td></tr>
+        <tr><td>kill -9 &lt;PID&gt;</td><td>Force kill a stubborn process</td></tr>
+        <tr><td>bg &lt;job&gt;</td><td>Move stopped job to background</td></tr>
+        <tr><td>fg &lt;job&gt;</td><td>Bring background job to foreground</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 7. PACKAGES ─── -->
+  <section class="section" id="packages">
+    <div class="section-header">
+      <div class="section-icon icon-green">📦</div>
+      <div>
+        <div class="section-number">07 / 13</div>
+        <h2>Package Management</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>What is a Package?</h3>
+      <p>A package is a bundle of files needed to install software — including program files, libraries (dependencies), and config files. A <strong style="color:var(--accent)">package manager</strong> automates install, update, and removal, handling all dependencies automatically.</p>
+    </div>
+
+    <div class="two-col">
+      <div class="info-block" style="margin-bottom:0;border-color:rgba(0,200,150,0.3)">
+        <h3 style="color:var(--accent)">🐧 Debian / Ubuntu — APT</h3>
+        <table class="cmd-table" style="margin-top:12px;border:none;background:transparent;">
+          <thead><tr><th>Command</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>apt update</td><td>Refresh package index</td></tr>
+            <tr><td>apt upgrade</td><td>Install all updates</td></tr>
+            <tr><td>apt install nginx</td><td>Install nginx</td></tr>
+            <tr><td>apt remove nginx</td><td>Remove nginx</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="info-block" style="margin-bottom:0;border-color:rgba(243,139,168,0.3)">
+        <h3 style="color:var(--red)">🎩 RedHat / CentOS — YUM</h3>
+        <table class="cmd-table" style="margin-top:12px;border:none;background:transparent;">
+          <thead><tr><th>Command</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>yum update</td><td>Refresh package index</td></tr>
+            <tr><td>yum install httpd</td><td>Install apache</td></tr>
+            <tr><td>yum remove httpd</td><td>Remove apache</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 8. MONITORING ─── -->
+  <section class="section" id="monitoring">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📊</div>
+      <div>
+        <div class="section-number">08 / 13</div>
+        <h2>System Monitoring & Logs</h2>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="info-block" style="margin-bottom:0">
+        <h3>📊 Monitoring Commands</h3>
+        <table class="cmd-table" style="margin-top:12px;border:none;background:transparent;">
+          <thead><tr><th>Command</th><th>Shows</th></tr></thead>
+          <tbody>
+            <tr><td>top</td><td>Live CPU & process view</td></tr>
+            <tr><td>htop</td><td>Enhanced top (interactive)</td></tr>
+            <tr><td>ps aux</td><td>All processes snapshot</td></tr>
+            <tr><td>free -m</td><td>RAM usage in MB</td></tr>
+            <tr><td>df -h</td><td>Disk space (human-readable)</td></tr>
+            <tr><td>uptime</td><td>System run duration</td></tr>
+            <tr><td>vmstat</td><td>Virtual memory stats</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="info-block" style="margin-bottom:0">
+        <h3>📜 Log Commands</h3>
+        <table class="cmd-table" style="margin-top:12px;border:none;background:transparent;">
+          <thead><tr><th>Command</th><th>Purpose</th></tr></thead>
+          <tbody>
+            <tr><td>cat /var/log/syslog</td><td>View entire log</td></tr>
+            <tr><td>less /var/log/syslog</td><td>Page through log</td></tr>
+            <tr><td>tail -f syslog</td><td>Live log stream</td></tr>
+            <tr><td>head syslog</td><td>First few lines</td></tr>
+            <tr><td>grep error syslog</td><td>Filter by keyword</td></tr>
+            <tr><td>journalctl</td><td>Systemd logs</td></tr>
+            <tr><td>dmesg</td><td>Kernel messages</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 9. NETWORKING ─── -->
+  <section class="section" id="networking">
+    <div class="section-header">
+      <div class="section-icon icon-blue">🌐</div>
+      <div>
+        <div class="section-number">09 / 13</div>
+        <h2>Networking Fundamentals</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>What is a Network?</h3>
+      <p>A network is two or more devices linked together to <strong style="color:var(--text-bright)">share resources, exchange files, or communicate</strong>. The Internet is a global network of networks — a vast infrastructure linking millions of computers worldwide using the standardized <strong style="color:var(--accent)">Internet Protocol Suite (TCP/IP)</strong>.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">☁️</div>
+        <h3>Virtual Operation</h3>
+        <p>Networks allow remote work, cloud computing, and distributed systems.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📡</div>
+        <h3>Large-scale Integration</h3>
+        <p>Thousands of devices, services, and users connected seamlessly.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <h3>Quick Response</h3>
+        <p>Modern networks react instantly to changing conditions and topology.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔐</div>
+        <h3>Data Security</h3>
+        <p>Networks enable encryption, firewalls, and access control at scale.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 10. OSI ─── -->
+  <section class="section" id="osi">
+    <div class="section-header">
+      <div class="section-icon icon-purple">🔗</div>
+      <div>
+        <div class="section-number">10 / 13</div>
+        <h2>OSI Model & TCP/IP</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>OSI Model (Open Systems Interconnection)</h3>
+      <p>Created in 1984 by ISO, the OSI model breaks network communication into <strong style="color:var(--text-bright)">7 layers</strong>, each serving a specific purpose. Data flows down the stack on the sender side and up on the receiver side.</p>
+    </div>
+
+    <div class="osi-stack">
+      <div class="osi-layer l7">
+        <div class="osi-num">7</div>
+        <div class="osi-name">Application</div>
+        <div class="osi-desc">User-facing services — email, web, file transfer</div>
+        <div class="osi-proto">HTTP / FTP / SMTP</div>
+      </div>
+      <div class="osi-layer l6">
+        <div class="osi-num">6</div>
+        <div class="osi-name">Presentation</div>
+        <div class="osi-desc">Data translation, encryption, compression</div>
+        <div class="osi-proto">SSL / TLS / JPEG</div>
+      </div>
+      <div class="osi-layer l5">
+        <div class="osi-num">5</div>
+        <div class="osi-name">Session</div>
+        <div class="osi-desc">Manages sessions between applications</div>
+        <div class="osi-proto">NetBIOS / RPC</div>
+      </div>
+      <div class="osi-layer l4">
+        <div class="osi-num">4</div>
+        <div class="osi-name">Transport</div>
+        <div class="osi-desc">End-to-end data delivery, error checking</div>
+        <div class="osi-proto">TCP / UDP</div>
+      </div>
+      <div class="osi-layer l3">
+        <div class="osi-num">3</div>
+        <div class="osi-name">Network</div>
+        <div class="osi-desc">Routing data packets across networks</div>
+        <div class="osi-proto">IP / ICMP / ARP</div>
+      </div>
+      <div class="osi-layer l2">
+        <div class="osi-num">2</div>
+        <div class="osi-name">Data Link</div>
+        <div class="osi-desc">Node-to-node delivery, MAC addressing</div>
+        <div class="osi-proto">Ethernet / WiFi</div>
+      </div>
+      <div class="osi-layer l1">
+        <div class="osi-num">1</div>
+        <div class="osi-name">Physical</div>
+        <div class="osi-desc">Raw bits over hardware cables and signals</div>
+        <div class="osi-proto">Cables / Radio</div>
+      </div>
+    </div>
+
+    <div class="callout note">
+      <span class="callout-icon">📌</span>
+      <span>TCP/IP simplifies this into <strong>4 layers</strong>: Application → Transport → Internet → Network Access. It's the actual model used on the internet today.</span>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 11. IP & SUBNETTING ─── -->
+  <section class="section" id="ip">
+    <div class="section-header">
+      <div class="section-icon icon-amber">🔢</div>
+      <div>
+        <div class="section-number">11 / 13</div>
+        <h2>IP Addressing & Subnetting</h2>
+      </div>
+    </div>
+
+    <div class="ip-compare">
+      <div class="ip-card">
+        <h4 style="color:var(--accent2)">🌍 Public IP</h4>
+        <ul>
+          <li>Assigned by ISP</li>
+          <li>Used to communicate externally</li>
+          <li>Traceable to a location</li>
+          <li>Static (fixed) or Dynamic (changes)</li>
+        </ul>
+      </div>
+      <div class="ip-card">
+        <h4 style="color:var(--accent)">🏠 Private IP</h4>
+        <ul>
+          <li>Assigned by your router</li>
+          <li>Used inside local network only</li>
+          <li>Not visible on the internet</li>
+          <li>Ranges: 192.168.x.x, 10.x.x.x</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>✂️ Subnetting</h3>
+      <p>Subnetting divides a large network into smaller sub-networks for <strong style="color:var(--text-bright)">better performance, security, and management</strong>. Like splitting a large classroom into smaller study groups.</p>
+    </div>
+
+    <table class="subnet-table">
+      <thead>
+        <tr><th>Subnet Mask</th><th>CIDR</th><th>Usable Hosts</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>255.255.255.0</td><td>/24</td><td><div class="hosts-bar"><div class="bar-fill" style="width:100%"></div>254</div></td></tr>
+        <tr><td>255.255.255.128</td><td>/25</td><td><div class="hosts-bar"><div class="bar-fill" style="width:50%"></div>126</div></td></tr>
+        <tr><td>255.255.255.192</td><td>/26</td><td><div class="hosts-bar"><div class="bar-fill" style="width:25%"></div>62</div></td></tr>
+        <tr><td>255.255.255.224</td><td>/27</td><td><div class="hosts-bar"><div class="bar-fill" style="width:12%"></div>30</div></td></tr>
+        <tr><td>255.255.255.240</td><td>/28</td><td><div class="hosts-bar"><div class="bar-fill" style="width:6%"></div>14</div></td></tr>
+        <tr><td>255.255.255.248</td><td>/29</td><td><div class="hosts-bar"><div class="bar-fill" style="width:3%"></div>6</div></td></tr>
+        <tr><td>255.255.255.252</td><td>/30</td><td><div class="hosts-bar"><div class="bar-fill" style="width:1%"></div>2</div></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 12. DNS ─── -->
+  <section class="section" id="dns">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📖</div>
+      <div>
+        <div class="section-number">12 / 13</div>
+        <h2>DNS — Domain Name System</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>📖 DNS is the Internet's Phonebook</h3>
+      <p>Humans remember names (<code style="font-family:var(--mono);color:var(--accent)">google.com</code>) but computers need numbers (<code style="font-family:var(--mono);color:var(--accent2)">142.250.190.78</code>). DNS translates between the two — automatically and instantly — every time you load a website.</p>
+    </div>
+
+    <div class="dns-flow">
+      <div class="dns-node">
+        <div class="dns-bubble">🧑‍💻</div>
+        <div class="dns-label">Browser</div>
+      </div>
+      <div class="dns-arrow">→</div>
+      <div class="dns-node">
+        <div class="dns-bubble">🔍</div>
+        <div class="dns-label">DNS Resolver</div>
+      </div>
+      <div class="dns-arrow">→</div>
+      <div class="dns-node">
+        <div class="dns-bubble">🌳</div>
+        <div class="dns-label">Root Server</div>
+      </div>
+      <div class="dns-arrow">→</div>
+      <div class="dns-node">
+        <div class="dns-bubble">🏷️</div>
+        <div class="dns-label">TLD Server</div>
+      </div>
+      <div class="dns-arrow">→</div>
+      <div class="dns-node">
+        <div class="dns-bubble">✅</div>
+        <div class="dns-label">Auth Server</div>
+      </div>
+      <div class="dns-arrow">→</div>
+      <div class="dns-node">
+        <div class="dns-bubble">🌐</div>
+        <div class="dns-label">Website</div>
+      </div>
+    </div>
+
+    <table class="cmd-table">
+      <thead><tr><th>Record Type</th><th>Purpose</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>A Record</td><td>Maps domain → IPv4 address</td><td>google.com → 142.x.x.x</td></tr>
+        <tr><td>AAAA Record</td><td>Maps domain → IPv6 address</td><td>google.com → 2607:f8b0::x</td></tr>
+        <tr><td>CNAME</td><td>Alias for another domain</td><td>www → main domain</td></tr>
+        <tr><td>MX Record</td><td>Mail server info</td><td>Gmail servers</td></tr>
+        <tr><td>NS Record</td><td>Name server info</td><td>DNS provider servers</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 13. TROUBLESHOOTING ─── -->
+  <section class="section" id="troubleshoot">
+    <div class="section-header">
+      <div class="section-icon icon-red">🛠️</div>
+      <div>
+        <div class="section-number">13 / 13</div>
+        <h2>Network Troubleshooting</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>Your Network Toolkit</h3>
+      <p>When something goes wrong on the network, these tools help you <strong style="color:var(--text-bright)">diagnose, trace, and fix</strong> connectivity issues from DNS resolution failures to port availability checks.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">📡</div>
+        <h3>ping</h3>
+        <p>Check if a host is reachable over the network using ICMP packets.</p>
+        <div class="example">ping guvi.in</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔍</div>
+        <h3>nslookup</h3>
+        <p>Query DNS servers to resolve domain names to IP addresses.</p>
+        <div class="example">nslookup guvi.in</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🗺️</div>
+        <h3>traceroute</h3>
+        <p>Display the path packets take to reach a destination, hop by hop.</p>
+        <div class="example">traceroute guvi.in</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔌</div>
+        <h3>netstat</h3>
+        <p>Show active connections, routing tables, and network interface stats.</p>
+        <div class="example">netstat -tulnp</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🗺️</div>
+        <h3>nmap</h3>
+        <p>Discover hosts and open ports on a network. Essential for security auditing.</p>
+        <div class="example">nmap guvi.in</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">📦</div>
+        <h3>tcpdump</h3>
+        <p>Capture and analyze raw network traffic on an interface.</p>
+        <div class="example">tcpdump -i eth0</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">📋</div>
+        <h3>host</h3>
+        <p>Simple DNS lookup — shows IP for a hostname and hostname for an IP.</p>
+        <div class="example">host guvi.in</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔗</div>
+        <h3>ifconfig / ip</h3>
+        <p>Configure and display network interface info. <code style="font-family:var(--mono);font-size:10px;color:var(--accent)">ip a</code> is the modern version.</p>
+        <div class="example">ip addr show</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🚪</div>
+        <h3>telnet</h3>
+        <p>Test if a specific port is open and accepting connections on a server.</p>
+        <div class="example">telnet guvi.in 443</div>
+      </div>
+    </div>
+
+    <div class="callout tip" style="margin-top:8px;">
+      <span class="callout-icon">🏁</span>
+      <span>You've completed all 13 topics in Module 1! You now have a solid foundation in Linux OS, file systems, shell commands, permissions, processes, networking, OSI, DNS, and troubleshooting tools.</span>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  // Intersection Observer for scroll animations
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(s => observer.observe(s));
+
+  // Nav active state on scroll
+  const navItems = document.querySelectorAll('.nav-item');
+  const sectionEls = document.querySelectorAll('section.section');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navItems.forEach(n => n.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sectionEls.forEach(s => navObserver.observe(s));
+
+  // Progress dots
+  const dotsContainer = document.getElementById('progressDots');
+  const totalTopics = 13;
+  for (let i = 0; i < totalTopics; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot-prog';
+    dotsContainer.appendChild(dot);
+  }
+
+  // Fill progress dots based on scroll
+  const progressObserver = new IntersectionObserver((entries) => {
+    const allDots = document.querySelectorAll('.dot-prog');
+    let maxIndex = 0;
+    sectionEls.forEach((s, i) => {
+      if (s.classList.contains('visible')) maxIndex = i;
+    });
+    allDots.forEach((d, i) => {
+      d.classList.toggle('filled', i <= maxIndex);
+    });
+  }, { threshold: 0.1 });
+
+  sectionEls.forEach(s => progressObserver.observe(s));
+</script>
+</body>
+</html>

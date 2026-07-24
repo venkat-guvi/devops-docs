@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Module 02: Git & Version Control — Interactive Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ════════════════ SIDEBAR ════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; color:var(--accent2); margin-bottom:10px;">← Back to Hub</a>
+    <div class="module-tag">Module 02</div>
+    <h1>Git & <span>Version Control</span></h1>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Core Concepts</div>
+    <a class="nav-item active" href="#vcs"><span class="dot"></span>VCS Fundamentals</a>
+    <a class="nav-item" href="#architecture"><span class="dot"></span>3-Stage Architecture</a>
+    <a class="nav-item" href="#repo"><span class="dot"></span>Repository Setup</a>
+    <a class="nav-item" href="#workflow"><span class="dot"></span>Basic Git Workflow</a>
+
+    <div class="nav-section-label">Collaboration & Branching</div>
+    <a class="nav-item" href="#branching"><span class="dot"></span>Branching & Merging</a>
+    <a class="nav-item" href="#collaboration"><span class="dot"></span>Remote & Pull Requests</a>
+    <a class="nav-item" href="#history"><span class="dot"></span>History & Inspection</a>
+
+    <div class="nav-section-label">Advanced & Security</div>
+    <a class="nav-item" href="#strategies"><span class="dot"></span>Workflow Strategies</a>
+    <a class="nav-item" href="#security"><span class="dot"></span>Secure Access</a>
+    <a class="nav-item" href="#cheatsheet"><span class="dot"></span>Git Cheat Sheet</a>
+  </div>
+
+  <div class="progress-dots">
+    <p>// 10 topics</p>
+    <div class="dots-row" id="progressDots"></div>
+  </div>
+</nav>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main class="main">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">Module 02 <span class="cursor-blink"></span></div>
+    <h1>Git &<br><span class="highlight">Version Control</span><br>Mastery</h1>
+    <p>Master source code management, distributed repositories, branching models, pull requests, and essential command-line workflows for modern software engineering.</p>
+    <div class="hero-chips">
+      <span class="chip green">⚡ Git CLI</span>
+      <span class="chip blue">🌿 Branching & Merging</span>
+      <span class="chip amber">🔒 SSH & Security</span>
+    </div>
+  </header>
+
+  <!-- ─── 1. VCS FUNDAMENTALS ─── -->
+  <section class="section" id="vcs">
+    <div class="section-header">
+      <div class="section-icon icon-green">📜</div>
+      <div>
+        <div class="section-number">01 / 10</div>
+        <h2>Version Control System (VCS) Fundamentals</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>What is a Version Control System?</h3>
+      <p>A <strong style="color:var(--text-bright)">Version Control System (VCS)</strong> is a software tool that records changes made to files over time. It allows developers to review revision history, undo mistakes, and collaborate on the same codebase without overwriting each other's work.</p>
+    </div>
+
+    <div class="callout tip">
+      <span class="callout-icon">💡</span>
+      <span>Think of VCS as an automated timeline and backup system for your code. You can travel back to any previous state in your project's history whenever needed.</span>
+    </div>
+
+    <div class="ip-compare">
+      <div class="ip-card">
+        <h4 style="color:var(--accent3)">🏢 Centralized VCS (CVCS)</h4>
+        <ul>
+          <li>Single central server contains all versioned files</li>
+          <li>Clients check out file snapshots from the server</li>
+          <li>Requires constant network connection for history</li>
+          <li>Single point of failure if the central server goes down</li>
+          <li>Examples: Subversion (SVN), Perforce</li>
+        </ul>
+      </div>
+      <div class="ip-card">
+        <h4 style="color:var(--accent)">🌐 Distributed VCS (DVCS)</h4>
+        <ul>
+          <li>Every developer has a full local copy of the repo</li>
+          <li>Complete commit history and metadata on local disk</li>
+          <li>Works fully offline without server dependency</li>
+          <li>Fast local commits and branching operations</li>
+          <li>Examples: Git, Mercurial, Bazaar</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 2. 3-STAGE ARCHITECTURE ─── -->
+  <section class="section" id="architecture">
+    <div class="section-header">
+      <div class="section-icon icon-blue">🏗️</div>
+      <div>
+        <div class="section-number">02 / 10</div>
+        <h2>Git 3-Stage Architecture</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>How Git Tracks Your Code</h3>
+      <p>Git manages project files across <strong style="color:var(--text-bright)">three primary areas</strong>. Understanding how code transitions through these stages is fundamental to mastering Git commands.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">💻</div>
+        <h3 style="color:var(--text-bright)">1. Working Directory</h3>
+        <p>Your local folder where files are actively created, edited, or deleted. Changes here are initially untracked or modified.</p>
+        <div class="example">$ edit main.py</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">📋</div>
+        <h3 style="color:var(--accent2)">2. Staging Area (Index)</h3>
+        <p>A intermediate formatting space where changes are indexed and prepared before being saved into the repository history.</p>
+        <div class="example">$ git add main.py</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">📦</div>
+        <h3 style="color:var(--accent)">3. Local Repository</h3>
+        <p>The permanent database inside <code style="color:var(--accent);font-family:var(--mono)">.git/</code> where Git stores immutable snapshots (commits) of your project.</p>
+        <div class="example">$ git commit -m "msg"</div>
+      </div>
+    </div>
+
+    <div class="code-block">
+      <span class="prompt">Workflow Flow: </span><br/>
+      Working Directory &nbsp;━━▶ &nbsp;<span style="color:var(--accent2)">git add</span> &nbsp;━━▶ &nbsp;Staging Area &nbsp;━━▶ &nbsp;<span style="color:var(--accent)">git commit</span> &nbsp;━━▶ &nbsp;Local Repository
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 3. REPOSITORY SETUP ─── -->
+  <section class="section" id="repo">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📁</div>
+      <div>
+        <div class="section-number">03 / 10</div>
+        <h2>Git Repository Management</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>Local vs. Remote Repositories</h3>
+      <p>A <strong style="color:var(--text-bright)">repository (repo)</strong> is the folder where Git tracks file changes and commit history.</p>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-icon">💻</div>
+        <h3>Local Repository</h3>
+        <p>Stored directly on your computer inside the hidden <code style="color:var(--accent);font-family:var(--mono)">.git</code> folder. Gives you instant offline access to full history.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">☁️</div>
+        <h3>Remote Repository</h3>
+        <p>Hosted on cloud servers (e.g., GitHub, GitLab, Bitbucket). Used for team collaboration, code reviews, and remote backups.</p>
+      </div>
+    </div>
+
+    <table class="cmd-table">
+      <thead>
+        <tr>
+          <th>Command</th>
+          <th>Action</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>git init</td><td>Initializes a new blank Git repository in current directory</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git init</code></td></tr>
+        <tr><td>git clone</td><td>Downloads a full copy of a remote repository to local machine</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git clone https://github.com/user/repo.git</code></td></tr>
+        <tr><td>git status</td><td>Displays the current status of working directory and staging area</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git status</code></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 4. BASIC GIT WORKFLOW ─── -->
+  <section class="section" id="workflow">
+    <div class="section-header">
+      <div class="section-icon icon-amber">⚡</div>
+      <div>
+        <div class="section-number">04 / 10</div>
+        <h2>Basic Git Workflow</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>The Core Cycle: Staging & Committing</h3>
+      <p>Every development task follows a simple three-step rhythm: make edits, stage changes with <code style="font-family:var(--mono);color:var(--accent2)">git add</code>, and lock in snapshots with <code style="font-family:var(--mono);color:var(--accent)">git commit</code>.</p>
+    </div>
+
+    <table class="cmd-table">
+      <thead>
+        <tr>
+          <th>Command</th>
+          <th>Purpose</th>
+          <th>Usage Syntax</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>git add &lt;file&gt;</td><td>Stages a specific modified or new file</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git add index.html</code></td></tr>
+        <tr><td>git add .</td><td>Stages all modified and new files in the project</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git add .</code></td></tr>
+        <tr><td>git commit -m "msg"</td><td>Saves staged changes as a permanent commit snapshot</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git commit -m "Add user auth page"</code></td></tr>
+      </tbody>
+    </table>
+
+    <div class="code-block">
+      <span class="prompt">$ </span>git status <br/>
+      <span class="output">On branch main <br/>Untracked files: app.js <br/></span>
+      <span class="prompt">$ </span>git add app.js <br/>
+      <span class="prompt">$ </span>git commit -m "Feature: Add main application logic" <br/>
+      <span class="output">[main 8f3a1b2] Feature: Add main application logic <br/> 1 file changed, 45 insertions(+)</span>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 5. BRANCHING & MERGING ─── -->
+  <section class="section" id="branching">
+    <div class="section-header">
+      <div class="section-icon icon-green">🌿</div>
+      <div>
+        <div class="section-number">05 / 10</div>
+        <h2>Branching & Merging</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>Isolated Feature Development</h3>
+      <p><strong style="color:var(--text-bright)">Branching</strong> allows developers to diverge from the main codebase to work on new features, experiment, or fix bugs in complete isolation without breaking production code.</p>
+    </div>
+
+    <table class="cmd-table">
+      <thead>
+        <tr>
+          <th>Command</th>
+          <th>Operation</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>git branch</td><td>List all local branches (* indicates current active branch)</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git branch</code></td></tr>
+        <tr><td>git branch &lt;name&gt;</td><td>Create a new branch without switching to it</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git branch feature/login</code></td></tr>
+        <tr><td>git checkout &lt;name&gt;</td><td>Switch working directory to specified branch</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git checkout feature/login</code></td></tr>
+        <tr><td>git checkout -b &lt;name&gt;</td><td>Create a new branch and switch to it immediately</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git checkout -b feature/login</code></td></tr>
+        <tr><td>git merge &lt;branch&gt;</td><td>Merges changes from target branch into current active branch</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git merge feature/login</code></td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout note">
+      <span class="callout-icon">📌</span>
+      <span>Modern Git versions also support <code style="font-family:var(--mono);color:var(--accent2)">git switch &lt;branch&gt;</code> to switch branches and <code style="font-family:var(--mono);color:var(--accent2)">git switch -c &lt;branch&gt;</code> to create & switch.</span>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 6. REMOTE COLLABORATION ─── -->
+  <section class="section" id="collaboration">
+    <div class="section-header">
+      <div class="section-icon icon-blue">🌐</div>
+      <div>
+        <div class="section-number">06 / 10</div>
+        <h2>Remote Collaboration & Pull Requests</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>Synchronizing with Remote Repositories</h3>
+      <p>Remote integration commands allow team members to exchange commits, review code changes, and keep local repositories in sync with cloud hosts like GitHub.</p>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-icon">⬇️</div>
+        <h3 style="color:var(--accent2)">git pull</h3>
+        <p>Fetches the latest commits from the remote repository and automatically merges them into your current local branch.</p>
+        <div class="example">$ git pull origin main</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">⬆️</div>
+        <h3 style="color:var(--accent)">git push</h3>
+        <p>Uploads your local committed snapshots to the remote repository for teammates to access.</p>
+        <div class="example">$ git push origin feature-branch</div>
+      </div>
+    </div>
+
+    <div class="dns-flow" style="margin-top:24px;">
+      <div class="dns-node">
+        <div class="dns-bubble">💻</div>
+        <div class="dns-label">1. Local Commit</div>
+      </div>
+      <div class="dns-arrow">→</div>
+      <div class="dns-node">
+        <div class="dns-bubble">⬆️</div>
+        <div class="dns-label">2. git push</div>
+      </div>
+      <div class="dns-arrow">→</div>
+      <div class="dns-node">
+        <div class="dns-bubble">🔀</div>
+        <div class="dns-label">3. Open PR</div>
+      </div>
+      <div class="dns-arrow">→</div>
+      <div class="dns-node">
+        <div class="dns-bubble">👀</div>
+        <div class="dns-label">4. Code Review</div>
+      </div>
+      <div class="dns-arrow">→</div>
+      <div class="dns-node">
+        <div class="dns-bubble">✅</div>
+        <div class="dns-label">5. Merge Main</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 7. HISTORY & INSPECTION ─── -->
+  <section class="section" id="history">
+    <div class="section-header">
+      <div class="section-icon icon-amber">🔎</div>
+      <div>
+        <div class="section-number">07 / 10</div>
+        <h2>Git History & Inspection</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>Inspecting Commit History & Differences</h3>
+      <p>Git maintains a complete, cryptographically signed history of every change. These commands help you inspect past commits, author details, and code diffs.</p>
+    </div>
+
+    <table class="cmd-table">
+      <thead>
+        <tr>
+          <th>Command</th>
+          <th>Purpose</th>
+          <th>Example Output / Usage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>git log</td><td>Shows detailed commit history (author, date, commit hash, message)</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git log</code></td></tr>
+        <tr><td>git log --oneline</td><td>Compact, one-line summary per commit hash and message</td><td><code style="font-family:var(--mono);color:var(--accent)">a1b2c3d Add login page</code></td></tr>
+        <tr><td>git diff</td><td>Displays exact line-by-line differences between working directory and staging</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git diff</code></td></tr>
+        <tr><td>git show &lt;commit&gt;</td><td>Shows detailed metadata and diffs introduced by a specific commit</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git show 8f3a1b2</code></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 8. WORKFLOW STRATEGIES ─── -->
+  <section class="section" id="strategies">
+    <div class="section-header">
+      <div class="section-icon icon-purple">🎯</div>
+      <div>
+        <div class="section-number">08 / 10</div>
+        <h2>Git Workflow Strategies</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>Team Collaboration Models</h3>
+      <p>Different engineering teams adopt standardized branching models to maintain code stability, streamline releases, and avoid merge conflicts.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">1️⃣</div>
+        <h3>Centralized Workflow</h3>
+        <p>All developers commit directly to a single <code style="font-family:var(--mono);color:var(--accent)">main</code> branch. Best for small teams or simple scripts.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌿</div>
+        <h3>Feature Branch Workflow</h3>
+        <p>Every feature or bug fix gets a dedicated branch. Merging requires Pull Request code reviews. Industry standard for SaaS products.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏗️</div>
+        <h3>Gitflow Workflow</h3>
+        <p>Strict multi-branch model using <code style="font-family:var(--mono)">main</code>, <code style="font-family:var(--mono)">develop</code>, <code style="font-family:var(--mono)">feature/*</code>, <code style="font-family:var(--mono)">release/*</code>, and <code style="font-family:var(--mono)">hotfix/*</code>. Ideal for scheduled enterprise releases.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 9. SECURE ACCESS ─── -->
+  <section class="section" id="security">
+    <div class="section-header">
+      <div class="section-icon icon-red">🔐</div>
+      <div>
+        <div class="section-number">09 / 10</div>
+        <h2>Secure Git Access & Authentication</h2>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="info-block" style="margin-bottom:0">
+        <h3>🔑 SSH Key Authentication</h3>
+        <p>Uses cryptographic public/private key pairs for passwordless, secure git operations.</p>
+        <div class="code-block" style="margin-top:12px;">
+          <span class="prompt">$ </span>ssh-keygen -t ed25519 -C "your@email.com"<br/>
+          <span class="prompt">$ </span>cat ~/.ssh/id_ed25519.pub
+        </div>
+      </div>
+      <div class="info-block" style="margin-bottom:0">
+        <h3>🌐 HTTPS & Personal Tokens</h3>
+        <p>Authenticates over HTTPS using Personal Access Tokens (PAT) instead of plain account passwords.</p>
+        <div class="code-block" style="margin-top:12px;">
+          <span class="prompt">$ </span>git config --global credential.helper store
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 10. CHEAT SHEET ─── -->
+  <section class="section" id="cheatsheet">
+    <div class="section-header">
+      <div class="section-icon icon-green">📋</div>
+      <div>
+        <div class="section-number">10 / 10</div>
+        <h2>Comprehensive Git Command Cheat Sheet</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>Quick Reference Command Table</h3>
+      <p>Essential Git commands grouped by operational category for fast lookup.</p>
+    </div>
+
+    <table class="cmd-table">
+      <thead>
+        <tr>
+          <th>Command</th>
+          <th>Usage & Description</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>git init</td><td>Initialize new Git repo</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git init</code></td></tr>
+        <tr><td>git clone &lt;url&gt;</td><td>Clone remote repo</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git clone https://github.com/user/repo.git</code></td></tr>
+        <tr><td>git status</td><td>Check working tree status</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git status</code></td></tr>
+        <tr><td>git add &lt;file&gt;</td><td>Stage specific file</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git add index.html</code></td></tr>
+        <tr><td>git add .</td><td>Stage all modified files</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git add .</code></td></tr>
+        <tr><td>git commit -m "msg"</td><td>Commit staged changes</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git commit -m "Add feature"</code></td></tr>
+        <tr><td>git branch</td><td>List local branches</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git branch</code></td></tr>
+        <tr><td>git checkout &lt;branch&gt;</td><td>Switch branch</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git checkout dev</code></td></tr>
+        <tr><td>git checkout -b &lt;name&gt;</td><td>Create & switch branch</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git checkout -b feature/auth</code></td></tr>
+        <tr><td>git merge &lt;branch&gt;</td><td>Merge branch into active branch</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git merge feature/auth</code></td></tr>
+        <tr><td>git pull origin &lt;branch&gt;</td><td>Fetch & merge remote updates</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git pull origin main</code></td></tr>
+        <tr><td>git push origin &lt;branch&gt;</td><td>Push local commits to remote</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git push origin main</code></td></tr>
+        <tr><td>git log --oneline</td><td>View compact commit log</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git log --oneline</code></td></tr>
+        <tr><td>git diff</td><td>View unstaged line diffs</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git diff</code></td></tr>
+        <tr><td>git reset &lt;file&gt;</td><td>Unstage file (keep edits)</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git reset app.js</code></td></tr>
+        <tr><td>git reset --hard HEAD</td><td>Discard all uncommitted changes</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git reset --hard HEAD</code></td></tr>
+        <tr><td>git stash</td><td>Shelve uncommitted changes</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git stash</code></td></tr>
+        <tr><td>git stash pop</td><td>Re-apply shelved changes</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git stash pop</code></td></tr>
+        <tr><td>git config --global user.name</td><td>Set global Git username</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git config --global user.name "John"</code></td></tr>
+        <tr><td>git config --global user.email</td><td>Set global Git email</td><td><code style="font-family:var(--mono);color:var(--text-dim)">git config --global user.email "john@dev.com"</code></td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout tip" style="margin-top:16px;">
+      <span class="callout-icon">🏁</span>
+      <span>You've completed Module 02: Git & Version Control! You now understand version control foundations, 3-stage workflow, branching, remote collaboration, and essential commands.</span>
+    </div>
+  </section>
+
+</main>
+
+<!-- ════════════════ SCRIPTS ════════════════ -->
+<script>
+  // Intersection Observer for scroll animations
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(s => observer.observe(s));
+
+  // Nav active state on scroll
+  const navItems = document.querySelectorAll('.nav-item');
+  const sectionEls = document.querySelectorAll('section.section');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navItems.forEach(n => n.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sectionEls.forEach(s => navObserver.observe(s));
+
+  // Progress dots
+  const dotsContainer = document.getElementById('progressDots');
+  const totalTopics = 10;
+  for (let i = 0; i < totalTopics; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot-prog';
+    dotsContainer.appendChild(dot);
+  }
+
+  // Fill progress dots based on scroll
+  const progressObserver = new IntersectionObserver((entries) => {
+    const allDots = document.querySelectorAll('.dot-prog');
+    let maxIndex = 0;
+    sectionEls.forEach((s, i) => {
+      if (s.classList.contains('visible')) maxIndex = i;
+    });
+    allDots.forEach((d, i) => {
+      d.classList.toggle('filled', i <= maxIndex);
+    });
+  }, { threshold: 0.1 });
+
+  sectionEls.forEach(s => progressObserver.observe(s));
+</script>
+
+</body>
+</html>

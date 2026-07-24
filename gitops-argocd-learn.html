@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Module 10: GitOps — Interactive Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ════════════════ SIDEBAR ════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; color:var(--accent2); margin-bottom:10px;">← Back to Hub</a>
+    <div class="module-tag">Module 10</div>
+    <h1>GitOps & <span>ArgoCD</span></h1>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="nav-section-label">GitOps Fundamentals</div>
+    <a class="nav-item active" href="#principles"><span class="dot"></span>GitOps Core Principles</a>
+    <a class="nav-item" href="#declarative"><span class="dot"></span>Declarative Deployment Models</a>
+    <a class="nav-item" href="#git-infra"><span class="dot"></span>Git-Driven Infrastructure</a>
+    <a class="nav-item" href="#delivery-flow"><span class="dot"></span>Continuous Delivery Flow</a>
+
+    <div class="nav-section-label">Reconciliation & Tools</div>
+    <a class="nav-item" href="#reconciliation"><span class="dot"></span>Reconciliation & Rollbacks</a>
+    <a class="nav-item" href="#environments"><span class="dot"></span>Environment Management</a>
+    <a class="nav-item" href="#argocd"><span class="dot"></span>ArgoCD Architecture</a>
+    <a class="nav-item" href="#fluxcd"><span class="dot"></span>FluxCD & Tool Comparison</a>
+
+    <div class="nav-section-label">Pipelines & Manifests</div>
+    <a class="nav-item" href="#platforms"><span class="dot"></span>Git Platforms (GitHub/GitLab)</a>
+    <a class="nav-item" href="#gitlab-sample"><span class="dot"></span>GitLab CI/CD Pipeline Sample</a>
+  </div>
+
+  <div class="progress-dots">
+    <p>// 10 topics</p>
+    <div class="dots-row" id="progressDots"></div>
+  </div>
+</nav>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main class="main">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">Module 10 <span class="cursor-blink"></span></div>
+    <h1>GitOps &<br><span class="highlight">Declarative Delivery</span><br>Mastery</h1>
+    <p>Master GitOps continuous deployment — Git as the single source of truth, automated reconciliation loops, zero-downtime rollbacks, ArgoCD vs FluxCD, and production GitLab CI/CD pipelines.</p>
+    <div class="hero-chips">
+      <span class="chip green">🔄 GitOps Delivery</span>
+      <span class="chip blue">🐙 ArgoCD & FluxCD</span>
+      <span class="chip amber">🦊 GitLab CI/CD</span>
+    </div>
+  </header>
+
+  <!-- ─── 1. GITOPS CORE PRINCIPLES ─── -->
+  <section class="section" id="principles">
+    <div class="section-header">
+      <div class="section-icon icon-green">🔄</div>
+      <div>
+        <div class="section-number">01 / 10</div>
+        <h2>GitOps Core Principles</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>Git as the Single Source of Truth</h3>
+      <p><strong style="color:var(--text-bright)">GitOps</strong> is an operational framework that uses Git repositories as the single source of truth for infrastructure and application code. Commits automatically trigger cluster synchronization.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <h3 style="color:var(--accent)">Single Source of Truth</h3>
+        <p>Entire application & infrastructure state is stored declaratively in version-controlled Git repositories.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🤖</div>
+        <h3 style="color:var(--accent2)">Automated Pull Sync</h3>
+        <p>Software agents (ArgoCD/FluxCD) running inside the cluster pull updates from Git automatically.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <h3 style="color:var(--accent3)">Continuous Drift Control</h3>
+        <p>Cluster state is continuously monitored. Any manual cluster state drift is automatically detected and reconciled.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 2. DECLARATIVE MODELS ─── -->
+  <section class="section" id="declarative">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📄</div>
+      <div>
+        <div class="section-number">02 / 10</div>
+        <h2>Declarative Deployment Models</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>Desired State vs. Imperative Scripts</h3>
+      <p>Instead of defining step-by-step deployment bash scripts, GitOps manifests declare the exact target state.</p>
+    </div>
+
+    <div class="code-block">
+      <span class="output"># Declarative Kubernetes Deployment (my-app.yaml)</span><br/>
+      <span class="prompt">apiVersion: </span>apps/v1<br/>
+      <span class="prompt">kind: </span>Deployment<br/>
+      <span class="prompt">metadata: </span><br/>
+      &nbsp;&nbsp;<span class="prompt">name: </span>my-app<br/>
+      <span class="prompt">spec: </span><br/>
+      &nbsp;&nbsp;<span class="prompt">replicas: </span>2 &nbsp;&nbsp;<span class="output"># GitOps agent guarantees exactly 2 pods are running</span><br/>
+      &nbsp;&nbsp;<span class="prompt">template: </span><br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="prompt">spec: </span><br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="prompt">containers: </span><br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="prompt">name: </span>app<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="prompt">image: </span>myapp:v2.0
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 3. GIT-DRIVEN INFRASTRUCTURE ─── -->
+  <section class="section" id="git-infra">
+    <div class="section-header">
+      <div class="section-icon icon-purple">🌳</div>
+      <div>
+        <div class="section-number">03 / 10</div>
+        <h2>Git-Driven Infrastructure</h2>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-icon">🔍</div>
+        <h3>Auditing & Transparency</h3>
+        <p>Every change to infrastructure or microservices requires a Git commit or Pull Request. Gives full visibility into who changed what, when, and why.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">👥</div>
+        <h3>Peer Review & Security</h3>
+        <p>Changes must pass peer review pull-request checks and automated CI tests before being merged into the deployment branch.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 4. CONTINUOUS DELIVERY FLOW ─── -->
+  <section class="section" id="delivery-flow">
+    <div class="section-header">
+      <div class="section-icon icon-amber">🚀</div>
+      <div>
+        <div class="section-number">04 / 10</div>
+        <h2>GitOps Continuous Delivery Flow</h2>
+      </div>
+    </div>
+
+    <div class="dns-flow">
+      <div class="dns-node">
+        <div class="dns-bubble">✍️</div>
+        <div class="dns-label">1. Code Commit</div>
+      </div>
+      <div class="dns-arrow">→</div>
+      <div class="dns-node">
+        <div class="dns-bubble">🔨</div>
+        <div class="dns-label">2. CI Build & Test</div>
+      </div>
+      <div class="dns-arrow">→</div>
+      <div class="dns-node">
+        <div class="dns-bubble">🌳</div>
+        <div class="dns-label">3. Update Git Manifest</div>
+      </div>
+      <div class="dns-arrow">→</div>
+      <div class="dns-node">
+        <div class="dns-bubble">🐙</div>
+        <div class="dns-label">4. ArgoCD Sync</div>
+      </div>
+      <div class="dns-arrow">→</div>
+      <div class="dns-node">
+        <div class="dns-bubble">☸️</div>
+        <div class="dns-label">5. K8s Live Deploy</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 5. RECONCILIATION & ROLLBACKS ─── -->
+  <section class="section" id="reconciliation">
+    <div class="section-header">
+      <div class="section-icon icon-green">♻️</div>
+      <div>
+        <div class="section-number">05 / 10</div>
+        <h2>Deployment Reconciliation & Automated Rollbacks</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>Self-Healing & Instant Recovery</h3>
+      <p><strong style="color:var(--text-bright)">Reconciliation</strong> continuously compares the running cluster state against the Git repository. If a pod crashes or someone deletes a resource manually, the GitOps controller self-heals it back to match Git.</p>
+    </div>
+
+    <div class="callout tip">
+      <span class="callout-icon">💡</span>
+      <span><strong>Instant Rollbacks</strong>: If a bad code release occurs in production, simply execute <code style="font-family:var(--mono);color:var(--accent)">git revert</code>. The GitOps agent immediately rolls back the live cluster to the previous working commit!</span>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 6. ENVIRONMENT MANAGEMENT ─── -->
+  <section class="section" id="environments">
+    <div class="section-header">
+      <div class="section-icon icon-blue">🌐</div>
+      <div>
+        <div class="section-number">06 / 10</div>
+        <h2>Environment Management (Dev vs. Prod)</h2>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="ip-card">
+        <h4 style="color:var(--accent)">📁 Directory-Based Layout</h4>
+        <ul>
+          <li><code style="font-family:var(--mono)">environments/dev/kust.yaml</code></li>
+          <li><code style="font-family:var(--mono)">environments/prod/kust.yaml</code></li>
+          <li>Uses Kustomize or Helm values overrides per environment</li>
+        </ul>
+      </div>
+      <div class="ip-card">
+        <h4 style="color:var(--accent2)">🌿 Branch-Based Layout</h4>
+        <ul>
+          <li><code style="font-family:var(--mono)">dev</code> branch syncs to Dev K8s Cluster</li>
+          <li><code style="font-family:var(--mono)">main</code> branch syncs to Production K8s Cluster</li>
+          <li>Promotions handled via Git Pull Requests</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 7. ARGOCD ARCHITECTURE ─── -->
+  <section class="section" id="argocd">
+    <div class="section-header">
+      <div class="section-icon icon-purple">🐙</div>
+      <div>
+        <div class="section-number">07 / 10</div>
+        <h2>ArgoCD Architecture & Features</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>Declarative GitOps Engine for Kubernetes</h3>
+      <p>ArgoCD is a popular Kubernetes-native continuous delivery controller that monitors Git repositories and synchronizes cluster resources in real time.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <h3>Web UI & Visual Tree</h3>
+        <p>Rich web dashboard providing real-time visual health metrics, resource trees, and sync statuses of all K8s workloads.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <h3>Automated Sync Policies</h3>
+        <p>Supports manual sync or automated self-healing sync options with pruning of orphaned resources.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔐</div>
+        <h3>Multi-Tenant & RBAC</h3>
+        <p>Native integration with SSO providers (OIDC, GitHub, Dex) and fine-grained Role-Based Access Control.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 8. FLUXCD & COMPARISON ─── -->
+  <section class="section" id="fluxcd">
+    <div class="section-header">
+      <div class="section-icon icon-amber">⚡</div>
+      <div>
+        <div class="section-number">08 / 10</div>
+        <h2>FluxCD & Tool Comparison (ArgoCD vs. Flux)</h2>
+      </div>
+    </div>
+
+    <table class="subnet-table">
+      <thead>
+        <tr><th>Feature</th><th>ArgoCD</th><th>FluxCD</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>User Interface</td><td>Rich Web UI Dashboard & CLI</td><td>CLI-focused & CRD Kubernetes native</td></tr>
+        <tr><td>Architecture</td><td>Centralized Control Plane & Application Controller</td><td>Set of composable Kubernetes controllers (Git, Kustomize, Helm)</td></tr>
+        <tr><td>Multi-Tenancy</td><td>Built-in RBAC and Project abstraction</td><td>Managed via Kubernetes Namespaces & RBAC</td></tr>
+        <tr><td>Helm Support</td><td>Supported natively inside manifests</td><td>Dedicated Helm Controller for automated releases</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 9. GIT PLATFORMS ─── -->
+  <section class="section" id="platforms">
+    <div class="section-header">
+      <div class="section-icon icon-blue">🦊</div>
+      <div>
+        <div class="section-number">09 / 10</div>
+        <h2>Git Platforms (GitHub vs. GitLab)</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>Hosting Declarative Code & Triggering Workflows</h3>
+      <p>Platforms like GitHub and GitLab host configuration repositories, enforce pull request approval rules, and emit webhooks to GitOps controllers upon code changes.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── 10. GITLAB CI/CD PIPELINE SAMPLE ─── -->
+  <section class="section" id="gitlab-sample">
+    <div class="section-header">
+      <div class="section-icon icon-red">🦊</div>
+      <div>
+        <div class="section-number">10 / 10</div>
+        <h2>GitLab CI/CD Pipeline Manifest Sample</h2>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>Complete Production 5-Stage `.gitlab-ci.yml` Breakdown</h3>
+      <p>Annotated production pipeline covering dependency installation, unit testing, building, Docker-in-Docker packaging, and SSH EC2 deployment.</p>
+    </div>
+
+    <div class="code-block">
+      <span class="output"># Complete .gitlab-ci.yml Pipeline</span><br/>
+      variables:<br/>
+      &nbsp;&nbsp;IMAGE_NAME: <span style="color:var(--accent)">"demo/gitlab"</span><br/>
+      &nbsp;&nbsp;IMAGE_TAG: <span style="color:var(--accent2)">"v2.0"</span><br/>
+      <br/>
+      stages:<br/>
+      &nbsp;&nbsp;- install<br/>
+      &nbsp;&nbsp;- test<br/>
+      &nbsp;&nbsp;- build<br/>
+      &nbsp;&nbsp;- image_build<br/>
+      &nbsp;&nbsp;- deploy<br/>
+      <br/>
+      <span class="output"># Stage 1: Install Dependencies</span><br/>
+      install:<br/>
+      &nbsp;&nbsp;image: node:14-alpine<br/>
+      &nbsp;&nbsp;stage: install<br/>
+      &nbsp;&nbsp;script:<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;- npm install<br/>
+      &nbsp;&nbsp;artifacts:<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;paths: [node_modules/]<br/>
+      <br/>
+      <span class="output"># Stage 2: Testing</span><br/>
+      test:<br/>
+      &nbsp;&nbsp;image: node:14-alpine<br/>
+      &nbsp;&nbsp;stage: test<br/>
+      &nbsp;&nbsp;script:<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;- npm test<br/>
+      <br/>
+      <span class="output"># Stage 3: Docker-in-Docker Image Build & Push</span><br/>
+      image_build:<br/>
+      &nbsp;&nbsp;image: docker:27.3<br/>
+      &nbsp;&nbsp;stage: image_build<br/>
+      &nbsp;&nbsp;services: [docker:27.3-dind]<br/>
+      &nbsp;&nbsp;script:<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;- docker login -u $DOCKER_USER -p $DOCKER_PASS<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;- docker build -t $IMAGE_NAME:$IMAGE_TAG .<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;- docker push $IMAGE_NAME:$IMAGE_TAG<br/>
+      <br/>
+      <span class="output"># Stage 4: Deployment over SSH</span><br/>
+      deploy:<br/>
+      &nbsp;&nbsp;stage: deploy<br/>
+      &nbsp;&nbsp;script:<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;- ssh -i $SSH_KEY $EC2_USER@$EC2_HOST "docker run -d -p 80:3000 $IMAGE_NAME:$IMAGE_TAG"
+    </div>
+
+    <div class="callout tip" style="margin-top:20px;">
+      <span class="callout-icon">🏁</span>
+      <span>You've completed Module 10: GitOps & Declarative Delivery! You now master Git single source of truth, reconciliation loops, ArgoCD vs FluxCD, automated rollbacks, and GitLab CI/CD pipelines.</span>
+    </div>
+  </section>
+
+</main>
+
+<!-- ════════════════ SCRIPTS ════════════════ -->
+<script>
+  // Intersection Observer for scroll animations
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(s => observer.observe(s));
+
+  // Nav active state on scroll
+  const navItems = document.querySelectorAll('.nav-item');
+  const sectionEls = document.querySelectorAll('section.section');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navItems.forEach(n => n.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sectionEls.forEach(s => navObserver.observe(s));
+
+  // Progress dots
+  const dotsContainer = document.getElementById('progressDots');
+  const totalTopics = 10;
+  for (let i = 0; i < totalTopics; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot-prog';
+    dotsContainer.appendChild(dot);
+  }
+
+  // Fill progress dots based on scroll
+  const progressObserver = new IntersectionObserver((entries) => {
+    const allDots = document.querySelectorAll('.dot-prog');
+    let maxIndex = 0;
+    sectionEls.forEach((s, i) => {
+      if (s.classList.contains('visible')) maxIndex = i;
+    });
+    allDots.forEach((d, i) => {
+      d.classList.toggle('filled', i <= maxIndex);
+    });
+  }, { threshold: 0.1 });
+
+  sectionEls.forEach(s => progressObserver.observe(s));
+</script>
+
+</body>
+</html>
