@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Module 05: Containers (Docker &amp; Compose) — Interactive Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ════════════════ SIDEBAR ════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; color:var(--accent); margin-bottom:10px;">← Back to Hub</a>
+    <div class="module-tag">Module 05</div>
+    <h1>Containers (Docker &amp; Compose</h1>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Curriculum Topics</div>
+    <a class="nav-item active" href="#sec-1"><span class="dot"></span>Containers (Docker &amp; Compose)</a>
+    <a class="nav-item" href="#sec-2"><span class="dot"></span>What is a Virtual Machine?</a>
+    <a class="nav-item" href="#sec-3"><span class="dot"></span>FROM</a>
+    <a class="nav-item" href="#sec-4"><span class="dot"></span>COPY</a>
+    <a class="nav-item" href="#sec-5"><span class="dot"></span>LABEL</a>
+    <a class="nav-item" href="#sec-6"><span class="dot"></span>WORKDIR</a>
+    <a class="nav-item" href="#sec-7"><span class="dot"></span>EXPOSE</a>
+    <a class="nav-item" href="#sec-8"><span class="dot"></span>ENTRYPOINT</a>
+    <a class="nav-item" href="#sec-9"><span class="dot"></span>VOLUME</a>
+    <a class="nav-item" href="#sec-10"><span class="dot"></span>USER</a>
+    <a class="nav-item" href="#sec-11"><span class="dot"></span>EXPOSE 80</a>
+    <a class="nav-item" href="#sec-12"><span class="dot"></span>What is the Docker File System</a>
+  </div>
+
+  <div class="progress-dots">
+    <p>// 12 topics</p>
+    <div class="dots-row" id="progressDots"></div>
+  </div>
+</nav>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main class="main">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">Module 05 <span class="cursor-blink"></span></div>
+    <h1>Module 05: <span class="highlight">Containers (Docker &amp; Compose)</span></h1>
+    <p>Containerization, Dockerfile instructions, network drivers, volumes, and Docker Compose. Master production DevOps workflows, cloud architecture, and hands-on execution with 11 embedded diagrams.</p>
+    <div class="hero-chips">
+      <span class="chip green">Docker Engine</span>
+      <span class="chip blue">Dockerfile</span>
+      <span class="chip amber">Docker Compose</span>
+    </div>
+  </header>
+
+  
+  <!-- ─── SECTION 1 ─── -->
+  <section class="section" id="sec-1">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">01 / 12</div>
+        <h2>Containers (Docker &amp; Compose)</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">— Containers (Docker)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker is an open source containerization platform for building, deploying, and managing containerized applications.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It enables applications to package applications into containers that encapsulate source code, libraries and dependencies required to run that code in any environment.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 2 ─── -->
+  <section class="section" id="sec-2">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">02 / 12</div>
+        <h2>What is a Virtual Machine?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A virtual machine (VM) is a virtual environment that functions as a virtual computer system with its own CPU, memory, network interface, and storage, created on a physical hardware system (located off- or on-premises).</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Software called a hypervisor separates the machine’s resources from the hardware and provisions them appropriately so they can be used by the VM.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module05/image1.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Hypervisor Types</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module05/image8.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker containers are easily portable because they do not have separate operating systems.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A container can be ported to a different OS, and it can start immediately.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">On the other hand, virtual machines have separate OS, so porting a virtual machine is difficult as compared to containers.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Containers are lightweight and can startup very fast compared to that of virtual machines.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module05/image9.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Container</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Containers share the machine's OS system Kernel and therefore do not require an OS per application.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A container is just a process running from a directory and all the data is coming from an image.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why Docker?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Lightweight</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Isolation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scalability</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Performance</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Portability</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker Architecture</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker uses a client-server architecture.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Docker client talks to the Docker daemon, which does the heavy lifting of building, running, and distributing your Docker containers.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Docker client and daemon can run on the same system, or you can connect a Docker client to a remote Docker daemon.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Docker client and daemon communicate using a REST API, over UNIX sockets or a network interface.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module05/image6.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker Client</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">With the help of the docker client, the docker users can interact with the docker.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The docker command uses the Docker API.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Docker client can communicate with multiple daemons.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When a docker client runs any docker command on the docker terminal then the terminal sends instructions to the daemon.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Docker daemon gets those instructions from the docker client withinside the shape of the command and REST API’s request.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker Host</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A Docker host is a type of machine that is responsible for running more than one container.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It comprises the Docker daemon, Images, Containers, Networks, and Storage.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker Registry</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">All the docker images are stored in the docker registry.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">There is a public registry which is known as a docker hub that can be used by anyone. We can run our private registry also.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker Engine</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker Engine is an open source containerization technology for building and containerizing your applications.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker Engine acts as a client-server application.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker Objects</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module05/image11.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker Installation and Setup</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Install Docker (ubuntu)</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>sudo apt update<br/><span class="prompt">$ </span>sudo apt install docker.io
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">(Linux)</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>sudo yum update<br/><span class="prompt">$ </span>sudo yum install docker
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Start Docker</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>sudo systemctl start docker<br/><span class="prompt">$ </span>sudo systemctl enable docker
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Verify Installation</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker --version
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Image</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">An image contains instructions for creating a docker container. It is just a read-only template. It is used to store and ship applications.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Build</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker build -t &lt;image_name&gt;
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ex: docker build -t demo .</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To build an image from a Dockerfile.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Images</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker images
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To list images.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Commit</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker commit &lt;container_name&gt;
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To create a new image from a container’s changes.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Load</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker load
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ex: docker load &lt; myimage.tar</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To load an image from a tar archive or STDIN.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">History</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker history &lt;container_name&gt;
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To show the history of an image.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Import</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker import
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To import the contents from a tarball to create a filesystem image.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Remove</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker rmi &lt;container_name&gt;
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To remove one or more images.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Save</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker save &lt;container_name&gt;
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ex: docker save myimage:latest &gt; myimage.tar</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To save images to a tar archive or STDOUT.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tag</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker tag<br/><span class="prompt">$ </span>docker tag demo:latest test:v1
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To tag an image into a repository.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Restart</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker restart &lt;cont_id&gt;
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Restart an existing running container.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kill</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker kill &lt;cont_id&gt;
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Delete the running container forcefully.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Pause and Unpause</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker pause &lt;cont_id&gt;<br/><span class="prompt">$ </span>docker unpause &lt;cont_id&gt;
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Prune</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker system prune
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Remove Unused images, volumes and networks.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Rename</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker rename &lt;old_container_name&gt; &lt;new_container_name&gt;
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker Container Lifecycle</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Containers are created from docker images as they are ready applications. With the help of Docker API or CLI, we can start, stop, delete, or move a container.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Lifecycle Stages</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Create</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Start</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Stop</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Restart</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Delete</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker run<br/><span class="prompt">$ </span>docker run --name &lt;container_name&gt; &lt;image_name&gt;
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To create and run a container from an image.</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker run -p &lt;host_port&gt;:&lt;container_port&gt; &lt;image_name&gt;
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To run a container with port mapping.</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker run -d &lt;image_name&gt;
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To run a container in the background.</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker start|stop<br/><span class="prompt">$ </span>docker start|stop &lt;container_name&gt; (or &lt;container-id&gt;)
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To start or stop an existing container.</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker rm<br/><span class="prompt">$ </span>docker rm &lt;container_name&gt;
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To remove a stopped container.</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker exec<br/><span class="prompt">$ </span>docker exec -it &lt;container_name&gt; sh
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To open a shell inside a running container.</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker logs<br/><span class="prompt">$ </span>docker logs -f &lt;container_name&gt;
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To fetch and follow the logs of a container.</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker inspect<br/><span class="prompt">$ </span>docker inspect &lt;container_name&gt; (or &lt;container_id&gt;)
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To inspect a running container.</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker ps<br/><span class="prompt">$ </span>docker ps
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To list currently running containers.</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker ps -a
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To list all docker containers.</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker container stats<br/><span class="prompt">$ </span>docker container stats
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To view resource usage stats.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Dockerfile Development</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A Dockerfile is a script containing instructions for building a Docker image.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Dockerfile defines the base image, the application's source code, dependencies, and configurations needed for the service to run.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Create a new file named `Dockerfile` in the root directory of your microservice.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module05/image2.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Dockerfile Instructions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker supports over 15 different Dockerfile instructions for adding content to your image and setting configuration parameters. Here are some of the most common ones you’ll use.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 3 ─── -->
+  <section class="section" id="sec-3">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">03 / 12</div>
+        <h2>FROM</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div class="code-block">
+                  FROM ubuntu:20.04<br/>FROM is usually the first line in your Dockerfile. It refers to an existing image which becomes the base for your build. All subsequent instructions apply on top of the referenced image’s filesystem.
+                </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 4 ─── -->
+  <section class="section" id="sec-4">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">04 / 12</div>
+        <h2>COPY</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div class="code-block">
+                  COPY main.js /app/main.js<br/>COPY adds files and folders to your image’s filesystem.
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It copies between your Docker host and the work-in-progress image. Containers using the image will include all the files you’ve copied in.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ADD</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ADD http://example.com/archive.tar /archive-content</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ADD works similarly to COPY but additionally supports remote file URLs and automatic archive extraction.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Archives will be extracted into the destination path in your container. Decompression of gzip, bzip2, and xz formats is supported.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">RUN</p>
+                <div class="code-block">
+                  RUN apt-get update &amp;&amp; apt-get install -y nodejs<br/>RUN runs a command inside the image you’re building.
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It creates a new image layer on top of the previous one; this layer will contain the filesystem changes that the command applies.</p>
+                <div class="code-block">
+                  RUN instructions are most commonly used to install and configure packages that your image requires.
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ENV</p>
+                <div class="code-block">
+                  ENV PATH=$PATH:/app/bin
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The ENV instruction is used to set environment variables that will be available within your containers.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Its argument looks similar to a variable assignment in your shell: specify the name of the variable and the value to assign, separated by an equals character.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 5 ─── -->
+  <section class="section" id="sec-5">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">05 / 12</div>
+        <h2>LABEL</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">LABEL maintainer="yourname@example.com"LABEL version="1.0"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Add metadata to your image using the LABEL instruction. It’s useful for providing information about the image, such as the maintainer or version.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 6 ─── -->
+  <section class="section" id="sec-6">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">06 / 12</div>
+        <h2>WORKDIR</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div class="code-block">
+                  WORKDIR /usr/src/app
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">You can specify your working directory inside the container using the WORKDIR instruction.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Any other instruction after that in the dockerfile, will be executed on that particular working directory only.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 7 ─── -->
+  <section class="section" id="sec-7">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">07 / 12</div>
+        <h2>EXPOSE</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div class="code-block">
+                  EXPOSE 8080
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The EXPOSE instruction inside the dockerfile informs that the container is listening to the specified port in the network. The default protocol is TCP.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">CMD</p>
+                <div class="code-block">
+                  CMD echo "Welcome to HCLGuvi"
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">If you want to run a docker container by specifying a default command that gets executed for all the containers of that image by default, you can use a CMD command.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">In case you specify a command during the docker run command, it overrides the default one.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Specifying more than one CMD instructions, will allow only the last one to get executed.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 8 ─── -->
+  <section class="section" id="sec-8">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">08 / 12</div>
+        <h2>ENTRYPOINT</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div class="code-block">
+                  ENTRYPOINT ["/bin/echo", "Welcome to HCLGuvi"]
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The difference between ENTRYPOINT and CMD is that, if you try to specify default arguments in the docker run command, it will not ignore the ENTRYPOINT arguments.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The exec form of an ENTRYPOINT command is −</p>
+                <div class="code-block">
+                  ENTRYPOINT [“&lt;executable-command&gt;”, “&lt;parameter 1&gt;”, “&lt;parameter 2&gt;”, ….]
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">If you have used the exec form of the ENTRYPOINT instruction, you can also set additional parameters with the help of CMD command.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 9 ─── -->
+  <section class="section" id="sec-9">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">09 / 12</div>
+        <h2>VOLUME</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">VOLUME ["/data"]</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The VOLUME instruction creates a mount point with the specified name and marks it as holding externally mounted volumes from native host or other containers.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The value can be a JSON array, VOLUME ["/var/log/"], or a plain string with multiple arguments, such as VOLUME /var/log or VOLUME /var/log /var/db.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 10 ─── -->
+  <section class="section" id="sec-10">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">10 / 12</div>
+        <h2>USER</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">USER UID[:GID]</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The USER instruction sets the user name (or UID) and optionally the user group (or GID) to use as the default user and group for the remainder of the current stage.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The specified user is used for RUN instructions and at runtime, runs the relevant ENTRYPOINT and CMD commands.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ARG</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ARG &lt;name&gt;[=&lt;default value&gt;]</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The ARG instruction defines a variable that users can pass at build-time to the builder with the docker build command using the --build-arg &lt;varname&gt;=&lt;value&gt; flag.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple Nginx Dockerfile</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>Use the official NGINX base image<br/>FROM nginx:latest<br/><span class="prompt">$ </span>Copy custom configuration file from the current directory to the nginx configuration directory<br/>COPY nginx.conf /etc/nginx/nginx.conf<br/><span class="prompt">$ </span>Copy static website files to the default nginx html directory<br/>COPY . /usr/share/nginx/html<br/><span class="prompt">$ </span>Expose port 80 to the outside world
+                </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 11 ─── -->
+  <section class="section" id="sec-11">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">11 / 12</div>
+        <h2>EXPOSE 80</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div class="code-block">
+                  <span class="prompt">$ </span>Start nginx server<br/>CMD ["nginx", "-g", "daemon off;"]
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker Networking</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker Networking allows you to create a Network of Docker Containers managed by a master node called the manager.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Containers inside the Docker Network can talk to each other by sharing packets of information.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Docker network is a virtual network created by Docker to enable communication between Docker containers.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">If two containers are running on the same host they can communicate with each other without the need for ports to be exposed to the host machine.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module05/image3.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Network Drivers</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">There are several default network drivers available in Docker and some can be installed with the help of plugins, Command to see the list of containers in Docker mentioned below.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Bridge</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">If you build a container without specifying the kind of driver, the container will only be created in the bridge network, which is the default network.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Host</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Containers will not have any IP address; they will be directly created in the system network which will remove isolation between the docker host and containers.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">None</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">IP addresses won’t be assigned to containers. These containments are not accessible to us from the outside or from any other container.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Overlay</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Overlay network will enable the connection between multiple Docker demons and make different Docker swarm services communicate with each other.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">IPvlan</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Users have complete control over both IPv4 and IPv6 addressing by using the IPvlan driver.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">MacVlan</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">MacVlan driver makes it possible to assign MAC addresses to a container.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Commands:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Create</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker network create
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ex: docker network create mynetwork</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To create a new Docker network.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Connect</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker network connect
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ex: docker network connect mynetwork &lt;cont_id&gt;</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To connect a container to a network.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Disconnect</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker network disconnect
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ex: docker network disconnect mynetwork &lt;cont_id&gt;</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To disconnect a container from a network.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Inspect</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker network inspect
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ex: docker network inspect mynetwork</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To display information about a Docker network.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">List</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker network ls
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To list all the networks.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Remove</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker network rm
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ex: docker network rm mynetwork</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To remove one or more networks.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker Storage</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 12 ─── -->
+  <section class="section" id="sec-12">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">12 / 12</div>
+        <h2>What is the Docker File System?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A Docker container executes the software stack specified in a Docker image.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Images are built up of read-only layers that operate on the Union File System. When we start a new container, Docker adds a read-write layer on top of the image layers, allowing the container to function like a conventional Linux file system.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">So, each file modification within the container generates a functioning copy in the read-write layer.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker Volumes</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker containers enable apps to execute in an isolated environment. All modifications made inside the container are lost by default when it ends.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker volumes and bind mounts can be useful for storing data in between runs. One way to store data outside of containers is with volumes.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">All volumes are kept in a specific directory on your host, typically /var/lib/docker/volumes for Linux systems, and are controlled by Docker.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module05/image10.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Volumes</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker volumes are used for permanent data storage. Containers mount those volumes and make them accessible from inside the containers.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Create</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker volume create
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ex: docker volume create myvol</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To create a new Docker volume.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">List</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker volume ls
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To list all Docker volumes.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Remove</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker volume rm
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ex: docker volume rm myvol</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Inspect</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker volume inspect
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ex: docker volume inspect myvol</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To display volume information.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Volume Mapping</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker run -v /opt/backup_dir:/var/lib/jenkins jenkins
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker Registry</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The term “Docker registry” is a bit ambiguous because it can mean two different things.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">In a narrow sense, Docker Registry (with a capital R) is an official tool from the Docker project for storing and distributing container images.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker Registry is open source, and anyone can download and run the software to set up their own container image registry.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Benefits of Docker Registry</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A centralized location for storing container images</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A central location where users can find container images</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Access controls</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Image versioning</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker and Kubernetes integration</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker Registry Workflow</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module05/image7.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Registry Vs Repository</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A registry is a centralized location that stores and manages container images, whereas a repository is a collection of related container images within a registry.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Think of it as a folder where you organize your images based on projects. Each repository contains one or more container images.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Multi-Container Applications</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker Compose is a tool that makes it easier to create and run multi-container applications.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It automates the process of managing several Docker containers simultaneously, such as a website frontend, API, and database service.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker Compose allows you to define your application’s containers as code inside a YAML file you can commit to your source repository.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Once you’ve created your file (normally named docker-compose.yml), you can start all your containers (called “services”) with a single Compose command.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why use docker compose?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Most real-world applications have several services with dependency relationships—for example, your app may run in one container, but depend on a database server that’s deployed adjacently in another container.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Moreover, services usually need to be configured with storage volumes, environment variables, port bindings, and other settings before they can be deployed.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This improves developer ergonomics, supports reuse of the stack in multiple environments, and helps prevent accidental misconfiguration.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker Compose Workflow</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module05/image4.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker Compose Benefits</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Fast and easy configuration with YAML scripts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Single host deployment</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Increased productivity</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Security with isolated containers</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker-compose File</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module05/image5.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker-compose commands</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Build</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker compose build
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">We need to build our multi-container using docker build.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">UP</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker compose up
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Run container using docker compose.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Detach Mode</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker compose up -d
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Run containers in detach mode.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Down</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker compose up
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Stop containers in docker-compose.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Process</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker compose ps
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The containers are up and running. Let's check the container list.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Container Security</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Security ensures containers are safe.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Best Practices</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use official images</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scan images for vulnerabilities</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Avoid running as root</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Limit container permissions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example: Use minimal base images like Alpine.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:50px; padding-top:30px; border-top:1px solid var(--border);">
+    <a href="aws-cloud-learn.html" class="btn-action" style="background:var(--bg3); color:var(--text-bright); border:1px solid var(--border); text-decoration:none; width:auto;">← Previous: Module 04</a>
+    <a href="kubernetes-cloud-native-learn.html" class="btn-action btn-primary" style="text-decoration:none; width:auto;">Next: Module 06 →</a>
+  </div>
+
+</main>
+
+<!-- ════════════════ SCRIPTS ════════════════ -->
+<script>
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(s => observer.observe(s));
+
+  const navItems = document.querySelectorAll('.nav-item');
+  const sectionEls = document.querySelectorAll('section.section');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navItems.forEach(n => n.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sectionEls.forEach(s => navObserver.observe(s));
+
+  const dotsContainer = document.getElementById('progressDots');
+  const totalTopics = 12;
+  for (let i = 0; i < totalTopics; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot-prog';
+    dotsContainer.appendChild(dot);
+  }
+
+  const progressObserver = new IntersectionObserver((entries) => {
+    const allDots = document.querySelectorAll('.dot-prog');
+    let maxIndex = 0;
+    sectionEls.forEach((s, i) => {
+      if (s.classList.contains('visible')) maxIndex = i;
+    });
+    allDots.forEach((d, i) => {
+      d.classList.toggle('filled', i <= maxIndex);
+    });
+  }, { threshold: 0.1 });
+
+  sectionEls.forEach(s => progressObserver.observe(s));
+</script>
+
+</body>
+</html>

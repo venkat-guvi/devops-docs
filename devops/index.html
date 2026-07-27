@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>DevOps & Cloud Engineering Academy — Learning Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body class="hub-body">
+
+  <!-- ════════════════ HEADER ════════════════ -->
+  <header class="hub-header">
+    <nav class="hub-nav">
+      <a href="../index.html" class="hub-brand">
+        <div class="hub-brand-icon">⚡</div>
+        <div class="hub-brand-text">
+          <h2>HCL GUVI <span>DevOps</span></h2>
+          <p>INTERACTIVE LEARNING HUB</p>
+        </div>
+      </a>
+
+      <div class="hub-search-wrapper">
+        <span class="hub-search-icon">🔍</span>
+        <input type="text" id="searchInput" class="hub-search-input" placeholder="Search modules, topics, or technologies..."/>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ════════════════ MAIN CONTAINER ════════════════ -->
+  <main class="hub-container">
+    
+    <!-- HERO SECTION -->
+    <section class="hub-hero">
+      <div class="hero-eyebrow">Complete DevOps & Cloud Roadmap <span class="cursor-blink"></span></div>
+      <h1>DevOps & <span style="color:var(--accent)">Cloud Engineering</span> Academy</h1>
+      <p>A structured 12-module learning path covering everything from OS foundations and version control to containers, Kubernetes, GitOps, Observability, and DevSecOps.</p>
+
+      <!-- STATS METRICS -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon icon-green">📚</div>
+          <div>
+            <div class="stat-val">12</div>
+            <div class="stat-lbl">Total Modules</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon icon-blue">⚡</div>
+          <div>
+            <div class="stat-val">100+</div>
+            <div class="stat-lbl">Diagrams & Images</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon icon-amber">🗺️</div>
+          <div>
+            <div class="stat-val">12</div>
+            <div class="stat-lbl">Active Modules</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon icon-purple">🎯</div>
+          <div>
+            <div class="stat-val">100%</div>
+            <div class="stat-lbl">Interactive</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All Modules (12)</button>
+      <button class="filter-btn" data-filter="foundations">Foundations</button>
+      <button class="filter-btn" data-filter="automation">Automation & IaC</button>
+      <button class="filter-btn" data-filter="containers">Containers & K8s</button>
+      <button class="filter-btn" data-filter="cicd">CI/CD & GitOps</button>
+      <button class="filter-btn" data-filter="observability">Observability & Security</button>
+    </div>
+
+    <!-- MODULES GRID -->
+    <section class="module-grid" id="moduleGrid">
+      
+      <!-- MODULE 01 -->
+      <div class="module-card" data-category="foundations" data-title="module 1 linux & networking foundations">
+        <div>
+          <div class="module-card-top">
+            <div class="module-icon-box icon-green">⚙️</div>
+            <span class="status-badge status-active">● Available Now</span>
+          </div>
+          <h3>Module 01: Linux & Networking Foundations</h3>
+          <p>Linux OS, Networking, Subnetting & Troubleshooting</p>
+          
+          <div class="module-tags">
+            <span class="chip green">Linux OS</span>
+            <span class="chip blue">Networking</span>
+            <span class="chip amber">11 Diagrams</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="module-meta">
+            <span>📖 Interactive</span>
+            <span>⏱️ ~2.5 hrs</span>
+            <span>⚡ Available</span>
+          </div>
+          <a href="linux-networking-learn.html" class="btn-action btn-primary">Start Module 01 →</a>
+        </div>
+      </div>
+      <!-- MODULE 02 -->
+      <div class="module-card" data-category="foundations" data-title="module 2 git & version control">
+        <div>
+          <div class="module-card-top">
+            <div class="module-icon-box icon-blue">⚙️</div>
+            <span class="status-badge status-active">● Available Now</span>
+          </div>
+          <h3>Module 02: Git & Version Control</h3>
+          <p>Master Git branching, merging, rebasing, pull requests, and workflow models</p>
+          
+          <div class="module-tags">
+            <span class="chip green">Git CLI</span>
+            <span class="chip blue">Branching</span>
+            <span class="chip amber">4 Diagrams</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="module-meta">
+            <span>📖 Interactive</span>
+            <span>⏱️ ~2.5 hrs</span>
+            <span>⚡ Available</span>
+          </div>
+          <a href="git-version-control-learn.html" class="btn-action btn-primary">Start Module 02 →</a>
+        </div>
+      </div>
+      <!-- MODULE 03 -->
+      <div class="module-card" data-category="foundations" data-title="module 3 programming & scripting (bash & python)">
+        <div>
+          <div class="module-card-top">
+            <div class="module-icon-box icon-purple">⚙️</div>
+            <span class="status-badge status-active">● Available Now</span>
+          </div>
+          <h3>Module 03: Programming & Scripting (Bash & Python)</h3>
+          <p>Bash automation, Python scripting, API consumption, subprocess, and code review rules</p>
+          
+          <div class="module-tags">
+            <span class="chip green">Bash</span>
+            <span class="chip blue">Python 3</span>
+            <span class="chip amber">1 Diagrams</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="module-meta">
+            <span>📖 Interactive</span>
+            <span>⏱️ ~2.5 hrs</span>
+            <span>⚡ Available</span>
+          </div>
+          <a href="programming-scripting-learn.html" class="btn-action btn-primary">Start Module 03 →</a>
+        </div>
+      </div>
+      <!-- MODULE 04 -->
+      <div class="module-card" data-category="foundations" data-title="module 4 cloud fundamentals (aws cloud)">
+        <div>
+          <div class="module-card-top">
+            <div class="module-icon-box icon-amber">⚙️</div>
+            <span class="status-badge status-active">● Available Now</span>
+          </div>
+          <h3>Module 04: Cloud Fundamentals (AWS Cloud)</h3>
+          <p>IAM, EC2, VPC subnets, S3/EBS storage, Route 53, RDS, Lambda, and CloudWatch</p>
+          
+          <div class="module-tags">
+            <span class="chip green">AWS IAM</span>
+            <span class="chip blue">EC2 & VPC</span>
+            <span class="chip amber">24 Diagrams</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="module-meta">
+            <span>📖 Interactive</span>
+            <span>⏱️ ~2.5 hrs</span>
+            <span>⚡ Available</span>
+          </div>
+          <a href="aws-cloud-learn.html" class="btn-action btn-primary">Start Module 04 →</a>
+        </div>
+      </div>
+      <!-- MODULE 05 -->
+      <div class="module-card" data-category="containers" data-title="module 5 containers (docker & compose)">
+        <div>
+          <div class="module-card-top">
+            <div class="module-icon-box icon-cyan">⚙️</div>
+            <span class="status-badge status-active">● Available Now</span>
+          </div>
+          <h3>Module 05: Containers (Docker & Compose)</h3>
+          <p>Containerization, Dockerfile instructions, network drivers, volumes, and Docker Compose</p>
+          
+          <div class="module-tags">
+            <span class="chip green">Docker Engine</span>
+            <span class="chip blue">Dockerfile</span>
+            <span class="chip amber">11 Diagrams</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="module-meta">
+            <span>📖 Interactive</span>
+            <span>⏱️ ~2.5 hrs</span>
+            <span>⚡ Available</span>
+          </div>
+          <a href="docker-containers-learn.html" class="btn-action btn-primary">Start Module 05 →</a>
+        </div>
+      </div>
+      <!-- MODULE 06 -->
+      <div class="module-card" data-category="containers" data-title="module 6 kubernetes & cloud native orchestration">
+        <div>
+          <div class="module-card-top">
+            <div class="module-icon-box icon-blue">⚙️</div>
+            <span class="status-badge status-active">● Available Now</span>
+          </div>
+          <h3>Module 06: Kubernetes & Cloud Native Orchestration</h3>
+          <p>K8s Control Plane, Pods, Deployments, ClusterIP/NodePort Services, Ingress, PV/PVC, and Helm</p>
+          
+          <div class="module-tags">
+            <span class="chip green">Kubernetes</span>
+            <span class="chip blue">Control Plane</span>
+            <span class="chip amber">10 Diagrams</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="module-meta">
+            <span>📖 Interactive</span>
+            <span>⏱️ ~2.5 hrs</span>
+            <span>⚡ Available</span>
+          </div>
+          <a href="kubernetes-cloud-native-learn.html" class="btn-action btn-primary">Start Module 06 →</a>
+        </div>
+      </div>
+      <!-- MODULE 07 -->
+      <div class="module-card" data-category="cicd" data-title="module 7 ci/cd pipelines (jenkins & github actions)">
+        <div>
+          <div class="module-card-top">
+            <div class="module-icon-box icon-amber">⚙️</div>
+            <span class="status-badge status-active">● Available Now</span>
+          </div>
+          <h3>Module 07: CI/CD Pipelines (Jenkins & GitHub Actions)</h3>
+          <p>Continuous Integration, build tools (Maven/npm), Jenkins pipelines, and GitHub Actions</p>
+          
+          <div class="module-tags">
+            <span class="chip green">Jenkins</span>
+            <span class="chip blue">GitHub Actions</span>
+            <span class="chip amber">6 Diagrams</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="module-meta">
+            <span>📖 Interactive</span>
+            <span>⏱️ ~2.5 hrs</span>
+            <span>⚡ Available</span>
+          </div>
+          <a href="cicd-pipelines-learn.html" class="btn-action btn-primary">Start Module 07 →</a>
+        </div>
+      </div>
+      <!-- MODULE 08 -->
+      <div class="module-card" data-category="automation" data-title="module 8 infrastructure as code (terraform)">
+        <div>
+          <div class="module-card-top">
+            <div class="module-icon-box icon-purple">⚙️</div>
+            <span class="status-badge status-active">● Available Now</span>
+          </div>
+          <h3>Module 08: Infrastructure as Code (Terraform)</h3>
+          <p>Terraform HCL syntax, providers, state management, S3+DynamoDB backends, and modules</p>
+          
+          <div class="module-tags">
+            <span class="chip green">Terraform</span>
+            <span class="chip blue">HCL</span>
+            <span class="chip amber">7 Diagrams</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="module-meta">
+            <span>📖 Interactive</span>
+            <span>⏱️ ~2.5 hrs</span>
+            <span>⚡ Available</span>
+          </div>
+          <a href="infrastructure-as-code-learn.html" class="btn-action btn-primary">Start Module 08 →</a>
+        </div>
+      </div>
+      <!-- MODULE 09 -->
+      <div class="module-card" data-category="automation" data-title="module 9 configuration management (ansible)">
+        <div>
+          <div class="module-card-top">
+            <div class="module-icon-box icon-green">⚙️</div>
+            <span class="status-badge status-active">● Available Now</span>
+          </div>
+          <h3>Module 09: Configuration Management (Ansible)</h3>
+          <p>Agentless automation, Ansible inventories, playbooks, modular roles, Vault, and Galaxy</p>
+          
+          <div class="module-tags">
+            <span class="chip green">Ansible</span>
+            <span class="chip blue">Playbooks</span>
+            <span class="chip amber">2 Diagrams</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="module-meta">
+            <span>📖 Interactive</span>
+            <span>⏱️ ~2.5 hrs</span>
+            <span>⚡ Available</span>
+          </div>
+          <a href="configuration-management-learn.html" class="btn-action btn-primary">Start Module 09 →</a>
+        </div>
+      </div>
+      <!-- MODULE 10 -->
+      <div class="module-card" data-category="cicd" data-title="module 10 gitops & declarative delivery (argocd & flux)">
+        <div>
+          <div class="module-card-top">
+            <div class="module-icon-box icon-blue">⚙️</div>
+            <span class="status-badge status-active">● Available Now</span>
+          </div>
+          <h3>Module 10: GitOps & Declarative Delivery (ArgoCD & Flux)</h3>
+          <p>Git single source of truth, automated drift reconciliation, ArgoCD UI, and GitLab CI/CD</p>
+          
+          <div class="module-tags">
+            <span class="chip green">ArgoCD</span>
+            <span class="chip blue">FluxCD</span>
+            <span class="chip amber">6 Diagrams</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="module-meta">
+            <span>📖 Interactive</span>
+            <span>⏱️ ~2.5 hrs</span>
+            <span>⚡ Available</span>
+          </div>
+          <a href="gitops-argocd-learn.html" class="btn-action btn-primary">Start Module 10 →</a>
+        </div>
+      </div>
+      <!-- MODULE 11 -->
+      <div class="module-card" data-category="observability" data-title="module 11 observability, metrics & logging (prometheus & loki)">
+        <div>
+          <div class="module-card-top">
+            <div class="module-icon-box icon-amber">⚙️</div>
+            <span class="status-badge status-active">● Available Now</span>
+          </div>
+          <h3>Module 11: Observability, Metrics & Logging (Prometheus & Loki)</h3>
+          <p>Three Pillars of Observability, Prometheus metrics, Loki log aggregation, OpenTelemetry, Grafana</p>
+          
+          <div class="module-tags">
+            <span class="chip green">Prometheus</span>
+            <span class="chip blue">Grafana Loki</span>
+            <span class="chip amber">13 Diagrams</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="module-meta">
+            <span>📖 Interactive</span>
+            <span>⏱️ ~2.5 hrs</span>
+            <span>⚡ Available</span>
+          </div>
+          <a href="observability-monitoring-learn.html" class="btn-action btn-primary">Start Module 11 →</a>
+        </div>
+      </div>
+      <!-- MODULE 12 -->
+      <div class="module-card" data-category="observability" data-title="module 12 devsecops & cloud security (sonarqube, trivy, vault)">
+        <div>
+          <div class="module-card-top">
+            <div class="module-icon-box icon-purple">⚙️</div>
+            <span class="status-badge status-active">● Available Now</span>
+          </div>
+          <h3>Module 12: DevSecOps & Cloud Security (SonarQube, Trivy, Vault)</h3>
+          <p>Shift Left security, SonarQube SAST, Snyk dependency scan, Trivy container scan, Vault secrets</p>
+          
+          <div class="module-tags">
+            <span class="chip green">SonarQube</span>
+            <span class="chip blue">Trivy & Vault</span>
+            <span class="chip amber">6 Diagrams</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="module-meta">
+            <span>📖 Interactive</span>
+            <span>⏱️ ~2.5 hrs</span>
+            <span>⚡ Available</span>
+          </div>
+          <a href="devsecops-security-learn.html" class="btn-action btn-primary">Start Module 12 →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="hub-footer">
+    <p>DevOps & Cloud Engineering Academy — Built with HTML5, CSS3, & Modern JS</p>
+  </footer>
+
+  <!-- ════════════════ INTERACTIVE FILTER SCRIPT ════════════════ -->
+  <script>
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const moduleCards = document.querySelectorAll('.module-card');
+    const searchInput = document.getElementById('searchInput');
+
+    // Filter by Category
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+        filterCards(filter, searchInput ? searchInput.value.toLowerCase().trim() : '');
+      });
+    });
+
+    // Search by Keyword
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const activeBtn = document.querySelector('.filter-btn.active');
+        const activeFilter = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
+        const query = e.target.value.toLowerCase().trim();
+        filterCards(activeFilter, query);
+      });
+    }
+
+    function filterCards(category, query) {
+      moduleCards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category') || 'all';
+        const cardTitle = (card.getAttribute('data-title') || '') + ' ' + (card.innerText || '');
+
+        const matchesCategory = (category === 'all' || cardCategory === category);
+        const matchesSearch = query === '' || cardTitle.toLowerCase().includes(query);
+
+        if (matchesCategory && matchesSearch) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

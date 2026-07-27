@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Module 12: DevSecOps &amp; Cloud Security (SonarQube, Trivy, Vault) — Interactive Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ════════════════ SIDEBAR ════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; color:var(--accent); margin-bottom:10px;">← Back to Hub</a>
+    <div class="module-tag">Module 12</div>
+    <h1>DevSecOps &amp; Cloud Security (</h1>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Curriculum Topics</div>
+    <a class="nav-item active" href="#sec-1"><span class="dot"></span>DevSecOps &amp; Cloud Security (So</a>
+    <a class="nav-item" href="#sec-2"><span class="dot"></span>What is DevSecOps?</a>
+    <a class="nav-item" href="#sec-3"><span class="dot"></span>What is Snyk?</a>
+    <a class="nav-item" href="#sec-4"><span class="dot"></span>What is Trivy?</a>
+    <a class="nav-item" href="#sec-5"><span class="dot"></span>What is Vault?</a>
+    <a class="nav-item" href="#sec-6"><span class="dot"></span>GDPR</a>
+    <a class="nav-item" href="#sec-7"><span class="dot"></span>What is Personal Data?</a>
+    <a class="nav-item" href="#sec-8"><span class="dot"></span>SOC2</a>
+    <a class="nav-item" href="#sec-9"><span class="dot"></span>What is OWASP?</a>
+    <a class="nav-item" href="#sec-10"><span class="dot"></span>OWASP ZAP</a>
+    <a class="nav-item" href="#sec-11"><span class="dot"></span>CSRF</a>
+  </div>
+
+  <div class="progress-dots">
+    <p>// 11 topics</p>
+    <div class="dots-row" id="progressDots"></div>
+  </div>
+</nav>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main class="main">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">Module 12 <span class="cursor-blink"></span></div>
+    <h1>Module 12: <span class="highlight">DevSecOps &amp; Cloud Security (SonarQube, Trivy, Vault)</span></h1>
+    <p>Shift Left security, SonarQube SAST, Snyk dependency scan, Trivy container scan, Vault secrets. Master production DevOps workflows, cloud architecture, and hands-on execution with 6 embedded diagrams.</p>
+    <div class="hero-chips">
+      <span class="chip green">SonarQube</span>
+      <span class="chip blue">Trivy &amp; Vault</span>
+      <span class="chip amber">Shift-Left</span>
+    </div>
+  </header>
+
+  
+  <!-- ─── SECTION 1 ─── -->
+  <section class="section" id="sec-1">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">01 / 11</div>
+        <h2>DevSecOps &amp; Cloud Security (SonarQube, Trivy, Vault)</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">— DevSecOps</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 2 ─── -->
+  <section class="section" id="sec-2">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">02 / 11</div>
+        <h2>What is DevSecOps?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DevSecOps (Development + Security + Operations) is a practice that integrates security into every stage of the software development lifecycle.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea: Instead of adding security at the end, we include it from the beginning.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module12/image5.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DevSecOps Principles</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Shift Left Security → Security starts early in development</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module12/image6.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Automation First → Security checks are automated</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Continuous Monitoring → Systems are always monitored</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Least Privilege Access → Give only required permissions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Secure by Design → Build secure applications from the start</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example: Code is scanned for vulnerabilities before deployment.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Security in CI/CD Pipelines</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Security checks are added in pipeline stages.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Pipeline Flow:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Code → Build → Test → Security Scan → Deploy</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scan code using SonarQube</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scan dependencies using Snyk</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scan Docker images using Trivy</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Sample Pipeline Idea:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Build → Test → Code Scan → Dependency Scan → Image Scan → Deploy</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Static Code Analysis</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">SonarQube is an open-source platform used for continuous inspection of code quality and security. Static Code Analysis checks source code for bugs and vulnerabilities without running it.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Detects:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Bugs</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Security vulnerabilities</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Code smells</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Duplicate code</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Maintainability issues</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why Use SonarQube?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Improves code quality</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Detects security vulnerabilities</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Reduces technical debt</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Enforces coding standards</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Integrates with CI/CD pipelines</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example: A Jenkins pipeline can automatically fail if code quality is poor.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">SonarQube Workflow</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Developer writes code</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Sonar Scanner scans project</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Results sent to SonarQube server</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Dashboard displays issues and metrics</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module12/image4.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tool: SonarQube</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module12/image2.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Important SonarQube Concepts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Quality Gates</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Quality Gate defines whether code passes required standards.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example Conditions:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">No critical vulnerabilities</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Code coverage &gt; 80%</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">No duplicated code</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">If conditions fail → pipeline fails.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Code Smells</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Code smells indicate poor coding practices.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Examples:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Duplicate code</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Large functions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Unused variables</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Bugs</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Logical issues that may cause application failures.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">if(a = 5)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Vulnerabilities</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Security-related weaknesses.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Examples:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">SQL Injection</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Hardcoded passwords</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Weak encryption</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Sonar Scanner Installation</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Ubuntu:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">sudo apt update</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>sudo apt install unzip wget -y
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Download Scanner:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner.zip</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Extract:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">unzip sonar-scanner.zip</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">SonarQube Project Configuration</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Create:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">sonar-project.properties</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">sonar.projectKey=myapp</p>
+                <div class="code-block">
+                  sonar.projectName=MyApp
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">sonar.projectVersion=1.0</p>
+                <div class="code-block">
+                  sonar.sources=.
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">sonar.host.url=http://localhost:9000</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">sonar.login=&lt;token&gt;</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">SonarQube Analysis Command</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">sonar-scanner</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This scans the project and uploads results to SonarQube.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Dependency Vulnerability Scanning</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Checks third-party libraries for known vulnerabilities.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why is it important?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Most applications depend on external packages.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 3 ─── -->
+  <section class="section" id="sec-3">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">03 / 11</div>
+        <h2>What is Snyk?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Snyk is a developer security platform used to identify and fix vulnerabilities in:</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Open-source dependencies</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Containers</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Infrastructure as Code (IaC)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Application code</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea:Snyk scans your applications and dependencies for security issues before deployment.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why Use Snyk?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Detects vulnerable libraries</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Monitors dependencies continuously</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Integrates with CI/CD pipelines</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Supports containers and Kubernetes</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Helps fix issues automatically</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example:If your project uses a vulnerable npm package, Snyk alerts you immediately.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tool: Snyk</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Snyk Workflow</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Developer writes code</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Dependencies installed</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Snyk scans project</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Vulnerabilities detected</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Fix suggestions provided</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Snyk Installation</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Install using npm:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">npm install -g snyk</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Verify installation:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">snyk --version</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Authenticate:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">snyk auth</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Dependency Vulnerability Scanning</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scans project dependencies for known vulnerabilities.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">snyk test</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Detects:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Vulnerable npm packages</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Outdated libraries</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Security issues</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Continuous Monitoring</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Continuously monitors projects for newly discovered vulnerabilities.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Command:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">snyk monitor</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Benefits:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Real-time alerts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Updated vulnerability reports</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Container Security Scanning</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scans Docker container images.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">snyk container test nginx</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Detects:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Vulnerable OS packages</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Insecure dependencies</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Misconfigurations</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Infrastructure as Code (IaC) Scanning</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scans Terraform and Kubernetes configuration files.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">snyk iac test .</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Detects:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Open security groups</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Public storage buckets</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Weak configurations</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Code Security Scanning</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scans source code for vulnerabilities.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">snyk code test</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Detects:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">SQL Injection</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Command Injection</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Hardcoded secrets</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Snyk with Docker</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example Docker image scan:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">snyk container monitor nginx</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Snyk with Kubernetes</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Scan Kubernetes files:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">snyk iac test deployment.yaml</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Container Image Security</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scans Docker images for vulnerabilities.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Detects:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">OS vulnerabilities</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Outdated packages</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Misconfigurations</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tool: Trivy</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 4 ─── -->
+  <section class="section" id="sec-4">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">04 / 11</div>
+        <h2>What is Trivy?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Trivy is an open-source security scanner used to scan:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Container images</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Filesystems</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Git repositories</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kubernetes clusters</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Infrastructure as Code (IaC)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea: Trivy scans applications and containers for security vulnerabilities.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why Use Trivy?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Lightweight and fast</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Detects vulnerabilities easily</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Supports Docker and Kubernetes</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scans Infrastructure as Code</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Integrates with CI/CD pipelines</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module12/image1.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Image Scanning</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">trivy image nginx</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>trivy fs .
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Filesystem Scanning</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Scan local directory:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">trivy fs .</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kubernetes Scanning</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Scan Kubernetes cluster:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">trivy k8s cluster</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Infrastructure as Code Scanning</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Scan Terraform/Kubernetes YAML:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">trivy config .</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Detects:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Open ports</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Weak configurations</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Public access issues</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Secret Scanning</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Detect secrets in code:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">trivy fs --security-checks secret .</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Detects:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">API keys</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Passwords</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tokens</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Best Practices:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use minimal base images (Alpine)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Avoid root user</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Keep images updated</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Secrets Management</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Secrets include:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Passwords</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">API keys</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tokens</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Problem: Hardcoding secrets in code is risky.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tool: HashiCorp Vault</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 5 ─── -->
+  <section class="section" id="sec-5">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">05 / 11</div>
+        <h2>What is Vault?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">HashiCorp Vault is a tool used for securely storing and managing secrets.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Secrets include:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Passwords</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">API keys</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tokens</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Certificates</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea: Vault stores sensitive information securely instead of keeping them inside code.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why Use Vault?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Secure secret storage</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Dynamic secrets</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Encryption services</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Access control</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Audit logging</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Install Vault</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Ubuntu:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">sudo apt install vault</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Verify:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">vault --version</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Start Vault Dev Server</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">vault server -dev</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Vault Authentication</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Login:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">vault login</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Store Secrets</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Store database password:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">vault kv put secret/db password=admin123</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Retrieve secret:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">vault kv get secret/db</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Vault Policies</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Policies define access permissions.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example policy:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">path "secret/*" {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">capabilities = ["read"]</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Dynamic Secrets</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Vault can generate temporary credentials automatically.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example: Temporary AWS credentials.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Vault Secret Engines</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Engine</th><th>Purpose</th></tr></thead><tbody><tr><td>KV</td><td>Key-value secrets</td></tr><tr><td>Database</td><td>Dynamic DB credentials</td></tr><tr><td>PKI</td><td>Certificates</td></tr><tr><td>AWS</td><td>AWS credentials</td></tr></tbody>
+                      </table>
+                    </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Best Practices:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Store secrets securely</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Rotate secrets regularly</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Never commit secrets to Git</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kubernetes Security</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Security practices for Kubernetes clusters.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Key Areas:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Pod security</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Network policies</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">RBAC (Role-Based Access Control)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Secrets management</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example Commands:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">kubectl get pods</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>kubectl describe pod mypod<br/><span class="prompt">$ </span>kubectl create role my-role --verb=get,list --resource=pods
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Best Practices:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use RBAC</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Disable root containers</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use namespaces for isolation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Infrastructure Security</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Securing cloud infrastructure.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Includes:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Secure EC2 instances</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Firewall rules</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">IAM roles</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Restrict SSH access</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use security groups</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Enable encryption</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Compliance and Security Monitoring</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ensures systems follow security standards.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Examples:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ISO</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">International Organization for Standardization (ISO) is an international organization that develops standards for quality, security, safety, and technology.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea:ISO provides rules and best practices that organizations follow to improve quality and security.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Important ISO Standards in IT &amp; DevSecOps</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>ISO Standard</th><th>Purpose</th></tr></thead><tbody><tr><td>ISO 27001</td><td>Information Security Management</td></tr><tr><td>ISO 9001</td><td>Quality Management</td></tr><tr><td>ISO 22301</td><td>Business Continuity</td></tr><tr><td>ISO 20000</td><td>IT Service Management</td></tr></tbody>
+                      </table>
+                    </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 6 ─── -->
+  <section class="section" id="sec-6">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">06 / 11</div>
+        <h2>GDPR</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">General Data Protection Regulation is a data privacy regulation created by the European Union (EU).</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Purpose: Protect user personal data and privacy.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 7 ─── -->
+  <section class="section" id="sec-7">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">07 / 11</div>
+        <h2>What is Personal Data?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Examples:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Name</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Email</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Phone number</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">IP address</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Location data</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GDPR Principles</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Principle</th><th>Meaning</th></tr></thead><tbody><tr><td>Lawfulness</td><td>Data must be collected legally</td></tr><tr><td>Transparency</td><td>Users must know how data is used</td></tr><tr><td>Data Minimization</td><td>Collect only required data</td></tr><tr><td>Accuracy</td><td>Keep data updated</td></tr><tr><td>Storage Limitation</td><td>Do not store forever</td></tr><tr><td>Integrity &amp; Confidentiality</td><td>Protect data securely</td></tr></tbody>
+                      </table>
+                    </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 8 ─── -->
+  <section class="section" id="sec-8">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">08 / 11</div>
+        <h2>SOC2</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">SOC 2 is a security compliance framework designed for service organizations and cloud providers.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It ensures organizations securely manage customer data.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">SOC 2 Trust Principles</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Principle</th><th>Description</th></tr></thead><tbody><tr><td>Security</td><td>Protect systems from unauthorized access</td></tr><tr><td>Availability</td><td>Systems should remain operational</td></tr><tr><td>Processing Integrity</td><td>Accurate system processing</td></tr><tr><td>Confidentiality</td><td>Protect sensitive information</td></tr><tr><td>Privacy</td><td>Proper handling of personal data</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">SOC 2 Types</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>SOC 2 Type 1</td><td>Evaluates controls at a specific time</td></tr><tr><td>SOC 2 Type 2</td><td>Evaluates controls over a period of time</td></tr></tbody>
+                      </table>
+                    </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Monitoring Tools:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Logs monitoring</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Alerts for suspicious activity</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Detect unauthorized login attempts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">OWASP Tools</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 9 ─── -->
+  <section class="section" id="sec-9">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">09 / 11</div>
+        <h2>What is OWASP?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">OWASP is a global organization focused on improving software security.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">OWASP provides:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Security standards</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Best practices</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Security testing tools</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">OWASP Top 10</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The OWASP Top 10 lists the most critical web security risks.</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Risk</th><th>Description</th></tr></thead><tbody><tr><td>Broken Access Control</td><td>Unauthorized access</td></tr><tr><td>Cryptographic Failures</td><td>Weak encryption</td></tr><tr><td>Injection</td><td>SQL Injection</td></tr><tr><td>Insecure Design</td><td>Poor architecture</td></tr><tr><td>Security Misconfiguration</td><td>Unsafe settings</td></tr><tr><td>Vulnerable Components</td><td>Outdated libraries</td></tr><tr><td>Authentication Failures</td><td>Weak login systems</td></tr><tr><td>Software Integrity Failures</td><td>Untrusted updates</td></tr><tr><td>Logging Failures</td><td>Poor monitoring</td></tr><tr><td>SSRF</td><td>Server-side request forgery</td></tr></tbody>
+                      </table>
+                    </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 10 ─── -->
+  <section class="section" id="sec-10">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">10 / 11</div>
+        <h2>OWASP ZAP</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">OWASP ZAP is a web application security testing tool.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Used for:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Vulnerability scanning</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Penetration testing</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Security analysis</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Install OWASP ZAP</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Docker:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">docker pull owasp/zap2docker-stable</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Run Quick Scan</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">zap-cli quick-scan http://example.com</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">OWASP Security Testing</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Detects:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">SQL Injection</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">XSS</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 11 ─── -->
+  <section class="section" id="sec-11">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">11 / 11</div>
+        <h2>CSRF</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Authentication issues</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Secure Coding Best Practices</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Validate inputs</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use HTTPS</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Encrypt sensitive data</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Avoid hardcoded secrets</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use secure authentication</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">OWASP Dependency Check</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scans dependencies for vulnerabilities.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">dependency-check.sh --scan .</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">OWASP Best Practices</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Follow OWASP Top 10</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Perform regular security testing</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use secure headers</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Keep dependencies updated</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Enable logging and monitoring</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Common OWASP Tools</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Tool</th><th>Purpose</th></tr></thead><tbody><tr><td>OWASP ZAP</td><td>Web vulnerability scanning</td></tr><tr><td>Dependency Check</td><td>Dependency scanning</td></tr><tr><td>Juice Shop</td><td>Security training app</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DevSecOps Workflow (Simple)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Developer writes code</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Code pushed to Git</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">CI pipeline runs</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Security scans executed</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Issues fixed</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Secure deployment</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module12/image3.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:50px; padding-top:30px; border-top:1px solid var(--border);">
+    <a href="observability-monitoring-learn.html" class="btn-action" style="background:var(--bg3); color:var(--text-bright); border:1px solid var(--border); text-decoration:none; width:auto;">← Previous: Module 11</a>
+    <a href="index.html" class="btn-action btn-primary" style="text-decoration:none; width:auto;">Finish DevOps Course 🏁</a>
+  </div>
+
+</main>
+
+<!-- ════════════════ SCRIPTS ════════════════ -->
+<script>
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(s => observer.observe(s));
+
+  const navItems = document.querySelectorAll('.nav-item');
+  const sectionEls = document.querySelectorAll('section.section');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navItems.forEach(n => n.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sectionEls.forEach(s => navObserver.observe(s));
+
+  const dotsContainer = document.getElementById('progressDots');
+  const totalTopics = 11;
+  for (let i = 0; i < totalTopics; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot-prog';
+    dotsContainer.appendChild(dot);
+  }
+
+  const progressObserver = new IntersectionObserver((entries) => {
+    const allDots = document.querySelectorAll('.dot-prog');
+    let maxIndex = 0;
+    sectionEls.forEach((s, i) => {
+      if (s.classList.contains('visible')) maxIndex = i;
+    });
+    allDots.forEach((d, i) => {
+      d.classList.toggle('filled', i <= maxIndex);
+    });
+  }, { threshold: 0.1 });
+
+  sectionEls.forEach(s => progressObserver.observe(s));
+</script>
+
+</body>
+</html>

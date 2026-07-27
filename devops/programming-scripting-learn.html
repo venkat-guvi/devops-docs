@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Module 03: Programming &amp; Scripting (Bash &amp; Python) — Interactive Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ════════════════ SIDEBAR ════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; color:var(--accent); margin-bottom:10px;">← Back to Hub</a>
+    <div class="module-tag">Module 03</div>
+    <h1>Programming &amp; Scripting (Bas</h1>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Curriculum Topics</div>
+    <a class="nav-item active" href="#sec-1"><span class="dot"></span>Programming &amp; Scripting (Bash </a>
+    <a class="nav-item" href="#sec-2"><span class="dot"></span>What is Shell ?</a>
+    <a class="nav-item" href="#sec-3"><span class="dot"></span>2. Control Statements → Decisi</a>
+    <a class="nav-item" href="#sec-4"><span class="dot"></span>3. Functions → Reusable Automa</a>
+    <a class="nav-item" href="#sec-5"><span class="dot"></span>4. File Handling → Config and </a>
+    <a class="nav-item" href="#sec-6"><span class="dot"></span>5. Exception Handling → Produc</a>
+    <a class="nav-item" href="#sec-7"><span class="dot"></span>6. Modules and Packages</a>
+    <a class="nav-item" href="#sec-8"><span class="dot"></span>7. Operating System Interactio</a>
+    <a class="nav-item" href="#sec-9"><span class="dot"></span>8. API Handling (Critical for </a>
+    <a class="nav-item" href="#sec-10"><span class="dot"></span>AWS API</a>
+    <a class="nav-item" href="#sec-11"><span class="dot"></span>CI/CD</a>
+    <a class="nav-item" href="#sec-12"><span class="dot"></span>9. JSON Handling</a>
+    <a class="nav-item" href="#sec-13"><span class="dot"></span>10. Automation Scripts</a>
+    <a class="nav-item" href="#sec-14"><span class="dot"></span>11. Command Line Arguments</a>
+    <a class="nav-item" href="#sec-15"><span class="dot"></span>12. Virtual Environments</a>
+    <a class="nav-item" href="#sec-16"><span class="dot"></span>13. Logging (Production Essent</a>
+  </div>
+
+  <div class="progress-dots">
+    <p>// 16 topics</p>
+    <div class="dots-row" id="progressDots"></div>
+  </div>
+</nav>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main class="main">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">Module 03 <span class="cursor-blink"></span></div>
+    <h1>Module 03: <span class="highlight">Programming &amp; Scripting (Bash &amp; Python)</span></h1>
+    <p>Bash automation, Python scripting, API consumption, subprocess, and code review rules. Master production DevOps workflows, cloud architecture, and hands-on execution with 1 embedded diagrams.</p>
+    <div class="hero-chips">
+      <span class="chip green">Bash</span>
+      <span class="chip blue">Python 3</span>
+      <span class="chip amber">API Scripting</span>
+    </div>
+  </header>
+
+  
+  <!-- ─── SECTION 1 ─── -->
+  <section class="section" id="sec-1">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">01 / 16</div>
+        <h2>Programming &amp; Scripting (Bash &amp; Python)</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">– Programming &amp; Scripting</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🐚 Shell Scripting Fundamentals</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 2 ─── -->
+  <section class="section" id="sec-2">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">02 / 16</div>
+        <h2>What is Shell ?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A Shell is basically a command-line interpreter between user and kernel or a complete environment specially designed to run commands, shell scripts, and programs.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Advantages</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Easy to use</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Time saving</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Automated</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Can be installed on all Linux system</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Portable</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Can run multiple commands</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Disadvantages</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">There may be errors in shell scripting that prove to be quite costly.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The programs in shell script are quite slow while executing and a new process is required for every shell command executed.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Different platforms in shell scripting may also have compatibility problems.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Shell scripting is writing a series of commands in a file to automate tasks in Linux.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A shell script is a file that contains commands executed by the shell.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">👉 Simple idea: Instead of typing commands one by one, you write them in a file and run them together.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Script</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">#!/bin/bash</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo "Hello DevOps"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">👉 Save as script.sh and run it.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">⚙️ Script Execution and Automation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scripts are used to automate repetitive tasks like backups, deployments, and monitoring.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Bash Structure</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Bash script starts with #! referred as the shebang followed by /bin/bash it actually tells the path of the interpreter to execute the commands in the script.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo: echo is a built-in command in Bash, which is used to display the standard output by passing the arguments. It is the most widely used command for printing the lines of text/String to the screen.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">bash script_name.sh</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">OR</p>
+                <div class="code-block">
+                  ./script_name.sh
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Sample Script</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Let's start to create our first hello world bash script.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">#!/bin/bash</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo “Hello World!”</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Save the file and we need to give executable permission for running.</p>
+                <div class="code-block">
+                  chmod +x hello.sh
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">After that we need to run our script using the below command.</p>
+                <div class="code-block">
+                  ./hello.sh or bash hello.sh
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Automation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">#!/bin/bash</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">date</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo "Backup completed"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🌍 Environment Variables</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Variables are the containers which store data or a useful piece of information as the value inside them.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Variable-name="Variable-value"</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Set variable   name="DevOps"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">#!/bin/bash</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>Variable set
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name=”DevOps”</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>Print value
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo “$name”</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Variable is known as the temporary storage for any kind of data like integer, float, char, etc.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A variable name can include alphabets, digits, and underscore, and its name can be started with alphabets and underscore only.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Environment variables store system-wide values used by programs.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Common Variables</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">$HOME → User home directory</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">$PATH → Command search path</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">$USER → Current user</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Commands</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo $HOME</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">export NAME="DevOps"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo $NAME</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">export makes variables available to other programs.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Bash Operators</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Operators allow you to perform operations on values and variables in Bash.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">📊 Arithmetic Operators</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Operator</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>+</td><td>Addition</td><td>$a + $b</td></tr><tr><td>-</td><td>Subtraction</td><td>$a - $b</td></tr><tr><td>*</td><td>Multiplication</td><td>$a * $b</td></tr><tr><td>/</td><td>Division</td><td>$a / $b</td></tr><tr><td>%</td><td>Modulus (remainder)</td><td>$a % $b</td></tr><tr><td>**</td><td>Exponentiation</td><td>$a ** $b</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Script</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">#!/bin/bash</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">read -r -p "Enter a: " a</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">read -r -p "Enter b: " b</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">add=$((a+b))</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo "Addition: $add"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">sub=$((a-b))</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo "Subtraction: $sub"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">📊 Assignment Operators</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Operator</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>=</td><td>Assign value</td><td>a=5</td></tr><tr><td>+=</td><td>Add and assign</td><td>a+=2</td></tr><tr><td>-=</td><td>Subtract and assign</td><td>a-=3</td></tr><tr><td>*=</td><td>Multiply and assign</td><td>a*=4</td></tr><tr><td>/=</td><td>Divide and assign</td><td>a/=5</td></tr><tr><td>%=</td><td>Modulus and assign</td><td>a%=6</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Script</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">#!/bin/bash</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">greeting="Hello, World!"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo $greeting</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">📊 Relational Operators</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Operator</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>-eq</td><td>Equal to</td><td>[ $a -eq $b ]</td></tr><tr><td>-ne</td><td>Not equal</td><td>[ $a -ne $b ]</td></tr><tr><td>-gt</td><td>Greater than</td><td>[ $a -gt $b ]</td></tr><tr><td>-ge</td><td>Greater or equal</td><td>[ $a -ge $b ]</td></tr><tr><td>-lt</td><td>Less than</td><td>[ $a -lt $b ]</td></tr><tr><td>-le</td><td>Less or equal</td><td>[ $a -le $b ]</td></tr><tr><td>==</td><td>Equal (general)</td><td>[ $a == $b ]</td></tr><tr><td>!=</td><td>Not equal</td><td>[ $a != $b ]</td></tr><tr><td>&lt;</td><td>Less than (string)</td><td>[ "$a" &lt; "$b" ]</td></tr><tr><td>&gt;</td><td>Greater than (string)</td><td>[ "$a" &gt; "$b" ]</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Script</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">#!/bin/bash</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">num1=10</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">num2=20</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">if [ $num1 -eq $num2 ]; then</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo "Equal"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">elif [ $num1 -lt $num2 ]; then</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo "num1 is less"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">else</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo "num1 is greater"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">fi</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">📊 Logical Operators</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Operator</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>!</td><td>NOT (negation)</td><td>! [ $a -eq $b ]</td></tr><tr><td>&amp;&amp;</td><td>AND</td><td>[ $a -eq 5 ] &amp;&amp; [ $b -eq 10 ]</td></tr><tr><td>`</td><td></td><td>`</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Script</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">#!/bin/bash</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">a=10</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">b=20</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">if [[ $a -lt 15 &amp;&amp; $b -gt 15 ]]; then</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo "Both conditions true"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">else</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo "Condition failed"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">fi</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">📊 Bitwise Operators</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Operator</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>&amp;</td><td>Bitwise AND</td><td>$a &amp; $b</td></tr><tr><td>|</td><td>Bitwise OR</td><td>$a | $b</td></tr><tr><td>~</td><td>Bitwise NOT</td><td>~$a</td></tr><tr><td>^</td><td>Bitwise XOR</td><td>$a ^ $b</td></tr><tr><td>&lt;&lt;</td><td>Left shift</td><td>$a &lt;&lt; 2</td></tr><tr><td>&gt;&gt;</td><td>Right shift</td><td>$a &gt;&gt; 2</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Script</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">#!/bin/bash</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">a=5</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">b=3</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo "AND: $((a &amp; b))"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo "OR: $((a | b))"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo "XOR: $((a ^ b))"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo "NOT: $((~a))"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo "Left Shift: $((a &lt;&lt; 1))"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo "Right Shift: $((a &gt;&gt; 1))"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">📊 Ternary Operator</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Syntax</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>condition ? true : false</td><td>Returns value based on condition</td><td>`result=$([ $a -gt 5 ] &amp;&amp; echo "Yes"</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Script</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">#!/bin/bash</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">num=5</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">result=$(if [ $num -gt 3 ]; then echo "Greater"; else echo "Smaller"; fi)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo $result</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔀 Conditional Statements</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Used to make decisions in scripts.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A Shell script is a plain text file. This file contains different commands for step-by-step execution.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">These commands can be written directly into the command line but from a re-usability perspective it is useful to store all of the inter-related commands for a specific task in a single file.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Two types of decision-making statements are used within shell scripting. They are –</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">If-else statement</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">case-sac statement</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">if Statement</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Expression</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">if  [ expression ]</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">then</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Commands</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">else</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Commands</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">fi</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">#!/bin/bash</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">if [ $1 -gt 10 ]</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">then</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo "Number is greater than 10"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">else</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo "Number is small"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">fi</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">👉 $1 = input argument</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">if [ -f file.txt ]</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">then</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo "File exists"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">fi</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔁 Looping and Functions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Like any other programming language, Bash supports loops.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The loops are used to repeatedly execute a set of commands based on some condition.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">With Bash you can use for loops, while loops, and until loops.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">for Loop</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The for loop operates on lists of items. It repeats a set of commands for every item in a list.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">#/bin/bash</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">for &lt;var&gt; in &lt;value1 value2 ... valuen&gt;</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">do</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">&lt;command 1&gt;</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">&lt;command 2&gt;</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">&lt;etc&gt;</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">done</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">#!/bin/bash</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">users="bobby tony"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">for user in ${users}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">do</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo "${user}"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">done</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">while Loop</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A while loop is a statement that iterates over a block of code till the condition specified is evaluated to false.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">#/bin/bash</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">while &lt;condition&gt;</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">do</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">&lt;command 1&gt;</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">&lt;command 2&gt;</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">&lt;etc&gt;</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">done</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">#!/bin/bash</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">read -p "What is your name? " name</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">while [[ -z ${name} ]]</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">do</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo "Your name can not be blank. Please enter a valid name!"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">read -p "Enter your name again? " name</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">done</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo "Hi there ${name}"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Until Loop</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The until loop is executed as many times as the condition/command evaluates to false.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The loop terminates when the condition/command becomes true.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">#/bin/bash</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">until &lt;condition&gt;</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">do</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">&lt;command 1&gt;</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">&lt;command 2&gt;</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">&lt;etc&gt;</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">done</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">#!/bin/bash</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">count=1</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">until [[ $count -gt 10 ]]</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">do</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo $count ((count++))</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">done</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Functions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Functions are a great way to reuse code.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A Bash function is essentially a set of commands that can be called numerous times.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The purpose of a function is to help you make your bash scripts more readable and to avoid writing the same code repeatedly.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">function function_name() {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">your_commands</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">#!/bin/bash</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">function hello() {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo "Hello World Function!"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">hello</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🐞 Script Debugging</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Debugging helps find and fix errors in scripts.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Methods</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Debug mode</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">bash -x script.sh</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">👉 Shows step-by-step execution</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Common Issues</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Syntax errors</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Wrong variables</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Permission issues</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🌐 API Interaction – Overview</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">An API (Application Programming Interface) allows communication between systems.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">👉 Simple idea: APIs let applications talk to each other.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module03/image1.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example using curl</p>
+                <div class="code-block">
+                  curl https://api.github.com
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">👉 Fetches data from API</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Common Methods</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GET → Fetch data</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">POST → Send data</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">PUT → Update data</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DELETE → Remove data</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AI Coder (GitHub Copilot)</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Instructor Demonstrates:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Script generation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Function generation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Error handling suggestions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Code explanation</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Backup files older than 30 days</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ask the Copilot to generate a script.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Then review:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Correctness</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Security</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Optimization</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Important DevOps skill:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Never trust AI-generated code without review.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🐍 Python for DevOps Automation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Python is widely used in DevOps for automation, scripting, cloud operations, and API handling. To work effectively, you need to focus on the following important topics.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Python Basics</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Variables</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Variables store values that your automation scripts use.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">server_name = "web01"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">cpu_limit = 80</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DevOps Use Case</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Instead of hardcoding values:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">server = "prod-server"</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">You can dynamically use:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">environment = "production"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">server = f"{environment}-server"</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Useful for:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Deployment scripts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Environment configuration</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">CI/CD pipelines</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Data Types</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">String</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ip = "192.168.1.10"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Integer</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">port = 8080</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">List</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">servers = ["web1", "web2", "web3"]</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Dictionary</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">server = {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"name": "web1",</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"ip": "192.168.1.10"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DevOps Example</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Store inventory information:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">inventory = {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"web1": "10.0.0.1",</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"web2": "10.0.0.2"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Similar to what tools like:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ansible</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Terraform</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Jenkins</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">use internally.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 3 ─── -->
+  <section class="section" id="sec-3">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">03 / 16</div>
+        <h2>2. Control Statements → Decision Making in Automation</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">if-else</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">cpu_usage = 85</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">if cpu_usage &gt; 80:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">print("Scale application")</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DevOps Scenario</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Auto-remediation:</h3><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">if disk_usage &gt; 90:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">send_alert()</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Production systems constantly use decision logic.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Loops</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">servers = ["web1", "web2", "web3"]</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">for server in servers:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">print(server)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DevOps Use Case</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Run commands on multiple servers:</h3><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">for server in servers:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">restart_service(server)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Instead of manually logging into 100 servers.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 4 ─── -->
+  <section class="section" id="sec-4">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">04 / 16</div>
+        <h2>3. Functions → Reusable Automation</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Without functions:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">print("Deploying...")</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">print("Testing...")</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">print("Restarting...")</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Repeated everywhere.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Function</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">def deploy_app():</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">print("Deploying Application")</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DevOps Example</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">def restart_nginx(server):</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">print(f"Restarting nginx on {server}")</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Call:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">restart_nginx("web01")</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">restart_nginx("web02")</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Functions are the building blocks of automation frameworks.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 5 ─── -->
+  <section class="section" id="sec-5">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">05 / 16</div>
+        <h2>4. File Handling → Config and Log Management</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Reading Configuration</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">with open("config.txt") as f:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">data = f.read()</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DevOps Use Cases</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Read:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Configuration files</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Inventory files</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Log files</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Secrets (carefully)</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">with open("/var/log/nginx/access.log") as f:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">logs = f.readlines()</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Analyze logs automatically.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Writing Files</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">with open("report.txt", "w") as f:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">f.write("Deployment Successful")</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Generate:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Health reports</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Deployment reports</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Backup reports</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 6 ─── -->
+  <section class="section" id="sec-6">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">06 / 16</div>
+        <h2>5. Exception Handling → Production Reliability</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scripts should never crash unexpectedly.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Bad:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">x = 10/0</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Good:</h3><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">try:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">x = 10/0</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">except ZeroDivisionError:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">print("Handled Error")</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DevOps Example</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">try:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">response = requests.get(url)</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">except Exception as e:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">print(e)</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Without exception handling:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Monitoring breaks</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Deployment stops</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Backup jobs fail</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 7 ─── -->
+  <section class="section" id="sec-7">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">07 / 16</div>
+        <h2>6. Modules and Packages</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Standard Library</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">import os</p>
+                <div class="code-block">
+                  import json<br/>import sys
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Third-party Packages</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">import requests</p>
+                <div class="code-block">
+                  import boto3
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Install:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">pip install requests</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Important DevOps Libraries</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Library</th><th>Purpose</th></tr></thead><tbody><tr><td>requests</td><td>APIs</td></tr><tr><td>boto3</td><td>AWS automation</td></tr><tr><td>paramiko</td><td>SSH automation</td></tr><tr><td>docker</td><td>Docker management</td></tr><tr><td>kubernetes</td><td>Kubernetes automation</td></tr><tr><td>pyyaml</td><td>YAML processing</td></tr></tbody>
+                      </table>
+                    </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 8 ─── -->
+  <section class="section" id="sec-8">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">08 / 16</div>
+        <h2>7. Operating System Interaction</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Working with OS</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">import os</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">print(os.getcwd())</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Create Directory</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">os.mkdir("backup")</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Check File</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">os.path.exists("config.yaml")</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DevOps Uses</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Backup scripts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cleanup jobs</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Log rotation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Deployment automation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">subprocess (Better Than os.system)</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Avoid:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">os.system("ls")</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Use:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">import subprocess</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">result = subprocess.run(</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">["ls", "-l"],</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">capture_output=True,</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">text=True</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">print(result.stdout)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DevOps Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">subprocess.run(["kubectl", "get", "pods"])</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">or</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">subprocess.run(["docker", "ps"])</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This is heavily used in automation.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 9 ─── -->
+  <section class="section" id="sec-9">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">09 / 16</div>
+        <h2>8. API Handling (Critical for DevOps)</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Modern infrastructure is API-driven.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Examples:</h3>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 10 ─── -->
+  <section class="section" id="sec-10">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">10 / 16</div>
+        <h2>AWS API</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GitHub API</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kubernetes API</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Monitoring APIs</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GET Request</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">import requests</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">response = requests.get(</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"https://api.github.com"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">print(response.status_code)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DevOps Example</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Check deployment status:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">response = requests.get(</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"https://api.company.com/deployments"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">)</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Used in:</h3>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 11 ─── -->
+  <section class="section" id="sec-11">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">11 / 16</div>
+        <h2>CI/CD</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Monitoring</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cloud automation</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 12 ─── -->
+  <section class="section" id="sec-12">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">12 / 16</div>
+        <h2>9. JSON Handling</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Most APIs return JSON.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">{</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"name":"web1",</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"status":"running"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Python:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">import json</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">data = json.loads(json_string)</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Access:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">print(data["status"])</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DevOps Example</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">AWS responses:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">instance["InstanceId"]</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Kubernetes API responses:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">pod["metadata"]["name"]</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">JSON is everywhere in cloud engineering.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 13 ─── -->
+  <section class="section" id="sec-13">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">13 / 16</div>
+        <h2>10. Automation Scripts</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A DevOps engineer spends a huge amount of time automating repetitive work.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Examples:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Log Cleanup</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">import os</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">for file in os.listdir("/logs"):</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">print(file)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Backup Automation</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">for server in servers:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">backup(server)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Health Check</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">for service in services:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">check_health(service)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 14 ─── -->
+  <section class="section" id="sec-14">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">14 / 16</div>
+        <h2>11. Command Line Arguments</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Allows scripts to be reusable.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">import sys</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">print(sys.argv)</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Run:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">python deploy.py prod</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Output:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">['deploy.py', 'prod']</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DevOps Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">python deploy.py staging</p>
+                <div class="code-block">
+                  python deploy.py production
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">More professional approach:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">import argparse</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">parser.add_argument("--env")</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Run:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">python deploy.py --env prod</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 15 ─── -->
+  <section class="section" id="sec-15">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">15 / 16</div>
+        <h2>12. Virtual Environments</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Problem:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Different projects require different versions.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Create:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">python3 -m venv venv</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Activate:</h3><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Linux/macOS:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">source venv/bin/activate</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Windows:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">venv\Scripts\activate</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Install:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">pip install requests</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Export dependencies:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">pip freeze &gt; requirements.txt</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Deploy consistently across environments.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 16 ─── -->
+  <section class="section" id="sec-16">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">16 / 16</div>
+        <h2>13. Logging (Production Essential)</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Never rely on print statements.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Bad:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">print("Server Started")</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Good:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">import logging</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">logging.basicConfig(</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">level=logging.INFO</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">logging.info("Server Started")</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DevOps Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">logging.info("Deployment started")</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">logging.warning("CPU usage high")</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">logging.error("Deployment failed")</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Logs help troubleshoot production issues.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Advanced Python Topics for DevOps</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Object-Oriented Programming (OOP)</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">class Server:</h3>
+                <div class="code-block">
+                  def __init__(self, name):
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">self.name = name</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Useful for large automation projects.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">YAML Processing</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Most DevOps tools use YAML.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">import yaml</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Read:</h3><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">app:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: nginx</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Python:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">yaml.safe_load(file)</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Used in:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kubernetes</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GitHub Actions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ansible</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">CI/CD pipelines</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cloud Automation</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">AWS example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">import boto3</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ec2 = boto3.client("ec2")</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">instances = ec2.describe_instances()</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kubernetes Automation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">from kubernetes import client</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Automate:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Pod creation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scaling</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Deployment updates</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:50px; padding-top:30px; border-top:1px solid var(--border);">
+    <a href="git-version-control-learn.html" class="btn-action" style="background:var(--bg3); color:var(--text-bright); border:1px solid var(--border); text-decoration:none; width:auto;">← Previous: Module 02</a>
+    <a href="aws-cloud-learn.html" class="btn-action btn-primary" style="text-decoration:none; width:auto;">Next: Module 04 →</a>
+  </div>
+
+</main>
+
+<!-- ════════════════ SCRIPTS ════════════════ -->
+<script>
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(s => observer.observe(s));
+
+  const navItems = document.querySelectorAll('.nav-item');
+  const sectionEls = document.querySelectorAll('section.section');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navItems.forEach(n => n.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sectionEls.forEach(s => navObserver.observe(s));
+
+  const dotsContainer = document.getElementById('progressDots');
+  const totalTopics = 16;
+  for (let i = 0; i < totalTopics; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot-prog';
+    dotsContainer.appendChild(dot);
+  }
+
+  const progressObserver = new IntersectionObserver((entries) => {
+    const allDots = document.querySelectorAll('.dot-prog');
+    let maxIndex = 0;
+    sectionEls.forEach((s, i) => {
+      if (s.classList.contains('visible')) maxIndex = i;
+    });
+    allDots.forEach((d, i) => {
+      d.classList.toggle('filled', i <= maxIndex);
+    });
+  }, { threshold: 0.1 });
+
+  sectionEls.forEach(s => progressObserver.observe(s));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Module 10: GitOps &amp; Declarative Delivery (ArgoCD &amp; Flux) — Interactive Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ════════════════ SIDEBAR ════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; color:var(--accent); margin-bottom:10px;">← Back to Hub</a>
+    <div class="module-tag">Module 10</div>
+    <h1>GitOps &amp; Declarative Deliver</h1>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Curriculum Topics</div>
+    <a class="nav-item active" href="#sec-1"><span class="dot"></span>GitOps &amp; Declarative Delivery </a>
+    <a class="nav-item" href="#sec-2"><span class="dot"></span>What is GitOps?</a>
+    <a class="nav-item" href="#sec-3"><span class="dot"></span>Features</a>
+    <a class="nav-item" href="#sec-4"><span class="dot"></span>Features</a>
+  </div>
+
+  <div class="progress-dots">
+    <p>// 4 topics</p>
+    <div class="dots-row" id="progressDots"></div>
+  </div>
+</nav>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main class="main">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">Module 10 <span class="cursor-blink"></span></div>
+    <h1>Module 10: <span class="highlight">GitOps &amp; Declarative Delivery (ArgoCD &amp; Flux)</span></h1>
+    <p>Git single source of truth, automated drift reconciliation, ArgoCD UI, and GitLab CI/CD. Master production DevOps workflows, cloud architecture, and hands-on execution with 6 embedded diagrams.</p>
+    <div class="hero-chips">
+      <span class="chip green">ArgoCD</span>
+      <span class="chip blue">FluxCD</span>
+      <span class="chip amber">GitOps Delivery</span>
+    </div>
+  </header>
+
+  
+  <!-- ─── SECTION 1 ─── -->
+  <section class="section" id="sec-1">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">01 / 04</div>
+        <h2>GitOps &amp; Declarative Delivery (ArgoCD &amp; Flux)</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">— GitOps</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 2 ─── -->
+  <section class="section" id="sec-2">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">02 / 04</div>
+        <h2>What is GitOps?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GitOps is a way of managing infrastructure and applications using Git as the single source of truth.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea: Make changes in Git → Automatically applied to system</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module10/image2.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why GitOps?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Automation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Version control</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Easy rollback</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Transparency</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Faster deployments</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Real Example</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Instead of manually deploying apps:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Update code in Git → System auto deploys changes</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module10/image3.png" alt="" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      <p style="font-family:var(--mono);font-size:11px;color:var(--text-dim);margin-top:8px;"></p>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GitOps Principles</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Core Principles</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Git is the source of truth</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Declarative configuration</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Automated deployment</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Continuous monitoring</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Flow</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Developer → Push code → Git → Tool detects change → Deploy</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Declarative Deployment Models</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">In GitOps, we define desired state instead of steps.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example (Kubernetes YAML)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">apiVersion: apps/v1</p>
+                <div class="code-block">
+                  kind: Deployment<br/>metadata:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: my-app</p>
+                <div class="code-block">
+                  spec:<br/>replicas: 2
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">System ensures 2 pods are always running</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Git-Driven Infrastructure</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Infrastructure is managed through Git repositories.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Change config file → Commit → Push → Infra updated</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Benefits</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Track changes</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Easy collaboration</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Audit history</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Continuous Delivery with Git</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GitOps enables automatic deployments after code changes.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Workflow</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Code Commit → CI Build → CD Deploy → Live Application</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module10/image1.png" alt="" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      <p style="font-family:var(--mono);font-size:11px;color:var(--text-dim);margin-top:8px;"></p>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kubernetes Application Deployment</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GitOps is commonly used with Kubernetes.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">YAML files stored in Git</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tool syncs cluster with Git</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Sample Deployment</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">apiVersion: apps/v1</p>
+                <div class="code-block">
+                  kind: Deployment<br/>metadata:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: nginx</p>
+                <div class="code-block">
+                  spec:<br/>replicas: 2
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Deployment Reconciliation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Reconciliation means: System continuously checks and fixes differences</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">If pods = 1 but Git says 2 → system creates 1 more pod</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Automated Rollbacks</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">If something fails → system rolls back automatically</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Bad deployment → detected → revert to previous version</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Benefits</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Safer deployments</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Less downtime</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Quick recovery</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Environment Management</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Manage multiple environments like:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Dev</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Test</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Production</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">dev.yaml</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">prod.yaml</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Benefits</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Separate configs</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Safe testing</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Controlled releases</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tools Used</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ArgoCD</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Argo CD is a popular GitOps tool for Kubernetes.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 3 ─── -->
+  <section class="section" id="sec-3">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">03 / 04</div>
+        <h2>Features</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Continuous deployment</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Git-based sync</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">UI dashboard</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module10/image5.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">FluxCD</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Flux is another GitOps tool.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 4 ─── -->
+  <section class="section" id="sec-4">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">04 / 04</div>
+        <h2>Features</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Lightweight</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Git synchronization</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kubernetes-native</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module10/image4.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ARGO Vs Flux</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module10/image6.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Git Platforms</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GitHub</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GitLab</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Role</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Store configurations</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Track changes</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Trigger deployments</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GitOps Workflow</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Code Change → Commit → Push → GitOps Tool → Deploy → Monitor</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GitLab Configuration Sample</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"># --------------------------------------------------</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>GitLab CI/CD Pipeline with Explanation<br/><span class="prompt">$ </span>--------------------------------------------------<br/><span class="prompt">$ </span>Variables (Used across all stages)<br/>variables:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">IMAGE_NAME: demo/gitlab # Docker image name</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">IMAGE_TAG: v2.0 # Docker image version/tag</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>Define pipeline stages<br/>stages:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- install</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- test</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- build</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- image_build</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- deploy</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>--------------------------------------------------<br/><span class="prompt">$ </span>Stage 1: Install Dependencies<br/><span class="prompt">$ </span>--------------------------------------------------
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">install:</h3>
+                <div class="code-block">
+                  image: node:14-alpine # Use Node.js lightweight image
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">stage: install</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">script:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- npm install # Install project dependencies</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>Cache to speed up future runs
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">cache:</h3><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">paths:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- node_modules/</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>Share files with next stages
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">artifacts:</h3><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">paths:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- node_modules/</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>--------------------------------------------------<br/><span class="prompt">$ </span>Stage 2: Testing<br/><span class="prompt">$ </span>--------------------------------------------------
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">test:</h3>
+                <div class="code-block">
+                  image: node:14-alpine
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">stage: test</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">before_script:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- npm install react-scripts --save # Install testing tools</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">script:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- npm test # Run test cases</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>--------------------------------------------------<br/><span class="prompt">$ </span>Stage 3: Build Application<br/><span class="prompt">$ </span>--------------------------------------------------
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">build:</h3>
+                <div class="code-block">
+                  image: node:14-alpine
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">stage: build</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">script:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- npm run build # Build production-ready app</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">artifacts:</h3><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">paths:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- node_modules/</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>--------------------------------------------------<br/><span class="prompt">$ </span>Stage 4: Docker Image Build &amp; Push<br/><span class="prompt">$ </span>--------------------------------------------------
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">image_build:</h3>
+                <div class="code-block">
+                  image: docker:27.3
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">stage: image_build</p>
+                <div class="code-block">
+                  services:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- docker:27.3-dind # Docker-in-Docker service</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">before_script:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- docker login -u $DOCKER_USER -p $DOCKER_PASS # Login to Docker Hub</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">script:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- docker build -t $IMAGE_NAME:$IMAGE_TAG . # Build Docker image</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- docker push $IMAGE_NAME:$IMAGE_TAG # Push image to registry</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>--------------------------------------------------<br/><span class="prompt">$ </span>Stage 5: Deployment<br/><span class="prompt">$ </span>--------------------------------------------------
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">deploy:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">stage: deploy</p>
+                <div class="code-block">
+                  image: docker:27.3
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">before_script:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- chmod 400 $SSH_KEY # Secure SSH key permissions</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">script:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- ssh -i $SSH_KEY -o StrictHostKeyChecking=no $AWS_EC2_USER@$AWS_EC2_HOST "</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>Stop and remove existing containers<br/><span class="prompt">$ </span>docker ps -a -q | xargs -r docker stop | xargs -r docker rm;<br/><span class="prompt">$ </span>Run new container with latest image<br/><span class="prompt">$ </span>docker run -d --name demo -p 80:3000 $IMAGE_NAME:$IMAGE_TAG
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:50px; padding-top:30px; border-top:1px solid var(--border);">
+    <a href="configuration-management-learn.html" class="btn-action" style="background:var(--bg3); color:var(--text-bright); border:1px solid var(--border); text-decoration:none; width:auto;">← Previous: Module 09</a>
+    <a href="observability-monitoring-learn.html" class="btn-action btn-primary" style="text-decoration:none; width:auto;">Next: Module 11 →</a>
+  </div>
+
+</main>
+
+<!-- ════════════════ SCRIPTS ════════════════ -->
+<script>
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(s => observer.observe(s));
+
+  const navItems = document.querySelectorAll('.nav-item');
+  const sectionEls = document.querySelectorAll('section.section');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navItems.forEach(n => n.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sectionEls.forEach(s => navObserver.observe(s));
+
+  const dotsContainer = document.getElementById('progressDots');
+  const totalTopics = 4;
+  for (let i = 0; i < totalTopics; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot-prog';
+    dotsContainer.appendChild(dot);
+  }
+
+  const progressObserver = new IntersectionObserver((entries) => {
+    const allDots = document.querySelectorAll('.dot-prog');
+    let maxIndex = 0;
+    sectionEls.forEach((s, i) => {
+      if (s.classList.contains('visible')) maxIndex = i;
+    });
+    allDots.forEach((d, i) => {
+      d.classList.toggle('filled', i <= maxIndex);
+    });
+  }, { threshold: 0.1 });
+
+  sectionEls.forEach(s => progressObserver.observe(s));
+</script>
+
+</body>
+</html>

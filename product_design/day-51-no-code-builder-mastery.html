@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>No-Code Builder Mastery — UI/UX Fellowship</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ════════════════ SIDEBAR ════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; color:var(--accent); margin-bottom:10px;">← Back to Hub</a>
+    <div class="module-tag">Product Design</div>
+    <h1>No-Code Builder Mastery</h1>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Curriculum Topics</div>
+    <a class="nav-item active" href="#sec-1"><span class="dot"></span>No-Code Builder Mastery</a>
+    <a class="nav-item" href="#sec-2"><span class="dot"></span>Part 1: Understanding Builder </a>
+    <a class="nav-item" href="#sec-3"><span class="dot"></span>Part 2 : Design to Builder Map</a>
+    <a class="nav-item" href="#sec-4"><span class="dot"></span>Part 3: Responsive Design in N</a>
+    <a class="nav-item" href="#sec-5"><span class="dot"></span>Part 4: Interaction & Animatio</a>
+    <a class="nav-item" href="#sec-6"><span class="dot"></span>Part 5: Content Management</a>
+    <a class="nav-item" href="#sec-7"><span class="dot"></span>Part 6 : Common Challenges</a>
+    <a class="nav-item" href="#sec-8"><span class="dot"></span>Part 7 : Best Practices</a>
+    <a class="nav-item" href="#sec-9"><span class="dot"></span>Part 8 : Good vs Bad No-Code I</a>
+  </div>
+
+  <div class="progress-dots">
+    <p>// 9 topics</p>
+    <div class="dots-row" id="progressDots"></div>
+  </div>
+</nav>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main class="main">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">UI/UX Fellowship <span class="cursor-blink"></span></div>
+    <h1><span class="highlight">No-Code Builder Mastery</span></h1>
+    <p>Welcome to No-Code Builder Mastery in the UI/UX Product Design Fellowship Programme. Master production workflows, design theory, and hands-on execution.</p>
+    <div class="hero-chips">
+      <span class="chip green">🎨 UI/UX Design</span>
+      <span class="chip blue">💡 Product Strategy</span>
+      <span class="chip amber">✨ Interactive Module</span>
+    </div>
+  </header>
+
+  
+  <!-- ─── SECTION 1 ─── -->
+  <section class="section" id="sec-1">
+    <div class="section-header">
+      <div class="section-icon icon-pink">📌</div>
+      <div>
+        <div class="section-number">01 / 09</div>
+        <h2>No-Code Builder Mastery</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">No-Code Builder Mastery</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 2 ─── -->
+  <section class="section" id="sec-2">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">02 / 09</div>
+        <h2>Part 1: Understanding Builder Logic</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What Is Builder Logic?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Every no-code tool works on the same three ideas: Components, Layouts, and Responsiveness. Think of it like building with LEGO bricks — you have individual pieces (components), a base plate to arrange them on (layout), and the ability to resize the whole thing for different screens (responsiveness).</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Components</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A component is a single reusable UI piece — a button, a card, a navigation bar, an image. Instead of writing code to create these, you drag them onto your canvas.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Buttons, forms, icons, images, videos are all components</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Components can be nested inside each other (e.g. icon inside a button)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Changing one master component updates all copies across your project</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Layouts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A layout is how components are arranged on the page. Most no-code tools use either a Box Model (parent-child containers) or a Grid/Flex system — very similar to how CSS works, but visual.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Containers/Sections hold other elements inside them</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">You control spacing using padding (inside the element) and margin (outside the element)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Think of layouts like nested boxes — a Section contains Rows, Rows contain Columns, Columns contain Components</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Responsiveness</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Responsiveness means your design automatically adjusts for different screen sizes — desktop, tablet, phone. No-code tools handle this with breakpoints (rules that say 'on screens smaller than X, do this instead').</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Desktop is usually designed first, then adapted for smaller screens</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Most tools let you preview at different screen widths</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Layouts that use percentage widths (%) respond better than fixed pixel widths (px)</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 3 ─── -->
+  <section class="section" id="sec-3">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">03 / 09</div>
+        <h2>Part 2 : Design to Builder Mapping</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">How Your Figma Designs Translate to a Builder</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Designers usually work in Figma or Sketch. When you move that design into a no-code tool, there is a translation process. Understanding this mapping prevents a lot of frustration.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Frames → Sections</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">In Figma, a Frame is a container for your design. In a no-code builder, this becomes a Section — a horizontal band on your webpage. Every Frame in your design should map to one Section in your builder.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Figma / Design Tool</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">No-Code Builder</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Frame (outer container)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Section (full-width row)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Frame inside a Frame</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Div / Container Block</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Auto Layout Frame</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Flexbox or Grid Container</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Component</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Reusable Symbol / Global Component</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Text Style</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Global Typography Class</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Color Style</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Design Token / CSS Variable</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Components → Reusable Blocks</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">In Figma you create Components to reuse UI elements. No-code tools have the same concept — usually called Symbols, Global Components, or CMS Templates. The key rule: if you use something more than once, make it a component.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Create a master component, then place instances (copies) across your project</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Editing the master updates all instances at once — saves huge amounts of time</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Most builders support component variants (e.g. Button: Primary / Secondary / Disabled)</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 4 ─── -->
+  <section class="section" id="sec-4">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">04 / 09</div>
+        <h2>Part 3: Responsive Design in No-Code</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Making Things Work on Every Screen</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Building for one screen size is easy. Building for all screen sizes — desktop, tablet, phone — is the skill that separates good no-code builders from great ones. The secret is understanding breakpoints.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What Are Breakpoints?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A breakpoint is a screen width at which your layout changes behaviour. Think of it as a signal to the builder: 'when the screen is narrower than 768px, switch to a single column instead of three.'</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Desktop</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">1280px and above — full layout, multi-column, large fonts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tablet</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">768px – 1279px — some columns collapse, medium fonts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Mobile (large)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">480px – 767px — single column, touch-friendly tap targets</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Mobile (small)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Below 480px — maximum simplification, large text, stacked layout</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Adaptive Layouts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">An adaptive layout responds to the screen size without you having to redesign everything from scratch. The key principles are:</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use flexible widths (%) instead of fixed widths (px) wherever possible</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Stack columns vertically on mobile — a 3-column grid becomes 1 column</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scale font sizes down for smaller screens — a 48px heading is too large on mobile</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Increase tap target sizes on mobile — buttons should be at least 44×44px</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 5 ─── -->
+  <section class="section" id="sec-5">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">05 / 09</div>
+        <h2>Part 4: Interaction & Animations</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Making Your Product Feel Alive</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Interactions and animations are what separate a static website from a living product. In no-code tools, you can add these without writing a single line of JavaScript — using triggers and actions.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Basic Interactions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">An interaction = Trigger + Action. Something happens (trigger), then the builder responds (action).</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Hover</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Mouse moves over element → change colour, show tooltip, scale up</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Click / Tap</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">User clicks → open modal, navigate to page, submit form</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scroll</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">User scrolls past element → fade in, slide in from side</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Page Load</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Page finishes loading → hero text animates in</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Mouse Move</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cursor moves → background element follows (parallax)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">User Flow Transitions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When a user moves between pages or states (e.g. from a product list to a product detail), the transition should feel smooth. No-code tools offer page transitions, modal animations, and state-based visibility.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Page transitions: fade, slide, or instant — keep it consistent across your site</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Show/Hide: toggle element visibility based on user actions (e.g. accordion, tabs)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">State changes: change a component's appearance based on interaction (e.g. active tab indicator)</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 6 ─── -->
+  <section class="section" id="sec-6">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">06 / 09</div>
+        <h2>Part 5: Content Management</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Dynamic vs Static Content</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This is one of the most important concepts in no-code. Understanding when to use static content and when to use dynamic (CMS-driven) content determines how scalable and maintainable your project is.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Static Content</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Dynamic Content (CMS)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">You type the text directly on the page</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Content is stored in a database and displayed automatically</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Works for: landing pages, about pages</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Works for: blog posts, product listings, team directories</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Changing content = editing the page manually</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Changing content = updating the database, page updates itself</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple to set up, hard to scale</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Slightly more complex, scales to hundreds of items easily</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">No CMS setup needed</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Requires defining a content type (Collection) with fields</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When to Use Each</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Fixed content that rarely changes — hero taglines, footer text, company values Static:</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Repeating content — blog posts, team members, portfolio items, products, FAQs Dynamic:</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 7 ─── -->
+  <section class="section" id="sec-7">
+    <div class="section-header">
+      <div class="section-icon icon-pink">📌</div>
+      <div>
+        <div class="section-number">07 / 09</div>
+        <h2>Part 6 : Common Challenges</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What Goes Wrong (And Why)</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 8 ─── -->
+  <section class="section" id="sec-8">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">08 / 09</div>
+        <h2>Part 7 : Best Practices</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">How the Best No-Code Builders Think</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">These are not rules — they are mental models. Internalise these and your no-code projects will be faster to build, easier to maintain, and far less likely to break.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Keep It Simple</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">No-code platforms are powerful, but power tempts you to over-engineer. The simpler your structure, the more robust your project.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use as few container levels as possible — 3-4 levels of nesting is usually enough</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">If you are fighting the builder to achieve a visual effect, reconsider the design</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A working simple version > a broken complex version, every time</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Design with Constraints</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Unlike Figma, no-code builders have real limitations — browser rendering, load time, animation performance. Design with these in mind from day one.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Avoid massive background videos on mobile — they destroy load times</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Optimise all images before uploading — WebP format, under 200KB for most images</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Custom fonts add load time — stick to 2 fonts maximum</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Every interaction you add has a small performance cost — keep it purposeful</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Naming Convention</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Always name your layers/sections descriptively. 'Section-Hero' not 'Section-5'. Future you will thank you.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Version / Backup</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use the builder's backup/version history before major changes. One click can undo hours of work.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Style Consistency</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Define all colours and fonts as global styles at the start. Never use one-off colour values inline.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Collaboration</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">If working with a team, agree on a naming system and component library before anyone touches the builder.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Client Handoff</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Always test the editor experience before handing to a client. Can they update content without breaking the layout?</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 9 ─── -->
+  <section class="section" id="sec-9">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">09 / 09</div>
+        <h2>Part 8 : Good vs Bad No-Code Implementations</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Side-by-Side Comparison</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Good No-Code Implementation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Bad No-Code Implementation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">All repeating elements are components</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Elements are copy-pasted individually</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Content uses CMS for any list/collection</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">All content is typed directly on the page</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Layouts use flexible widths, work on all screens</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Fixed pixel widths, breaks on mobile</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">2–3 fonts, one type scale used everywhere</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">5+ fonts, random sizes used inconsistently</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Images are compressed, under 200KB</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Unoptimised images, 2–5MB per image</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Interactions are purposeful and consistent</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Animations on every element, distracting</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Global colour styles defined and reused</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">One-off colours typed inline everywhere</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Editor view is clean, a client can update it</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Deeply nested, impossible for non-dev to edit</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Loads in under 2 seconds on mobile</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Loads in 8+ seconds, high bounce rate</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tested on real devices before launch</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Only tested on designer's own large monitor</p>
+                    <div class="callout tip">
+                      <span class="callout-icon">💡</span>
+                      <span><strong>Key Takeaways</strong></span>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Module</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Core Concept</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Remember This</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">01 Builder Logic</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Components + Layout + Responsiveness</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Learn the layout system first, always</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">02 Design Mapping</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Frames → Sections, Components → Reusables</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Componentise early, never copy-paste</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">03 Responsive Design</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Breakpoints & Adaptive Layouts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Test mobile as you build, not after</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">04 Interactions</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Trigger → Action model</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">1-2 animation styles max, be consistent</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">05 Content Management</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Static vs Dynamic (CMS)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">5+ repeating items = use CMS</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">06 Common Challenges</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Layout breaks + Inconsistent behaviour</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Fixed px widths are the root of most evils</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">07 Best Practices</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple structure + Design with constraints</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Constrain what clients can edit</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">08 Good vs Bad</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Quality shows in maintenance, not visuals</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Test: phone + client + speed + interactions</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:50px; padding-top:30px; border-top:1px solid var(--border);">
+    <a href="day-50-no-code-builder-fundamentals.html" class="btn-action" style="background:var(--bg3); color:var(--text-bright); border:1px solid var(--border); text-decoration:none; width:auto;">← Previous: No-Code Builder Fundamentals</a>
+    <a href="day-52-working-with-apis.html" class="btn-action btn-primary" style="text-decoration:none; width:auto;">Next: Working with APIs →</a>
+  </div>
+
+</main>
+
+<!-- ════════════════ SCRIPTS ════════════════ -->
+<script>
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(s => observer.observe(s));
+
+  const navItems = document.querySelectorAll('.nav-item');
+  const sectionEls = document.querySelectorAll('section.section');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navItems.forEach(n => n.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sectionEls.forEach(s => navObserver.observe(s));
+
+  const dotsContainer = document.getElementById('progressDots');
+  const totalTopics = 9;
+  for (let i = 0; i < totalTopics; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot-prog';
+    dotsContainer.appendChild(dot);
+  }
+
+  const progressObserver = new IntersectionObserver((entries) => {
+    const allDots = document.querySelectorAll('.dot-prog');
+    let maxIndex = 0;
+    sectionEls.forEach((s, i) => {
+      if (s.classList.contains('visible')) maxIndex = i;
+    });
+    allDots.forEach((d, i) => {
+      d.classList.toggle('filled', i <= maxIndex);
+    });
+  }, { threshold: 0.1 });
+
+  sectionEls.forEach(s => progressObserver.observe(s));
+</script>
+
+</body>
+</html>

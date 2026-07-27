@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Advanced Figma — UI/UX Fellowship</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ════════════════ SIDEBAR ════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; color:var(--accent); margin-bottom:10px;">← Back to Hub</a>
+    <div class="module-tag">Product Design</div>
+    <h1>Advanced Figma</h1>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Curriculum Topics</div>
+    <a class="nav-item active" href="#sec-1"><span class="dot"></span>Advanced Figma</a>
+    <a class="nav-item" href="#sec-2"><span class="dot"></span>AUTO LAYOUT</a>
+    <a class="nav-item" href="#sec-3"><span class="dot"></span>🔷 PART 2 — COMPONENTS</a>
+    <a class="nav-item" href="#sec-4"><span class="dot"></span>🔷 PART 3 — VARIANTS</a>
+  </div>
+
+  <div class="progress-dots">
+    <p>// 4 topics</p>
+    <div class="dots-row" id="progressDots"></div>
+  </div>
+</nav>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main class="main">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">UI/UX Fellowship <span class="cursor-blink"></span></div>
+    <h1><span class="highlight">Advanced Figma</span></h1>
+    <p>Welcome to Advanced Figma in the UI/UX Product Design Fellowship Programme. Master production workflows, design theory, and hands-on execution.</p>
+    <div class="hero-chips">
+      <span class="chip green">🎨 UI/UX Design</span>
+      <span class="chip blue">💡 Product Strategy</span>
+      <span class="chip amber">✨ Interactive Module</span>
+    </div>
+  </header>
+
+  
+  <!-- ─── SECTION 1 ─── -->
+  <section class="section" id="sec-1">
+    <div class="section-header">
+      <div class="section-icon icon-pink">📌</div>
+      <div>
+        <div class="section-number">01 / 04</div>
+        <h2>Advanced Figma</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">◆  ADVANCED FIGMA</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Auto Layout, Components & Variants</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A Complete Visual Guide with Real-Time Figma Tool Examples</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 2 ─── -->
+  <section class="section" id="sec-2">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">02 / 04</div>
+        <h2>AUTO LAYOUT</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔹 Nested Auto Layout</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Nested Auto Layout means placing one Auto Layout frame inside another to build structured and scalable UI.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Each nested level can have its own direction (horizontal/vertical), spacing, padding, and alignment.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This helps in designing complex components like cards, lists, and layouts in a clean hierarchy.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Proper nesting improves maintainability and makes updates easier across the design.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day06/image16.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔹 Wrapping (Responsive Layouts)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Wrapping allows elements to automatically move to the next row or column when there is no space.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It behaves similar to CSS flex-wrap and supports responsive design behavior.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This is useful when the number of items is dynamic and not fixed.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Combined with resizing properties, it creates flexible and adaptive layouts.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day06/image19.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔹 Min / Max Width & Height</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Minimum and maximum constraints control how much an element can shrink or expand.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Min width prevents elements from becoming too small and breaking the layout.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Max width ensures elements do not stretch excessively on larger screens.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">These constraints help maintain consistency across different screen sizes.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day06/image10.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔹 Hug, Fill, Fixed Resizing</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Hug resizes the element based on its content, making it ideal for buttons and text.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Fill expands the element to occupy available space within its parent container.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Fixed keeps the size constant regardless of content or layout changes.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Combining all three resizing options enables flexible and responsive UI design.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day06/image12.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔹 Content-Driven Layouts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Content-driven layouts automatically adjust their size based on text, images, or nested elements.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This removes the need for manual resizing when content changes.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It ensures layouts remain consistent across different data conditions.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It is a key principle for building scalable and reusable components.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day06/image20.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔹 Responsive Design using Auto Layout</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Auto Layout allows designers to simulate responsive behavior directly in Figma.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Layouts can adapt when frames are resized, similar to real application screens.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Fill, Hug, and constraints work together to create fluid and flexible layouts.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This helps communicate responsive behavior clearly to developers.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day06/image14.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔹 Auto Layout with Components</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When components are built using Auto Layout, they adapt automatically to content changes.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Layout structure remains intact even when elements are added, removed, or hidden.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This improves reusability and reduces manual adjustments.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It ensures consistency across multiple instances of the same component.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day06/image18.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔹 Scalable UI Patterns</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Auto Layout enables the creation of reusable UI patterns such as cards, lists, and forms.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">These patterns adjust dynamically based on content and layout changes.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It reduces repetitive design work and improves efficiency.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Helps maintain consistency across the entire product.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day06/image11.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔹 Performance Optimization</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Excessive nesting of Auto Layout frames can impact performance and make files harder to manage.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Unnecessary wrapper frames increase complexity without adding value.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Using components instead of duplicated elements improves efficiency.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Maintaining a clean and minimal structure ensures better performance and collaboration.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 3 ─── -->
+  <section class="section" id="sec-3">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">03 / 04</div>
+        <h2>🔷 PART 2 — COMPONENTS</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔹 Main Component vs Instance</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A Main Component is the original reusable design element created in the system.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Instances are copies of the Main Component used across different screens.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Any changes made to the Main Component automatically update all instances.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This ensures consistency and reduces repetitive design work.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day06/image15.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔹 Overrides</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Overrides allow changes to be made in instances without breaking the connection to the Main Component.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Designers can modify text, colors, visibility, and nested elements.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This provides flexibility while maintaining the benefits of reuse.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Overrides can be reset to return to the original component design.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day06/image13.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔹 Nested Components</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Components can contain other components, enabling modular and scalable design.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Complex UI elements are built by combining smaller reusable components.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Each nested component can still be independently controlled.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This approach supports structured and efficient design systems.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day06/image1.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔹 Component Properties</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Component Properties allow control of component behavior from the properties panel.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Text properties make it easy to edit content without entering layers.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Boolean properties control visibility of elements.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Instance swap properties allow replacing nested components easily.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day06/image17.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔹 Atomic Design Structure</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">UI is structured into smaller building blocks for better scalability.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Atoms are basic elements like buttons and icons.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Molecules combine multiple elements into small components.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Organisms represent larger sections built from multiple components.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This structure helps maintain a clear and organized design system.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day06/image4.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔹 Detach vs Instance</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Detaching an instance removes its connection to the Main Component.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Detached elements will not receive updates from the original component.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This should be used only for one-time or custom designs.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Overusing detach can lead to inconsistency in the design system.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day06/image5.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔹 Component Libraries</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Component libraries allow sharing reusable components across files and teams.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Local libraries are limited to a single file, while team libraries are shared globally.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">They help maintain consistency and standardization in design.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Updating a library automatically updates all linked designs.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day06/image21.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 4 ─── -->
+  <section class="section" id="sec-4">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">04 / 04</div>
+        <h2>🔷 PART 3 — VARIANTS</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔹 Component Sets</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Variants group multiple versions of a component into a single organized set.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This reduces duplication and keeps related components together.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Designers can switch between variations easily from the properties panel.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It improves efficiency and organization in design systems.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day06/image7.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔹 Variant Properties</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Variant properties define differences between component variations.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Common properties include state, size, and type.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">These properties allow easy switching between different configurations.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It simplifies component usage and improves usability.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day06/image8.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔹 States</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">States represent different interaction conditions of a component.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Common states include default, hover, active, and disabled.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Designing all states ensures accurate representation of UI behavior.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It helps developers understand how components should behave.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day06/image3.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔹 Naming Convention</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Clear naming conventions improve readability and usability of components.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Structured naming helps identify properties and variations easily.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It also improves collaboration between designers and developers.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Consistent naming ensures better organization in large design systems.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day06/image2.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔹 Prototyping with Variants</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Variants can be used to create interactive prototypes within Figma.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Interactions like hover and click can trigger changes between variants.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This helps simulate real application behavior.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It reduces the need for external prototyping tools.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day06/image6.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔹 Reducing Complexity</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Creating too many variants can make components difficult to manage.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Only necessary variations should be created.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Properties can be used instead of multiple variants for minor changes.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This keeps the system simple and scalable.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day06/image9.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔹 Performance</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Large variant sets can affect Figma performance and usability.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Keeping variants organized and limited improves efficiency.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Splitting large sets into smaller groups can help manage complexity.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Using variables for styling reduces the need for extra variants.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:50px; padding-top:30px; border-top:1px solid var(--border);">
+    <a href="day-05-wireframing.html" class="btn-action" style="background:var(--bg3); color:var(--text-bright); border:1px solid var(--border); text-decoration:none; width:auto;">← Previous: Wireframing</a>
+    <a href="day-07-double-diamond-method.html" class="btn-action btn-primary" style="text-decoration:none; width:auto;">Next: Double diamond method →</a>
+  </div>
+
+</main>
+
+<!-- ════════════════ SCRIPTS ════════════════ -->
+<script>
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(s => observer.observe(s));
+
+  const navItems = document.querySelectorAll('.nav-item');
+  const sectionEls = document.querySelectorAll('section.section');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navItems.forEach(n => n.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sectionEls.forEach(s => navObserver.observe(s));
+
+  const dotsContainer = document.getElementById('progressDots');
+  const totalTopics = 4;
+  for (let i = 0; i < totalTopics; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot-prog';
+    dotsContainer.appendChild(dot);
+  }
+
+  const progressObserver = new IntersectionObserver((entries) => {
+    const allDots = document.querySelectorAll('.dot-prog');
+    let maxIndex = 0;
+    sectionEls.forEach((s, i) => {
+      if (s.classList.contains('visible')) maxIndex = i;
+    });
+    allDots.forEach((d, i) => {
+      d.classList.toggle('filled', i <= maxIndex);
+    });
+  }, { threshold: 0.1 });
+
+  sectionEls.forEach(s => progressObserver.observe(s));
+</script>
+
+</body>
+</html>

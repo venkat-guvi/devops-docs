@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Module 11: Observability, Metrics &amp; Logging (Prometheus &amp; Loki) — Interactive Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ════════════════ SIDEBAR ════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; color:var(--accent); margin-bottom:10px;">← Back to Hub</a>
+    <div class="module-tag">Module 11</div>
+    <h1>Observability, Metrics &amp; Log</h1>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Curriculum Topics</div>
+    <a class="nav-item active" href="#sec-1"><span class="dot"></span>Observability, Metrics &amp; Loggi</a>
+    <a class="nav-item" href="#sec-2"><span class="dot"></span>What is Observability?</a>
+    <a class="nav-item" href="#sec-3"><span class="dot"></span>Concepts:</a>
+    <a class="nav-item" href="#sec-4"><span class="dot"></span>2. Targets</a>
+    <a class="nav-item" href="#sec-5"><span class="dot"></span>3. Service Discovery</a>
+    <a class="nav-item" href="#sec-6"><span class="dot"></span>4. TSTB</a>
+    <a class="nav-item" href="#sec-7"><span class="dot"></span>5. Exporters</a>
+    <a class="nav-item" href="#sec-8"><span class="dot"></span>6. Alert Manager</a>
+    <a class="nav-item" href="#sec-9"><span class="dot"></span>7. PushGateway</a>
+    <a class="nav-item" href="#sec-10"><span class="dot"></span>8. PromQL</a>
+    <a class="nav-item" href="#sec-11"><span class="dot"></span>9. Client Libraries</a>
+    <a class="nav-item" href="#sec-12"><span class="dot"></span>What is Tracing?</a>
+    <a class="nav-item" href="#sec-13"><span class="dot"></span>Features</a>
+    <a class="nav-item" href="#sec-14"><span class="dot"></span>Concepts</a>
+    <a class="nav-item" href="#sec-15"><span class="dot"></span>CPU &gt; 80%</a>
+    <a class="nav-item" href="#sec-16"><span class="dot"></span>Concepts</a>
+  </div>
+
+  <div class="progress-dots">
+    <p>// 16 topics</p>
+    <div class="dots-row" id="progressDots"></div>
+  </div>
+</nav>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main class="main">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">Module 11 <span class="cursor-blink"></span></div>
+    <h1>Module 11: <span class="highlight">Observability, Metrics &amp; Logging (Prometheus &amp; Loki)</span></h1>
+    <p>Three Pillars of Observability, Prometheus metrics, Loki log aggregation, OpenTelemetry, Grafana. Master production DevOps workflows, cloud architecture, and hands-on execution with 13 embedded diagrams.</p>
+    <div class="hero-chips">
+      <span class="chip green">Prometheus</span>
+      <span class="chip blue">Grafana Loki</span>
+      <span class="chip amber">OpenTelemetry</span>
+    </div>
+  </header>
+
+  
+  <!-- ─── SECTION 1 ─── -->
+  <section class="section" id="sec-1">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">01 / 16</div>
+        <h2>Observability, Metrics &amp; Logging (Prometheus &amp; Loki)</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">— Observability</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 2 ─── -->
+  <section class="section" id="sec-2">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">02 / 16</div>
+        <h2>What is Observability?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Observability is the ability to understand what is happening inside a system by analyzing:</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Metrics (numbers)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Logs (events)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Traces (request flow)</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Simple idea:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Observability helps you answer: “What is happening inside my system and why?”</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">It is very important in DevOps for:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Troubleshooting issues</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Monitoring performance</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Improving system reliability</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module11/image8.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Core Concepts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Observability Fundamentals</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Monitoring vs Observability</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Monitoring → Tells WHAT is wrong</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Observability → Helps find WHY it is wrong</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Three pillars:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Metrics → Numerical data (CPU, memory, requests)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Logs → Events/messages from applications</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Traces → Flow of requests across services</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">SLI, SLO, SLA basics</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module11/image5.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">System reliability concepts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Metrics Monitoring (Prometheus)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What are metrics?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Metrics are numerical values collected over time.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Types of metrics:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Counter</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Gauge</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Histogram</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Prometheus Architecture</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Prometheus is an open-source systems monitoring and alerting toolkit originally built at SoundCloud. Since its inception in 2012, many companies and organizations have adopted Prometheus, and the project has a very active developer and user community.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It is now a standalone open source project and maintained independently of any company. To emphasize this, and to clarify the project’s governance structure, Prometheus joined the Cloud Native Computing Foundation in 2016 as the second hosted project, after Kubernetes.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module11/image10.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 3 ─── -->
+  <section class="section" id="sec-3">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">03 / 16</div>
+        <h2>Concepts:</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">1. Prometheus Server</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Prometheus server is the brain of the metric-based monitoring system. The main job of the server is to collect the metrics from various targets using a pull model.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Target is nothing but a server, pod, endpoints etc which we will look into detail in the next topic.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The general term for collecting metrics from the targets using Prometheus is called scraping.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module11/image12.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 4 ─── -->
+  <section class="section" id="sec-4">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">04 / 16</div>
+        <h2>2. Targets</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Target is the source where Prometheus scrapes the metrics. A target could be servers, services, Kubernetes pods, application endpoints, etc.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">By default prometheus looks for metrics under /metrics path of the target. The default path can be changed in the target configuration. This means, if you don't specify a custom metric path, Prometheus looks for the metrics under /metrics.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module11/image2.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 5 ─── -->
+  <section class="section" id="sec-5">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">05 / 16</div>
+        <h2>3. Service Discovery</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Prometheus uses two methods to scrape metrics from the targets.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Static configs: When the targets have a static IP or DNS endpoint, we can use those endpoints as targets.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Service Discovery: In most autoscaling systems and distributed systems like Kubernetes, the target will not have a static endpoint. In this case, target endpoints are discovered using prometheus service discovery and targets are added automatically to the prometheus configuration.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module11/image3.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 6 ─── -->
+  <section class="section" id="sec-6">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">06 / 16</div>
+        <h2>4. TSTB</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The metric data which prometheus receives changes over time (CPU, memory, network IO etc..). It is called time-series data. So Prometheus uses a Time Series Database (TSDB) to store all its data.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">By default Prometheus stores all its data in an efficient format (chunks) in the local disk. Over time, it compacts all the old data to save space. It also has a retention policy to get rid of old data.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The TSDB has inbuilt mechanisms to manage data kept for a long time. You can choose any of the following data retention policies.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Time based retention: Data will be kept for the specified days. The default retention is 15 days.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Size-based retention: You can specify the maximum data TSDB can hold. Once this limit is reached, Prometheus will free up the space to accommodate new data.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 7 ─── -->
+  <section class="section" id="sec-7">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">07 / 16</div>
+        <h2>5. Exporters</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Exporters are like agents that run on the targets. It converts metrics from a specific system to a format that Prometheus understands.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It could be system metrics like CPU, memory etc, or Java JMX metrics, MySQL metrics etc.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module11/image9.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 8 ─── -->
+  <section class="section" id="sec-8">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">08 / 16</div>
+        <h2>6. Alert Manager</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Alertmanager is the key part of Prometheus monitoring system. Its primary job is to send alerts based on metric thresholds set in the Prometheus alert configuration.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The alert gets triggered by Prometheus and sent to Alertmanager. It in turn sends the alerts to the respective notification systems/receivers (email, slack etc) configured in the alert manager configurations.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module11/image6.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Alert Deduplicating: Process of silencing duplicated alerts.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Grouping: Process of grouping related alerts together.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Silencing: Silence alerts for maintenance or false positives.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Routing: Routing alerts to appropriate receivers based on severities.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Inhibition: Process of stopping low severity alert when there is a medium of high severity alert.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 9 ─── -->
+  <section class="section" id="sec-9">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">09 / 16</div>
+        <h2>7. PushGateway</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Prometheus by default uses a pull mechanism to scrap the metrics.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">However, there are scenarios where metrics need to be pushed to prometheus.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">So instead of waiting for prometheus to pull the metrics, we need to push the metrics to prometheus. To push metrics, Prometheus offers a solution called Pushgateway. It is kind of an intermediate gateway.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module11/image7.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Pushgateway needs to be run as a standalone component. The batch jobs can push the metrics to the pushgateway using HTTP API. Then Pushgateway exposes those metrics on /metrics endpoint. Then Prometheus scrapes those metrics from the Pushgateway.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 10 ─── -->
+  <section class="section" id="sec-10">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">10 / 16</div>
+        <h2>8. PromQL</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">PromQL is a flexible query language that can be used to query time series metrics from the prometheus.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">We can directly use the queries from the Prometheus user interface or we can use curl command to make a query over the command line interface.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 11 ─── -->
+  <section class="section" id="sec-11">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">11 / 16</div>
+        <h2>9. Client Libraries</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Prometheus Client Libraries are software libraries that can be used to instrument application code to expose metrics in the way Prometheus understands.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">In cases where you need custom instrumentation or you want to create your own exporters, you can use the client libraries.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A very good use case is batch jobs that need to push metrics to the Pushgateway. The batch job needs to be instrumented with client libraries to expose requirement metrics in prometheus format.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Basic Commands:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"># Start Prometheus</p>
+                <div class="code-block">
+                  ./prometheus<br/><span class="prompt">$ </span>Access UI<br/>http://localhost:9090
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example Query:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">up</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Shows whether services are up (1) or down (0)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">prometheus.yml</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">global:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">scrape_interval: 15s</p>
+                <div class="code-block">
+                  scrape_configs:<br/>- job_name: "node_exporter"
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">static_configs:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- targets: ["localhost:9100"]</p>
+                <div class="code-block">
+                  - job_name: "application"
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">static_configs:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- targets: ["localhost:3000"]</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Log Aggregation (Loki)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What are Logs?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Logs are records of events generated by applications or systems.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Loki</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Grafana Loki is a horizontally scalable, cost-effective, multi-tenant log aggregation system designed to work with Prometheus and Grafana.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It indexes only log metadata (labels), not full text, making it highly efficient for high-throughput, petabyte-scale storage, commonly used within Kubernetes environments for cloud-native observability.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module11/image4.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Examples</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">User login</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Error messages</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">System warnings</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why Logging is Important</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Helps debug issues</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tracks system behavior</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Provides history of events</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">About Loki</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Loki helps by:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Collecting logs from multiple systems</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Storing them centrally</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Making them easy to search</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Log Levels</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">INFO → Normal activity</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">WARN → Something unusual</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ERROR → Failure</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example Query:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Filter logs containing “error”</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">loki-config.yml</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">auth_enabled: false</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">server:</h3>
+                <div class="code-block">
+                  http_listen_port: 3100
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">ingester:</h3><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">lifecycler:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">address: 127.0.0.1</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">ring:</h3><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">kvstore:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">store: inmemory</p>
+                <div class="code-block">
+                  schema_config:
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">configs:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- from: 2020-10-24</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">store: boltdb</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">object_store: filesystem</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">schema: v11</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">index:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">prefix: index_</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">period: 24h</p>
+                <div class="code-block">
+                  storage_config:
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">filesystem:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">directory: /tmp/loki/chunks</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AI-Assisted Log Analysis</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Workflow:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Loki → Log Collection</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ChatGPT/Claude → Log Interpretation</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Paste error logs.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Ask:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Summarize root cause and suggest fixes.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This is very close to real AIOps workflows.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Distributed Tracing (OpenTelemetry)</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 12 ─── -->
+  <section class="section" id="sec-12">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">12 / 16</div>
+        <h2>What is Tracing?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tracing tracks how a request moves through multiple services.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Flow</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">User → API → Service → Database → Response</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">OpenTelemetry</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">OpenTelemetry (OTel) is an open-source, vendor-neutral observability framework for cloud-native software that provides a single set of APIs, SDKs, and tools to instrument, generate, collect, and export telemetry data (traces, metrics, and logs).</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It enables developers to monitor application performance and behavior without being locked into a specific vendor's proprietary monitoring tool.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Key Concepts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Trace → Full journey of request</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Span → Single step inside trace</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Context propagation → Passing trace info between services</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module11/image11.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why It Matters</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Identifies slow services</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Helps debug microservices</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Application Monitoring</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Focuses on monitoring application performance.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Key Metrics</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Response time (latency)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Request rate (traffic)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Error rate</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">If response time increases → application is slow</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">app.js (with Prometheus metrics)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">const express = require("express");</p>
+                <div class="code-block">
+                  const client = require("prom-client");<br/>const app = express();<br/>const collectDefaultMetrics = client.collectDefaultMetrics;
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">collectDefaultMetrics();</p>
+                <div class="code-block">
+                  app.get("/metrics", async (req, res) =&gt; {
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">res.set("Content-Type", client.register.contentType);</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">res.end(await client.register.metrics());</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">});</p>
+                <div class="code-block">
+                  app.get("/", (req, res) =&gt; {
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">res.send("App is running!");</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">});</p>
+                <div class="code-block">
+                  app.listen(3000, () =&gt; {
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">console.log("Server running on port 3000");</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">});</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Infrastructure Monitoring</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Monitors system resources like servers and containers.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Important Metrics</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">CPU usage</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Memory usage</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Disk usage</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Network traffic</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">High CPU usage → system overloaded</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Dashboard Visualization (Grafana)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Grafana is a popular open-source data visualization and analytics platform that allows you to create custom dashboards and visualizations based on a variety of data sources.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Grafana is often used for monitoring and analyzing metrics and logs in real-time, making it an ideal tool for monitoring systems and applications, including Kubernetes environments.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 13 ─── -->
+  <section class="section" id="sec-13">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">13 / 16</div>
+        <h2>Features</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Graphs and charts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Real-time monitoring</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Multiple data sources</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 14 ─── -->
+  <section class="section" id="sec-14">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">14 / 16</div>
+        <h2>Concepts</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Panels → Individual graphs</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Dashboards → Collection of panels</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module11/image13.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Examples</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">CPU usage graph</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Memory usage chart</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Alerting and Notification (Alertmanager)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Alert manager handles alerts sent by client applications such as the Prometheus server. It takes care of deduplicating, grouping, and routing them to the correct receiver integration such as email, PagerDuty, or OpsGenie. It also takes care of silencing and inhibition of alerts.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Examples</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 15 ─── -->
+  <section class="section" id="sec-15">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">15 / 16</div>
+        <h2>CPU &gt; 80%</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Server down</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">High error rate</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">How it Works</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Prometheus → Alertmanager → Notification</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module11/image1.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 16 ─── -->
+  <section class="section" id="sec-16">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">16 / 16</div>
+        <h2>Concepts</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Threshold-based alerts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Alert grouping</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Alert routing</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">alerts.yml</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">groups:</h3>
+                <div class="code-block">
+                  - name: system_alerts<br/>rules:<br/><span class="prompt">$ </span>CPU Usage Alert
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- alert: HighCPUUsage</p>
+                <div class="code-block">
+                  expr: 100 - (avg by(instance)(irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) &gt; 80<br/>for: 2m<br/>labels:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">severity: warning</p>
+                <div class="code-block">
+                  annotations:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">summary: "High CPU usage detected"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">description: "CPU usage is above 80% for 2 minutes."</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>Memory Usage Alert
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- alert: HighMemoryUsage</p>
+                <div class="code-block">
+                  expr: (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes) * 100 &lt; 20<br/>for: 2m<br/>labels:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">severity: critical</p>
+                <div class="code-block">
+                  annotations:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">summary: "Low memory available"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">description: "Available memory is below 20%."</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>Disk Usage Alert
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- alert: HighDiskUsage</p>
+                <div class="code-block">
+                  expr: (node_filesystem_avail_bytes / node_filesystem_size_bytes) * 100 &lt; 15<br/>for: 5m<br/>labels:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">severity: critical</p>
+                <div class="code-block">
+                  annotations:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">summary: "Disk space running low"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">description: "Less than 15% disk space remaining."</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Performance Monitoring</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Focuses on system performance.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Golden Signals</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Latency → Response time</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Traffic → Number of requests</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Errors → Failed requests</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Saturation → Resource usage</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:50px; padding-top:30px; border-top:1px solid var(--border);">
+    <a href="gitops-argocd-learn.html" class="btn-action" style="background:var(--bg3); color:var(--text-bright); border:1px solid var(--border); text-decoration:none; width:auto;">← Previous: Module 10</a>
+    <a href="devsecops-security-learn.html" class="btn-action btn-primary" style="text-decoration:none; width:auto;">Next: Module 12 →</a>
+  </div>
+
+</main>
+
+<!-- ════════════════ SCRIPTS ════════════════ -->
+<script>
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(s => observer.observe(s));
+
+  const navItems = document.querySelectorAll('.nav-item');
+  const sectionEls = document.querySelectorAll('section.section');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navItems.forEach(n => n.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sectionEls.forEach(s => navObserver.observe(s));
+
+  const dotsContainer = document.getElementById('progressDots');
+  const totalTopics = 16;
+  for (let i = 0; i < totalTopics; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot-prog';
+    dotsContainer.appendChild(dot);
+  }
+
+  const progressObserver = new IntersectionObserver((entries) => {
+    const allDots = document.querySelectorAll('.dot-prog');
+    let maxIndex = 0;
+    sectionEls.forEach((s, i) => {
+      if (s.classList.contains('visible')) maxIndex = i;
+    });
+    allDots.forEach((d, i) => {
+      d.classList.toggle('filled', i <= maxIndex);
+    });
+  }, { threshold: 0.1 });
+
+  sectionEls.forEach(s => progressObserver.observe(s));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Working with APIs — UI/UX Fellowship</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ════════════════ SIDEBAR ════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; color:var(--accent); margin-bottom:10px;">← Back to Hub</a>
+    <div class="module-tag">Product Design</div>
+    <h1>Working with APIs</h1>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Curriculum Topics</div>
+    <a class="nav-item active" href="#sec-1"><span class="dot"></span>Working with APIs</a>
+  </div>
+
+  <div class="progress-dots">
+    <p>// 1 topics</p>
+    <div class="dots-row" id="progressDots"></div>
+  </div>
+</nav>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main class="main">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">UI/UX Fellowship <span class="cursor-blink"></span></div>
+    <h1><span class="highlight">Working with APIs</span></h1>
+    <p>Welcome to Working with APIs in the UI/UX Product Design Fellowship Programme. Master production workflows, design theory, and hands-on execution.</p>
+    <div class="hero-chips">
+      <span class="chip green">🎨 UI/UX Design</span>
+      <span class="chip blue">💡 Product Strategy</span>
+      <span class="chip amber">✨ Interactive Module</span>
+    </div>
+  </header>
+
+  
+  <!-- ─── SECTION 1 ─── -->
+  <section class="section" id="sec-1">
+    <div class="section-header">
+      <div class="section-icon icon-pink">📌</div>
+      <div>
+        <div class="section-number">01 / 01</div>
+        <h2>Working with APIs</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Working with APIs</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">01 · Introduction to APIs</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What is an API?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">API = Application Programming Interface — a messenger between two software systems</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">User sends a request → API carries it → App responds</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Every tap, swipe, and search in any dynamic app triggers at least one API call</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The restaurant analogy</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">You are the user. The waiter is the API. The kitchen is the server. You never enter the kitchen — you just get your dish. APIs work the same way.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why designers should care</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">All UI data (prices, names, orders, feeds) comes from APIs — nothing is hardcoded.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Understanding APIs helps you design buildable, realistic UIs</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Developers will trust and respect your specs far more when you speak their language</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day52/image5.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">UX INSIGHT  When you know how APIs work, your designs become engineering-aware — you stop designing utopian UIs and start designing real, buildable ones.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">02 · How APIs Work</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Request → Response cycle</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Every API interaction follows one pattern: Request → Server processes → Response.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Step 1: User action triggers a request (e.g., tap "Search Restaurants")</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Step 2: App fires the API request (GET /restaurants?city=Chennai)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Step 3: Server receives it, queries the database</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Step 4: Server sends back a response (JSON list of restaurants)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Step 5: App renders the data on screen — user sees results</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day52/image9.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The cab booking analogy</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">You open Ola and tap "Book Ride" (request). Ola checks for nearby drivers (server lookup). It sends back driver info (response). Your screen updates — all in under a second. That speed? APIs are doing their job perfectly.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">UX INSIGHT  The time between request and response is when your loading state, skeleton screen, or spinner appears. Designing this in-between moment well separates average apps from great ones.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">03 · Real-world Examples</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">a) Payment systems (GPay, Razorpay)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">At least 4 APIs fire in sequence when you pay on Amazon</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Flow: User taps Pay → App → Payment Gateway API → Bank API → Success response</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">As a designer: plan timeout screens, failure screens, and retry CTAs for each step</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">b) Login & authentication</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">POST /login sends credentials → Server verifies → Token returned to app</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Every future API call carries this token — it proves the user is authenticated</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Design: loading state while verifying, clear error for wrong password, success redirect</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">c) Data fetching (Instagram / Flipkart)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Every scroll loads a new batch of posts via API — called pagination</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">App fetches 10-20 posts at a time, triggered by scroll position</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This directly impacts your infinite scroll UX, loading indicator placement, and end-of-feed messaging</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day52/image8.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">UX INSIGHT  GPay's retry screen and Instagram's skeleton loader are not afterthoughts — they are deliberate UX decisions based on how APIs behave. You must design for them, too.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">04 · Types of APIs</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">REST APIs — the industry standard</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">REST = Representational State Transfer — the default API style in 90% of products</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Uses standard HTTP verbs to perform actions on data (users, orders, products)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GET — reads/fetches data (load Flipkart search results)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">POST — creates new data (place an order, log in)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">PUT — updates existing data (edit delivery address)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DELETE — removes data (cancel order, delete cart item)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What endpoints look like</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GET    /products           → Load product listing page</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GET    /products/42        → Load a single product</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">POST   /login              → Log in (send email + password)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">POST   /cart/items         → Add item to cart</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DELETE /cart/items/7       → Remove item from cart</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day52/image6.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">💡  UX INSIGHT  Each endpoint returns specific fields. If you design UI elements that need data the API does not provide, you create an engineering conflict that delays the project every time.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">05 · API in Product Design</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Designing with dynamic data</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Static UI = hardcoded, fixed content (like a poster)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Dynamic UI = data fetched from APIs, unique for every user</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Every UI element must map to a real field in the API response — or it will not render</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Conversely, every API field must have a corresponding UI element — or it is wasted data</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The three states every screen must have</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Loading state — skeleton screens while API call is in flight (never blank pages)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Success state — happy path with real data rendered correctly</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Error state — clear error message + a recovery action (Retry, Go Back)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A handoff missing two of these three states is an incomplete design.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Sample API response</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">{</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"name": "Priya Sharma",</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"orders": 3,</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"status": "active",</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"lastOrder": "Biryani from Meghana Foods",</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"loyaltyPoints": 420</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day52/image7.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">UX INSIGHT  Skeleton loaders (animated gray placeholders) reduce perceived loading time by 20-30%. They are trivially easy to design but have an outsized impact on user satisfaction.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">06 · Common API Concepts</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Endpoints</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">An endpoint is a specific URL where an API lives — like a door to a data room</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/products → product list (name, price, image, stock)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/orders → order history (status, date, items)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/users/me → logged-in user profile</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/cart → current cart items, quantities, and total</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">JSON data</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">JSON = JavaScript Object Notation — the format in which API responses return data</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Looks like a structured list of labels (keys) and values</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">You do not write it — but you must be able to read it</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Sample product JSON</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">{</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"product": "Nike Air Max",</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"price": 2999,</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"stock": true,</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"rating": 4.3,</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"badge": "Best Seller",</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"sizes": [7,8,9,10]</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">badge → "Best Seller" chip on card   |   sizes → size selector buttons   |   stock: false → disabled "Add to Cart" button</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day52/image1.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">UX INSIGHT  In design reviews, senior designers ask: "Where does this data come from?" Answering "it comes from the product field in the /products endpoint" earns instant credibility with engineers and PMs.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">07 · Limitations Designers Should Know</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Latency</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Latency = time between the request sent and the response received</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Even on fast internet: 100–500ms round trip</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">On slow networks: 2–3 seconds — always design for this</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">0–200ms: instant, no loader needed</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">200ms–1s: show skeleton loader</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">1s+: show progress indicator + timeout message</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Error handling</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">APIs fail — servers go down, networks drop — design for it</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">400: Bad request (app sent wrong data)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">401: Unauthorized (user not logged in)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">404: Not found (product/page does not exist)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">500: Server error (backend problem)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Sample error response</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">{</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"status": 500,</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"error": "Server not responding",</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"message": "Unable to fetch restaurants. Try again."</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day52/image4.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Three UX patterns for failures</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Skeleton loaders — animated placeholders that mirror the expected layout</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Retry states — clear error message + one-tap "Try again" action</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Offline UX — show cached data or a helpful offline screen — never strand users</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">UX INSIGHT  "Couldn't load restaurants. Check your connection and try again →" beats "Error 500" every single time. You control the message — make it human and actionable.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">08 · Common Mistakes</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Designing without real data</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Using "Lorem ipsum" or "John Doe" creates designs that break when real data arrives.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Names that are 2 words or 40 characters, prices of ₹4 or ₹40,000, products with no image</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Always design with realistic data from the very first frame</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ignoring edge cases</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What if the order list is empty? → Empty state must be designed</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What if the username is 80 characters? → Text truncation and overflow must be handled</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What if the product has zero reviews? → Null values must not crash the UI</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Only designing successful states</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Handing off only the happy path is like designing only the front door of a building.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Loading + error states are not optional — they are part of the design</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Designing data that does not exist in the API</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Adding a "Last Active" badge that does not exist in the API forces devs to build a new endpoint</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Always ask: "Does the API already return this field?" before designing any element.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day52/image2.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">💡  UX INSIGHT  Before handoff, stress-test your own design: What breaks if the name is 100 characters? If there are 0 items? If the image URL returns a 404? These questions are API-thinking, and they make your work production-ready.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">09 · How Apps Use APIs in Real Scenarios</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Food delivery (Swiggy / Zomato)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GET /restaurants → Search results page (restaurants near you)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GET /menu/:id → Restaurant detail page (menu, prices)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">POST /cart → Add items to cart</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">POST /payment → Process payment</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GET /order/:id/track → Live order tracking screen</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">E-commerce (Amazon / Flipkart)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GET /products?q=shoes → Search results</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GET /products/42 → Product detail page</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">POST /cart/items → Add to cart</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">POST /checkout → Initiate checkout flow</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">POST /payment → Process payment → Order confirmation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Social media (Instagram / X)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">POST /login → Authentication, token returned</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GET /feed?page=1 → Load initial feed</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">POST /likes/:postId → Like a post</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">POST /comments → Add a comment</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GET /feed?page=2 → Load more as user scrolls</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day52/image3.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">💡  UX INSIGHT  The best designers ask in sprint planning: "What APIs do we have available for this feature?" API availability determines feature feasibility — knowing this saves weeks of rework.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:50px; padding-top:30px; border-top:1px solid var(--border);">
+    <a href="day-51-no-code-builder-mastery.html" class="btn-action" style="background:var(--bg3); color:var(--text-bright); border:1px solid var(--border); text-decoration:none; width:auto;">← Previous: No-Code Builder Mastery</a>
+    <a href="day-53-deploying-live-products.html" class="btn-action btn-primary" style="text-decoration:none; width:auto;">Next: Deploying Live Products →</a>
+  </div>
+
+</main>
+
+<!-- ════════════════ SCRIPTS ════════════════ -->
+<script>
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(s => observer.observe(s));
+
+  const navItems = document.querySelectorAll('.nav-item');
+  const sectionEls = document.querySelectorAll('section.section');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navItems.forEach(n => n.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sectionEls.forEach(s => navObserver.observe(s));
+
+  const dotsContainer = document.getElementById('progressDots');
+  const totalTopics = 1;
+  for (let i = 0; i < totalTopics; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot-prog';
+    dotsContainer.appendChild(dot);
+  }
+
+  const progressObserver = new IntersectionObserver((entries) => {
+    const allDots = document.querySelectorAll('.dot-prog');
+    let maxIndex = 0;
+    sectionEls.forEach((s, i) => {
+      if (s.classList.contains('visible')) maxIndex = i;
+    });
+    allDots.forEach((d, i) => {
+      d.classList.toggle('filled', i <= maxIndex);
+    });
+  }, { threshold: 0.1 });
+
+  sectionEls.forEach(s => progressObserver.observe(s));
+</script>
+
+</body>
+</html>

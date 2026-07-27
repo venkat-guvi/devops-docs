@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Module 06: Kubernetes &amp; Cloud Native Orchestration — Interactive Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ════════════════ SIDEBAR ════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; color:var(--accent); margin-bottom:10px;">← Back to Hub</a>
+    <div class="module-tag">Module 06</div>
+    <h1>Kubernetes &amp; Cloud Native Or</h1>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Curriculum Topics</div>
+    <a class="nav-item active" href="#sec-1"><span class="dot"></span>Kubernetes &amp; Cloud Native Orch</a>
+    <a class="nav-item" href="#sec-2"><span class="dot"></span>Introduction to K8s</a>
+    <a class="nav-item" href="#sec-3"><span class="dot"></span>Features of K8s</a>
+    <a class="nav-item" href="#sec-4"><span class="dot"></span>What is Monolithic Architectur</a>
+    <a class="nav-item" href="#sec-5"><span class="dot"></span>What is Microservice Architect</a>
+    <a class="nav-item" href="#sec-6"><span class="dot"></span>What is Container Orchestratio</a>
+    <a class="nav-item" href="#sec-7"><span class="dot"></span>1. Pod-to-Pod Communication</a>
+    <a class="nav-item" href="#sec-8"><span class="dot"></span>2. Cluster Networking</a>
+    <a class="nav-item" href="#sec-9"><span class="dot"></span>3. Service Networking</a>
+    <a class="nav-item" href="#sec-10"><span class="dot"></span>4. DNS in Kubernetes</a>
+    <a class="nav-item" href="#sec-11"><span class="dot"></span>5. Ingress (External Access)</a>
+    <a class="nav-item" href="#sec-12"><span class="dot"></span>6. Network Policies</a>
+    <a class="nav-item" href="#sec-13"><span class="dot"></span>8. CNI (Container Network Inte</a>
+    <a class="nav-item" href="#sec-14"><span class="dot"></span>1. Manual Scaling</a>
+    <a class="nav-item" href="#sec-15"><span class="dot"></span>2. Auto Scaling (HPA – Horizon</a>
+  </div>
+
+  <div class="progress-dots">
+    <p>// 15 topics</p>
+    <div class="dots-row" id="progressDots"></div>
+  </div>
+</nav>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main class="main">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">Module 06 <span class="cursor-blink"></span></div>
+    <h1>Module 06: <span class="highlight">Kubernetes &amp; Cloud Native Orchestration</span></h1>
+    <p>K8s Control Plane, Pods, Deployments, ClusterIP/NodePort Services, Ingress, PV/PVC, and Helm. Master production DevOps workflows, cloud architecture, and hands-on execution with 10 embedded diagrams.</p>
+    <div class="hero-chips">
+      <span class="chip green">Kubernetes</span>
+      <span class="chip blue">Control Plane</span>
+      <span class="chip amber">Helm Charts</span>
+    </div>
+  </header>
+
+  
+  <!-- ─── SECTION 1 ─── -->
+  <section class="section" id="sec-1">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">01 / 15</div>
+        <h2>Kubernetes &amp; Cloud Native Orchestration</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">— Kubernetes &amp; Cloud Native</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 2 ─── -->
+  <section class="section" id="sec-2">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">02 / 15</div>
+        <h2>Introduction to K8s</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kubernetes, also known as K8s, is an open source orchestration system for automating deployment, scaling, and management of containerized applications.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Evaluation of K8s</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module06/image8.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 3 ─── -->
+  <section class="section" id="sec-3">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">03 / 15</div>
+        <h2>Features of K8s</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Automated Scheduling</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Healing Capabilities</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Auto Upgrade</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Rollback</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Secret &amp; Config Management</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Horizontal Scaling</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 4 ─── -->
+  <section class="section" id="sec-4">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">04 / 15</div>
+        <h2>What is Monolithic Architecture?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Monolithic architecture is a software design approach where the entire application is built as a single, interconnected unit.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 5 ─── -->
+  <section class="section" id="sec-5">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">05 / 15</div>
+        <h2>What is Microservice Architecture?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Microservices architecture is a software design approach where an application is broken down into small, independent services that communicate with each other through APIs, rather than being built as a single, interconnected unit like in monolithic architecture.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 6 ─── -->
+  <section class="section" id="sec-6">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">06 / 15</div>
+        <h2>What is Container Orchestration?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Orchestration enables developers to easily build containerized applications and services, as well as scale, schedule and monitor those containers.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">K8s Architecture</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module06/image11.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">K8s Components</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cluster</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A Kubernetes cluster is a set of nodes that run containerized applications. Containerizing applications packages an app with its dependencies and some necessary services.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">They are more lightweight and flexible than virtual machines.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Nodes</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Nodes are physical or virtual machines in which kubernetes is installed.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">API Server</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The API Server is the main management point of the entire cluster. In short, it processes REST operations, validates them, and updates the corresponding objects in etcd.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Controller</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Kubernetes Controller Manager is a daemon that embeds the core control loops (also known as “controllers”) shipped with Kubernetes.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Basically, a controller watches the state of the cluster through the API Server watch feature and, when it gets notified, it makes the necessary changes attempting to move the current state towards the desired state.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scheduler</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Scheduler watches for unscheduled pods and binds them to nodes via the /binding pod subresource API, according to the availability of the requested resources, quality of service requirements, affinity and anti-affinity specifications, and other constraints.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Etcd</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Etcd is a distributed, consistent key-value store used for configuration management, service discovery, and coordinating distributed work.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kubelet</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The kubelet is the main component of the Node which is located on each Node.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Its purpose is to continuously watch the state of the pods and to send this information such as monitoring back to the kube-api-server.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kube-Proxy</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Kube proxy is a component whose purpose is to watch changes in the definition of the service of the pods in order to maintain the desired network configuration by querying kube-api-server.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Pod</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A pod is the basic component of Kubernetes. This is the component where your container is running. It’s represented as a process within the Kubernetes cluster.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Container Runtime</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The container runtime is the engine used for running the container pod. E.g: docker, rkt and many more.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kubernetes Cluster Setup</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Minikube</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kubeadm</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kops</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kubespary</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AWS, GCP, Azure</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Play with Kubernetes</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kubernetes Core Objects</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Objects are sort of like blueprints. They provide detailed instructions to Kubernetes on how the applications must be set up and managed.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Namespaces</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A Namespace in Kubernetes is used to divide cluster resources into separate environments.Namespace = “virtual cluster inside a cluster”</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Pods</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Pods are the fundamental building blocks of the Kubernetes system. They are used to deploy, scale, and manage containerized applications in a cluster.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A Pod can host a single container or a group of containers that need to "sit closer together".</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">One important characteristic of Pods is that they are ephemeral in nature.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This means that they are not guaranteed to have a long-term lifespan. They can be created, destroyed, and recreated at any time if required.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module06/image5.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Deployments</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Deployment object is used to manage the lifecycle of one or more identical Pods. A Deployment allows you to declaratively manage the desired state of your application, such as the number of replicas, the image to use for the Pods, and the resources required.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When you create a Deployment, you provide a Pod template, which defines the configuration of the Pods that the Deployment will manage.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It's important to note that Deployment objects are used to manage stateless applications. Stateless applications are those that do not maintain any persistent data or state.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module06/image2.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ReplicaSets</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">In Kubernetes, Deployments don’t manage Pods directly. That’s the job of the ReplicaSet object.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When you create a Deployment in Kubernetes, a ReplicaSet is created automatically.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The ReplicaSet ensures that the desired number of replicas (copies) are running at all times by creating or deleting Pods as needed.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">StatefulSets</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A StatefulSet is a Kubernetes object that is used to manage stateful applications. The word "state" means any stored data that the application or component needs to do its work. This state is typically stored in a persistent storage backend, such as a disk, or a database.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The StatefulSet ensures that each Pod is uniquely identified by a number, starting at zero.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DaemonSets</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A DaemonSet ensures that a copy of a Pod is running across all, or a subset of nodes in a Kubernetes cluster.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DaemonSets are useful for running system-level services, such as logging or monitoring agents, that need to run on every node in a cluster.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DaemonSets are managed by a reconciliation loop. A reconciliation loop is a mechanism that continuously checks and compares the desired state of a resource with the current state.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Persistent Volume</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">PersistentVolume represents a piece of storage that you can attach to your Pod(s).</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The reason it's called "persistent" is because it's not tied to the life cycle of your Pod. In other words, even if your Pod gets deleted, the Persistent Volume will survive.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">There are a lot of different types of storage that you can attach using a Persistent Volume, like local disks, network storage, and cloud storage.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Service</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A Kubernetes Service is a way to access a group of Pods that provide the same functionality. It creates a single, consistent point of entry for clients to access the service, regardless of the location of the Pods.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To make it easier for clients to access the web application, you can create a Kubernetes Service that has a stable IP address.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">One of the key benefits of using a Service is that it provides a stable endpoint that doesn't change even if the underlying Pods are recreated or replaced.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ConfigMap</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ConfigMaps and Secrets are two very important objects that allow you to configure the apps that run in your Pods.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ConfigMaps are used to store non-sensitive configuration values.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Secrets</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Secrets, on the other hand, are meant to hold sensitive configuration values.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ConfigMaps and Secrets can be injected into Pods with the help of environment variables, command-line arguments, or configuration files included in the volumes attached to those Pods.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Job</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">A job object is used to run specific tasks that have the following properties:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">They are short-lived.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">They need to be executed once.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">But most importantly, Kubernetes has to make sure that the task has been executed correctly and finished its job.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kubernetes Services and Networking</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">In Kubernetes, a Service is a method for exposing a network application that is running as one or more Pods in your cluster.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Service API, part of Kubernetes, is an abstraction to help you expose groups of Pods over a network.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Each Service object defines a logical set of endpoints (usually these endpoints are Pods) along with a policy about how to make those pods accessible.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Types of Services</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ClusterIP</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A ClusterIP service is a type of service that exposes the pods of a deployment or replica set internally within the cluster.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When a ClusterIP service is created, it assigns an internal IP address to the service that can be used by other pods in the cluster to access the pods associated with the service.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ClusterIP services are often used for internal communication between microservices within the cluster.</p>
+                <div class="code-block">
+                  apiVersion: v1<br/>kind: Service<br/>metadata:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: Backend</p>
+                <div class="code-block">
+                  spec:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">type: ClusterIP</p>
+                <div class="code-block">
+                  ports:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- targetPort: 80</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">port: 80</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">selector:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: my-demo-pod</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">NodePort</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A NodePort service is a type of service that exposes the pods of a deployment or replica set externally on a specific port on each node in the cluster.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When a NodePort service is created, it assigns a port number that is available on all nodes in the cluster and forwards traffic to the pods associated with the service.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">NodePort services are often used for external access to a service, such as when exposing a web application to the internet.</p>
+                <div class="code-block">
+                  apiVersion: v1<br/>kind: Service<br/>metadata:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: nginx</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">namespace: nginx</p>
+                <div class="code-block">
+                  spec:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">type: NodePort</p>
+                <div class="code-block">
+                  ports:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- port: 80</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">targetPort: 80</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">LoadBalancer</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A LoadBalancer service is a type of service that exposes the pods of a deployment or replica set externally using a cloud provider's load balancer.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When a LoadBalancer service is created, the cloud provider provisions a load balancer that distributes traffic to the pods associated with the service</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">LoadBalancer services can be created using a YAML manifest that specifies the type of service and its associated properties, such as the port number, target port, and protocol.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Once created, the LoadBalancer service can be accessed using the external IP address assigned by the cloud provider's load balancer.</p>
+                <div class="code-block">
+                  apiVersion: v1<br/>kind: Service<br/>metadata:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: example-service</p>
+                <div class="code-block">
+                  spec:
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">selector:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">app: example</p>
+                <div class="code-block">
+                  ports:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- port: 8765</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">targetPort: 9376</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">type: LoadBalancer</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Key Networking Concepts</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 7 ─── -->
+  <section class="section" id="sec-7">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">07 / 15</div>
+        <h2>1. Pod-to-Pod Communication</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Every Pod gets its own IP address</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Pods can communicate directly</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">All pods are on the same network</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 8 ─── -->
+  <section class="section" id="sec-8">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">08 / 15</div>
+        <h2>2. Cluster Networking</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Entire cluster shares one network</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">No NAT required between pods</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example: One pod can directly call another pod using IP</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 9 ─── -->
+  <section class="section" id="sec-9">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">09 / 15</div>
+        <h2>3. Service Networking</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Services provide a stable IP + DNS name</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3>
+                <div class="code-block">
+                  curl http://my-service
+                </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 10 ─── -->
+  <section class="section" id="sec-10">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">10 / 15</div>
+        <h2>4. DNS in Kubernetes</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kubernetes automatically assigns DNS names.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Format:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">service-name.namespace.svc.cluster.local</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">myapp.default.svc.cluster.local</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 11 ─── -->
+  <section class="section" id="sec-11">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">11 / 15</div>
+        <h2>5. Ingress (External Access)</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ingress is used to expose HTTP/HTTPS routes.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Simple idea:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ingress = Smart router for web traffic</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module06/image1.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Ingress</p>
+                <div class="code-block">
+                  apiVersion: networking.k8s.io/v1<br/>kind: Ingress<br/>metadata:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: my-ingress</p>
+                <div class="code-block">
+                  spec:<br/>rules:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- host: myapp.com</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">http:</h3><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">paths:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- path: /</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">pathType: Prefix</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">backend:</h3><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">service:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: my-service</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">port:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">number: 80</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 12 ─── -->
+  <section class="section" id="sec-12">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">12 / 15</div>
+        <h2>6. Network Policies</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Used to control traffic between pods.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Allow only frontend → backend communication</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Block unwanted traffic</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">7. kube-proxy</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Runs on each node</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Handles networking rules</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Routes traffic to correct pods</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 13 ─── -->
+  <section class="section" id="sec-13">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">13 / 15</div>
+        <h2>8. CNI (Container Network Interface)</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Plugins used for networking.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Examples:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Flannel</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Calico</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kubernetes Configuration Management</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ConfigMap</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Kubernetes ConfigMap is a Kubernetes API resource that lets you store non-confidential configuration data for your applications. It allows you to decouple configuration from your application code, allowing you to change configuration settings without having to edit and relaunch your program.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ConfigMaps stores data in a key-value format, making it an excellent choice for environmental setups, endpoint URLs, and various application configuration parameters.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When a ConfigMap is utilized, files mounted directly into the container or environment variables can be used by the program to access the stored configurations.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Secret</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A Kubernetes Secret is an object that stores and manages sensitive information like passwords, API keys, tokens, or any other secret data. Secrets, like ConfigMaps, enable you to segregate sensitive information from your application code.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Conversely, secrets are built explicitly for storing secret data and offer additional security safeguards.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Similar to ConfigMaps, secrets are key-value pairs with base64 encoding added for an extra degree of protection.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Applications retrieve sensitive data through file mounts or environment variables when accessing Secrets, just like they do with ConfigMaps.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What are the differences between ConfigMaps and Secrets?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ConfigMaps are typically used for non-sensitive configuration data, while Secrets are used for storing sensitive information.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ConfigMaps stores data as key-value pairs, whereas Secrets stores data as base64-encoded data, thereby ensuring an additional layer of security.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ConfigMaps are typically used to store configuration data, such as environment variables, while Secrets store sensitive data, such as passwords and API keys.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Working with ConfigMaps</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Create ConfigMap</p>
+                <div class="code-block">
+                  apiVersion: v1<br/>kind: ConfigMap<br/>metadata:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: my-configmap</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">data:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">key1: value1</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">key2: value2</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Using environment variables with ConfigMaps</p>
+                <div class="code-block">
+                  apiVersion: v1<br/>kind: Pod<br/>metadata:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: my-pod</p>
+                <div class="code-block">
+                  spec:<br/>containers:<br/>- name: my-container<br/>image: my-image
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">env:</h3>
+                <div class="code-block">
+                  - name: KEY1
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">valueFrom:</h3><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">configMapKeyRef:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: my-configmap</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">key: key1</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Mounting ConfigMaps as volumes</p>
+                <div class="code-block">
+                  apiVersion: v1<br/>kind: Pod<br/>metadata:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: my-pod</p>
+                <div class="code-block">
+                  spec:
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">volumes:</h3>
+                <div class="code-block">
+                  - name: config-volume
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">configMap:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: my-configmap</p>
+                <div class="code-block">
+                  containers:<br/>- name: my-container<br/>image: my-image
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">volumeMounts:</h3>
+                <div class="code-block">
+                  - name: config-volume
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">mountPath: /etc/config</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Managing Secrets</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Create Secret</p>
+                <div class="code-block">
+                  apiVersion: apps/v1<br/>kind: Secret<br/>metadata:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: my-secret</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">type: Opaque</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">data:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">username: xxxxxx</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">password: xxxxxxxx</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Using Secrets as environment variables</p>
+                <div class="code-block">
+                  apiVersion: apps/v1<br/>kind: Pod<br/>metadata:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: my-pod</p>
+                <div class="code-block">
+                  spec:<br/>containers:<br/>- name: my-container<br/>image: my-image
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">env:</h3>
+                <div class="code-block">
+                  - name: SECRET_USERNAME
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">valueFrom:</h3><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">secretKeyRef:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: my-secret</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">key: username</p>
+                <div class="code-block">
+                  - name: SECRET_PASSWORD
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">valueFrom:</h3><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">secretKeyRef:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: my-secret</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">key: password</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Mounting Secrets as volumes</p>
+                <div class="code-block">
+                  apiVersion: apps/v1<br/>kind: Pod<br/>metadata:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: my-pod</p>
+                <div class="code-block">
+                  spec:
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">volumes:</h3>
+                <div class="code-block">
+                  - name: secret-volume
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">secret:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">secretName: my-secret</p>
+                <div class="code-block">
+                  containers:<br/>- name: my-container<br/>image: my-image
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">volumeMounts:</h3>
+                <div class="code-block">
+                  - name: secret-volume
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">mountPath: /etc/secret</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">readOnly: true</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kubernetes Storage Management</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A Persistent Volume (PV) is a storage resource in the cluster that has been provisioned by an administrator or dynamically provisioned using Storage Classes.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Persistent Volumes are Kubernetes objects that represent storage resources in your cluster.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">PVs work in conjunction with Persistent Volume Claims (PVCs), another type of object which permits Pods to request access to PVs.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To successfully utilize persistent storage in a cluster, you’ll need a PV and a PVC that connects it to your Pod.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The primary role of PVs is to abstract away the differences between cluster storage implementations.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Each PV is assigned a storage class which defines the type of storage it provisions.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Storage classes allow the automatic provisioning of volumes through many different storage providers, including cloud-hosted block storage options such as AWS Elastic Block Store and GCE Persistent Disk.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Types of Persistent Volume</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kubernetes supports several Persistent Volume types that alter where and how your data is stored:</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">local – Data is stored on devices mounted locally to your cluster’s Nodes.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">hostPath – Stores data within a named directory on a Node (this is designed for testing purposes and doesn’t work with multi-Node clusters).</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">nfs – Used to access Network File System (NFS) mounts.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">iscsi – iSCSI (SCSI over IP) storage attachments.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">csi – Allows integration with storage providers that support the Container Storage Interface (CSI) specification, such as the block storage services provided by cloud platforms.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">cephfs – Allow the use of CephFS volumes.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">fc – Fibre Channel (FC) storage attachments.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">rbd – Rados Block Device (RBD) volumes</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Persistent Volume Access Modes</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Persistent Volumes support four different access modes that define how they’re mounted to Nodes and Pods:</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ReadWriteOnce (RWO) – The volume is mounted with read-write access for a single Node in your cluster. Any of the Pods running on that Node can read and write the volume’s contents.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ReadOnlyMany (ROX) – The volume can be concurrently mounted to any of the Nodes in your cluster, with read-only access for any Pod.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ReadWriteMany (RWX) – Similar to ReadOnlyMany, but with read-write access.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ReadWriteOncePod (RWOP) – This new variant, introduced as a beta feature in Kubernetes v1.27, enforces that read-write access is provided to a single Pod. No other Pods in the cluster will be able to use the volume simultaneously.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The lifecycles of PVs and PVCs</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Provision</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">At the Provisioning stage, the PV is created and its storage is allocated using the selected driver.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Provisioning can occur manually by creating a PersistentVolume object in your cluster, or dynamically, by adding a PVC that refers to an unknown PV. After provisioning, the PV will exist in your cluster, but won’t be actively providing storage.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Binding</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Binding occurs when a cluster user adds a PVC that claims the PV. The PV will enter this state automatically when dynamic provisioning is used, because you’ll have already created the PVC.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kubernetes automatically watches for new PVCs and binds them to the PVs they reference. Each PV can only be bound to a single PVC at a time. Once a PVC claims a PV, the volume will be Bound, but won’t necessarily be used by a Pod.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A volume enters use once its PVC is consumed by a Pod. When Pods reference PVCs, Kubernetes automatically mounts the correct volume into the Pod’s filesystem.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">In this state, the PV is actively providing storage to an application in your cluster.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Reclaim</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Storage isn’t always required indefinitely. Users can delete the PVC to relinquish access to the PV. When this happens, the storage used by the PV is “reclaimed.”</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The reclaim behavior is customizable and allows you to either delete the provisioned storage, recycle it by emptying its contents, or retain it as-is for future reuse.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">PV.yml</p>
+                <div class="code-block">
+                  apiVersion: v1<br/>kind: PersistentVolume<br/>metadata:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: demo-pv</p>
+                <div class="code-block">
+                  spec:
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">accessModes:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- ReadWriteOnce</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">capacity:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">storage: 1Gi</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">storageClassName: standard</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">hostPath:</h3>
+                <div class="code-block">
+                  path: /tmp/demo-pv
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">PVC.yml</p>
+                <div class="code-block">
+                  apiVersion: v1<br/>kind: PersistentVolumeClaim<br/>metadata:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: demo-pvc</p>
+                <div class="code-block">
+                  spec:
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">accessModes:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- ReadWriteOnce</p>
+                <div class="code-block">
+                  resources:
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">requests:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">storage: 1Gi</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">storageClassName: standard</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">volumeName: demo-pv</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kubernetes Scaling</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scaling in Kubernetes means increasing or decreasing the number of Pods based on demand.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea: More users → add more pods Less users → reduce pods</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why is Scaling Important?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Handle high traffic</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Improve performance</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ensure high availability</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Save cost  (scale down when not needed)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Types of Scaling</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 14 ─── -->
+  <section class="section" id="sec-14">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">14 / 15</div>
+        <h2>1. Manual Scaling</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">You manually increase or decrease the number of Pods.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Command</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">kubectl scale deployment myapp --replicas=3</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This sets the number of Pods to 3</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">kubectl scale deployment nginx --replicas=5</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Now 5 Pods will run</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When to Use?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Testing</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Small applications</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Temporary scaling</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 15 ─── -->
+  <section class="section" id="sec-15">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">15 / 15</div>
+        <h2>2. Auto Scaling (HPA – Horizontal Pod Autoscaler)</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">HPA automatically adjusts Pods based on system metrics.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Metrics Used</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">CPU usage</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Memory usage</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Custom metrics</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module06/image4.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Command</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">kubectl autoscale deployment myapp --cpu-percent=50 --min=1 --max=5</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">This means:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Minimum Pods = 1</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Maximum Pods = 5</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scale when CPU &gt; 50%</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">How It Works</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Monitor CPU usage</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">If usage increases → add Pods</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">If usage decreases → remove Pods</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea: Kubernetes automatically manages scaling based on load</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Other Types of Scaling</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Vertical Scaling</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Increase CPU/RAM of a Pod</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Not commonly used in Kubernetes</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example: Increase memory from 512MB → 1GB</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module06/image9.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cluster Scaling</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Add/remove nodes in cluster</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Done using cloud services</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example: Add more machines when load increases</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kubernetes Security</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Security controls access and protects clusters.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Key Concepts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">RBAC (Role-Based Access Control)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Network Policies</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Secrets management</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example: Restrict user access to specific resources.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kubernetes Package Management</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Helm</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Helm is an open-source package manager for Kubernetes. It is used to install, upgrade, and administer apps on Kubernetes clusters.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Helm charts are the package format in which Helm defines an application.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module06/image7.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">helm install myapp chart-name</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Helm uses charts (pre-configured apps)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Benefits of Helm</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simplify the deployment of applications.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Enable easy distribution of applications.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Helm charts provide versioning, allowing developers to track changes to an application and rollback to previous versions if necessary.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kubernetes Deployment</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A deployment is an object in Kubernetes that helps you to manage a group of identical pods.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Without a deployment, you’d have to produce, update, and delete a bunch of pods manually.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">With a deployment, we tend to declare one object in a very YAML file.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Using Kubernetes deployment we can autoscale the applications very easily.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module06/image2.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Deployment Strategies</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Recrete</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Whenever you apply the recreate strategy, all the existing pods from the previous deployments are terminated, and replaced with a new version.</p>
+                <div class="code-block">
+                  spec:<br/>replicas: 10
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">strategy:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">type: Recreate</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Rolling</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The rolling update is the default deployment strategy in Kubernetes that updates the pods one by one without causing cluster downtime.</p>
+                <div class="code-block">
+                  spec:<br/>replicas: 10
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">strategy:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">type: RollingUpdate</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">rollingUpdate:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">maxSurge: 3</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">maxUnavailable: 1</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Blue/Green</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">“Green” refers to the new version of the software that is deployed alongside the old version called the “Blue” version.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module06/image10.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div>
+                <div class="code-block">
+                  kind: Service<br/>metadata:
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: web-app-01</p>
+                <div class="code-block">
+                  labels: app: web-app
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">selector:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">app: web-app</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">version: v1.0.0</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Canary</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A newer version of the application is deployed to a small subset of people in the live Kubernetes cluster.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A small subset of live users will be connected to the application while the rest will still be using the previous version.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module06/image6.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Managed Kubernetes Services</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cloud providers offer managed Kubernetes.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Amazon EKS (AWS)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Google GKE</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Azure AKS</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea: Cloud manages cluster → you manage apps</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kubernetes Command Cheat Sheet</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">For Kubernetes</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Basic Cluster Commands</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Usage</th><th>Example</th></tr></thead><tbody><tr><td>kubectl version</td><td>Check version</td><td>kubectl version</td></tr><tr><td>kubectl cluster-info</td><td>Cluster details</td><td>kubectl cluster-info</td></tr><tr><td>kubectl get nodes</td><td>List nodes</td><td>kubectl get nodes</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Pod Management</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Usage</th><th>Example</th></tr></thead><tbody><tr><td>kubectl get pods</td><td>List pods</td><td>kubectl get pods</td></tr><tr><td>kubectl get pods -o wide</td><td>Detailed info</td><td>kubectl get pods -o wide</td></tr><tr><td>kubectl describe pod</td><td>Pod details</td><td>kubectl describe pod pod1</td></tr><tr><td>kubectl logs</td><td>View logs</td><td>kubectl logs pod1</td></tr><tr><td>kubectl exec -it</td><td>Access container</td><td>kubectl exec -it pod1 -- /bin/bash</td></tr><tr><td>kubectl delete pod</td><td>Delete pod</td><td>kubectl delete pod pod1</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Deployment Management</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Usage</th><th>Example</th></tr></thead><tbody><tr><td>kubectl get deployments</td><td>List deployments</td><td>kubectl get deploy</td></tr><tr><td>kubectl create deployment</td><td>Create deployment</td><td>kubectl create deploy app --image=nginx</td></tr><tr><td>kubectl apply -f</td><td>Apply YAML</td><td>kubectl apply -f app.yaml</td></tr><tr><td>kubectl delete deployment</td><td>Delete deployment</td><td>kubectl delete deploy app</td></tr><tr><td>kubectl rollout status</td><td>Check rollout</td><td>kubectl rollout status deploy/app</td></tr><tr><td>kubectl rollout undo</td><td>Rollback</td><td>kubectl rollout undo deploy/app</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scaling Commands</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Usage</th><th>Example</th></tr></thead><tbody><tr><td>kubectl scale</td><td>Manual scaling</td><td>kubectl scale deploy app --replicas=3</td></tr><tr><td>kubectl autoscale</td><td>Enable HPA</td><td>kubectl autoscale deploy app --cpu-percent=50 --min=1 --max=5</td></tr><tr><td>kubectl get hpa</td><td>View autoscaling</td><td>kubectl get hpa</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Services &amp; Networking</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Usage</th><th>Example</th></tr></thead><tbody><tr><td>kubectl get svc</td><td>List services</td><td>kubectl get svc</td></tr><tr><td>kubectl expose</td><td>Expose app</td><td>kubectl expose deploy app --port=80</td></tr><tr><td>kubectl describe svc</td><td>Service details</td><td>kubectl describe svc app</td></tr><tr><td>kubectl get endpoints</td><td>Check endpoints</td><td>kubectl get endpoints</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Namespace Commands</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Usage</th><th>Example</th></tr></thead><tbody><tr><td>kubectl get ns</td><td>List namespaces</td><td>kubectl get ns</td></tr><tr><td>kubectl create ns</td><td>Create namespace</td><td>kubectl create ns dev</td></tr><tr><td>kubectl delete ns</td><td>Delete namespace</td><td>kubectl delete ns dev</td></tr><tr><td>kubectl config set-context</td><td>Set namespace</td><td>kubectl config set-context --current --namespace=dev</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Configuration (ConfigMap &amp; Secrets)</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Usage</th><th>Example</th></tr></thead><tbody><tr><td>kubectl create configmap</td><td>Create config</td><td>kubectl create configmap app-config --from-literal=key=value</td></tr><tr><td>kubectl get configmap</td><td>View config</td><td>kubectl get configmap</td></tr><tr><td>kubectl create secret</td><td>Create secret</td><td>kubectl create secret generic mysecret --from-literal=password=123</td></tr><tr><td>kubectl get secrets</td><td>View secrets</td><td>kubectl get secrets</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Storage Commands</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Usage</th><th>Example</th></tr></thead><tbody><tr><td>kubectl get pv</td><td>List persistent volumes</td><td>kubectl get pv</td></tr><tr><td>kubectl get pvc</td><td>List claims</td><td>kubectl get pvc</td></tr><tr><td>kubectl describe pvc</td><td>PVC details</td><td>kubectl describe pvc myclaim</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Security Commands</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Usage</th><th>Example</th></tr></thead><tbody><tr><td>kubectl auth can-i</td><td>Check permission</td><td>kubectl auth can-i create pods</td></tr><tr><td>kubectl get roles</td><td>List roles</td><td>kubectl get roles</td></tr><tr><td>kubectl get rolebindings</td><td>List bindings</td><td>kubectl get rolebindings</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Helm (Package Management)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">For Helm</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Usage</th><th>Example</th></tr></thead><tbody><tr><td>helm repo add</td><td>Add repo</td><td>helm repo add stable https://charts</td></tr><tr><td>helm install</td><td>Install app</td><td>helm install myapp chart</td></tr><tr><td>helm list</td><td>List releases</td><td>helm list</td></tr><tr><td>helm uninstall</td><td>Remove app</td><td>helm uninstall myapp</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Monitoring &amp; Logs</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Usage</th><th>Example</th></tr></thead><tbody><tr><td>kubectl logs</td><td>View logs</td><td>kubectl logs pod1</td></tr><tr><td>kubectl top nodes</td><td>Node metrics</td><td>kubectl top nodes</td></tr><tr><td>kubectl top pods</td><td>Pod metrics</td><td>kubectl top pods</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Debugging Commands</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Usage</th><th>Example</th></tr></thead><tbody><tr><td>kubectl describe</td><td>Detailed info</td><td>kubectl describe pod pod1</td></tr><tr><td>kubectl get events</td><td>Cluster events</td><td>kubectl get events</td></tr><tr><td>kubectl exec</td><td>Enter container</td><td>kubectl exec -it pod1 -- bash</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AI-Assisted Kubernetes Troubleshooting</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Tools:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ChatGPT</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Claude</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Use cases:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">kubectl describe pod</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Paste error.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Ask:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why is this pod in CrashLoopBackOff?</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Output:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Read errors</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Validate AI suggestions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Apply fixes</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:50px; padding-top:30px; border-top:1px solid var(--border);">
+    <a href="docker-containers-learn.html" class="btn-action" style="background:var(--bg3); color:var(--text-bright); border:1px solid var(--border); text-decoration:none; width:auto;">← Previous: Module 05</a>
+    <a href="cicd-pipelines-learn.html" class="btn-action btn-primary" style="text-decoration:none; width:auto;">Next: Module 07 →</a>
+  </div>
+
+</main>
+
+<!-- ════════════════ SCRIPTS ════════════════ -->
+<script>
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(s => observer.observe(s));
+
+  const navItems = document.querySelectorAll('.nav-item');
+  const sectionEls = document.querySelectorAll('section.section');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navItems.forEach(n => n.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sectionEls.forEach(s => navObserver.observe(s));
+
+  const dotsContainer = document.getElementById('progressDots');
+  const totalTopics = 15;
+  for (let i = 0; i < totalTopics; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot-prog';
+    dotsContainer.appendChild(dot);
+  }
+
+  const progressObserver = new IntersectionObserver((entries) => {
+    const allDots = document.querySelectorAll('.dot-prog');
+    let maxIndex = 0;
+    sectionEls.forEach((s, i) => {
+      if (s.classList.contains('visible')) maxIndex = i;
+    });
+    allDots.forEach((d, i) => {
+      d.classList.toggle('filled', i <= maxIndex);
+    });
+  }, { threshold: 0.1 });
+
+  sectionEls.forEach(s => progressObserver.observe(s));
+</script>
+
+</body>
+</html>

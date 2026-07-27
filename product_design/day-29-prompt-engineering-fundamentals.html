@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Prompt Engineering Fundamentals — UI/UX Fellowship</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ════════════════ SIDEBAR ════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; color:var(--accent); margin-bottom:10px;">← Back to Hub</a>
+    <div class="module-tag">Product Design</div>
+    <h1>Prompt_Engineering_Fundament</h1>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Curriculum Topics</div>
+    <a class="nav-item active" href="#sec-1"><span class="dot"></span>Prompt_Engineering_Fundamental</a>
+    <a class="nav-item" href="#sec-2"><span class="dot"></span>1. Introduction to Prompt Engi</a>
+    <a class="nav-item" href="#sec-3"><span class="dot"></span>2. What is Prompting & Why It </a>
+    <a class="nav-item" href="#sec-4"><span class="dot"></span>3. Types of Prompts</a>
+    <a class="nav-item" href="#sec-5"><span class="dot"></span>4. Anatomy of a Good Prompt</a>
+    <a class="nav-item" href="#sec-6"><span class="dot"></span>5. Common Prompting Mistakes</a>
+    <a class="nav-item" href="#sec-7"><span class="dot"></span>6. Improving AI Outputs</a>
+    <a class="nav-item" href="#sec-8"><span class="dot"></span>7. Iterative Prompting</a>
+    <a class="nav-item" href="#sec-9"><span class="dot"></span>8. Refining Responses</a>
+    <a class="nav-item" href="#sec-10"><span class="dot"></span>9. Prompt Patterns</a>
+    <a class="nav-item" href="#sec-11"><span class="dot"></span>10. Comparing Bad vs Good Prom</a>
+    <a class="nav-item" href="#sec-12"><span class="dot"></span>11. Understanding Output Diffe</a>
+    <a class="nav-item" href="#sec-13"><span class="dot"></span>12. Why Some Prompts Fail</a>
+  </div>
+
+  <div class="progress-dots">
+    <p>// 13 topics</p>
+    <div class="dots-row" id="progressDots"></div>
+  </div>
+</nav>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main class="main">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">UI/UX Fellowship <span class="cursor-blink"></span></div>
+    <h1><span class="highlight">Prompt Engineering Fundamentals</span></h1>
+    <p>Welcome to Prompt Engineering Fundamentals in the UI/UX Product Design Fellowship Programme. Master production workflows, design theory, and hands-on execution.</p>
+    <div class="hero-chips">
+      <span class="chip green">🎨 UI/UX Design</span>
+      <span class="chip blue">💡 Product Strategy</span>
+      <span class="chip amber">✨ Interactive Module</span>
+    </div>
+  </header>
+
+  
+  <!-- ─── SECTION 1 ─── -->
+  <section class="section" id="sec-1">
+    <div class="section-header">
+      <div class="section-icon icon-pink">📌</div>
+      <div>
+        <div class="section-number">01 / 13</div>
+        <h2>Prompt Engineering Fundamentals</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">PROMPT ENGINEERING FUNDAMENTALS</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">— Mastering AI Communication</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 2 ─── -->
+  <section class="section" id="sec-2">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">02 / 13</div>
+        <h2>1. Introduction to Prompt Engineering</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Artificial Intelligence tools like ChatGPT, image generators, coding assistants, and AI research tools are becoming a major part of modern workflows.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">But one important thing many beginners misunderstand is:</h3>
+                    <div class="callout tip">
+                      <span class="callout-icon">💡</span>
+                      <span><strong>Key Insight</strong></span>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AI quality depends heavily on the quality of the prompt.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Common Misconception</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Most people think AI works magically. They type vague instructions and expect perfect results:</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Bad Prompt</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Good Prompt</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"Give me UI ideas"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"Give me 5 mobile UI ideas for a food delivery app targeting students."</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"Write code"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"Write a React component for a login form with email validation."</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"Create a case study"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"Create a UI/UX case study for a food delivery app targeting college students in India."</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When they get generic, weak, or incorrect output — they assume: "AI is not good."</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Real Issue</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Poor prompting — not poor AI — is the root cause of most weak outputs.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What is Prompt Engineering?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Prompt engineering is the process of designing clear, structured, and strategic instructions to get better outputs from AI systems. It is not just typing random questions. It is:</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Communicating clearly with AI</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Structuring information properly</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Guiding output behavior</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Improving response quality</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why Prompt Engineering Matters Today</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AI models are extremely powerful, but they are not mind readers. They depend heavily on Context, Clarity, Structure, and Intent. Today, prompt engineering is used across many domains:</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Domain</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use Cases</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">UI/UX Workflows</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Generating wireframe ideas, design critiques, onboarding flows</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Coding</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Writing, reviewing, and debugging code with context</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Content Creation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Blog posts, scripts, social media copy</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Marketing</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Campaign ideas, taglines, audience messaging</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Research</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Summarizing papers, comparing studies</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Product Strategy</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">PRDs, user stories, roadmap planning</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Automation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Workflow descriptions, trigger logic documentation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">So learning prompting is becoming a modern digital skill.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 3 ─── -->
+  <section class="section" id="sec-3">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">03 / 13</div>
+        <h2>2. What is Prompting & Why It Matters</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Definition</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A prompt is the instruction or input given to an AI system. It tells the AI: what to do, how to do it, and what type of output is expected.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple Example: Weak vs Improved Prompt</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Bad Prompt</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Good Prompt</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"Write about UX"
+(No level, no format, no audience, no depth → Generic output)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"Explain UX design fundamentals for beginners in a classroom teaching style with real-world examples."
+(Clear topic, audience, tone, structure, and depth → Better output quality)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Important Insight</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Good prompting is similar to giving clear instructions to a human assistant. If instructions are confusing — results become confusing.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 4 ─── -->
+  <section class="section" id="sec-4">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">04 / 13</div>
+        <h2>3. Types of Prompts</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Not all prompts work the same way. Different prompts produce different behaviors. Understanding prompt types helps control AI outputs better.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Type</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Description</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Best For</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Open-Ended</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Broad, exploratory instructions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Give ideas for a food delivery app.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Brainstorming, creativity</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Structured</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Clear instructions with defined expectations</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Generate 5 app ideas for college students with problem + monetization.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Focused output</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Instruction-Based</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tells AI role, task, and constraints</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Act as a senior UX designer and explain user flows.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Professional output</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Open-Ended Prompts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Open-ended prompts are broad and exploratory. Example: "Give ideas for a food delivery app."</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Advantages</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Good for brainstorming</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Helps idea generation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Encourages broad thinking</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Disadvantages</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Outputs may become generic, unfocused, or too broad</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Structured Prompts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Structured prompts provide clear instructions, defined expectations, and specific output requirements.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"Generate 5 food delivery app ideas for college students. Include problem statement, target audience, and monetization model." — Now AI understands quantity, structure, audience, and output format.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Instruction-Based Prompting</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Instruction-based prompts explicitly tell the AI what role to take, what task to perform, and what constraints to follow.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"Act as a senior UX designer and explain user flows in a beginner-friendly teaching style." — Now the AI adjusts tone, depth, and explanation style. This is one of the most powerful prompting methods.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 5 ─── -->
+  <section class="section" id="sec-5">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">05 / 13</div>
+        <h2>4. Anatomy of a Good Prompt</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A strong prompt usually contains four major parts. This structure dramatically improves response quality.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Component</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Definition</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Role</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Who the AI should behave like</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Act as a senior UX mentor</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Context</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Background, audience, situation, constraints</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">For beginner UI/UX students in a classroom</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Task</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What exactly should be done</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Explain onboarding UX with real examples</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Output Format</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">How the answer should appear</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use bullet points, simple language, sub-headings</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Role</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Role defines who the AI should behave like — UX mentor, product manager, developer, researcher. Different roles produce different perspectives.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Bad Prompt</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Good Prompt</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"Explain onboarding."</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"Act as a UX mentor and explain onboarding to beginners with examples." → Better teaching style, simpler explanations, more contextual learning</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Context</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Context explains background information, audience, situation, and constraints. Without context, AI makes assumptions.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Bad Prompt</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Good Prompt</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"Write about design systems."</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"Write detailed classroom notes about design systems for beginner UI/UX students." → Educational context, audience level, expected explanation depth</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Task</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Task explains exactly what should be done. Specific tasks improve accuracy. Common task words include:</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Explain</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Compare</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Analyze</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Generate</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Summarize</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Output Format</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Output format defines how the answer should appear. Without format instructions, AI chooses structure independently. Common formats include:</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Bullet points</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Table</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Script</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Detailed notes</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">PPT structure</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Complete Prompt Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"Act as a senior UX mentor. Create detailed classroom notes on onboarding UX for beginner students. Include examples, common mistakes, and practical insights. Use simple teaching language." — This prompt contains Role + Context + Task + Format expectation. That is why it produces stronger output.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 6 ─── -->
+  <section class="section" id="sec-6">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">06 / 13</div>
+        <h2>5. Common Prompting Mistakes</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Most beginners fail not because AI is weak, but because prompts are weak.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Mistake</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Problem</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Fix</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Vague Instructions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">No context, audience, style, or goal</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Be specific: topic + audience + goal</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">No Context</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AI makes wrong assumptions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Add background: who, what, why</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Overloading Prompts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Too many unrelated tasks confuse AI</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">One task per prompt; break into steps</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">No Output Format</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AI picks structure independently</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Specify: bullet points, table, notes, etc.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Contradictory Instructions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Conflicting goals reduce quality</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Keep instructions consistent and clear</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Mistake 1: Vague Instructions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example: "Give UI ideas." — No context, no audience, no style, no goal. Result: Generic output.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Mistake 2: No Context</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AI needs background information. Without context, responses become inaccurate and AI makes assumptions.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Bad Prompt</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Good Prompt</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"Create a case study."</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"Create a UI/UX case study for a food delivery app targeting students." — Context improves relevance.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Mistake 3: Overloading Prompts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Some users add too many instructions, multiple unrelated tasks, and conflicting goals — this confuses the AI.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Bad Prompt Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"Write code, explain UX, generate images, and create marketing copy." — Too many unrelated tasks reduce quality. Keep prompts focused on one task at a time.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 7 ─── -->
+  <section class="section" id="sec-7">
+    <div class="section-header">
+      <div class="section-icon icon-pink">📌</div>
+      <div>
+        <div class="section-number">07 / 13</div>
+        <h2>6. Improving AI Outputs</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Good prompting is not a one-time instruction. It is continuous refinement. Experienced users improve outputs by:</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Adding clarity</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Adding constraints</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Refining instructions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Guiding tone</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Important Insight</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AI outputs improve when prompts become more specific, more contextual, and more structured.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 8 ─── -->
+  <section class="section" id="sec-8">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">08 / 13</div>
+        <h2>7. Iterative Prompting</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Iterative prompting means improving prompts step-by-step. Instead of expecting perfect output immediately, you refine progressively.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Step</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Prompt</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Purpose</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Prompt 1</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Create onboarding flow.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Initial broad output</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Prompt 2</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Make it beginner-friendly.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Adjust tone and depth</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Prompt 3</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Add accessibility considerations.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Expand scope</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Prompt 4</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Convert into teaching notes.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Change output format</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why Iteration Matters</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AI works better through feedback loops, clarification, and progressive refinement. This is similar to collaborating with humans.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 9 ─── -->
+  <section class="section" id="sec-9">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">09 / 13</div>
+        <h2>8. Refining Responses</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Refinement means improving generated outputs further. You can refine: Tone, Depth, Clarity, Structure, and Examples.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Bad Prompt</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Good Prompt</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Initial Output: Too generic.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"Explain in more detail with real-world examples and beginner-friendly language." — The response improves significantly.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 10 ─── -->
+  <section class="section" id="sec-10">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">10 / 13</div>
+        <h2>9. Prompt Patterns</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Prompt patterns are reusable prompting strategies. Experienced AI users rely heavily on these patterns.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Pattern</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">How It Works</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Step-by-Step</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Asks AI to explain sequentially for logical flow</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Explain the UX research process step-by-step.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Role-Based</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Changes AI perspective to match expertise</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Act as a senior product designer and review this flow.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Iterative Refinement</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Improves output through follow-up prompts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Make it beginner-friendly. Add accessibility notes.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Format-Driven</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Defines output structure explicitly</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Explain in a table with pros and cons columns.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Step-by-Step Prompting</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This pattern asks AI to explain sequentially. Example: "Explain the UX research process step-by-step."</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Better structure</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Logical flow</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Easier understanding</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Role-Based Prompting</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Role-based prompting changes AI perspective. "Act as a senior product designer." produces very different output from "Act as a beginner student." Roles influence: Tone, Complexity, Detail level, and Expertise.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 11 ─── -->
+  <section class="section" id="sec-11">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">11 / 13</div>
+        <h2>10. Comparing Bad vs Good Prompts</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This is one of the best ways to understand prompting quality.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Bad Prompt</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Good Prompt</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"Explain UX."
+— Too vague, no audience, no format, no depth
+→ Generic answer</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"Act as a UX mentor and explain UX fundamentals for beginners using classroom teaching style, practical examples, and simple language."
+— Role + Audience + Tone + Depth + Structure
+→ High-quality output</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 12 ─── -->
+  <section class="section" id="sec-12">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">12 / 13</div>
+        <h2>11. Understanding Output Differences</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Even small prompt changes create major output differences because prompts guide Context, Intent, Structure, and Scope.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Bad Prompt</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Good Prompt</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"Write about color systems."
+→ Generic overview</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"Create detailed masterclass-level notes on color systems for beginner UI/UX students with practical examples and accessibility insights."
+→ Structured, rich, audience-specific output</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Important Insight</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AI quality is often a direct reflection of prompt quality.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 13 ─── -->
+  <section class="section" id="sec-13">
+    <div class="section-header">
+      <div class="section-icon icon-pink">📌</div>
+      <div>
+        <div class="section-number">13 / 13</div>
+        <h2>12. Why Some Prompts Fail</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Many prompts fail because they lack clarity, context, mix multiple goals, or give weak instructions.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Failure Cause</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Impact</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Solution</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Unclear Goal</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AI cannot determine what exactly is needed</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Define the exact desired outcome clearly</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Missing Audience</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Explanation level is mismatched</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">State: beginner / intermediate / expert</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">No Structure</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Responses become inconsistent</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Specify format: bullet points, table, notes</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Contradictory Instructions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Conflicting signals reduce quality</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Review prompt for conflicts before sending</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Final Core Insight</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Prompt engineering is not about learning magical AI tricks.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It is about learning how to communicate clearly, strategically,</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">and structurally with AI systems.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:50px; padding-top:30px; border-top:1px solid var(--border);">
+    <a href="day-28-llms-for-designers-updated.html" class="btn-action" style="background:var(--bg3); color:var(--text-bright); border:1px solid var(--border); text-decoration:none; width:auto;">← Previous: LLMs for Designers Updated</a>
+    <a href="day-30-advanced-prompting-for-designers.html" class="btn-action btn-primary" style="text-decoration:none; width:auto;">Next: Advanced_Prompting_For_Desig →</a>
+  </div>
+
+</main>
+
+<!-- ════════════════ SCRIPTS ════════════════ -->
+<script>
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(s => observer.observe(s));
+
+  const navItems = document.querySelectorAll('.nav-item');
+  const sectionEls = document.querySelectorAll('section.section');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navItems.forEach(n => n.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sectionEls.forEach(s => navObserver.observe(s));
+
+  const dotsContainer = document.getElementById('progressDots');
+  const totalTopics = 13;
+  for (let i = 0; i < totalTopics; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot-prog';
+    dotsContainer.appendChild(dot);
+  }
+
+  const progressObserver = new IntersectionObserver((entries) => {
+    const allDots = document.querySelectorAll('.dot-prog');
+    let maxIndex = 0;
+    sectionEls.forEach((s, i) => {
+      if (s.classList.contains('visible')) maxIndex = i;
+    });
+    allDots.forEach((d, i) => {
+      d.classList.toggle('filled', i <= maxIndex);
+    });
+  }, { threshold: 0.1 });
+
+  sectionEls.forEach(s => progressObserver.observe(s));
+</script>
+
+</body>
+</html>

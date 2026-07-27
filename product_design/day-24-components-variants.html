@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Components & Variants — UI/UX Fellowship</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ════════════════ SIDEBAR ════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; color:var(--accent); margin-bottom:10px;">← Back to Hub</a>
+    <div class="module-tag">Product Design</div>
+    <h1>Components & Variants</h1>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Curriculum Topics</div>
+    <a class="nav-item active" href="#sec-1"><span class="dot"></span>Components & Variants</a>
+    <a class="nav-item" href="#sec-2"><span class="dot"></span>Part 1: Introduction to Compon</a>
+    <a class="nav-item" href="#sec-3"><span class="dot"></span>Part 2: From Screens to Compon</a>
+    <a class="nav-item" href="#sec-4"><span class="dot"></span>Part 3: Component Anatomy</a>
+    <a class="nav-item" href="#sec-5"><span class="dot"></span>Part 4: Types of Components</a>
+    <a class="nav-item" href="#sec-6"><span class="dot"></span>Part 5: Types of Components</a>
+    <a class="nav-item" href="#sec-7"><span class="dot"></span>Part 6: Variants in Components</a>
+    <a class="nav-item" href="#sec-8"><span class="dot"></span>Part 7: Component Consistency </a>
+    <a class="nav-item" href="#sec-9"><span class="dot"></span>Part 8: Breakdown of a Real Pr</a>
+  </div>
+
+  <div class="progress-dots">
+    <p>// 9 topics</p>
+    <div class="dots-row" id="progressDots"></div>
+  </div>
+</nav>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main class="main">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">UI/UX Fellowship <span class="cursor-blink"></span></div>
+    <h1><span class="highlight">Components & Variants</span></h1>
+    <p>Welcome to Components & Variants in the UI/UX Product Design Fellowship Programme. Master production workflows, design theory, and hands-on execution.</p>
+    <div class="hero-chips">
+      <span class="chip green">🎨 UI/UX Design</span>
+      <span class="chip blue">💡 Product Strategy</span>
+      <span class="chip amber">✨ Interactive Module</span>
+    </div>
+  </header>
+
+  
+  <!-- ─── SECTION 1 ─── -->
+  <section class="section" id="sec-1">
+    <div class="section-header">
+      <div class="section-icon icon-pink">📌</div>
+      <div>
+        <div class="section-number">01 / 09</div>
+        <h2>Components & Variants</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">COMPONENTS & VARIANTS</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 2 ─── -->
+  <section class="section" id="sec-2">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">02 / 09</div>
+        <h2>Part 1: Introduction to Components</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What is a Component in Design Systems?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A component is a reusable, self-contained building block of a user interface. It encapsulates a specific UI pattern - its structure, appearance, behaviour, and states - into a single, manageable unit that can be placed anywhere in the product.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A component is not just a Figma frame with a name. It is a living specification: it defines not only how something looks, but how it behaves across every possible state and context in which it can appear.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day24/image8.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why are Components the Foundation of Scalable UI ?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Design Without Components</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Design With Components</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Every button is drawn fresh for each screen</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Every button is an instance of the master Button component</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Updating the button style requires touching 200+ screens</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Updating the button style requires one change to the master</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Engineers interpret each button slightly differently</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Engineers implement the same Button component everywhere</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">New team members copy the nearest button they can find</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">New team members use the library - same result every time</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Consistency erodes with every new screen and every new designer</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Consistency is enforced by the system, not by vigilance</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A rebrand requires a full design audit and re-delivery</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A rebrand requires updating token values - changes propagate automatically</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Component Thinking vs Screen Thinking</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Screen Thinking</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Component Thinking</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Shift</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"I need to design the dashboard."</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"I need to design the Stat Card component that populates the dashboard."</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">From whole to part</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"This section needs a heading and some text."</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"This is a Section Header component with optional subtitles and action slot."</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">From element to pattern</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"The button on this screen is blue."</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"The button uses the Primary variant of the Button component, which references the brand-primary token."</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">From value to token</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"I'll copy this card from the previous screen."</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"I'll place an instance of the Card component from the library."</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">From copy-paste to instance</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"This looks a bit different from the other screen."</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"These two screens use the same component - they must look identical by design."</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">From visual check to system trust</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 3 ─── -->
+  <section class="section" id="sec-3">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">03 / 09</div>
+        <h2>Part 2: From Screens to Components - The Mindset Shift</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">From Screens to Components</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The traditional design workflow starts with screens. You open Figma, create a frame the size of the device you are targeting, and start laying out content. This approach feels natural because it mirrors how users experience the product - as screens.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">But it produces fragile design systems. When you design screen by screen, you make countless micro-decisions (this button is 40px tall, this card has 16px padding, this heading is 24px bold) that are not recorded, not shared, and not enforced. Every new screen requires making the same decisions again - and each time, drift occurs.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day24/image12.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Hidden Costs of Screen-First Design</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Inconsistency compounds: each new screen introduces new micro-decisions that contradict previous ones</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Handoff is ambiguous: engineers receive multiple versions of the same element with no defined master</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Iteration is expensive: changing a pattern that appears across 20 screens requires opening and editing 20 frames</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Onboarding is fragile: new designers find the nearest existing screen and copy from it - propagating all existing inconsistencies</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Accessibility is deferred: when every screen is bespoke, accessibility is checked only at the end - when the cost of fixing it is highest</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The design file becomes a museum: historical screens that no longer represent the product sit in the same file as current work, creating confusion</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Shifting the Mindset: Screen to Reusable Blocks</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day24/image6.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 4 ─── -->
+  <section class="section" id="sec-4">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">04 / 09</div>
+        <h2>Part 3: Component Anatomy</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Every UI component, regardless of its complexity, can be deconstructed into the same set of anatomical layers. Understanding anatomy is what allows designers to build components that are structurally consistent, flexible, and maintainable.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Six Anatomical Layers</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day24/image1.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Properties - The Dimensions of Variation</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day24/image2.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Behavior - Interactive vs Static</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Static Components</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Interactive Components</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Display information, do not respond to interaction</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Receive user input and change state in response to interaction</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Examples: Labels, Badges, Dividers, Avatars, Skeletons, Illustrations</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Examples: Buttons, Inputs, Checkboxes, Toggles, Dropdowns, Links</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">States: Default and Loading only (no hover, focus, or active)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">States: Must define all interactive states: hover, active, focus, disabled</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Accessibility: Roles are presentational (role="presentation") or informational (aria-label)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Accessibility: Must have keyboard access, visible focus indicator, ARIA role, and label</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Design decision: Does this element need to communicate information about an action? If yes, it may need to become interactive.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Design decision: Every interactive element must be operable by keyboard alone, not just by mouse or touch.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 5 ─── -->
+  <section class="section" id="sec-5">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">05 / 09</div>
+        <h2>Part 4: Types of Components</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Components exist on a complexity spectrum from basic atomic elements to complex assembled organisms. Understanding the full taxonomy prevents over-engineering simple elements and under-engineering complex ones.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Component Complexity Spectrum</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day24/image10.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Complete Component Reference: Basic and Complex</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day24/image9.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 6 ─── -->
+  <section class="section" id="sec-6">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">06 / 09</div>
+        <h2>Part 5: Types of Components</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DRY (Don't Repeat Yourself) in Design</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day24/image13.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When to Reuse vs When to Create New</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Reuse the Existing Component When...</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Create a New Component When...</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The existing component satisfies the use case with a different property value</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The new element serves a fundamentally different semantic purpose</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The difference is only in content (different label, different icon)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The new element has a different anatomical structure that cannot fit the existing component's property model</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A new variant can be added to the existing component without breaking existing usage</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The existing component would require structural breaking changes to accommodate the new use case</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The visual difference is minor and the semantic role is the same</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The new element will appear in at least 3+ different screens or contexts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">You are tempted to detach the instance and manually adjust - instead, propose a new variant through the design system process</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The new element has unique interactive behaviour not present in any existing component</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 7 ─── -->
+  <section class="section" id="sec-7">
+    <div class="section-header">
+      <div class="section-icon icon-pink">📌</div>
+      <div>
+        <div class="section-number">07 / 09</div>
+        <h2>Part 6: Variants in Components</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What are Variants and Why They Exist</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A variant is a defined version of a component that differs from the base version in one or more properties. Variants exist because the same UI pattern must serve different contexts, communicate different states, and adapt to different constraints - without being a different component.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day24/image3.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Complete Variant Reference</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Variant</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Specification</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When to Use</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Size - Small</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Height: 28-32px, Font: 12-13px, Padding: 8px 12px, Icon: 16px</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Dense UIs, data tables, inline actions, toolbar buttons, tag actions. Anywhere space is constrained.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Size - Medium</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Height: 36-40px, Font: 14px, Padding: 10px 16px, Icon: 20px</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The default size for most UI contexts. Forms, cards, modal footers, settings pages.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Size - Large</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Height: 44-48px, Font: 15-16px, Padding: 12px 20px, Icon: 24px</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Primary CTAs, hero sections, onboarding flows, empty state actions. When the action must be unmissable.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Type - Primary</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Filled background with brand primary colour. White label. High visual weight.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The main action on any view. One primary button per view - never two competing primary buttons.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Type - Secondary</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Filled background with lower-priority colour (grey or secondary brand). Moderate visual weight.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Supporting action alongside primary. Cancel, Save Draft, Add Another.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Type - Ghost</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">No background. Coloured label and border-radius only. Low visual weight.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tertiary actions, destructive confirmations where weight should be low, inline text actions.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Type - Outline</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Transparent background. Coloured border. Coloured label. Medium-low visual weight.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Alternative to secondary. Popular in card footers, filter controls, and segmented selections.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Type - Danger / Destructive</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Red background or red border/label. Signals irreversible action.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Delete, Remove, Deactivate. Dangerous actions that cannot be undone. Must be separated spatially from cancel.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Type - Link</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">No background, no border. Coloured underlined label. Inline text behaviour.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Inline actions within body copy. Footer links. Breadcrumb-style navigation within content.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">State - Default</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The component at rest. No user interaction has occurred.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">All components must have a defined default state. This is the starting point for all other state definitions.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">State - Hover</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Subtle background change or opacity shift indicating interactivity. Not visible on touch devices.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Must be distinct from default but not dramatic. Use 10-15% background opacity increase or lightness shift.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">State - Active / Pressed</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Stronger visual depression: darker background, scale transform (0.97-0.99), or shadow removal.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Provides tactile feedback for clicks and taps. Duration: 100-150ms. Must be distinguishable from hover.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">State - Focus</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Visible focus ring for keyboard navigation. Required for WCAG 2.1 AA compliance.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">3px offset focus ring in a high-contrast colour (often the brand primary or a system focus blue). Never remove outline:none without replacement.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">State - Disabled</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Reduced opacity (0.4-0.5) and non-interactive. Cursor: not-allowed.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Never hide disabled components. Users need to see that the action exists but is unavailable - and ideally understand why.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">State - Loading</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Spinner or skeleton replaces label. Component remains in place and size-locked during loading.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Prevent double-submission by disabling the component during loading. Preserve exact component dimensions during the loading state.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">State - Error</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Red border, red icon, error message below. Applicable to inputs, selects, and file uploads.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Error message must be adjacent to the field, not grouped at the top of the form. Use aria-describedby to associate error with field.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">State - Success</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Green indicator or checkmark. Typically transient - fades or transitions after 2-3 seconds.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Success states confirm completion. Use sparingly - only for actions where confirmation is necessary to prevent re-submission.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day24/image11.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Managing Variants at Scale</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The danger of variant systems is exponential growth. If a button has 5 types, 6 states, 3 sizes, and 4 icon positions, the complete matrix is 5x6x3x4 = 360 variants. Building and maintaining 360 individual variant frames is unsustainable.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">How Variant Sets Become Unmanageable</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Exponential growth: adding one new property dimension multiplies the entire variant set</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Maintenance debt: every design system update requires propagating to potentially hundreds of variant frames</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cognitive overload: a component with 200+ variants is not usable - designers cannot find what they need</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Naming collapse: with too many variants, the naming convention breaks down and variants cannot be distinguished by name</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Real example: A navigation component with 4 orientations x 3 densities x 5 states x 4 active-item styles = 240 variants. This is not a component system. This is a museum.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Balancing Flexibility vs Simplicity</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Too Much Flexibility</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Too Much Simplicity</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Component accepts every possible variation without constraint</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Component is completely rigid - only one possible form</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">No variant rules - designers can configure any combination</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Every new context requires a new component</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Result: Every instance looks different despite using the same component</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Result: Component library proliferates with near-identical components</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">System becomes a tool for inconsistency, not against it</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">System becomes bureaucratic - designers work around it rather than with it</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The component is "flexible" but provides no design direction</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The component is "simple" but does not serve the actual variety of needs</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 8 ─── -->
+  <section class="section" id="sec-8">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">08 / 09</div>
+        <h2>Part 7: Component Consistency and Common Mistakes</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Component Consistency - Maintaining Uniform Behavior Across the Product</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Consistency in a component system means that the same component behaves identically in every context where it appears. A Primary Button in the onboarding flow must look and behave exactly like a Primary Button in the settings page. The system enforces this - not designer vigilance.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Four Dimensions of Component Consistency</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Visual Consistency: The same component variant looks identical in every screen where it appears. No ad-hoc colour overrides, no manually adjusted padding, no locally detached instances with bespoke styling.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Behavioural Consistency: Hover, focus, active, and disabled states behave the same way across all instances of a component. Users develop accurate mental models because the component always responds in the same way.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Naming Consistency: Component names follow the same convention across the design file and the codebase. Button/Primary/Default in Figma is ButtonPrimary in React. The names are different in format but map 1:1.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Documentation Consistency: Every component has the same documentation structure: description, usage guidelines, variant list, do/do-not examples, accessibility notes, and responsive behaviour. No component gets more or less documentation than another.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day24/image5.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 9 ─── -->
+  <section class="section" id="sec-9">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">09 / 09</div>
+        <h2>Part 8: Breakdown of a Real Product Component - The Button System Evolution</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The button is the most common component in any UI - and the most revealing indicator of a design system's maturity. Tracing the evolution of a button from its earliest form to a production-ready design system component is the clearest way to understand what a component system actually accomplishes.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day24/image7.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Key Observations from the Button Evolution</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Every design system starts the same way: with a hardcoded, inconsistent, undocumented button. The journey is the same for every team that builds a real system.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The greatest jump in value is from Stage 2 (Shared Style) to Stage 3 (Basic Component). The moment you create a real component, you unlock single-source updates.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The greatest jump in scalability is from Stage 3 (Basic Component) to Stage 4 (Variants Added). This is when the component stops being a shortcut and becomes a system.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Token integration (Stage 6) is the moment design and engineering truly synchronise. Before tokens, the design system is a reference. After tokens, it is a source of truth.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Documentation (Stage 7) is what makes the investment compound. Every hour spent on documentation saves dozens of hours of team confusion over the product's lifetime.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Most teams stop at Stage 3 or 4. Teams with mature products reach Stage 6 or 7. The gap between these stages is where most design inconsistency lives.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day24/image4.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div>
+                    <div class="callout tip">
+                      <span class="callout-icon">💡</span>
+                      <span><strong>Key Takeaways</strong></span>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Components</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Self-contained, reusable UI building blocks with defined structure, properties, and behaviour. The atomic unit of a design system.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scalability</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Components are the foundation of scalable UI. Without them, every new screen is a new problem. With them, every new screen is an assembly of solved problems.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Mindset Shift</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Design component-first, not screen-first. Identify repeating patterns first. Build components. Assemble screens from components.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Component Anatomy</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Every component has 6 layers: Container, Content Area, Label, Icon, Action Target, and Feedback Indicator. Every layer has rules.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Component Types</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Basic (buttons, inputs, icons) and Complex (cards, modals, navigation). Know when to build atomic vs composite components.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DRY in Design</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Every pattern has one source. Instances everywhere. No copy-paste. No detached instances. One update propagates to the entire product.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Variants</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The defined set of all legitimate forms a component can take. Size, Type, and State are the three primary variant dimensions.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Variant Management</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Avoid variant explosion through boolean properties, slot architecture, state overlays, and composition. Design for real use cases, not speculative ones.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Consistency</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Visual, behavioural, naming, and documentation consistency together make a component system trustworthy and adopted.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Button Evolution</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A component evolves through 7 stages: Hardcoded > Shared Style > Basic Component > Variants > Size System > Token Integration > Documentation. Most teams stop too early.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:50px; padding-top:30px; border-top:1px solid var(--border);">
+    <a href="day-23-design-tokens.html" class="btn-action" style="background:var(--bg3); color:var(--text-bright); border:1px solid var(--border); text-decoration:none; width:auto;">← Previous: Design Tokens</a>
+    <a href="day-26-working-with-developers-system-thinking.html" class="btn-action btn-primary" style="text-decoration:none; width:auto;">Next: Working with Developers & Sy →</a>
+  </div>
+
+</main>
+
+<!-- ════════════════ SCRIPTS ════════════════ -->
+<script>
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(s => observer.observe(s));
+
+  const navItems = document.querySelectorAll('.nav-item');
+  const sectionEls = document.querySelectorAll('section.section');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navItems.forEach(n => n.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sectionEls.forEach(s => navObserver.observe(s));
+
+  const dotsContainer = document.getElementById('progressDots');
+  const totalTopics = 9;
+  for (let i = 0; i < totalTopics; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot-prog';
+    dotsContainer.appendChild(dot);
+  }
+
+  const progressObserver = new IntersectionObserver((entries) => {
+    const allDots = document.querySelectorAll('.dot-prog');
+    let maxIndex = 0;
+    sectionEls.forEach((s, i) => {
+      if (s.classList.contains('visible')) maxIndex = i;
+    });
+    allDots.forEach((d, i) => {
+      d.classList.toggle('filled', i <= maxIndex);
+    });
+  }, { threshold: 0.1 });
+
+  sectionEls.forEach(s => progressObserver.observe(s));
+</script>
+
+</body>
+</html>

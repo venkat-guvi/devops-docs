@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Module 09: Configuration Management (Ansible) — Interactive Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ════════════════ SIDEBAR ════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; color:var(--accent); margin-bottom:10px;">← Back to Hub</a>
+    <div class="module-tag">Module 09</div>
+    <h1>Configuration Management (An</h1>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Curriculum Topics</div>
+    <a class="nav-item active" href="#sec-1"><span class="dot"></span>Configuration Management (Ansi</a>
+    <a class="nav-item" href="#sec-2"><span class="dot"></span>What is Configuration Manageme</a>
+  </div>
+
+  <div class="progress-dots">
+    <p>// 2 topics</p>
+    <div class="dots-row" id="progressDots"></div>
+  </div>
+</nav>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main class="main">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">Module 09 <span class="cursor-blink"></span></div>
+    <h1>Module 09: <span class="highlight">Configuration Management (Ansible)</span></h1>
+    <p>Agentless automation, Ansible inventories, playbooks, modular roles, Vault, and Galaxy. Master production DevOps workflows, cloud architecture, and hands-on execution with 2 embedded diagrams.</p>
+    <div class="hero-chips">
+      <span class="chip green">Ansible</span>
+      <span class="chip blue">Playbooks</span>
+      <span class="chip amber">Ansible Vault</span>
+    </div>
+  </header>
+
+  
+  <!-- ─── SECTION 1 ─── -->
+  <section class="section" id="sec-1">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">01 / 02</div>
+        <h2>Configuration Management (Ansible)</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">— Configuration Management</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 2 ─── -->
+  <section class="section" id="sec-2">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">02 / 02</div>
+        <h2>What is Configuration Management?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Configuration Management is the process of automating system setup, software installation, and maintaining consistent environments.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea: Instead of manually configuring servers → use automation tools</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why is it Important?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ensures consistency across servers</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Saves time</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Reduces human errors</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Makes scaling easier</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Real Example</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Without automation:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Install software manually on each server</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">With configuration management:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Run one command → All servers configured automatically</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ansible</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ansible is a software tool that enables cross-platform automation and orchestration at scale and has become over the years the standard choice among enterprise automation solutions.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It’s mostly addressed to IT operators, administrators, and decision-makers, helping them achieve operational excellence across their entire infrastructure ecosystem.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Backed by RedHat and a loyal open source community, it is considered an excellent option for configuration management, infrastructure provisioning, and application deployment use cases.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module09/image1.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Configuration Management Concepts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Key Concepts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Idempotency → Running the same script multiple times gives same result</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Automation → No manual work</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Consistency → Same setup everywhere</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scalability → Manage many servers easily</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Infrastructure Configuration Automation</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Automating system setup like:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Installing packages</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Configuring services</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Updating systems</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- name: Install nginx</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">hosts: web</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">tasks:</h3>
+                <div class="code-block">
+                  - name: Install package
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">apt:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: nginx</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">state: present</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This installs nginx automatically.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Server Provisioning</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Provisioning means preparing servers for use.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Types</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Manual provisioning</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Automated provisioning</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Create VM → Install OS → Configure software → Ready server</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Inventory Management</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ansible inventory is a crucial component in Ansible, helping you manage the hosts you want to automate tasks on. It defines a collection of hosts, which can be grouped, organized, and assigned variables. There are two main types of Ansible inventory:</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Static Host Inventory: Manually created text files with a list of hosts, groups, and variables. Suitable for a set of servers that don’t change frequently.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Dynamic Host Inventory: Generated dynamically using Ansible plugins based on external information sources. Ideal for large, dynamic environments with frequently changing hosts.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Inventory File</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">[web]</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">server1</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">server2</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">[db]</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">server3</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Task Automation</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Tasks are small actions like:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Installing packages</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Starting services</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Copying files</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Task</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- name: Start nginx</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">service:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: nginx</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">state: started</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Configuration Enforcement</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ensures the system stays in desired state.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Even if someone changes config manually → tool corrects it</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- name: Ensure nginx is running</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">service:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: nginx</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">state: started</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Application Deployment Automation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Automates deployment of applications.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- name: Deploy app</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">copy:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">src: app/</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">dest: /var/www/html/</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Playbook</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Playbooks are the files where Ansible code is written. Playbooks are written in YAML format. YAML stands for Yet Another Markup Language.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Playbooks are one of the core features of Ansible and tell Ansible what to execute. They are like a to-do list for Ansible that contains a list of tasks.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Playbooks contain the steps which the user wants to execute on a particular machine. Playbooks are run sequentially.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Playbooks are the building blocks for all the use cases of Ansible.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- hosts: web</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">become: yes</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">tasks:</h3>
+                <div class="code-block">
+                  - name: Install nginx
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">apt:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: nginx</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">state: present</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ansible Roles</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Roles provide a framework for fully independent, or interdependent collections of variables, tasks, files, templates, and modules.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">In Ansible, the role is the primary mechanism for breaking a playbook into multiple files.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This simplifies writing complex playbooks, and it makes them easier to reuse. The breaking of the playbook allows you to logically break the playbook into reusable components.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Each role is basically limited to a particular functionality or desired output, with all the necessary steps to provide that result either within that role itself or in other roles listed as dependencies.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module09/image2.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Structure</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">roles/</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">web/</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">tasks/</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">handlers/</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">templates/</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Playbook File (Guvi.yml)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">---</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- hosts: tomcat-node</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">roles:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- { role: install-tomcat }</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- { role: start-tomcat }</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Explanation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Indicates the start of a YAML file</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">hosts: tomcat-node</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Specifies the target servers/group</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">tomcat-node should be defined in the inventory file</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example (hosts file):</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">[tomcat-node]</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">server1</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">server2</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">roles</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Defines which roles to execute</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Roles are reusable automation components</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Roles Used</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">install-tomcat</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Installs Tomcat on servers</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Tasks may include:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Install Java</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Download Tomcat</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Extract files</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">start-tomcat</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Starts Tomcat service</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Tasks may include:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Start service</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Enable service on boot</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Execution Flow:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Install Tomcat → Start Tomcat</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Project Directory Structure</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">$ ls</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ansible.cfg  hosts  roles  Guvi.yml</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Explanation of Files</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔹 ansible.cfg</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Configuration file for Ansible</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Defines settings like:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Inventory location</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">SSH settings</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">hosts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Inventory file</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Contains server details</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">roles/</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Contains all role folders</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example structure:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">roles/</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">install-tomcat/</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">tasks/</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">handlers/</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">start-tomcat/</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">tasks/</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Guvi.yml/</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Main playbook file</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Executes roles</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">How to Run Playbook</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ansible-playbook -i hosts Guvi.yml</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ansible Commands Cheat Sheet</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea: Ansible commands help you connect, configure, and automate servers</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Basic Ansible Commands</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>ansible --version</td><td>Check Ansible version</td><td>ansible --version</td></tr><tr><td>ansible all -m ping</td><td>Check connectivity to all hosts</td><td>ansible all -m ping</td></tr><tr><td>ansible-doc -l</td><td>List all modules</td><td>ansible-doc -l</td></tr><tr><td>ansible-doc &lt;module&gt;</td><td>Get module documentation</td><td>ansible-doc apt</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ad-Hoc Commands (One-time tasks)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Used for quick operations without playbooks</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Syntax</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ansible &lt;hosts&gt; -m &lt;module&gt; -a "arguments"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Common Ad-Hoc Commands</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>Ping</td><td>Check connectivity</td><td>ansible all -m ping</td></tr><tr><td>Shell</td><td>Run shell command</td><td>ansible all -m shell -a "uptime"</td></tr><tr><td>Command</td><td>Run command (no shell)</td><td>ansible all -m command -a "ls"</td></tr><tr><td>Copy</td><td>Copy file to servers</td><td>ansible all -m copy -a "src=file.txt dest=/tmp/"</td></tr><tr><td>File</td><td>Manage files</td><td>ansible all -m file -a "path=/tmp/file state=touch"</td></tr><tr><td>Package install</td><td>Install package</td><td>ansible all -m apt -a "name=nginx state=present"</td></tr><tr><td>Service</td><td>Manage services</td><td>ansible all -m service -a "name=nginx state=started"</td></tr><tr><td>User</td><td>Manage users</td><td>ansible all -m user -a "name=testuser state=present"</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Playbook Commands</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Used for automation using YAML files</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Playbook Commands</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>Run playbook</td><td>Execute playbook</td><td>ansible-playbook play.yml</td></tr><tr><td>Inventory specify</td><td>Use custom inventory</td><td>ansible-playbook -i hosts play.yml</td></tr><tr><td>Check mode</td><td>Dry run (no changes)</td><td>ansible-playbook play.yml --check</td></tr><tr><td>Verbose</td><td>Detailed output</td><td>ansible-playbook play.yml -v</td></tr><tr><td>Extra verbose</td><td>More details</td><td>ansible-playbook play.yml -vvv</td></tr><tr><td>Limit hosts</td><td>Run on specific hosts</td><td>ansible-playbook play.yml -l web</td></tr><tr><td>Tags</td><td>Run specific tasks</td><td>ansible-playbook play.yml --tags "install"</td></tr><tr><td>Skip tags</td><td>Skip tasks</td><td>ansible-playbook play.yml --skip-tags "test"</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Inventory Commands</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>List inventory</td><td>Show hosts</td><td>ansible-inventory --list</td></tr><tr><td>Graph view</td><td>Show structure</td><td>ansible-inventory --graph</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Module-Specific Commands</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Common Modules</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Module</th><th>Purpose</th><th>Example</th></tr></thead><tbody><tr><td>ping</td><td>Test connection</td><td>ansible all -m ping</td></tr><tr><td>command</td><td>Run command</td><td>ansible all -m command -a "date"</td></tr><tr><td>shell</td><td>Run shell script</td><td>ansible all -m shell -a "echo hello"</td></tr><tr><td>copy</td><td>Copy files</td><td>ansible all -m copy -a "src=a.txt dest=/tmp/"</td></tr><tr><td>fetch</td><td>Copy from remote</td><td>ansible all -m fetch -a "src=/tmp/a dest=./"</td></tr><tr><td>file</td><td>Manage files</td><td>ansible all -m file -a "path=/tmp/a state=absent"</td></tr><tr><td>apt</td><td>Install packages (Ubuntu)</td><td>ansible all -m apt -a "name=nginx state=present"</td></tr><tr><td>yum</td><td>Install packages (RHEL)</td><td>ansible all -m yum -a "name=httpd state=present"</td></tr><tr><td>service</td><td>Manage services</td><td>ansible all -m service -a "name=nginx state=started"</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Privilege Escalation</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>Become root</td><td>Run as sudo</td><td>ansible all -m apt -a "name=nginx" --become</td></tr><tr><td>Specify user</td><td>Use different user</td><td>ansible all -u ubuntu -m ping</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">File Transfer Commands</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>Copy file</td><td>Upload file</td><td>ansible all -m copy -a "src=test.txt dest=/tmp/"</td></tr><tr><td>Fetch file</td><td>Download file</td><td>ansible all -m fetch -a "src=/tmp/test.txt dest=./"</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Debugging Commands</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>Debug</td><td>Print variable</td><td>debug: var=var_name</td></tr><tr><td>Verbose</td><td>Detailed logs</td><td>-v, -vv, -vvv</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Galaxy Commands (Roles Management)</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>Install role</td><td>Download role</td><td>ansible-galaxy install geerlingguy.nginx</td></tr><tr><td>List roles</td><td>Show installed roles</td><td>ansible-galaxy list</td></tr><tr><td>Create role</td><td>Create new role</td><td>ansible-galaxy init myrole</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Vault Commands (Secrets Management)</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>Encrypt file</td><td>Secure file</td><td>ansible-vault encrypt file.yml</td></tr><tr><td>Decrypt file</td><td>Open file</td><td>ansible-vault decrypt file.yml</td></tr><tr><td>Edit file</td><td>Edit securely</td><td>ansible-vault edit file.yml</td></tr><tr><td>View file</td><td>View encrypted file</td><td>ansible-vault view file.yml</td></tr></tbody>
+                      </table>
+                    </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:50px; padding-top:30px; border-top:1px solid var(--border);">
+    <a href="infrastructure-as-code-learn.html" class="btn-action" style="background:var(--bg3); color:var(--text-bright); border:1px solid var(--border); text-decoration:none; width:auto;">← Previous: Module 08</a>
+    <a href="gitops-argocd-learn.html" class="btn-action btn-primary" style="text-decoration:none; width:auto;">Next: Module 10 →</a>
+  </div>
+
+</main>
+
+<!-- ════════════════ SCRIPTS ════════════════ -->
+<script>
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(s => observer.observe(s));
+
+  const navItems = document.querySelectorAll('.nav-item');
+  const sectionEls = document.querySelectorAll('section.section');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navItems.forEach(n => n.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sectionEls.forEach(s => navObserver.observe(s));
+
+  const dotsContainer = document.getElementById('progressDots');
+  const totalTopics = 2;
+  for (let i = 0; i < totalTopics; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot-prog';
+    dotsContainer.appendChild(dot);
+  }
+
+  const progressObserver = new IntersectionObserver((entries) => {
+    const allDots = document.querySelectorAll('.dot-prog');
+    let maxIndex = 0;
+    sectionEls.forEach((s, i) => {
+      if (s.classList.contains('visible')) maxIndex = i;
+    });
+    allDots.forEach((d, i) => {
+      d.classList.toggle('filled', i <= maxIndex);
+    });
+  }, { threshold: 0.1 });
+
+  sectionEls.forEach(s => progressObserver.observe(s));
+</script>
+
+</body>
+</html>

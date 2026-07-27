@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Module 08: Infrastructure as Code (Terraform) — Interactive Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ════════════════ SIDEBAR ════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; color:var(--accent); margin-bottom:10px;">← Back to Hub</a>
+    <div class="module-tag">Module 08</div>
+    <h1>Infrastructure as Code (Terr</h1>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Curriculum Topics</div>
+    <a class="nav-item active" href="#sec-1"><span class="dot"></span>Infrastructure as Code (Terraf</a>
+    <a class="nav-item" href="#sec-2"><span class="dot"></span>What is Infrastructure as Code</a>
+    <a class="nav-item" href="#sec-3"><span class="dot"></span>What is Terraform?</a>
+    <a class="nav-item" href="#sec-4"><span class="dot"></span>1. Terraform Block</a>
+    <a class="nav-item" href="#sec-5"><span class="dot"></span>2. Provider Block</a>
+    <a class="nav-item" href="#sec-6"><span class="dot"></span>3. Resource Block</a>
+    <a class="nav-item" href="#sec-7"><span class="dot"></span>4. Variable Block</a>
+    <a class="nav-item" href="#sec-8"><span class="dot"></span>5. Locals Block</a>
+    <a class="nav-item" href="#sec-9"><span class="dot"></span>6. Data Block</a>
+    <a class="nav-item" href="#sec-10"><span class="dot"></span>7. Module Block</a>
+    <a class="nav-item" href="#sec-11"><span class="dot"></span>8. Output Block</a>
+    <a class="nav-item" href="#sec-12"><span class="dot"></span>9. Provisioner Block</a>
+    <a class="nav-item" href="#sec-13"><span class="dot"></span>1. Local Backend</a>
+    <a class="nav-item" href="#sec-14"><span class="dot"></span>2. Remote Backend</a>
+  </div>
+
+  <div class="progress-dots">
+    <p>// 14 topics</p>
+    <div class="dots-row" id="progressDots"></div>
+  </div>
+</nav>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main class="main">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">Module 08 <span class="cursor-blink"></span></div>
+    <h1>Module 08: <span class="highlight">Infrastructure as Code (Terraform)</span></h1>
+    <p>Terraform HCL syntax, providers, state management, S3+DynamoDB backends, and modules. Master production DevOps workflows, cloud architecture, and hands-on execution with 7 embedded diagrams.</p>
+    <div class="hero-chips">
+      <span class="chip green">Terraform</span>
+      <span class="chip blue">HCL</span>
+      <span class="chip amber">Remote State</span>
+    </div>
+  </header>
+
+  
+  <!-- ─── SECTION 1 ─── -->
+  <section class="section" id="sec-1">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">01 / 14</div>
+        <h2>Infrastructure as Code (Terraform)</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">— Infrastructure as Code (IaC)</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 2 ─── -->
+  <section class="section" id="sec-2">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">02 / 14</div>
+        <h2>What is Infrastructure as Code?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Infrastructure as Code (IaC) is the practice of managing and provisioning infrastructure using code instead of manual setup.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea: Instead of clicking in UI → write code to create servers, networks, etc.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why Use IaC?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Automation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Consistency</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Faster deployment</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Version control</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Easy scaling</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Declarative Infrastructure</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The declarative approach defines what you want, not how to do it.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">resource "aws_instance" "example" {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">instance_type = "t2.micro"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">You describe the desired state, and the tool handles the rest.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Imperative vs Declarative</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>Imperative</td><td>Step-by-step instructions</td></tr><tr><td>Declarative</td><td>Define final state</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Infrastructure Provisioning</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Provisioning means creating infrastructure like:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Servers</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Networks</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Storage</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Flow</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Write Code → Run Tool → Resources Created</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 3 ─── -->
+  <section class="section" id="sec-3">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">03 / 14</div>
+        <h2>What is Terraform?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Terraform is an open-source infrastructure as a code tool created by HashiCorp, that lets you provision, build, change, and version cloud and on-prem resources.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It lets you define both Cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">How does Terraform work?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Terraform creates and manages resources on a cloud platform and other services through their APIs. Providers enable Terraform to work with virtually any platform or service with an accessible API.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Providers are a logical abstraction of an upstream API. They are responsible for understanding API interactions and exposing resources. Providers supported by Terraform, there are officially 130 providers supported by Terraform:</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AWS</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Azure</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Google Cloud Platform</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Kubernetes and so on</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module08/image5.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Terraform Configuration</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">HCL (HashiCorp Configuration Language) is a declarative language used in Terraform to define infrastructure configurations. It provides a clean and readable syntax for expressing resources and their dependencies.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">HCL files typically have a .tf extension and contain the configuration for a Terraform project. HCL uses blocks to define resources. Within each block, you can specify attributes and their corresponding values to configure the desired behavior of the resource.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module08/image6.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 4 ─── -->
+  <section class="section" id="sec-4">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">04 / 14</div>
+        <h2>1. Terraform Block</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">The terraform block is used to define:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Required Terraform version</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Required providers</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Usually stored in terraform.tf</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">terraform {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">required_providers {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">aws = {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">source  = "hashicorp/aws"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">version = "~&gt; 2.0"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">required_version = "&gt;= 1.0.1"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 5 ─── -->
+  <section class="section" id="sec-5">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">05 / 14</div>
+        <h2>2. Provider Block</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Provider connects Terraform to cloud platforms like AWS, Azure, etc.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea: Provider = Bridge between Terraform and Cloud</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">provider "aws" {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">version = "~&gt; 3.0"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">region  = "us-east-1"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 6 ─── -->
+  <section class="section" id="sec-6">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">06 / 14</div>
+        <h2>3. Resource Block</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The resource block creates actual infrastructure.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea: Resource = Real object (server, database, network)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">resource "aws_instance" "example_resource" {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ami           = "ami-005e54dee72cc1d00"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">instance_type = "t2.micro"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">credit_specification {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">cpu_credits = "unlimited"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 7 ─── -->
+  <section class="section" id="sec-7">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">07 / 14</div>
+        <h2>4. Variable Block</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Variables allow customization without changing code.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Usually stored in variables.tf</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">variable "example_variable" {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">type        = string</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">description = "Example variable"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">default     = "value1"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">sensitive   = false</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 8 ─── -->
+  <section class="section" id="sec-8">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">08 / 14</div>
+        <h2>5. Locals Block</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Locals store reusable values inside configuration.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea: Like temporary variables</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">locals {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">service_name = "forum"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">owner        = "Community Team"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Usage</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">local.service_name</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 9 ─── -->
+  <section class="section" id="sec-9">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">09 / 14</div>
+        <h2>6. Data Block</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Data block fetches information from external sources.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea: Used to read existing resources</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">data "aws_ami" "latest" {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">most_recent = true</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 10 ─── -->
+  <section class="section" id="sec-10">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">10 / 14</div>
+        <h2>7. Module Block</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Modules are reusable Terraform components.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea: Module = Reusable code block</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">module "vpc" {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">source = "./modules/vpc"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 11 ─── -->
+  <section class="section" id="sec-11">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">11 / 14</div>
+        <h2>8. Output Block</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Outputs display important information after execution.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">output "public_ip" {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">description = "EC2 Public IP"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">value       = aws_instance.test_web_server.public_ip</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">sensitive   = true</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Another Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">output "public_url" {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">value = "https://${aws_instance.test_web_server.public_ip}:8000"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 12 ─── -->
+  <section class="section" id="sec-12">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">12 / 14</div>
+        <h2>9. Provisioner Block</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Provisioners run scripts after resource creation.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea: Run commands on created machines</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Types</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">local-exec → Runs on local system</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">remote-exec → Runs on remote machine</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">resource "aws_instance" "web_server" {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">provisioner "local-exec" {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">command = "echo Done &gt; output.txt"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">provisioner "remote-exec" {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">inline = [</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"chmod +x script.sh",</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"./script.sh"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">]</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Terraform Modules</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Modules are containers for multiple resources that are used together. A module consists of .tf and/or .tf.json files stored in a directory. It is the primary way to package and reuse resources in Terraform.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Modules are a great way to compartmentalize reusable collections of resources in multiple configurations.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module08/image1.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Terraform State Management</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Terraform must store the state of your managed infrastructure and configuration.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Terraform uses this state to map real-world resources to your configuration, track information, and boost efficiency for huge infrastructures.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This state is stored by default in a local file named “terraform.tfstate”.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module08/image2.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Terraform State File</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Terraform creates a state file called “terraform.tfstate”.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This State File contains full details of resources in our terraform code.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When you modify something on your code and apply it on cloud, terraform will look into the state file, and compare the changes made in the code from that state file and the changes to the infrastructure based on the state file.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module08/image3.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Terraform Backend</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Terraform Backend is a configuration option in Terraform that allows you to store and manage the state of your infrastructure in a remote or local location.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The backend is responsible for storing the state file and providing an interface for reading and writing state data.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">There are two types of Terraform backends: local and remote.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module08/image7.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 13 ─── -->
+  <section class="section" id="sec-13">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">13 / 14</div>
+        <h2>1. Local Backend</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The local backend stores the state file on your local machine.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This is the default backend in Terraform</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Key Points</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">No configuration needed (default)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Stores state in local system</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Easy to use for beginners</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">terraform {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">backend "local" {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">workspace_dir = "/Users/user/terraform-state"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">path          = "project/dev.tfstate"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 14 ─── -->
+  <section class="section" id="sec-14">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">14 / 14</div>
+        <h2>2. Remote Backend</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The remote backend stores the state file in a centralized location like cloud storage.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea: Remote backend = Shared state for teams</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">terraform {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">backend "remote" {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">hostname     = "example.scalr.io"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">organization = "my-org"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">workspaces {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name = "dev-environment"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Common Remote Backends</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Amazon S3</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Azure Storage</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Google Cloud Storage</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">HashiCorp Consul</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Infrastructure Automation</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module08/image4.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cloud Infrastructure Templates</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Templates define infrastructure in a structured format.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Tools</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AWS CloudFormation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Terraform</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example (CloudFormation)</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Resources:</h3><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">MyInstance:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Type: AWS::EC2::Instance</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Terraform Commands</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Terraform provides various commands to manage infrastructure efficiently.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea: Commands = Steps to create, manage, and delete infrastructure</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Terraform Commands Table</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Description</th><th>Example Usage</th></tr></thead><tbody><tr><td>terraform init</td><td>Initializes Terraform project and installs required providers/plugins</td><td>terraform init</td></tr><tr><td>terraform plan</td><td>Shows what changes Terraform will make before applying</td><td>terraform plan</td></tr><tr><td>terraform apply</td><td>Applies the changes and creates infrastructure</td><td>terraform apply</td></tr><tr><td>terraform validate</td><td>Checks if configuration syntax is correct</td><td>terraform validate</td></tr><tr><td>terraform fmt</td><td>Formats code for better readability</td><td>terraform fmt</td></tr><tr><td>terraform providers</td><td>Lists providers used in configuration</td><td>terraform providers</td></tr><tr><td>terraform providers mirror</td><td>Copies providers to a local directory</td><td>terraform providers mirror ./providers</td></tr><tr><td>terraform output</td><td>Displays output values from configuration</td><td>terraform output</td></tr><tr><td>terraform refresh</td><td>Updates state file with real infrastructure</td><td>terraform refresh</td></tr><tr><td>terraform show</td><td>Displays current state of infrastructure</td><td>terraform show</td></tr><tr><td>terraform destroy</td><td>Deletes all resources created by Terraform</td><td>terraform destroy</td></tr></tbody>
+                      </table>
+                    </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:50px; padding-top:30px; border-top:1px solid var(--border);">
+    <a href="cicd-pipelines-learn.html" class="btn-action" style="background:var(--bg3); color:var(--text-bright); border:1px solid var(--border); text-decoration:none; width:auto;">← Previous: Module 07</a>
+    <a href="configuration-management-learn.html" class="btn-action btn-primary" style="text-decoration:none; width:auto;">Next: Module 09 →</a>
+  </div>
+
+</main>
+
+<!-- ════════════════ SCRIPTS ════════════════ -->
+<script>
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(s => observer.observe(s));
+
+  const navItems = document.querySelectorAll('.nav-item');
+  const sectionEls = document.querySelectorAll('section.section');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navItems.forEach(n => n.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sectionEls.forEach(s => navObserver.observe(s));
+
+  const dotsContainer = document.getElementById('progressDots');
+  const totalTopics = 14;
+  for (let i = 0; i < totalTopics; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot-prog';
+    dotsContainer.appendChild(dot);
+  }
+
+  const progressObserver = new IntersectionObserver((entries) => {
+    const allDots = document.querySelectorAll('.dot-prog');
+    let maxIndex = 0;
+    sectionEls.forEach((s, i) => {
+      if (s.classList.contains('visible')) maxIndex = i;
+    });
+    allDots.forEach((d, i) => {
+      d.classList.toggle('filled', i <= maxIndex);
+    });
+  }, { threshold: 0.1 });
+
+  sectionEls.forEach(s => progressObserver.observe(s));
+</script>
+
+</body>
+</html>

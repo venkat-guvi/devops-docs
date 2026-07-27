@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Module 01: Linux &amp; Networking Foundations — Interactive Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ════════════════ SIDEBAR ════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; color:var(--accent); margin-bottom:10px;">← Back to Hub</a>
+    <div class="module-tag">Module 01</div>
+    <h1>Linux &amp; Networking Foundatio</h1>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Curriculum Topics</div>
+    <a class="nav-item active" href="#sec-1"><span class="dot"></span>Linux &amp; Networking Foundations</a>
+    <a class="nav-item" href="#sec-2"><span class="dot"></span>2. Memory Management</a>
+    <a class="nav-item" href="#sec-3"><span class="dot"></span>3. File System Management</a>
+    <a class="nav-item" href="#sec-4"><span class="dot"></span>4. Device Management</a>
+    <a class="nav-item" href="#sec-5"><span class="dot"></span>What is Linux?</a>
+    <a class="nav-item" href="#sec-6"><span class="dot"></span>PID       TTY      TIME       </a>
+    <a class="nav-item" href="#sec-7"><span class="dot"></span>UID      PID  PPID C STIME    </a>
+    <a class="nav-item" href="#sec-8"><span class="dot"></span>What is Package Management?</a>
+    <a class="nav-item" href="#sec-9"><span class="dot"></span>What is a Package?</a>
+    <a class="nav-item" href="#sec-10"><span class="dot"></span>What is System Monitoring?</a>
+    <a class="nav-item" href="#sec-11"><span class="dot"></span>What is the Internet?</a>
+    <a class="nav-item" href="#sec-12"><span class="dot"></span>TCP/IP</a>
+    <a class="nav-item" href="#sec-13"><span class="dot"></span>What is Subnetting?</a>
+    <a class="nav-item" href="#sec-14"><span class="dot"></span>What is DNS?</a>
+  </div>
+
+  <div class="progress-dots">
+    <p>// 14 topics</p>
+    <div class="dots-row" id="progressDots"></div>
+  </div>
+</nav>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main class="main">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">Module 01 <span class="cursor-blink"></span></div>
+    <h1>Module 01: <span class="highlight">Linux &amp; Networking Foundations</span></h1>
+    <p>Linux OS, Networking, Subnetting &amp; Troubleshooting. Master production DevOps workflows, cloud architecture, and hands-on execution with 11 embedded diagrams.</p>
+    <div class="hero-chips">
+      <span class="chip green">Linux OS</span>
+      <span class="chip blue">Networking</span>
+      <span class="chip amber">OSI &amp; DNS</span>
+    </div>
+  </header>
+
+  
+  <!-- ─── SECTION 1 ─── -->
+  <section class="section" id="sec-1">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">01 / 14</div>
+        <h2>Linux &amp; Networking Foundations</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Linux &amp; Networking Foundations</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Operating System Fundamentals</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">An Operating System (OS) is the core software that acts as a bridge between users and computer hardware. It ensures that applications run smoothly by managing resources like CPU, memory, storage, and devices.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Key Functions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Process Management</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The OS helps run programs like a browser, games, or text editor.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It makes sure multiple programs can run at the same time without crashing.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It decides which program gets to use the CPU first.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example: Listening to music while browsing the web—both processes run smoothly due to OS management.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 2 ─── -->
+  <section class="section" id="sec-2">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">02 / 14</div>
+        <h2>2. Memory Management</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The OS controls how much memory (RAM) each program gets.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It makes sure programs don’t use each other’s memory.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It also frees memory when a program is closed.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example: Even if your system has limited RAM, you can still run many apps because of virtual memory.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 3 ─── -->
+  <section class="section" id="sec-3">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">03 / 14</div>
+        <h2>3. File System Management</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The OS helps you store data in files and folders.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It allows you to create, open, save, and delete files.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It keeps everything organized so you can find your data easily.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example: Saving a document in a folder and retrieving it later depends on the OS file system.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 4 ─── -->
+  <section class="section" id="sec-4">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">04 / 14</div>
+        <h2>4. Device Management</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Device management handles communication between the system and hardware devices.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The OS controls devices like keyboard, mouse, printer, and speakers.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It uses special programs called drivers to communicate with hardware.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example: When you print a document, the OS sends data to the printer via a driver.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Linux Distributions and Installation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Linux Operating System is a type of operating system that is similar to Unix, and it is built upon the Linux Kernel. The Linux Kernel is like the brain of the operating system because it manages how the computer interacts with its hardware and resources.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 5 ─── -->
+  <section class="section" id="sec-5">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">05 / 14</div>
+        <h2>What is Linux?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Linux is a powerful and flexible family of operating systems that are free to use and share. It was created by a person named Linus Torvalds in 1991.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why Use Linux?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why use Linux? What advantages can Linux offer? Here are 10 benefits of using the OS.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It Runs on Any Hardware</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Linux is compatible with virtually every hardware device on the market today. That includes:</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Windows PCs and Laptops</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Mac</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Windows Tablets</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Chromebook</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Non-Android Phones and Tablets</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Gaming consoles</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Linux Distributions</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module01/image11.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What’s cool is that anyone can see how the system works because its source code is open for everyone to explore and modify. This openness encourages people from all over the world to work together and make Linux better and better.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Linux File System</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Linux filesystem can be a harder one for understanding beginners. With its deep directory structure and unfamiliar folder names, it’s easy to get lost. But once you understand the purpose of each directory, everything starts to make sense.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module01/image3.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Root Directory in Linux Filesystem</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">At the top of the Linux filesystem hierarchy is the root directory, represented by a single forward slash (/). Every single file and directory on a Linux system is stored under this directory, regardless of where they reside on the disk.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Let’s break down the key directories you’ll find under / and explore their purposes.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">1. /bin and /sbin – Essential Binaries</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The /bin directory contains essential binaries (programs) that are needed for the system to boot and run basic tasks. These binaries are available to all users.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Common files:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/bin/bash: The bash shell, which most users interact with in the terminal.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/bin/ls: The command used to list files.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The /sbin directory is similar to /bin, but it contains system binaries that are typically reserved for the root user, such as those used for system administration</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">2. /boot – Boot Files</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The /boot directory contains everything the system needs to boot, including the Linux kernel and bootloader files.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Common files:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/boot/vmlinuz: The Linux kernel.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/boot/grub/: Files for the GRUB bootloader.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">You should be cautious when modifying files in /boot, as mistakes can make your system unbootable.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">3. /dev – Device Files</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Linux treats everything as a file, including devices like hard drives, keyboards, and printers. The /dev directory contains special files that represent these devices.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Common files:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/dev/sda: The first hard drive in the system.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/dev/null: A virtual device that discards anything written to it.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Programs interact with hardware by reading and writing to these device files.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">4. /etc – Configuration Files</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The /etc directory is home to all system-wide configuration files. These files control how various software and services behave on your system.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Common files:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/etc/passwd: Contains user account information.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/etc/hostname: Defines the system’s network hostname.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/etc/fstab: Configuration for automatic mounting of file systems.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Everything in /etc is crucial for system configuration, and manually editing these files can affect how your Linux system operates.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">5. /home – User Home Directories</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Each user on a Linux system has their personal space under the /home directory. For example, if your username is ubuntu, your home directory would be /home/ubuntu/. This is where users store their personal files, settings, and projects.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Common contents:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/home/username/Documents: Personal documents.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Files in /home are specific to each user and typically not shared between users, unless explicitly permitted.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">6. /lib and /lib64 – Libraries</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The /lib and /lib64 directories contain essential shared libraries required by binaries in /bin and /sbin. These libraries help programs perform basic functions and interface with hardware.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Common libraries:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/lib/x86_64-linux-gnu/libc.so.6: The GNU C Library, used by many programs.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/lib/modules/: Kernel modules, which extend the functionality of the kernel.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">7. /mnt and /media – Mount Points</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The /mnt and /media directories are used for mounting file systems such as USB drives, CD-ROMs, or external hard drives.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Difference between /mnt and /media:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/mnt: A general-purpose directory for mounting file systems temporarily.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/media: Typically used by the system to automatically mount external drives, like USBs or CDs, under subdirectories such as /media/ubuntu/usb-drive.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">8. /opt – Optional Software</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The /opt directory is used for third-party software packages that aren’t included with the operating system. These are often large, self-contained programs or suites.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Use cases:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Software like Google Chrome, proprietary drivers, or specialized software that isn’t installed through the system package manager.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">MDN</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">9. /tmp – Temporary Files</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The /tmp directory is used for temporary files created by programs. Files stored here are not meant to be persistent and can be deleted at any time, often when the system reboots.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Use cases:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Temporary storage for downloads or installation processes.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Temporary session files for applications.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Because /tmp is publicly writable, it’s often used as scratch space by various system services.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">10. /usr – User Programs and Data</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The /usr directory holds the bulk of user-installed programs and their related data, which is why it’s often one of the largest directories on a Linux system.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Common directories inside /usr:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/usr/bin/: Contains most user-executable programs.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/usr/lib/: Shared libraries needed by programs in /usr/bin/.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/usr/share/: Architecture-independent files such as documentation, icons, and default configuration.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It’s important to note that /usr does not stand for “user”, but rather “Unix System Resources.”</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">11. /var – Variable Files</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The /var directory is used for files that are expected to grow in size over time. This includes log files, caches, and spool files for tasks like printing and mail queues.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Common files:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/var/log/: Stores log files for system events and services.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/var/tmp/: Temporary files that are persistent across reboots.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/var/lib/: Stores data used by programs (e.g., databases).</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The size of /var can grow significantly depending on how your system is used. Regular maintenance, like clearing old logs, is crucial for managing space.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">12. /proc and /sys – Kernel and System Information</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The /proc and /sys directories are virtual filesystems that provide information about the kernel and running processes.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">In /proc:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/proc/cpuinfo: Information about the CPU.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/proc/meminfo: Information about memory usage.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">In /sys:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/sys/class/net/: Network devices.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">/sys/devices/: Detailed information about system devices.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">These directories don’t contain actual files on the disk. Instead, they provide a view of the system’s running state.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Linux Commands and Shell Usage</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A shell is a special user program that provides an interface for the user to use operating system services. Shell accepts human-readable commands from users and converts them into something which the kernel can understand.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It is a command language interpreter that executes commands read from input devices such as keyboards or from files. The shell gets started when the user logs in or starts the terminal.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Shell is broadly classified into two categories –</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Command Line Shell</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Graphical shell</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module01/image8.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Commands:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">While performing a task, we all need shortcuts. Shortcuts help us to complete a task quickly. Linux comes with such commands which are one to two words, using those commands, you can perform several operations in no time.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">As a beginner, you must be aware of those basic Linux commands to complete an operation in a short time in the Linux-based operating system.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ls command</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Displays information about files in the current directory. The ls command is commonly used to identify files and directories. Example: ls</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">pwd command</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Displays the current working directory. Example: pwd → output: home/ubuntu</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">cd command</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Used to navigate between directories. Example: cd file</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">mkdir command</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Creates a new directory. Example: mkdir file</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">rmdir command</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Removes empty directories. Example: rmdir file</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">touch command</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Creates an empty file. Example: touch file.txt</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">rm command</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Deletes files. Example: rm file.txt</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">echo command</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Prints text on the terminal. Example: echo "Hello DevOps Engineer"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">man command</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Displays the manual for commands. Example: man ls</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">cat command</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Displays file contents. Example: cat file.txt</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Users, Groups &amp; Permissions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A user is an entity, in a Linux operating system, that can manipulate files and perform several other operations. Each user is assigned an ID that is unique for each user in the operating system.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">After installation of the operating system, the ID 0 is assigned to the root user and the IDs 1 to 999 (both inclusive) are assigned to the system users and hence the ids for local users begins from 1000 onwards.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">In a single directory, we can create 60,000 users.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module01/image2.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Useradd command</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The command to add a user. useradd command adds a new user to the directory. The user is given the ID automatically depending on which category it falls in.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The username of the user will be as provided by us in the command.</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>sudo useradd username
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Password command</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Using passwd command to assign a password to a user.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">After using this command we have to enter the new password for the user and then the password gets updated to the new password.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">passwd username</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">User Configuration</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This command prints the data of the configuration file. This file contains information about the user in the format.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">cat /etc/passwd</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Usermod command</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The command to change the user ID for a user.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">usermod  -u new_id username</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ex: sudo usermod -u 1982 user1</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Group:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Groups are collections of users. They are used to simplify access control and permissions management.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Users within the same group share common permissions to files and directories. A group also has a unique group ID (GID).</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When a user creates a file, the file’s group ownership is set to the user’s primary group by default.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">There are 2 categories of groups in the Linux operating system i.e. Primary and Secondary groups.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Primary Group</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Primary Group is a group that is automatically generated while creating a user with a unique user ID simultaneously a group with an ID the same as the user ID is created and the user gets added to the group and becomes the first and only member of the group. This group is called the primary group.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Secondary Group</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A secondary group is a group that can be created separately with the help of commands and we can then add users to it by changing the group ID of users.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Group Creation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">groupadd group_name</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ex: sudo groupadd testgp</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The below command created a group with the name provided. The group while creating gets a group ID and we can get to know everything about the group as its name, ID, and the users present in it in the file “/etc/group”.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Group Password Setup</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">gpasswd group_name</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ex: sudo gpasswd testgp</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The above command is used to set the password of the group. After executing the command, we have to enter the new password which we want to assign to the group. The password has to be given twice for confirmation purposes.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Group Password file</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">cat /etc/gshadow</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To access information about groups and their passwords, you can view the password file, /etc/gshadow. However, keep in mind that this file is not intended for regular viewing.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Adding User to Old group</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To add a user to an existing group, you can utilize the usermod command. By specifying the group name, you can add a user to the desired group. However, note that when a user is added to a new group, they are automatically removed from their previous groups.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">usermod -G group_name  username</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ex: usermod -G testgp ubuntu</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">File Permissions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">File permissions are core to the security model used by Linux systems. They determine who can access files and directories on a system and how.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Linux is a multi-user operating system, so it has security to prevent people from accessing each other’s confidential files.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When you execute a “ls” command, you are not given any information about the security of the files, because by default “ls” only lists the names of files.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">How do you view Linux file permissions?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The ls command along with its -l (for long listing) option will show you metadata about your Linux files, including the permissions set on the file.</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>ls -l
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">drwxr-xr-x. 4 root root    68 Jun 13 20:25 tuned</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">-rw-r--r--. 1 root root  4017 Feb 24  2022 vimrc</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">In this example, you see two different listings. The first field of the ls -l output is a group of metadata that includes the permissions on each file. Here are the components of the vimrc listing:</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">File type: -</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Permission settings: rw-r--r--</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Extended attributes: dot (.)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">User owner: root</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Group owner: root</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What are the three permission groups in Linux?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Owner</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">These permissions apply exclusively to the individuals who own the files or directories.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Group</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Permissions can be assigned to a specific group of users, impacting only those within that particular group.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">All Users or Others</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">These permissions apply universally to all users on the system, presenting the highest security risk. Assigning permissions to all users should be done cautiously to prevent potential security vulnerabilities.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">---     ---     ---</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">rwx     rwx     rwx</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">user    group   other</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What are the three kinds of file permissions in Linux?</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Letters</th><th>Definition</th></tr></thead><tbody><tr><td>‘r’</td><td>“read” the file’s contents.</td></tr><tr><td>‘w’</td><td>“write”, or modify, the file’s contents.</td></tr><tr><td>‘x’</td><td>“execute” the file. This permission is given only if the file is a program.</td></tr></tbody>
+                      </table>
+                    </div>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Operators</th><th>Definition</th></tr></thead><tbody><tr><td>`+`</td><td>Add permissions</td></tr><tr><td>`-`</td><td>Remove permissions</td></tr><tr><td>`=`</td><td>Set the permissions to the specified values</td></tr></tbody>
+                      </table>
+                    </div>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Reference</th><th>Class</th><th>Description</th></tr></thead><tbody><tr><td>‘u’</td><td>User</td><td>The user permissions apply only to the owner of the file or directory, they will not impact the actions of other users.</td></tr><tr><td>‘g’</td><td>Group</td><td>The group permissions apply only to the group that has been assigned to the file or directory, they will not affect the actions of other users.</td></tr><tr><td>‘o’</td><td>Others</td><td>The other permissions apply to all other users on the system, this is the permission group that you want to watch the most.</td></tr><tr><td>‘a’</td><td>All</td><td>All three (owner, groups, others)</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What are octal values?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When Linux file permissions are represented by numbers, it's called numeric mode. In numeric mode, a three-digit value represents specific file permissions (for example, 744.) These are called octal values.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The first digit is for owner permissions, the second digit is for group permissions, and the third is for other users. Each permission has a numeric value assigned to it:</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">r (read): 4</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">w (write): 2</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">x (execute): 1</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Owner: rwx = 4+2+1 = 7</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Group: r-- = 4+0+0 = 4</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Others: r-- = 4+0+0 = 4</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The results produce the three-digit value 744.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">How to Change Permissions in Linux</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The command you use to change the security permissions on files is called “chmod“, which stands for “change mode” because the nine security characters are collectively called the security “mode” of the file.</p>
+                <div class="code-block">
+                  chmod [option]+[permission] [Filename]
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ex: chmod u+x file.txt // add execute permission for user in file.txt</p>
+                <div class="code-block">
+                  chmod ug+rw,o-x abc.txt
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The code above adds read(r) and write(w) permission to both user(u) and group(g) and revokes execute(x) permission from others(o) for the file abc.txt.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The octal notations  in Permissions in Linux</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">There can be numerous combinations of file permissions you can invoke, revoke and assign. You can also use octal notations.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module01/image7.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Process and Service management</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A program/command when executed, a special instance is provided by the system to the process. This instance consists of all the services/resources that may be utilized by the process under execution.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Whenever a command is issued in Unix/Linux, it creates/starts a new process.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Through a 5 digit ID number Unix/Linux keeps an account of the processes, this number is called process ID or PID. Each process in the system has a unique PID.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Used up pid’s can be used again for a newer process since all the possible combinations are used.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">At any point of time, no two processes with the same pid exist in the system because it is the pid that Unix uses to track each process.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Initializing a process</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">A process can be run in two ways:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Foreground Process</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Every process when started runs in foreground by default, receives input from the keyboard, and sends output to the screen. When issuing pwd command</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>ls pwd
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When a command/process is running in the foreground and is taking a lot of time, no other processes can be run or started because the prompt would not be available until the program finishes processing and comes out.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Background Process</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It runs in the background without keyboard input and waits till keyboard input is required.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Thus, other processes can be done in parallel with the process running in the background since they do not have to wait for the previous process to be completed.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Adding &amp; along with the command starts it as a background process</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>pwd &amp;
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">[1]   +   Done                 pwd</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">$</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Since pwd does not want any input from the keyboard, it goes to the stop state until moved to the foreground and given any data input. Thus, on pressing Enter.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Commands</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tracking ongoing processes</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ps (Process status) can be used to see/list all the running processes.</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>ps
+                </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 6 ─── -->
+  <section class="section" id="sec-6">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">06 / 14</div>
+        <h2>PID       TTY      TIME        CMD</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">19        pts/1    00:00:00    sh</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">24        pts/1    00:00:00    ps</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Stop Process</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When running in the foreground, hitting Ctrl + c (interrupt character) will exit the command. For processes running in background kill command can be used if its pid is known.</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>ps –f
+                </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 7 ─── -->
+  <section class="section" id="sec-7">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">07 / 14</div>
+        <h2>UID      PID  PPID C STIME    TTY        TIME CMD</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">52471     19     1 0 07:20    pts/1  00:00:00      sh</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">52471     25    19 0 08:04    pts/1  00:00:00      ps –f</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>kill 19
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Terminated</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">If a process ignores a regular kill command, you can use kill -9 followed by the process ID.</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>kill -9 19
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Terminated</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">bg command</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A job control command that resumes suspended jobs while keeping them running in the background</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>bg [ job ]
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ex: bg 19</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">fg command</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It continues a stopped job by running it in the foreground.</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>fg [ job ]
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ex: fg 19</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Package Management</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 8 ─── -->
+  <section class="section" id="sec-8">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">08 / 14</div>
+        <h2>What is Package Management?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Package management is the process of installing, updating, removing, and managing software on a Linux system.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">👉 In simple words: It helps you easily install apps like browsers, editors, or tools using commands.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 9 ─── -->
+  <section class="section" id="sec-9">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">09 / 14</div>
+        <h2>What is a Package?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A package is a collection of files needed to install a software.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">It includes:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Program files</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Libraries (dependencies)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Configuration files</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">👉 Example: Installing a browser means downloading its package.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Package Manager</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">A package manager is a tool that:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Installs software</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Updates software</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Removes software</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Handles dependencies automatically</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">👉 Examples:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">APT (Ubuntu/Debian)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">YUM / DNF (RedHat/CentOS)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Debian / Ubuntu (APT)</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>apt update</td><td>Update package index</td><td>sudo apt update → Refreshes the list of available packages</td></tr><tr><td>apt upgrade</td><td>Upgrade installed packages</td><td>sudo apt upgrade → Installs updates for all installed packages</td></tr><tr><td>apt install [pkg]</td><td>Install a package</td><td>sudo apt install nginx → Installs the nginx package</td></tr><tr><td>apt remove [pkg]</td><td>Remove a package</td><td>sudo apt remove nginx → Removes the nginx package</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">RedHat / CentOS (YUM)</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>yum update</td><td>Update package index</td><td>sudo yum update → Refreshes the list of available packages</td></tr><tr><td>yum install [pkg]</td><td>Install a package</td><td>sudo yum install httpd → Installs the httpd package</td></tr><tr><td>yum remove [pkg]</td><td>Remove a package</td><td>sudo yum remove httpd → Removes the httpd package</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">System Monitoring and Logs</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 10 ─── -->
+  <section class="section" id="sec-10">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">10 / 14</div>
+        <h2>What is System Monitoring?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">System monitoring means checking the health and performance of your system.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">It helps you:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">See CPU usage</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Check memory (RAM) usage</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Monitor running processes</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Track system performance</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea: It tells you what is happening inside your computer right now.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What are Logs?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Logs are records of system activities.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">They store information like:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">System errors</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">User logins</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Application activity</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Security events</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea: Logs are like a history book of your system.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">System Monitoring Commands</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>top</td><td>Shows running processes and CPU usage in real-time</td><td>top → Displays live system activity</td></tr><tr><td>htop</td><td>Advanced version of top (user-friendly)</td><td>htop → Better visualization (if installed)</td></tr><tr><td>ps</td><td>Shows current running processes</td><td>ps aux → Lists all processes</td></tr><tr><td>free</td><td>Displays memory usage</td><td>free -m → Shows RAM in MB</td></tr><tr><td>df</td><td>Shows disk space usage</td><td>df -h → Displays storage in human-readable format</td></tr><tr><td>du</td><td>Shows file/folder size</td><td>du -sh folder → Size of a folder</td></tr><tr><td>uptime</td><td>Shows how long system is running</td><td>uptime</td></tr><tr><td>vmstat</td><td>Shows system performance stats</td><td>vmstat</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Log Management Commands</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>cat</td><td>View entire log file</td><td>cat /var/log/syslog</td></tr><tr><td>less</td><td>View large logs page by page</td><td>less /var/log/syslog</td></tr><tr><td>tail</td><td>View last lines of a log file</td><td>tail /var/log/syslog</td></tr><tr><td>tail -f</td><td>Monitor logs in real-time</td><td>tail -f /var/log/syslog</td></tr><tr><td>head</td><td>View first lines of a log file</td><td>head /var/log/syslog</td></tr><tr><td>grep</td><td>Search inside logs</td><td>grep error /var/log/syslog</td></tr><tr><td>journalctl</td><td>View systemd logs</td><td>journalctl</td></tr><tr><td>dmesg</td><td>View kernel logs</td><td>dmesg</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Networking Fundamentals</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A network consists of two or more electronic devices or objects linked in order to share resources, exchange files, or allow electronic communications.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 11 ─── -->
+  <section class="section" id="sec-11">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">11 / 14</div>
+        <h2>What is the Internet?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Internet is a larger network that allows computer networks controlled by enterprises, governments, colleges, and other organizations all over the world to communicate with one another.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Internet is a vast network of networks that functions as a networking infrastructure.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It links millions of computers throughout the world, creating a network in which any computer can talk with any other computer as long as they are both linked to the Internet.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Internet is a global network of interconnected computers that communicate and share information using a standardized Internet Protocol Suite.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What Do Computer Networks Do?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Computer Networks are one of the important aspects of Computer Science. In the early days, it was used for data transmission on telephone lines and had a very limited use, but nowadays, it is used in a variety of places.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Modern computer networks have the following functionality:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Computer Networks help in operating virtually</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Computer Networks integrate on a large scale</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Computer Networks respond very quickly in case of conditions change</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Computer Networks help in providing data security</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Network Components:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The hardware and software needed to set up computer networks at homes and businesses are referred to as computer network components.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module01/image10.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">OSI Model and TCP/IP</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">OSI</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Open Systems Interconnection (OSI) model is a set of standards that defines how computers communicate over a network. In the OSI model, data flow gets broken down into seven layers that build upon each other.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The OSI model, created in 1984 by ISO, is a reference framework that explains the process of transmitting data between computers.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It is divided into seven layers that work together to carry out specialized network functions, allowing for a more systematic approach to networking.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Each layer uses data from the layer before it and serves a specific purpose in the broader network communication.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module01/image4.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">OSI Model Protocol Stack</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The OSI protocol stack is structured into seven conceptual layers. The layers form a hierarchy of functionality starting with the physical hardware components to the user interfaces at the software application level.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module01/image9.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 12 ─── -->
+  <section class="section" id="sec-12">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">12 / 14</div>
+        <h2>TCP/IP</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Transmission Control Protocol/Internet Protocol (TCP/IP) model is a set of standards that defines how computers communicate over a network, especially the internet. In the TCP/IP model, data communication is divided into layers that work together to transmit data efficiently.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The TCP/IP model was developed by the United States Department of Defense and became the foundation of modern internet communication. It provides a practical framework for how data is sent and received across networks.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It is divided into four layers that work together to perform specific network functions, making communication simpler and more efficient.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Each layer uses the services of the layer below it and provides services to the layer above it, ensuring smooth data transmission from one system to another.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module01/image6.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">IP Addressing and Subnetting</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Public IP</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Public IP Address of a system is the IP address that is used to communicate outside the network. A public IP address is basically assigned by the ISP (Internet Service Provider).</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Public IP Addresses can be traced back to the Internet Service Provider that can easily trace the geographical location.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Public IP Types</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Static IP</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Static Addresses are those addresses that do not change with time.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Dynamic IP</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Dynamic IP Addresses are addresses that change over time.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Private IP</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Private IP Address of a system is the IP address that is used to communicate within the same network.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Using private IP data or information can be sent or received within the same network.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The router basically assigns these types of addresses to the device.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">We can trace Private IP Addresses, but this happens only by using other devices on the local network.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">But it can’t be seen online as it happens in public IP Addresses.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module01/image5.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Subnetting</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 13 ─── -->
+  <section class="section" id="sec-13">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">13 / 14</div>
+        <h2>What is Subnetting?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Subnetting is the process of dividing a large network into smaller networks (subnets).</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea: It is like dividing a big classroom into smaller groups for better management.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why do we use Subnetting?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Improves network performance</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Reduces network congestion</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Enhances security</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Makes network management easier</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Subnetting Table (Common)</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Subnet Mask</th><th>CIDR</th><th>No. of Hosts</th></tr></thead><tbody><tr><td>255.255.255.0</td><td>/24</td><td>254</td></tr><tr><td>255.255.255.128</td><td>/25</td><td>126</td></tr><tr><td>255.255.255.192</td><td>/26</td><td>62</td></tr><tr><td>255.255.255.224</td><td>/27</td><td>30</td></tr><tr><td>255.255.255.240</td><td>/28</td><td>14</td></tr><tr><td>255.255.255.248</td><td>/29</td><td>6</td></tr><tr><td>255.255.255.252</td><td>/30</td><td>2</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DNS Fundamentals</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DNS (Domain Name System)</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 14 ─── -->
+  <section class="section" id="sec-14">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">14 / 14</div>
+        <h2>What is DNS?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DNS is a system that translates website names into IP addresses.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea: DNS is like a phonebook of the internet.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Humans use names → google.com</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Computers use numbers → 142.250.190.78</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DNS converts the name into an IP address so the computer can understand it.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">How DNS Works (Step by Step)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">You type a website name in the browser (e.g., google.com)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Your system asks the DNS server for the IP address</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DNS server finds the correct IP</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The browser connects to that IP</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Website loads on your screen</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple example: Typing a contact name → phonebook gives number → call connects</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Components of DNS</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DNS Resolver → Receives your request</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Root Server → First step in finding address</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">TLD Server → (.com, .org, etc.)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Authoritative Server → Gives final IP address</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Types of DNS Records</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Record Type</th><th>Purpose</th><th>Example</th></tr></thead><tbody><tr><td>A Record</td><td>Maps domain to IPv4 address</td><td>google.com → 142.x.x.x</td></tr><tr><td>AAAA Record</td><td>Maps to IPv6 address</td><td>Example IPv6</td></tr><tr><td>CNAME</td><td>Alias for another domain</td><td>www → main domain</td></tr><tr><td>MX Record</td><td>Mail server info</td><td>Gmail servers</td></tr><tr><td>NS Record</td><td>Name server info</td><td>DNS servers</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why is DNS Important?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Makes internet easy to use</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">No need to remember IP addresses</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Faster access using caching</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Essential for web browsing</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module01/image1.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Network Troubleshooting</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ping</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ping</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ex: ping guvi.in</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To check the reachability of a host on an Internet Protocol (IP) network.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Nslookup</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">nslookup</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ex: nslookup guvi.in</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To query DNS servers for domain information.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Traceroute</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">traceroute</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ex: traceroute guvi.in</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To display the route and measure transit delays of packets across an Internet Protocol network.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Netstat</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">netstat</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To display active network connections, routing tables, interface statistics, masquerade connections, and multicast memberships.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">nmap</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">nmap</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ex: nmap guvi.in</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To discover hosts and services on a computer network, creating a "map" of the network.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">tcpdump</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">tcpdump</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ex: tcpdump -i eth0</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">To capture and analyze network traffic.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Host</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">host</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ex: host guvi.in</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The host command shows the IP address for a hostname and the domain name for an IP address. Also, it is used to get DNS lookup for DNS related issues.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ARP</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">arp</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The arp command is short for Address Resolution Protocol. This command is used to see and include content in the ARP table of the kernel.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ifconfig</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ifconfig</p>
+                <div class="code-block">
+                  ifconfig is used to initialize an interface, configure it with an IP address, and enable or disable it. It is also used to display the route and the network interface.
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ip</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ip</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ex: ip a or ip addr</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This is the latest and updated version of the ifconfig command.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This command gives the details of all networks like ifconfig.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">telnet</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">telnet</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ex: guvi.in 443</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Used to check open ports of a server.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AI-Assisted Troubleshooting (ChatGPT)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ChatGPT Use Cases</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Explain Linux commands</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Generate grep/find commands</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Analyze ping/traceroute output</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Debug permission issues</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Explain DNS failures</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example Exercise:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">SSH connection refused</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Ask ChatGPT:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Explain possible causes and troubleshooting steps.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Students compare AI answers with manual troubleshooting.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:50px; padding-top:30px; border-top:1px solid var(--border);">
+    <a href="index.html" class="btn-action" style="background:var(--bg3); color:var(--text-dim); border:1px solid var(--border); text-decoration:none; width:auto;">← Back to Hub</a>
+    <a href="git-version-control-learn.html" class="btn-action btn-primary" style="text-decoration:none; width:auto;">Next: Module 02 →</a>
+  </div>
+
+</main>
+
+<!-- ════════════════ SCRIPTS ════════════════ -->
+<script>
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(s => observer.observe(s));
+
+  const navItems = document.querySelectorAll('.nav-item');
+  const sectionEls = document.querySelectorAll('section.section');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navItems.forEach(n => n.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sectionEls.forEach(s => navObserver.observe(s));
+
+  const dotsContainer = document.getElementById('progressDots');
+  const totalTopics = 14;
+  for (let i = 0; i < totalTopics; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot-prog';
+    dotsContainer.appendChild(dot);
+  }
+
+  const progressObserver = new IntersectionObserver((entries) => {
+    const allDots = document.querySelectorAll('.dot-prog');
+    let maxIndex = 0;
+    sectionEls.forEach((s, i) => {
+      if (s.classList.contains('visible')) maxIndex = i;
+    });
+    allDots.forEach((d, i) => {
+      d.classList.toggle('filled', i <= maxIndex);
+    });
+  }, { threshold: 0.1 });
+
+  sectionEls.forEach(s => progressObserver.observe(s));
+</script>
+
+</body>
+</html>

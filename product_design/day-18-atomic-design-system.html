@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Atomic Design System — UI/UX Fellowship</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ════════════════ SIDEBAR ════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; color:var(--accent); margin-bottom:10px;">← Back to Hub</a>
+    <div class="module-tag">Product Design</div>
+    <h1>Atomic Design System</h1>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Curriculum Topics</div>
+    <a class="nav-item active" href="#sec-1"><span class="dot"></span>Atomic Design System</a>
+    <a class="nav-item" href="#sec-2"><span class="dot"></span>Part 1: Introduction to Atomic</a>
+    <a class="nav-item" href="#sec-3"><span class="dot"></span>ATOMS</a>
+    <a class="nav-item" href="#sec-4"><span class="dot"></span>MOLECULES</a>
+    <a class="nav-item" href="#sec-5"><span class="dot"></span>ORGANISMS</a>
+    <a class="nav-item" href="#sec-6"><span class="dot"></span>TEMPLATES</a>
+    <a class="nav-item" href="#sec-7"><span class="dot"></span>PAGES</a>
+    <a class="nav-item" href="#sec-8"><span class="dot"></span>Part 3: How to Break Down Any </a>
+    <a class="nav-item" href="#sec-9"><span class="dot"></span>Part 4: Real Product Breakdown</a>
+    <a class="nav-item" href="#sec-10"><span class="dot"></span>ATOM</a>
+    <a class="nav-item" href="#sec-11"><span class="dot"></span>ATOM</a>
+    <a class="nav-item" href="#sec-12"><span class="dot"></span>ATOM</a>
+    <a class="nav-item" href="#sec-13"><span class="dot"></span>ATOM</a>
+    <a class="nav-item" href="#sec-14"><span class="dot"></span>ATOM</a>
+    <a class="nav-item" href="#sec-15"><span class="dot"></span>MOLECULE</a>
+    <a class="nav-item" href="#sec-16"><span class="dot"></span>MOLECULE</a>
+    <a class="nav-item" href="#sec-17"><span class="dot"></span>MOLECULE</a>
+    <a class="nav-item" href="#sec-18"><span class="dot"></span>MOLECULE</a>
+    <a class="nav-item" href="#sec-19"><span class="dot"></span>ORGANISM</a>
+    <a class="nav-item" href="#sec-20"><span class="dot"></span>ORGANISM</a>
+    <a class="nav-item" href="#sec-21"><span class="dot"></span>ORGANISM</a>
+    <a class="nav-item" href="#sec-22"><span class="dot"></span>ORGANISM</a>
+    <a class="nav-item" href="#sec-23"><span class="dot"></span>TEMPLATE</a>
+    <a class="nav-item" href="#sec-24"><span class="dot"></span>PAGE</a>
+    <a class="nav-item" href="#sec-25"><span class="dot"></span>Part 5: Component Thinking — B</a>
+    <a class="nav-item" href="#sec-26"><span class="dot"></span>Part 6: Advantages of Atomic D</a>
+    <a class="nav-item" href="#sec-27"><span class="dot"></span>Part 7: Scalability & Reusabil</a>
+    <a class="nav-item" href="#sec-28"><span class="dot"></span>Part 8: Limitations & Misuse</a>
+    <a class="nav-item" href="#sec-29"><span class="dot"></span>Part 9: Common Mistakes & Desi</a>
+  </div>
+
+  <div class="progress-dots">
+    <p>// 29 topics</p>
+    <div class="dots-row" id="progressDots"></div>
+  </div>
+</nav>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main class="main">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">UI/UX Fellowship <span class="cursor-blink"></span></div>
+    <h1><span class="highlight">Atomic Design System</span></h1>
+    <p>Welcome to Atomic Design System in the UI/UX Product Design Fellowship Programme. Master production workflows, design theory, and hands-on execution.</p>
+    <div class="hero-chips">
+      <span class="chip green">🎨 UI/UX Design</span>
+      <span class="chip blue">💡 Product Strategy</span>
+      <span class="chip amber">✨ Interactive Module</span>
+    </div>
+  </header>
+
+  
+  <!-- ─── SECTION 1 ─── -->
+  <section class="section" id="sec-1">
+    <div class="section-header">
+      <div class="section-icon icon-pink">📌</div>
+      <div>
+        <div class="section-number">01 / 29</div>
+        <h2>Atomic Design System</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Atomic Design System</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 2 ─── -->
+  <section class="section" id="sec-2">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">02 / 29</div>
+        <h2>Part 1: Introduction to Atomic Design</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What is Atomic Design?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Atomic Design is not a tool, a plugin, or a Figma feature. It is a mental model — a way of thinking about UI structure. The tool you use (Figma, Sketch, code) is secondary. The thinking comes first.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Problem Atomic Design Solves</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Before design systems and atomic thinking became standard practice, most product teams designed screen by screen. Every designer made individual decisions about spacing, colour, button size, and typography — on every screen, every time. The results were predictable:</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day18/image10.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What Changes When You Think Atomically</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Designing Screens</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Designing a System</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Each screen is a unique artifact</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Each screen is an assembly of reusable parts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Change one screen, update only that screen</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Change one atom, update every screen instantly</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">New screen requires design from scratch</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">New screen requires composition of existing pieces</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Inconsistency is the default outcome</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Consistency is the automatic outcome</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Design and dev share screens as the spec</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Design and dev share components as the spec</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A component library is 'nice to have'</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A component library is the primary deliverable</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The goal is beautiful screens</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The goal is a consistent, scalable system</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">All Five Levels at a Glance</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Level</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Definition</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Examples</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 3 ─── -->
+  <section class="section" id="sec-3">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">03 / 29</div>
+        <h2>ATOMS</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The smallest possible UI elements. They cannot be broken down further without losing their function.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Buttons, input fields, labels, icons, colour swatches, typography styles, spacing tokens, dividers</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 4 ─── -->
+  <section class="section" id="sec-4">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">04 / 29</div>
+        <h2>MOLECULES</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple groups of atoms functioning together as a unit. Each molecule has one clear, focused purpose.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Search bar (input + button + icon), form field (label + input + error text), card thumbnail (image + label)</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 5 ─── -->
+  <section class="section" id="sec-5">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">05 / 29</div>
+        <h2>ORGANISMS</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Relatively complex components built from groups of molecules and atoms. They form distinct sections of UI.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Navigation bar, product card grid, hero section, comment thread, pricing table, checkout form</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 6 ─── -->
+  <section class="section" id="sec-6">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">06 / 29</div>
+        <h2>TEMPLATES</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Page-level skeletons that place organisms into a layout. No real content — only structure and wireframe.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Article page layout, dashboard shell, e-commerce product page grid, settings page structure</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 7 ─── -->
+  <section class="section" id="sec-7">
+    <div class="section-header">
+      <div class="section-icon icon-pink">📌</div>
+      <div>
+        <div class="section-number">07 / 29</div>
+        <h2>PAGES</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Templates filled with real content. This is what the end user actually sees and interacts with.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Live homepage, actual product detail page, real user dashboard with data and media</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day18/image2.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day18/image11.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 8 ─── -->
+  <section class="section" id="sec-8">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">08 / 29</div>
+        <h2>Part 3: How to Break Down Any UI into Atomic Levels</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day18/image8.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 9 ─── -->
+  <section class="section" id="sec-9">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">09 / 29</div>
+        <h2>Part 4: Real Product Breakdown — Zomato Home Screen</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why Zomato ?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Zomato's home screen is an ideal teaching example because it contains every atomic level in a single view — atoms, molecules, organisms, and a clear template structure — and every student is familiar with it. The same analysis applies equally to Swiggy, Flipkart, Amazon, or any product you choose to substitute.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day18/image6.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Complete Atomic Breakdown — Zomato Home</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The table below breaks the Zomato home screen into every identified component, classified by atomic level, with its composition documented.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Level</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Component Name</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Composition</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 10 ─── -->
+  <section class="section" id="sec-10">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">10 / 29</div>
+        <h2>ATOM</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Primary Button</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Order Now button — text label + background fill + border radius + padding token</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 11 ─── -->
+  <section class="section" id="sec-11">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">11 / 29</div>
+        <h2>ATOM</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Rating Badge</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Star icon (SVG) + numeric label + background pill — appears on every restaurant card</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 12 ─── -->
+  <section class="section" id="sec-12">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">12 / 29</div>
+        <h2>ATOM</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tag / Chip</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cuisine label chip — text + border + border radius. Used as a filter and a card label</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 13 ─── -->
+  <section class="section" id="sec-13">
+    <div class="section-header">
+      <div class="section-icon icon-pink">📌</div>
+      <div>
+        <div class="section-number">13 / 29</div>
+        <h2>ATOM</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Food Image</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Fixed aspect-ratio image container with rounded corners — reused in cards and hero banners</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 14 ─── -->
+  <section class="section" id="sec-14">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">14 / 29</div>
+        <h2>ATOM</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Delivery Time Label</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Icon (clock) + text label — appears on cards and restaurant headers</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 15 ─── -->
+  <section class="section" id="sec-15">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">15 / 29</div>
+        <h2>MOLECULE</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Restaurant Card</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Food Image + Restaurant Name (text atom) + Rating Badge + Delivery Time Label + Tag/Chip</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 16 ─── -->
+  <section class="section" id="sec-16">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">16 / 29</div>
+        <h2>MOLECULE</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Search Bar</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Search input atom + location selector atom + search icon button atom</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 17 ─── -->
+  <section class="section" id="sec-17">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">17 / 29</div>
+        <h2>MOLECULE</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Filter Row</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Horizontal scrollable row of Tag/Chip atoms — Pure Veg, Rating 4.0+, Under ₹150</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 18 ─── -->
+  <section class="section" id="sec-18">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">18 / 29</div>
+        <h2>MOLECULE</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Offer Banner</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Background image atom + heading text atom + sub-label atom + CTA button atom</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 19 ─── -->
+  <section class="section" id="sec-19">
+    <div class="section-header">
+      <div class="section-icon icon-pink">📌</div>
+      <div>
+        <div class="section-number">19 / 29</div>
+        <h2>ORGANISM</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Home Header</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Location selector molecule + Search Bar molecule + notification icon atom</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 20 ─── -->
+  <section class="section" id="sec-20">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">20 / 29</div>
+        <h2>ORGANISM</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Restaurant List Section</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Section heading atom + Filter Row molecule + grid/list of Restaurant Card molecules</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 21 ─── -->
+  <section class="section" id="sec-21">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">21 / 29</div>
+        <h2>ORGANISM</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Category Scroll Strip</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Section heading + horizontal scroll of icon+label molecules (Biryani, Pizza, Rolls...)</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 22 ─── -->
+  <section class="section" id="sec-22">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">22 / 29</div>
+        <h2>ORGANISM</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Offer Banner Section</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Section heading + horizontal scroll of Offer Banner molecules</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 23 ─── -->
+  <section class="section" id="sec-23">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">23 / 29</div>
+        <h2>TEMPLATE</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Home Page Shell</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Home Header organism at top + Category Strip organism + Restaurant List organism + Bottom Nav organism — all positioned, no real data</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 24 ─── -->
+  <section class="section" id="sec-24">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">24 / 29</div>
+        <h2>PAGE</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Live Home Page</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Template filled with real data: user location, actual restaurant list, live offers, real category images</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day18/image7.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 25 ─── -->
+  <section class="section" id="sec-25">
+    <div class="section-header">
+      <div class="section-icon icon-pink">📌</div>
+      <div>
+        <div class="section-number">25 / 29</div>
+        <h2>Part 5: Component Thinking — Building from Small to Large</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What is Component Thinking?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Component thinking is the mental practice of seeing every interface element as a building block that should be defined, named, documented, and reused — rather than drawn freshly each time it appears. It is the design equivalent of a developer thinking in functions and classes.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A designer who thinks in components asks these questions before adding any element to a screen:</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Does this component already exist in the system?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">If not, is this a new atom, molecule, or organism that should be added to the system?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">If it is a variant of an existing component, can I solve this with a new variant rather than a new component?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">If this is truly unique to this screen, should it become a component for future use?</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day18/image4.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Variants and Properties in Figma</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">In Figma, an atom is not just one component — it is a component with variants covering every state, size, and type it can appear in.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Button Component — Variant Structure</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Property: Type → Primary | Secondary | Ghost | Destructive | Link</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Property: Size → Large | Medium | Small</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Property: State → Default | Hover | Pressed | Disabled | Loading</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Property: Icon → None | Left | Right | Only</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">One Button component with these four properties generates 5 × 3 × 5 × 4 = 300 possible combinations — all from a single master component.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Input Field Component — Variant Structure</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Property: Type → Text | Password | Search | Number | Textarea</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Property: State → Empty | Focused | Filled | Error | Disabled</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Property: Size → Large | Medium | Small</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Property: Label → With Label | Without Label</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day18/image1.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 26 ─── -->
+  <section class="section" id="sec-26">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">26 / 29</div>
+        <h2>Part 6: Advantages of Atomic Design</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day18/image3.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 27 ─── -->
+  <section class="section" id="sec-27">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">27 / 29</div>
+        <h2>Part 7: Scalability & Reusability</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scalability</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scalability means the system can grow — in screens, features, products, and team size — without proportional growth in design effort or without degradation in visual consistency.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Reusability</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Reusability means a component built once is used everywhere it is needed, without modification. True reusability requires components to be designed with flexibility — through props, variants, and slots — rather than designed for a single context.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 28 ─── -->
+  <section class="section" id="sec-28">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">28 / 29</div>
+        <h2>Part 8: Limitations & Misuse</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When Atomic Design Works Against You</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day18/image5.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 29 ─── -->
+  <section class="section" id="sec-29">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">29 / 29</div>
+        <h2>Part 9: Common Mistakes & Designing Screens vs Systems</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Designing Screens Instead of Systems — The Root Mistake</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Signs that a designer is designing screens instead of a system:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Every screen has its own version of a button with slightly different properties</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">There is no component library — only a collection of designed screens</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Changing the CTA button colour requires opening every screen file manually</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A new designer on the team cannot find a 'standard' for anything — because there isn't one</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The design handoff to developers is a PDF of screens, not a component specification</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The fix is not to retroactively extract components from existing screens. The fix is to change the starting point — begin every design project by defining atoms, building molecules, composing organisms, and only then assembling screens.</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day18/image9.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Key Principles to Carry Forward</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Build systems, not screens</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Screens are the byproduct of a well-built system</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Name everything</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Unnamed components do not exist in a shared system</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Token everything</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Hardcoded values are technical debt in design form</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">One source of truth</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Every component lives in the library, nowhere else</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Document as you build</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A component without usage guidance is a trap for the next designer</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Right-size the system</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Complexity should match project scope</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:50px; padding-top:30px; border-top:1px solid var(--border);">
+    <a href="day-17-design-systems.html" class="btn-action" style="background:var(--bg3); color:var(--text-bright); border:1px solid var(--border); text-decoration:none; width:auto;">← Previous: Design Systems</a>
+    <a href="day-19-color-in-product-design.html" class="btn-action btn-primary" style="text-decoration:none; width:auto;">Next: Color in Product Design →</a>
+  </div>
+
+</main>
+
+<!-- ════════════════ SCRIPTS ════════════════ -->
+<script>
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(s => observer.observe(s));
+
+  const navItems = document.querySelectorAll('.nav-item');
+  const sectionEls = document.querySelectorAll('section.section');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navItems.forEach(n => n.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sectionEls.forEach(s => navObserver.observe(s));
+
+  const dotsContainer = document.getElementById('progressDots');
+  const totalTopics = 29;
+  for (let i = 0; i < totalTopics; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot-prog';
+    dotsContainer.appendChild(dot);
+  }
+
+  const progressObserver = new IntersectionObserver((entries) => {
+    const allDots = document.querySelectorAll('.dot-prog');
+    let maxIndex = 0;
+    sectionEls.forEach((s, i) => {
+      if (s.classList.contains('visible')) maxIndex = i;
+    });
+    allDots.forEach((d, i) => {
+      d.classList.toggle('filled', i <= maxIndex);
+    });
+  }, { threshold: 0.1 });
+
+  sectionEls.forEach(s => progressObserver.observe(s));
+</script>
+
+</body>
+</html>

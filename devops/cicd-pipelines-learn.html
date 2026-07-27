@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Module 07: CI/CD Pipelines (Jenkins &amp; GitHub Actions) — Interactive Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ════════════════ SIDEBAR ════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; color:var(--accent); margin-bottom:10px;">← Back to Hub</a>
+    <div class="module-tag">Module 07</div>
+    <h1>CI/CD Pipelines (Jenkins &amp; G</h1>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Curriculum Topics</div>
+    <a class="nav-item active" href="#sec-1"><span class="dot"></span>CI/CD Pipelines (Jenkins &amp; Git</a>
+    <a class="nav-item" href="#sec-2"><span class="dot"></span>What is CI/CD?</a>
+    <a class="nav-item" href="#sec-3"><span class="dot"></span>What is Continuous Integration</a>
+    <a class="nav-item" href="#sec-4"><span class="dot"></span>What is Continuous Delivery (C</a>
+    <a class="nav-item" href="#sec-5"><span class="dot"></span>What is Continuous Deployment?</a>
+    <a class="nav-item" href="#sec-6"><span class="dot"></span>What is an Artifact?</a>
+    <a class="nav-item" href="#sec-7"><span class="dot"></span>Features</a>
+    <a class="nav-item" href="#sec-8"><span class="dot"></span>Features</a>
+    <a class="nav-item" href="#sec-9"><span class="dot"></span>Architecture</a>
+    <a class="nav-item" href="#sec-10"><span class="dot"></span>Features</a>
+    <a class="nav-item" href="#sec-11"><span class="dot"></span>Features</a>
+    <a class="nav-item" href="#sec-12"><span class="dot"></span>1. Freestyle Project</a>
+    <a class="nav-item" href="#sec-13"><span class="dot"></span>Features</a>
+    <a class="nav-item" href="#sec-14"><span class="dot"></span>2. Pipeline Project</a>
+    <a class="nav-item" href="#sec-15"><span class="dot"></span>Features</a>
+    <a class="nav-item" href="#sec-16"><span class="dot"></span>3. Multi-Branch Pipeline</a>
+    <a class="nav-item" href="#sec-17"><span class="dot"></span>Features</a>
+    <a class="nav-item" href="#sec-18"><span class="dot"></span>What is a Workflow?</a>
+    <a class="nav-item" href="#sec-19"><span class="dot"></span>1. Basic Workflow (Single Job)</a>
+    <a class="nav-item" href="#sec-20"><span class="dot"></span>Features</a>
+    <a class="nav-item" href="#sec-21"><span class="dot"></span>Features</a>
+    <a class="nav-item" href="#sec-22"><span class="dot"></span>Features</a>
+  </div>
+
+  <div class="progress-dots">
+    <p>// 22 topics</p>
+    <div class="dots-row" id="progressDots"></div>
+  </div>
+</nav>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main class="main">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">Module 07 <span class="cursor-blink"></span></div>
+    <h1>Module 07: <span class="highlight">CI/CD Pipelines (Jenkins &amp; GitHub Actions)</span></h1>
+    <p>Continuous Integration, build tools (Maven/npm), Jenkins pipelines, and GitHub Actions. Master production DevOps workflows, cloud architecture, and hands-on execution with 6 embedded diagrams.</p>
+    <div class="hero-chips">
+      <span class="chip green">Jenkins</span>
+      <span class="chip blue">GitHub Actions</span>
+      <span class="chip amber">Declarative CI</span>
+    </div>
+  </header>
+
+  
+  <!-- ─── SECTION 1 ─── -->
+  <section class="section" id="sec-1">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">01 / 22</div>
+        <h2>CI/CD Pipelines (Jenkins &amp; GitHub Actions)</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">— CI/CD</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 2 ─── -->
+  <section class="section" id="sec-2">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">02 / 22</div>
+        <h2>What is CI/CD?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">CI/CD (Continuous Integration and Continuous Delivery) is a method used in DevOps to automate the process of building, testing, and deploying applications.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea: Automatically build → test → deploy your code</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 3 ─── -->
+  <section class="section" id="sec-3">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">03 / 22</div>
+        <h2>What is Continuous Integration (CI)?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Continuous Integration is the process of automatically integrating code changes into a shared repository.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Developers push code frequently</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Code is automatically built and tested</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Errors are detected early</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module07/image6.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 4 ─── -->
+  <section class="section" id="sec-4">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">04 / 22</div>
+        <h2>What is Continuous Delivery (CD)?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Continuous delivery is a software development practice that uses automation to speed the release of new code.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It establishes a process through which a developer’s changes to an application can be pushed to a code repository or container registry through automation.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module07/image1.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 5 ─── -->
+  <section class="section" id="sec-5">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">05 / 22</div>
+        <h2>What is Continuous Deployment?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Continuous deployment is an extension of continuous delivery, and can refer to automating the release of a developer’s changes from the repository to production, where it is usable by customers.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module07/image4.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">CI/CD Workflow</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Developer writes code</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Code pushed to repository</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Pipeline triggers</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Build runs</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tests executed</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Application deployed</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Build Automation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Build automation means automatically compiling and packaging code.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Tools used:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Maven (Java)</p>
+                <div class="code-block">
+                  npm (Node.js)<br/>pip (Python)
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why Build Automation?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Saves time</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Reduces human errors</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ensures consistent builds</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Speeds up development</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example: Instead of running multiple commands manually, one command builds the entire project.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What Happens in a Build?</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">During build automation:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Source code is compiled</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Dependencies are installed</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tests may run</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Output (artifact) is generated</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Output examples:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">.jar file (Java)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">.zip file</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker image</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tools Used</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Maven (Java)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Apache Maven is used for Java projects.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Key Features</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Manages dependencies</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Builds and packages code</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Uses pom.xml configuration</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Common Commands</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Usage</th><th>Example</th></tr></thead><tbody><tr><td>mvn compile</td><td>Compile code</td><td>mvn compile</td></tr><tr><td>mvn test</td><td>Run tests</td><td>mvn test</td></tr><tr><td>mvn package</td><td>Create package</td><td>mvn package</td></tr><tr><td>mvn install</td><td>Install to local repo</td><td>mvn install</td></tr><tr><td>mvn clean</td><td>Clean build files</td><td>mvn clean</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">mvn clean install</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cleans + builds + installs project</p>
+                <div class="code-block">
+                  npm (Node.js)<br/>npm is used for JavaScript/Node.js projects.
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Key Features</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Installs dependencies</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Runs scripts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Manages packages</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Common Commands</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Usage</th><th>Example</th></tr></thead><tbody><tr><td>npm install</td><td>Install dependencies</td><td>npm install</td></tr><tr><td>npm start</td><td>Start app</td><td>npm start</td></tr><tr><td>npm run build</td><td>Build project</td><td>npm run build</td></tr><tr><td>npm test</td><td>Run tests</td><td>npm test</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">npm install</p>
+                <div class="code-block">
+                  npm run build
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Installs packages and builds app</p>
+                <div class="code-block">
+                  pip (Python)<br/>pip is used for Python projects.
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Key Features</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Installs Python libraries</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Manages dependencies</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Works with requirements.txt</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Common Commands</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Command</th><th>Usage</th><th>Example</th></tr></thead><tbody><tr><td>pip install</td><td>Install package</td><td>pip install flask</td></tr><tr><td>pip install -r</td><td>Install from file</td><td>pip install -r requirements.txt</td></tr><tr><td>pip list</td><td>List packages</td><td>pip list</td></tr><tr><td>pip uninstall</td><td>Remove package</td><td>pip uninstall flask</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">pip install -r requirements.txt</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Installs all project dependencies</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Pipeline Design</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A pipeline is a sequence of automated steps.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Good pipeline design should:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Be fast ⚡</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Be reliable ✅</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Be easy to maintain</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Pipeline Stages and Workflow</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Stage</th><th>Description</th></tr></thead><tbody><tr><td>Source</td><td>Code from Git</td></tr><tr><td>Build</td><td>Compile code</td></tr><tr><td>Test</td><td>Run tests</td></tr><tr><td>Deploy</td><td>Deploy app</td></tr></tbody>
+                      </table>
+                    </div>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module07/image3.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Artifact Management</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Artifact Repositories</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Artifact repositories are used to store and manage build outputs (artifacts).</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea: After building your application, you store the output in a central place so it can be reused later.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 6 ─── -->
+  <section class="section" id="sec-6">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">06 / 22</div>
+        <h2>What is an Artifact?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Artifacts are files generated after a build process.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Examples:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">.jar, .war (Java)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">.zip files</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker images</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why Use Artifact Repositories?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Central storage</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Version control of builds</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Easy sharing between teams</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Faster deployments</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Nexus Repository Manager</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Nexus Repository Manager is a popular open-source tool used to store and manage artifacts.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 7 ─── -->
+  <section class="section" id="sec-7">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">07 / 22</div>
+        <h2>Features</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Stores build artifacts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Supports multiple formats (Maven, npm, Docker)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Proxy remote repositories</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Access control &amp; security</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Types of Repositories in Nexus</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Hosted → Store your own artifacts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Proxy → Cache external repositories</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Group → Combine multiple repositories</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Common Use Case</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example: Store .jar files after build and use them in deployment.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Basic Commands (Using Maven with Nexus)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">mvn deploy</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Uploads artifact to Nexus</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Configuration (pom.xml)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">&lt;distributionManagement&gt;</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">&lt;repository&gt;</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">&lt;id&gt;nexus&lt;/id&gt;</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">&lt;url&gt;http://localhost:8081/repository/maven-releases/&lt;/url&gt;</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">&lt;/repository&gt;</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">&lt;/distributionManagement&gt;</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">JFrog Artifactory</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">JFrog Artifactory is an enterprise-level artifact repository manager.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 8 ─── -->
+  <section class="section" id="sec-8">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">08 / 22</div>
+        <h2>Features</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Universal repository (supports many package types)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">High availability</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Advanced security</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Integration with CI/CD tools</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Supported Formats</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Maven</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">npm</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Docker</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Python (pip)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Helm</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Container Build Pipelines</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Applications are packaged into containers using Docker</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">docker build -t myapp .</p>
+                <div class="code-block">
+                  <span class="prompt">$ </span>docker push myapp
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Builds and pushes container image</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Automated Testing Integration</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Testing is automatically executed in pipelines.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Types:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Unit Testing</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Integration Testing</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">UI Testing</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">npm test</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Runs automated tests</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Deployment Automation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Deployment is automated using pipelines.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Types:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Manual approval deployment</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Fully automated deployment</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">kubectl apply -f deployment.yaml</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Deploys app to Kubernetes</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Pipeline Security</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Security ensures safe pipelines.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Best Practices:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use secrets management</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Avoid hardcoding passwords</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scan code for vulnerabilities</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use role-based access</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Pipeline Monitoring</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Monitoring tracks pipeline performance.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Helps:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Detect failures</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Improve performance</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Track build time</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tools</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Prometheus</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Grafana</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tools Used in CI/CD</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔧 Jenkins</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Jenkins is an open-source automation tool. Jenkins builds and tests our software projects which continuously makes it easier for developers to integrate changes to the project, and makes it easier for users to obtain a fresh build.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It also allows us to continuously deliver our software by integrating with a large number of testing and deployment technologies.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Used to build pipelines</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Supports plugins</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Widely used in DevOps</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 9 ─── -->
+  <section class="section" id="sec-9">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">09 / 22</div>
+        <h2>Architecture</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module07/image5.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Jenkins Workflow</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module07/image2.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Types of Pipelines</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">There are two types of pipelines in Jenkins:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scripted Pipeline</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Declarative Pipeline</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scripted Pipeline</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scripted Pipeline is the older and more flexible way of writing pipelines.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Based on Groovy scripting language</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Full control over logic</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">More complex and verbose</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 10 ─── -->
+  <section class="section" id="sec-10">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">10 / 22</div>
+        <h2>Features</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Highly customizable</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Supports complex logic</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Requires programming knowledge</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">node {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">stage('Build') {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">// Build the application</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">sh 'mvn clean install'</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">stage('Test') {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">// Run tests</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">sh 'mvn test'</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">stage('Deploy') {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">// Deploy application</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">sh 'deploy.sh'</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Explanation</p>
+                <div class="code-block">
+                  node → Defines execution environment
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">stage → Represents steps (Build, Test, Deploy)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">sh → Runs shell commands</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Flow: Build → Test → Deploy</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Declarative Pipeline</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Declarative Pipeline is a newer and simpler way to write pipelines.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Uses structured syntax</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Easier to read</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Less error-prone</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 11 ─── -->
+  <section class="section" id="sec-11">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">11 / 22</div>
+        <h2>Features</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple and readable</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Recommended for beginners</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Uses predefined structure</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">pipeline {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">agent any</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">stages {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">stage('Build') {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">steps {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">sh 'mvn clean install'</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">stage('Test') {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">steps {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">sh 'mvn test'</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">stage('Deploy') {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">steps {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">sh 'deploy.sh'</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Explanation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">pipeline → Main block</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">agent any → Runs on any available node</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">stages → Groups all stages</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">steps → Commands inside each stage</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Flow remains same: Build → Test → Deploy</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Jenkins Project Types</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">In Jenkins, projects are used to define how your application is built, tested, and deployed.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea: Project = Configuration that tells Jenkins what to do</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 12 ─── -->
+  <section class="section" id="sec-12">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">12 / 22</div>
+        <h2>1. Freestyle Project</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Freestyle Project is the simplest and most basic project type in Jenkins.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It allows you to configure build steps using the Jenkins UI without writing code.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 13 ─── -->
+  <section class="section" id="sec-13">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">13 / 22</div>
+        <h2>Features</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Easy to set up</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Highly flexible</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GUI-based configuration</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">No coding required</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use Cases</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Small projects</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple automation tasks</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Quick builds</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Workflow</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Code → Build → Output</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Pull code from Git</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Run shell command</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Generate output</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Limitations</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Not suitable for complex workflows</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Difficult to maintain for large projects</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">No version control for configuration</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 14 ─── -->
+  <section class="section" id="sec-14">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">14 / 22</div>
+        <h2>2. Pipeline Project</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Pipeline Project is a modern and powerful way to define CI/CD workflows using code.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 15 ─── -->
+  <section class="section" id="sec-15">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">15 / 22</div>
+        <h2>Features</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Pipeline as Code (Jenkinsfile)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Supports stages (Build, Test, Deploy)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Version-controlled</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Highly scalable</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use Cases</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">CI/CD workflows</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Automated deployments</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Complex applications</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Workflow</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Code → Build → Test → Deploy</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Benefits</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Easy to track changes (stored in Git)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Reusable pipelines</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Better visualization</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example (Declarative Pipeline)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">pipeline {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">agent any</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">stages {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">stage('Build') {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">steps {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">sh 'mvn clean install'</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 16 ─── -->
+  <section class="section" id="sec-16">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">16 / 22</div>
+        <h2>3. Multi-Branch Pipeline</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Multi-Branch Pipeline is used when your project has multiple branches (like dev, test, main).</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 17 ─── -->
+  <section class="section" id="sec-17">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">17 / 22</div>
+        <h2>Features</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Automatically detects new branches</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Creates pipelines for each branch</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Runs builds independently</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use Cases</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Teams working on multiple branches</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Feature development</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Continuous integration for each branch</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Workflow</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Branch1 → Build/Test</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Branch2 → Build/Test</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Branch3 → Build/Test</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Benefits</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">No manual pipeline creation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Better branch visibility</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Faster development cycle</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Real Example</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">If you push a new branch:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Jenkins detects it</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Automatically creates pipeline</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Runs build and tests</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GitHub Actions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GitHub Actions is a CI/CD tool that allows you to automate workflows directly inside your GitHub repository.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea: GitHub Actions = Automatically run tasks when something happens in your repo</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 18 ─── -->
+  <section class="section" id="sec-18">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">18 / 22</div>
+        <h2>What is a Workflow?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A workflow is a defined automation process in GitHub Actions.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Stored as a .yml file</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Located in .github/workflows/</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Runs on specific events</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Workflow File</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: CI Pipeline</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">on: push</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">jobs:</h3><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">build:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">runs-on: ubuntu-latest</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">steps:</h3>
+                <div class="code-block">
+                  - name: Checkout code
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">uses: actions/checkout@v3</p>
+                <div class="code-block">
+                  - name: Run build
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">run: echo "Building project"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Key Components</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Component</th><th>Description</th></tr></thead><tbody><tr><td>Workflow</td><td>Automation process</td></tr><tr><td>Job</td><td>Group of steps</td></tr><tr><td>Step</td><td>Individual task</td></tr><tr><td>Action</td><td>Pre-built reusable code</td></tr><tr><td>Runner</td><td>Machine that runs jobs</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Types of GitHub Actions Workflows</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 19 ─── -->
+  <section class="section" id="sec-19">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">19 / 22</div>
+        <h2>1. Basic Workflow (Single Job)</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This is the simplest workflow with one job and multiple steps.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 20 ─── -->
+  <section class="section" id="sec-20">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">20 / 22</div>
+        <h2>Features</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Easy to create</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Suitable for beginners</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Single pipeline</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use Cases</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple build/test</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Learning CI/CD</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Small projects</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: Basic Workflow</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">on: push</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">jobs:</h3><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">build:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">runs-on: ubuntu-latest</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">steps:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- run: echo "Hello World"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Workflow</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Code Push → Run Job → Output</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">2. Multi-Job Workflow</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This workflow contains multiple jobs that can run in parallel or sequence.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 21 ─── -->
+  <section class="section" id="sec-21">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">21 / 22</div>
+        <h2>Features</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Multiple jobs</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Dependency between jobs</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Faster execution</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use Cases</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Build + Test + Deploy</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Complex pipelines</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: Multi Job Workflow</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">on: push</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">jobs:</h3><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">build:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">runs-on: ubuntu-latest</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">steps:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- run: echo "Building"</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">test:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">runs-on: ubuntu-latest</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">needs: build</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">steps:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- run: echo "Testing"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Workflow</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Build → Test → Deploy</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">3. Matrix Workflow</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Matrix workflows allow you to run jobs with different configurations.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 22 ─── -->
+  <section class="section" id="sec-22">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">22 / 22</div>
+        <h2>Features</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Run jobs in parallel</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Test multiple environments</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Saves time</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use Cases</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Test on multiple OS</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Test multiple versions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">name: Matrix Workflow</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">on: push</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">jobs:</h3><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">build:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">runs-on: ubuntu-latest</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">strategy:</h3><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">matrix:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">node-version: [14, 16, 18]</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">steps:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- run: echo "Running on Node ${{ matrix.node-version }}"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Workflow</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Run Job → Node 14</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">→ Node 16</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">→ Node 18</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Event-Based Triggers</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Workflows run based on events.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Common Events</p>
+                    <div style="overflow-x:auto; margin:20px 0;">
+                      <table class="cmd-table">
+                        <thead><tr><th>Event</th><th>Description</th></tr></thead><tbody><tr><td>push</td><td>Code pushed</td></tr><tr><td>pull_request</td><td>PR created</td></tr><tr><td>schedule</td><td>Run on time</td></tr><tr><td>workflow_dispatch</td><td>Manual trigger</td></tr></tbody>
+                      </table>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">on:</h3><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">push:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">branches: [main]</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Reusable Actions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Actions are reusable components.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">- uses: actions/checkout@v3</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This action checks out your code</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Secrets Management</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Sensitive data is stored securely.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">env:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">PASSWORD: ${{ secrets.MY_PASSWORD }}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AI-Assisted Pipeline Creation</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Use ChatGPT or Claude:</h3><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Generate:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Jenkinsfile</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GitHub Actions YAML</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Dockerfile</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Deployment YAML</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Infrastructure YAML (Terraform, Ansible, CloudFormation)</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Review:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Security</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Best practices</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Production readiness</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:50px; padding-top:30px; border-top:1px solid var(--border);">
+    <a href="kubernetes-cloud-native-learn.html" class="btn-action" style="background:var(--bg3); color:var(--text-bright); border:1px solid var(--border); text-decoration:none; width:auto;">← Previous: Module 06</a>
+    <a href="infrastructure-as-code-learn.html" class="btn-action btn-primary" style="text-decoration:none; width:auto;">Next: Module 08 →</a>
+  </div>
+
+</main>
+
+<!-- ════════════════ SCRIPTS ════════════════ -->
+<script>
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(s => observer.observe(s));
+
+  const navItems = document.querySelectorAll('.nav-item');
+  const sectionEls = document.querySelectorAll('section.section');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navItems.forEach(n => n.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sectionEls.forEach(s => navObserver.observe(s));
+
+  const dotsContainer = document.getElementById('progressDots');
+  const totalTopics = 22;
+  for (let i = 0; i < totalTopics; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot-prog';
+    dotsContainer.appendChild(dot);
+  }
+
+  const progressObserver = new IntersectionObserver((entries) => {
+    const allDots = document.querySelectorAll('.dot-prog');
+    let maxIndex = 0;
+    sectionEls.forEach((s, i) => {
+      if (s.classList.contains('visible')) maxIndex = i;
+    });
+    allDots.forEach((d, i) => {
+      d.classList.toggle('filled', i <= maxIndex);
+    });
+  }, { threshold: 0.1 });
+
+  sectionEls.forEach(s => progressObserver.observe(s));
+</script>
+
+</body>
+</html>

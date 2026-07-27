@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Web App Essentials — UI/UX Fellowship</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ════════════════ SIDEBAR ════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; color:var(--accent); margin-bottom:10px;">← Back to Hub</a>
+    <div class="module-tag">Product Design</div>
+    <h1>Web App Essentials</h1>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Curriculum Topics</div>
+    <a class="nav-item active" href="#sec-1"><span class="dot"></span>Web App Essentials</a>
+    <a class="nav-item" href="#sec-2"><span class="dot"></span>1. Open App — GET /auth/sessio</a>
+    <a class="nav-item" href="#sec-3"><span class="dot"></span>3. Location — POST /user/locat</a>
+    <a class="nav-item" href="#sec-4"><span class="dot"></span>5. Menu — GET /restaurants/42/</a>
+    <a class="nav-item" href="#sec-5"><span class="dot"></span>7. Checkout — GET /cart → orde</a>
+    <a class="nav-item" href="#sec-6"><span class="dot"></span>9. Confirmed — POST /orders → </a>
+    <a class="nav-item" href="#sec-7"><span class="dot"></span>11. Delivered — PATCH /orders/</a>
+  </div>
+
+  <div class="progress-dots">
+    <p>// 7 topics</p>
+    <div class="dots-row" id="progressDots"></div>
+  </div>
+</nav>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main class="main">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">UI/UX Fellowship <span class="cursor-blink"></span></div>
+    <h1><span class="highlight">Web App Essentials</span></h1>
+    <p>Welcome to Web App Essentials in the UI/UX Product Design Fellowship Programme. Master production workflows, design theory, and hands-on execution.</p>
+    <div class="hero-chips">
+      <span class="chip green">🎨 UI/UX Design</span>
+      <span class="chip blue">💡 Product Strategy</span>
+      <span class="chip amber">✨ Interactive Module</span>
+    </div>
+  </header>
+
+  
+  <!-- ─── SECTION 1 ─── -->
+  <section class="section" id="sec-1">
+    <div class="section-header">
+      <div class="section-icon icon-pink">📌</div>
+      <div>
+        <div class="section-number">01 / 07</div>
+        <h2>Web App Essentials</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Web App Essentials</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">01 · Introduction to Web Applications</h3>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day48/image3.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Fig 01 · Netflix-style web app dashboard</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A web app runs in the browser, has a backend, stores data, and gives personalised experiences</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Unlike a static website, it changes based on who is using it and what they do</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Real-World Examples</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Netflix — personalised content, watchlists, recommendations per user</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Gmail — real-time email, spam filtering, syncs across all devices</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Swiggy — location-aware restaurants, live order tracking, payment processing</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Amazon — personalised listings, cart, order tracking, seller dashboard</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">02 · Web App vs Website vs Mobile App</h3>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day48/image5.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Website</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Purpose: inform and showcase content</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">No login, same content for everyone, minimal data stored</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Examples: Wikipedia, portfolio, landing page</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Web App</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Purpose: perform tasks, complete transactions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Login required, personalised per user, stores data in a database</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Examples: Gmail, Figma, Notion, Swiggy</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Mobile App</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Purpose: mobile-first, on-the-go task completion</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Uses device features: camera, GPS, push notifications</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Works partially offline, stored on device + server</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Examples: Instagram, Uber, WhatsApp</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">03 · How Modern Digital Products Are Built</h3>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day48/image11.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">💡 Idea — define the problem and who it's for</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔍 Research — user interviews, competitive analysis, personas</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🧭 UX — wireframes, user flows, prototypes</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🎨 UI — visual design, component library, high-fidelity screens</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">⚛️ Frontend — turn Figma into HTML, CSS, JavaScript</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">⚙️ Backend — server logic, business rules, database management</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔌 API — connect frontend and backend, integrate third parties</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🧪 QA — test across devices, browsers, and edge cases</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🚀 Deploy — publish to a cloud server so real users can access it</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">👤 Users + Iteration — collect data, find friction, improve, and repeat</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Design is one stage in a long pipeline. Understanding what comes before and after your work makes you more effective.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">04 · Core Building Blocks</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🖥️ Frontend — The UI Layer</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day48/image12.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Everything the user sees and touches: buttons, forms, text, images</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Built with HTML (structure), CSS (styling), JavaScript (interaction)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Responds to user actions and sends requests to the backend</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Every component needs: default, hover, active, disabled, and loading states</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;"><button class="btn-primary">Buy Now</button></p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">.btn-primary {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">background: #D4500A;</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">color: white;</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">border-radius: 8px;</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">padding: 12px 24px;</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">⚙️ Backend — Logic & Database</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day48/image4.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Runs on a server — invisible to the user but powers everything</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Handles authentication, business rules, payments, and notifications</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Reads and writes data to the database</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Controls what each user is allowed to see and do</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">if (user.isLoggedIn) {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">showDashboard(user.data);</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">} else {</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">redirectTo("/login");</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">}</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔌 APIs — The Communication Layer</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day48/image9.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">API = contract between frontend and backend — defines how they talk</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Frontend sends an HTTP request → backend processes → returns JSON response</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GET = fetch data, POST = create, PATCH = update, DELETE = remove</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GET  /restaurants       # list nearby restaurants</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GET  /restaurants/42/menu  # get menu</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">POST /orders            # place an order</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">POST /auth/login        # log in</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DELETE /cart/item/7     # remove from cart</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">05 · How the Internet Works</h3>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day48/image8.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">You type a URL → browser asks DNS to convert it to an IP address</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The browser connects to the server and sends an HTTP request</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Server processes the request, queries the database, and returns a response</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The browser receives HTML + CSS + JS and renders the UI</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">HTTP Status Codes Designers Must Know</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">200 OK — success, data returned</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">301 Redirect — URL has moved</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">404 Not Found — page or resource does not exist → design a helpful 404 page</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">500 Server Error — something broke on the server → design a friendly fallback</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Every user action is a request. Every result on screen is a response. The milliseconds between them = your UX opportunity.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">06 · Key Concepts for Designers</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🌐 Hosting, Domains & Databases</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day48/image15.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Domain — the address of your app (e.g., swiggy.com), costs ~₹800–2000/year</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Hosting — the server that runs your app (AWS, Vercel, Netlify)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Database — stores all data: users, orders, products (PostgreSQL, Firebase)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">SSL Certificate — the padlock in the browser; without it, the users see "Not Secure.re"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">⚡ Performance</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day48/image14.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day48/image13.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Speed is a UX feature — a 1-second delay can drop conversions by 7%</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Optimise images — use WebP, set correct dimensions, use lazy loading</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Avoid too many fonts and heavy icons — each adds to load time</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">CDN — serves assets from servers closest to the user globally</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Core Web Vitals: FCP (first paint), LCP (largest element), CLS (layout shifts)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Every design decision affects performance. Design with load time in mind from the start.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">07 · Types of Web Apps</h3>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day48/image10.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day48/image7.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Static Website</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Same HTML served to every user — no personalisation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Fast, cheap to host, no backend needed</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Best for: portfolios, docs, landing pages</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Dynamic Web App</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Content generated per user based on their data and login</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Requires backend + database</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Best for: dashboards, e-commerce, SaaS tools</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Single Page Application (SPA)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">One HTML page loads; JavaScript swaps content without full reloads</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Feels fast and native — like an app, not a website</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Built with React, Vue, or Angular</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Loading is per-component, not per-page — design skeleton screens</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">08 · Role of a Designer</h3>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day48/image2.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Beyond UI — Think in Systems</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Design every state: default, loading, empty, error, partial data</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Design for real data — long names, missing images, 0 results, 1000 results</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Talk to engineers early — know constraints before you invest design time</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Build components, not just screens — think reusability from day one</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Own error messages, empty states, loading screens — not just the happy path</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use real content in mockups — lorem ipsum hides UX problems</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">09 · Common Misconceptions</h3>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day48/image6.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Fig 09 · Designer myths vs reality</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">❌ "Designers don't need technical knowledge."</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">✅ Tech literacy = better decisions, less rework, more trust from engineers</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">❌ "If it works in Figma, it works in codee.e"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">✅ Browsers have constraints — screen sizes, dynamic data, accessibility rules</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">❌ "UX is just wireframes and flows."</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">✅ UX = performance, error messages, emails, loading states, 404 pages, all of it</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">❌ "Loading and error states are the developer's job."</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">✅ They are prime UX moments — design them with the same care as onboarding</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Technical literacy = speaking the language of your medium. You don't need to code — you need to understand.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">10 · Real App Breakdown — Food Delivery</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day48/image1.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The 11-Step User Journey</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 2 ─── -->
+  <section class="section" id="sec-2">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">02 / 07</div>
+        <h2>1. Open App — GET /auth/session → splash screen, check login status</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">2. Login — POST /auth/login → form validation, error states, redirect</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 3 ─── -->
+  <section class="section" id="sec-3">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">03 / 07</div>
+        <h2>3. Location — POST /user/location → permission dialog, fallback to manual entry</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">4. Browse — GET /restaurants → skeleton cards, filters, empty state if none nearby</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 4 ─── -->
+  <section class="section" id="sec-4">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">04 / 07</div>
+        <h2>5. Menu — GET /restaurants/42/menu → category tabs, out-of-stock states</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">6. Add to Cart — POST /cart/items → optimistic update, undo toast, badge count</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 5 ─── -->
+  <section class="section" id="sec-5">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">05 / 07</div>
+        <h2>7. Checkout — GET /cart → order summary, promo code, address confirmation</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">8. Payment — POST /payments → processing state, success screen, failure + retry</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 6 ─── -->
+  <section class="section" id="sec-6">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">06 / 07</div>
+        <h2>9. Confirmed — POST /orders → success animation, order ID, estimated time</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">10. Track — GET /orders/99/status → live map, progress steps, ETA</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 7 ─── -->
+  <section class="section" id="sec-7">
+    <div class="section-header">
+      <div class="section-icon icon-pink">📌</div>
+      <div>
+        <div class="section-number">07 / 07</div>
+        <h2>11. Delivered — PATCH /orders/done → rating prompt, reorder shortcut</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GET   /restaurants          # nearby list</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GET   /restaurants/42/menu  # menu items</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">POST  /cart/items           # add to cart</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">POST  /orders               # place order</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">POST  /payments             # charge payment</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GET   /orders/99/status     # track status</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GET   /orders/99/track      # live GPS</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Every screen = an API call. Every call can succeed, fail, or be slow. Design all three outcomes for every screen.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:50px; padding-top:30px; border-top:1px solid var(--border);">
+    <a href="day-47-voice-presentation-delivery.html" class="btn-action" style="background:var(--bg3); color:var(--text-bright); border:1px solid var(--border); text-decoration:none; width:auto;">← Previous: Voice Presentation & Deliver</a>
+    <a href="day-49-translating-design-to-product.html" class="btn-action btn-primary" style="text-decoration:none; width:auto;">Next: Translating Design to Produc →</a>
+  </div>
+
+</main>
+
+<!-- ════════════════ SCRIPTS ════════════════ -->
+<script>
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(s => observer.observe(s));
+
+  const navItems = document.querySelectorAll('.nav-item');
+  const sectionEls = document.querySelectorAll('section.section');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navItems.forEach(n => n.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sectionEls.forEach(s => navObserver.observe(s));
+
+  const dotsContainer = document.getElementById('progressDots');
+  const totalTopics = 7;
+  for (let i = 0; i < totalTopics; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot-prog';
+    dotsContainer.appendChild(dot);
+  }
+
+  const progressObserver = new IntersectionObserver((entries) => {
+    const allDots = document.querySelectorAll('.dot-prog');
+    let maxIndex = 0;
+    sectionEls.forEach((s, i) => {
+      if (s.classList.contains('visible')) maxIndex = i;
+    });
+    allDots.forEach((d, i) => {
+      d.classList.toggle('filled', i <= maxIndex);
+    });
+  }, { threshold: 0.1 });
+
+  sectionEls.forEach(s => progressObserver.observe(s));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Accessibility & Testing in UX — UI/UX Fellowship</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ════════════════ SIDEBAR ════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; color:var(--accent); margin-bottom:10px;">← Back to Hub</a>
+    <div class="module-tag">Product Design</div>
+    <h1>Accessibility & Testing in U</h1>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Curriculum Topics</div>
+    <a class="nav-item active" href="#sec-1"><span class="dot"></span>Accessibility & Testing in UX</a>
+    <a class="nav-item" href="#sec-2"><span class="dot"></span>ECOMMERCE PRODUCT PAGE: ACCESS</a>
+    <a class="nav-item" href="#sec-3"><span class="dot"></span>HOW DESIGN FAILS EACH USER TYP</a>
+    <a class="nav-item" href="#sec-4"><span class="dot"></span>UX TESTING PLAN BOARD — FLIPKA</a>
+    <a class="nav-item" href="#sec-5"><span class="dot"></span>SUS ≥ 75</a>
+    <a class="nav-item" href="#sec-6"><span class="dot"></span>USABILITY TEST — AMAZON PRODUC</a>
+    <a class="nav-item" href="#sec-7"><span class="dot"></span>MODERATED (ZOOM) + UNMODERATED</a>
+    <a class="nav-item" href="#sec-8"><span class="dot"></span>BEFORE VS AFTER — CHECKOUT CTA</a>
+  </div>
+
+  <div class="progress-dots">
+    <p>// 8 topics</p>
+    <div class="dots-row" id="progressDots"></div>
+  </div>
+</nav>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main class="main">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">UI/UX Fellowship <span class="cursor-blink"></span></div>
+    <h1><span class="highlight">Accessibility & Testing in UX</span></h1>
+    <p>Welcome to Accessibility & Testing in UX in the UI/UX Product Design Fellowship Programme. Master production workflows, design theory, and hands-on execution.</p>
+    <div class="hero-chips">
+      <span class="chip green">🎨 UI/UX Design</span>
+      <span class="chip blue">💡 Product Strategy</span>
+      <span class="chip amber">✨ Interactive Module</span>
+    </div>
+  </header>
+
+  
+  <!-- ─── SECTION 1 ─── -->
+  <section class="section" id="sec-1">
+    <div class="section-header">
+      <div class="section-icon icon-pink">📌</div>
+      <div>
+        <div class="section-number">01 / 08</div>
+        <h2>Accessibility & Testing in UX</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Accessibility & Testing in UX</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">01  Accessibility Fundamentals</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">WCAG Principles — Perceivable · Operable · Understandable · Robust</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">WCAG (Web Content Accessibility Guidelines) defines four core principles that all digital interfaces must satisfy. In ecommerce, failing any one of these means real users cannot complete purchases.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">P — Perceivable</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Users must be able to see/hear content</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">O — Operable</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Users must be able to interact (buttons, navigation)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">U — Understandable</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Users must be able to interact (buttons, navigation)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">R — Robust</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Works across devices, browsers, assistive tech</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 2 ─── -->
+  <section class="section" id="sec-2">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">02 / 08</div>
+        <h2>ECOMMERCE PRODUCT PAGE: ACCESSIBILITY AUDIT</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day16/image5.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Issues (Inaccessible version):</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Low contrast price text (2.1:1, fails 4.5:1)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Small CTA buttons (24px, should be 44px)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Missing image alt text</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Fix (Accessible version):</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Proper contrast</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Larger tap targets</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Alt text added</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">02  Types of Disabilities</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Each disability type creates specific barriers in ecommerce flows. Designing for the hardest user first means your product becomes better for everyone — including users on slow connections, in bright sunlight, or holding a baby one-handed.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">👁  Visual Disability</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Blindness · Low Vision · Color Blindness</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Problem: No alt text, color-only signals</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Fix: Alt text + labels + don’t rely only on color</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🤚  Motor Disability</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tremors · Paralysis · Limited Dexterity</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Problem: Small buttons, swipe/hover actions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Fix: ≥44px targets + simple tap interactions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">👂  Auditory Disability</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Deafness · Hard of Hearing</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Problem: Videos without captions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Fix: Captions + visual indicators</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🧠  Cognitive Disability</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ADHD · Dyslexia · Memory Issues</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Problem : Amazon's checkout has 6+ steps with inconsistent UI across steps. No progress indicator. Users with ADHD lose track, abandon carts. Dyslexic users struggle with dense text and small line heights in specs.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Fix: Progress steps + simple, readable content</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 3 ─── -->
+  <section class="section" id="sec-3">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">03 / 08</div>
+        <h2>HOW DESIGN FAILS EACH USER TYPE</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day16/image6.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Disability → Ecommerce Problem → Design Fix</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Type</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ecommerce Problem</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Affected Flow</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Design Fix</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Visual</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Product images without alt text</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">PDP, Search Results</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Descriptive alt text, ARIA labels</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Motor</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Size/color swatches under 44px</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">PDP, Filter panel</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Min 44×44px targets, more spacing</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Auditory</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Promo videos without captions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Homepage, Brand pages</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Auto-captions + visual badges</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cognitive</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">No checkout progress indicator</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cart → Checkout</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Step stepper (1 of 4), clear CTAs</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">03  Test Planning & Execution</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Before any user sits in front of your product, the UX team builds a test plan. This plan defines exactly what you're testing, who you're testing with, and how you'll measure success. Without a plan, you're just watching someone shop — not learning anything actionable.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">What a test plan covers:</h3><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Participants: target users (age, device, behavior, accessibility)</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tasks: real scenarios (e.g., “Find a phone under ₹30K”)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Metrics: success rate, time, errors, SUS score</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Structure: moderated/unmoderated, session flow</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 4 ─── -->
+  <section class="section" id="sec-4">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">04 / 08</div>
+        <h2>UX TESTING PLAN BOARD — FLIPKART MOBILE APP (Q2 2025)</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day16/image4.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">The board above shows a real test plan structure:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Users: 8 participants</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tasks: 5 (browse → purchase)</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Metrics targets:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Success ≥ 80%</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Time ≤ 3 mins</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Errors ≤ 1</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 5 ─── -->
+  <section class="section" id="sec-5">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">05 / 08</div>
+        <h2>SUS ≥ 75</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">04  Usability Testing</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Watching real users navigate your ecommerce flow — and learning from where they break</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Usability testing is not asking users "do you like this?" It's watching them try to complete real tasks and observing where they struggle, hesitate, or fail. On an ecommerce product, the flow is always: Product → Cart → Checkout.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">What usability testing reveals:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Exactly where users hesitate, backtrack, or abandon</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Whether your button labels match what users expect to do</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Which UI elements are being ignored vs. interacted with</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Confusion points that no amount of analytics data explains</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 6 ─── -->
+  <section class="section" id="sec-6">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">06 / 08</div>
+        <h2>USABILITY TEST — AMAZON PRODUCT PAGE (PARTICIPANT #5)</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day16/image7.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The mockup above shows a real usability test session.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The left panel shows the task ("Add Sony WH-1000XM5 to cart").</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Live metrics (1:24 elapsed, 3 hesitations, 2 misclicks).</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The user's click path.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The right panel shows an Amazon product page with a heatmap overlay,</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">the orange/red zone around "Buy Now" is a misclick cluster (3 of 8 users tapped it when trying to Add to Cart).</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">05  Types of Testing Methods</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Moderated vs Unmoderated — when to use each, and what you learn</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Neither method alone is enough. The best UX teams combine both — moderated sessions to discover problems and understand the "why," then unmoderated tests to validate fixes at scale before shipping.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Factor</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🎙  Moderated Testing</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">📊  Unmoderated Testing</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Sample size</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">5–8 (enough for patterns)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">20–50+ (statistical confidence)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Turnaround</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">1–2 weeks (scheduling)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">24–48 hours</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Output type</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Quotes, observations, the "why"</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Metrics, heatmaps, click paths</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Best for</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Complex flows, new features, accessibility</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Validating hypotheses, A/B decisions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example use</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Testing new Flipkart return flow</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Validating 'Add to Cart' button copy change</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 7 ─── -->
+  <section class="section" id="sec-7">
+    <div class="section-header">
+      <div class="section-icon icon-pink">📌</div>
+      <div>
+        <div class="section-number">07 / 08</div>
+        <h2>MODERATED (ZOOM) + UNMODERATED</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Left panel: A moderated session showing the researcher's video, participant's screen share (Flipkart product page), controls, and live notes. This is where behavioral nuances like "user paused and said 'is this an ad?'" get captured.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Right panel: Maze analytics showing 72% task success, 2:18 avg time, 2.8 misclicks, and a visual click distribution bar chart per page zone.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">06  Analyzing Feedback & Iteration Cycle</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Testing → Insight → Design Fix → Better UX</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Raw session data means nothing until it's organized into themes. The affinity mapping process turns scattered observations into prioritized design problems — and those problems into specific UI changes you can measure in the next round.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">🔬 Test  →  📋 Synthesize  →  🎯 Prioritize  →  ✏️ Redesign  →  ✅ Retest</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Each step feeds the next. After retesting, the cycle starts again. UX is never "done" — every shipped improvement creates new behavior to observe.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AFFINITY MAPPING BOARD — FIGJAM / MIRO STYLE (FLIPKART CHECKOUT TEST)</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day16/image1.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">After 8 sessions, observations are grouped into themes: Navigation, CTA, Checkout, Trust</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Priority:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">P0: CTA issues (blocks task)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">P1: Checkout flow</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">P2: Coupon visibility</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">P3: Trust signals</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 8 ─── -->
+  <section class="section" id="sec-8">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">08 / 08</div>
+        <h2>BEFORE VS AFTER — CHECKOUT CTA FIX (P0 ISSUE)</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day16/image3.png" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Complete Iteration Record — Checkout CTA Issue</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">#</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Step</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What happened</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">1</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Testing revealed the problem</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Moderated session (8 users): 3 of 8 misclicked "Buy Now" — both buttons had identical visual weight.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">2</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Affinity mapping clustered it</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Observation tagged P0 under "CTA Problems" theme. The same session revealed a coupon field issue.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">3</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Hypothesis formed</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">"If we differentiate CTA hierarchy and surface coupon field, task success will exceed 80%."</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">4</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Redesign in Figma</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Full-width primary CTA, outlined secondary, coupon field always-visible, step stepper added.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">5</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Unmoderated retest</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">36 participants via Maze. Task success 89% (+27%), misclicks 0.8, SUS score 68 → 81.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:50px; padding-top:30px; border-top:1px solid var(--border);">
+    <a href="day-15-behavioral-design.html" class="btn-action" style="background:var(--bg3); color:var(--text-bright); border:1px solid var(--border); text-decoration:none; width:auto;">← Previous: Behavioral Design</a>
+    <a href="day-17-design-systems.html" class="btn-action btn-primary" style="text-decoration:none; width:auto;">Next: Design Systems →</a>
+  </div>
+
+</main>
+
+<!-- ════════════════ SCRIPTS ════════════════ -->
+<script>
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(s => observer.observe(s));
+
+  const navItems = document.querySelectorAll('.nav-item');
+  const sectionEls = document.querySelectorAll('section.section');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navItems.forEach(n => n.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sectionEls.forEach(s => navObserver.observe(s));
+
+  const dotsContainer = document.getElementById('progressDots');
+  const totalTopics = 8;
+  for (let i = 0; i < totalTopics; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot-prog';
+    dotsContainer.appendChild(dot);
+  }
+
+  const progressObserver = new IntersectionObserver((entries) => {
+    const allDots = document.querySelectorAll('.dot-prog');
+    let maxIndex = 0;
+    sectionEls.forEach((s, i) => {
+      if (s.classList.contains('visible')) maxIndex = i;
+    });
+    allDots.forEach((d, i) => {
+      d.classList.toggle('filled', i <= maxIndex);
+    });
+  }, { threshold: 0.1 });
+
+  sectionEls.forEach(s => progressObserver.observe(s));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>User research — UI/UX Fellowship</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ════════════════ SIDEBAR ════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; color:var(--accent); margin-bottom:10px;">← Back to Hub</a>
+    <div class="module-tag">Product Design</div>
+    <h1>User research</h1>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Curriculum Topics</div>
+    <a class="nav-item active" href="#sec-1"><span class="dot"></span>User research</a>
+    <a class="nav-item" href="#sec-2"><span class="dot"></span>1. Qualitative Research</a>
+    <a class="nav-item" href="#sec-3"><span class="dot"></span>1. Qualitative Research</a>
+    <a class="nav-item" href="#sec-4"><span class="dot"></span>1. User Interviews</a>
+    <a class="nav-item" href="#sec-5"><span class="dot"></span>2. Usability Testing</a>
+    <a class="nav-item" href="#sec-6"><span class="dot"></span>3. Focus Groups</a>
+    <a class="nav-item" href="#sec-7"><span class="dot"></span>4. Field Study (Contextual Inq</a>
+    <a class="nav-item" href="#sec-8"><span class="dot"></span>1. Surveys & Questionnaires</a>
+    <a class="nav-item" href="#sec-9"><span class="dot"></span>2. Product Analytics</a>
+    <a class="nav-item" href="#sec-10"><span class="dot"></span>3. A/B Testing</a>
+    <a class="nav-item" href="#sec-11"><span class="dot"></span>4. Funnel Analysis</a>
+    <a class="nav-item" href="#sec-12"><span class="dot"></span>1. Define a Clear Goal</a>
+    <a class="nav-item" href="#sec-13"><span class="dot"></span>2. Keep Questions Simple and C</a>
+    <a class="nav-item" href="#sec-14"><span class="dot"></span>3. Avoid Leading and Biased Qu</a>
+    <a class="nav-item" href="#sec-15"><span class="dot"></span>4. Use Closed-Ended Questions </a>
+    <a class="nav-item" href="#sec-16"><span class="dot"></span>5. Use Consistent Rating Scale</a>
+    <a class="nav-item" href="#sec-17"><span class="dot"></span>6. Avoid Double-Barreled Quest</a>
+    <a class="nav-item" href="#sec-18"><span class="dot"></span>7. Keep the Survey Short</a>
+    <a class="nav-item" href="#sec-19"><span class="dot"></span>8. Use Logical Question Order</a>
+    <a class="nav-item" href="#sec-20"><span class="dot"></span>9. Include Optional Open-Ended</a>
+    <a class="nav-item" href="#sec-21"><span class="dot"></span>10. Make It Mobile-Friendly</a>
+    <a class="nav-item" href="#sec-22"><span class="dot"></span>11. Test the Survey Before Lau</a>
+    <a class="nav-item" href="#sec-23"><span class="dot"></span>12. Avoid Too Many Open-Ended </a>
+    <a class="nav-item" href="#sec-24"><span class="dot"></span>1. Click / Tap Data</a>
+    <a class="nav-item" href="#sec-25"><span class="dot"></span>2. Navigation Flow (User Journ</a>
+    <a class="nav-item" href="#sec-26"><span class="dot"></span>3. Scroll Behavior</a>
+    <a class="nav-item" href="#sec-27"><span class="dot"></span>4. Session Duration & Time on </a>
+    <a class="nav-item" href="#sec-28"><span class="dot"></span>5. Drop-off & Funnel Data</a>
+    <a class="nav-item" href="#sec-29"><span class="dot"></span>6. Feature Usage Data</a>
+    <a class="nav-item" href="#sec-30"><span class="dot"></span>1. Start with Quantitative Dat</a>
+    <a class="nav-item" href="#sec-31"><span class="dot"></span>2. Follow with Qualitative Res</a>
+    <a class="nav-item" href="#sec-32"><span class="dot"></span>3. Design Solutions Based on I</a>
+    <a class="nav-item" href="#sec-33"><span class="dot"></span>4. Validate Again with Quantit</a>
+    <a class="nav-item" href="#sec-34"><span class="dot"></span>1. Sequential Approach (Most C</a>
+    <a class="nav-item" href="#sec-35"><span class="dot"></span>2. Exploratory Approach</a>
+    <a class="nav-item" href="#sec-36"><span class="dot"></span>3. Concurrent Approach</a>
+  </div>
+
+  <div class="progress-dots">
+    <p>// 36 topics</p>
+    <div class="dots-row" id="progressDots"></div>
+  </div>
+</nav>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main class="main">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">UI/UX Fellowship <span class="cursor-blink"></span></div>
+    <h1><span class="highlight">User research</span></h1>
+    <p>Welcome to User research in the UI/UX Product Design Fellowship Programme. Master production workflows, design theory, and hands-on execution.</p>
+    <div class="hero-chips">
+      <span class="chip green">🎨 UI/UX Design</span>
+      <span class="chip blue">💡 Product Strategy</span>
+      <span class="chip amber">✨ Interactive Module</span>
+    </div>
+  </header>
+
+  
+  <!-- ─── SECTION 1 ─── -->
+  <section class="section" id="sec-1">
+    <div class="section-header">
+      <div class="section-icon icon-pink">📌</div>
+      <div>
+        <div class="section-number">01 / 36</div>
+        <h2>User research</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">In UX Design,  Primary research is broadly divided into two types:</h3>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 2 ─── -->
+  <section class="section" id="sec-2">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">02 / 36</div>
+        <h2>1. Qualitative Research</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">2. Quantitative Research</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Both play a crucial role in understanding users and building better products.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 3 ─── -->
+  <section class="section" id="sec-3">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">03 / 36</div>
+        <h2>1. Qualitative Research</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Qualitative Research is a research approach that focuses on understanding users at a deeper level specifically their thoughts, emotions, motivations, and behaviors.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Unlike quantitative research, which deals with numbers and metrics, qualitative research helps answer the “why” behind user actions. It is widely used in UI/UX design to uncover real user problems and design meaningful solutions.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What Questions Does It Answer?</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Qualitative research helps designers and researchers explore:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why are users struggling? Identifies root causes behind usability issues.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What are users feeling? Captures emotions such as frustration, confusion, satisfaction, or delight.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What problems are they facing? Understands real-world challenges users encounter while using a product.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why do users behave in a certain way? Reveals motivations and decision-making patterns.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Goals of Qualitative Research</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">The primary objectives include:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Identify User Pain Points Understand where users face difficulty, confusion, or frustration.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Understand User Expectations Learn what users expect from a product or experience.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Discover Behavior Patterns Analyze how users interact with systems in real-life scenarios.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Build Empathy Help designers deeply understand users to create human-centered solutions.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Methods</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 4 ─── -->
+  <section class="section" id="sec-4">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">04 / 36</div>
+        <h2>1. User Interviews</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day09/image12.jpg" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">One-on-one conversations between the researcher and the user.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Uses open-ended questions to encourage detailed responses.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Helps uncover personal experiences, thoughts, and motivations.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example: “What difficulties did you face while ordering food through this app?”</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Outcome: Rich insights in the form of stories, opinions, and personal experiences.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 5 ─── -->
+  <section class="section" id="sec-5">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">05 / 36</div>
+        <h2>2. Usability Testing</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day09/image6.jpg" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Users are given specific tasks to perform using a product.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Researchers observe behavior, actions, and difficulties.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Focuses on identifying usability issues.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Task:“Order a meal from this application.”</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">What to Observe:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Where users hesitate</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Where they make errors</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">How they navigate through the interface</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 6 ─── -->
+  <section class="section" id="sec-6">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">06 / 36</div>
+        <h2>3. Focus Groups</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day09/image24.jpg" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A group of users participates in a guided discussion.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Facilitated by a moderator who asks questions and encourages interaction.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Useful for gathering multiple perspectives at once.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Benefits:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Reveals shared opinions and disagreements</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Helps understand group dynamics and common concerns</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 7 ─── -->
+  <section class="section" id="sec-7">
+    <div class="section-header">
+      <div class="section-icon icon-pink">📌</div>
+      <div>
+        <div class="section-number">07 / 36</div>
+        <h2>4. Field Study (Contextual Inquiry)</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day09/image19.jpg" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Observing users in their natural environment while they perform tasks.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Helps understand real-world constraints and workflows.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example:Watching a shop owner use a billing application in their store.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Outcome:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Realistic insights into user behavior</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Identification of environmental and contextual challenges</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Type of Data Collected</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Qualitative research produces descriptive (non-numerical) data, such as:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">User QuotesExample: “This screen is confusing.”</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ObservationsNoting user actions, hesitations, and behaviors.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Emotions and ReactionsFacial expressions, tone of voice, frustration levels.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Notes and RecordingsWritten notes, audio recordings, or video sessions.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This type of data focuses on depth rather than quantity.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Outputs of Qualitative Research</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">The insights gathered are transformed into useful UX artifacts:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">PersonasFictional representations of target users based on research.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Empathy MapsVisual representation of what users think, feel, say, and do.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Journey MapsStep-by-step visualization of user experience across interactions.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Pain Points & InsightsClearly defined problems and opportunities for improvement.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Advantages of Qualitative Research</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Provides Deep UnderstandingCaptures detailed insights into user behavior and mindset.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Supports IdeationHelps generate meaningful design ideas based on real user needs.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Reveals Hidden IssuesIdentifies problems that may not be visible through data alone.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Limitations of Qualitative Research</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Small Sample SizeTypically involves fewer participants, limiting generalization.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Time-ConsumingRequires effort in conducting sessions and analyzing data.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Not Statistically MeasurableCannot be used to derive numerical conclusions or trends.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What is Quantitative Research?</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day09/image5.jpg" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Quantitative Research is a research approach that focuses on collecting and analyzing numerical data to understand user behavior at scale.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It answers questions using measurable data, statistics, and metrics, helping teams make data-driven decisions.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Unlike qualitative research (which explains why), quantitative research focuses on “what,” “how many,” and “how often.”</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What Questions Does It Answer?</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Quantitative research helps answer:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What percentage of users are dropping off?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">How many users completed a task successfully?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Which feature is used the most?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">How often do users return to the app?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What is the conversion rate?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Goals of Quantitative Research</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Measure User BehaviorTrack how users interact with the product.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Validate AssumptionsConfirm whether a design decision is effective.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Identify Trends and PatternsUnderstand usage patterns across large user groups.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Support Decision-MakingProvide data-backed insights for product improvements.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Methods (Detailed Explanation)</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 8 ─── -->
+  <section class="section" id="sec-8">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">08 / 36</div>
+        <h2>1. Surveys & Questionnaires</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day09/image16.jpg" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day09/image15.jpg" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Structured forms with closed-ended questions.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Users respond using predefined options like:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Multiple choice</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Rating scales (1–5)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Yes/No</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example Questions:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">“Rate your experience from 1 to 5”</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">“Did you face any issue while ordering?”</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Outcome:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Easy-to-analyze numerical data</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Useful for identifying trends across many users</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 9 ─── -->
+  <section class="section" id="sec-9">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">09 / 36</div>
+        <h2>2. Product Analytics</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day09/image2.jpg" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day09/image9.jpg" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tools track user interactions within the product.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Measures real-time user behavior using metrics.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Key Metrics:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Number of users</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Session duration</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Bounce rate</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Conversion rate</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Retention rate</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example:Tracking how many users abandon the checkout process.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 10 ─── -->
+  <section class="section" id="sec-10">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">10 / 36</div>
+        <h2>3. A/B Testing</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day09/image20.jpg" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day09/image22.jpg" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Compares two or more versions of a design.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Users are split into groups and shown different variations.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Version A: Red “Buy Now” button</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Version B: Green “Buy Now” button</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Goal:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Identify which version performs better based on metrics like clicks or conversions.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 11 ─── -->
+  <section class="section" id="sec-11">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">11 / 36</div>
+        <h2>4. Funnel Analysis</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day09/image7.jpg" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tracks the step-by-step journey of users.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Identifies where users drop off in a process.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example Funnel:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Open app → Browse → Add to cart → Checkout → Payment</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Insight:Pinpoints exact stages where users leave the flow.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Type of Data Collected</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Quantitative research produces numerical and measurable data, such as:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">PercentagesExample: 65% users dropped at checkout</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">CountsExample: 1,200 users signed up</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">RatesConversion rate, retention rate</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Time-based DataSession duration, time on task</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This data is structured and statistically analyzable.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Outputs of Quantitative Research</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Charts & GraphsVisual representation of user data</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DashboardsReal-time analytics overview</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Reports with MetricsPerformance summaries</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Data InsightsClear, measurable findings for decision-making</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Advantages of Quantitative Research</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ScalableCan collect data from a large number of users</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Objective and MeasurableBased on numbers, reducing bias</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Quick AnalysisData can be processed and visualized easily</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Supports ValidationHelps confirm design decisions with evidence</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Limitations of Quantitative Research</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Lacks DepthDoes not explain why users behave a certain way</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Limited ContextNumbers don’t capture emotions or motivations</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Depends on Data QualityPoor data collection leads to incorrect insights</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Qualitative vs Quantitative Research – Key Differences & Use Cases</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day09/image10.jpg" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Understanding the difference between Qualitative and Quantitative research is crucial in UX design. Both methods serve different purposes, and using them together leads to better product decisions.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Key Differences</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Aspect</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Qualitative Research</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Quantitative Research</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Purpose</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Understand why users behave in a certain way</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Measure what, how many, how often</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Data Type</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Non-numerical (opinions, emotions, observations)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Numerical (metrics, percentages, counts)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Focus</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Depth of understanding</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Breadth and scale</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Sample Size</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Small (5–15 users typically)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Large (100s–1000s users)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Methods</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Interviews, usability testing, focus groups, field study</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Surveys, analytics, A/B testing, funnel analysis</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Output</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Personas, empathy maps, journey maps, insights</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Charts, graphs, dashboards, reports</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Analysis</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Interpretative and subjective</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Statistical and objective</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Time Required</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Time-consuming</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Faster with tools</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Outcome</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Discover problems and user needs</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Validate and measure performance</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When to Use Qualitative Research</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day09/image13.jpg" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Use qualitative research when you want to:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Explore new problemsWhen you don’t clearly understand user issues.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Understand user behavior deeplyLearn motivations, emotions, and pain points.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Generate ideas (Ideation phase)Useful in early stages of design thinking.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Improve user experienceIdentify usability issues and hidden frustrations.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Use Case:You notice users are not completing orders. You conduct interviews and usability testing to understand why they are dropping off.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When to Use Quantitative Research</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Use quantitative research when you want to:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Measure performanceTrack KPIs like conversion rate, retention, and engagement.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Validate design decisionsConfirm if a solution works effectively.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Identify trends at scaleAnalyze behavior across a large user base.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Compare variations (A/B testing)Decide which design performs better.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Use Case:After redesigning the checkout flow, you track analytics to see if the conversion rate has increased.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">How They Work Together</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day09/image18.jpg" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">In real-world UX design, both methods are used together:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Step 1: Quantitative → Identify the problemExample: 70% users drop at checkout</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Step 2: Qualitative → Understand the reasonExample: Users find the payment process confusing</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Step 3: Quantitative → Validate the solutionExample: A/B testing shows improved conversion rate</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Summary</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Qualitative Research helps you understand why users behave the way they do.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Quantitative Research helps you measure what is happening at scale.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A strong UX process does not rely on just one method. The best outcomes come from combining both approaches—using qualitative insights to guide decisions and quantitative data to validate them.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Survey Design Best Practices</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Designing an effective survey is critical in quantitative research. Poorly designed surveys lead to biased, confusing, or unusable data, while well-designed surveys produce clear, reliable insights.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 12 ─── -->
+  <section class="section" id="sec-12">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">12 / 36</div>
+        <h2>1. Define a Clear Goal</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Before creating a survey, be very clear about:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What do you want to learn?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What decision will this data support?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example:Instead of “Understand user feedback,” define:“Measure user satisfaction with the checkout experience.”</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A focused goal ensures every question has a purpose.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 13 ─── -->
+  <section class="section" id="sec-13">
+    <div class="section-header">
+      <div class="section-icon icon-pink">📌</div>
+      <div>
+        <div class="section-number">13 / 36</div>
+        <h2>2. Keep Questions Simple and Clear</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use easy, everyday language</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Avoid jargon or technical terms</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Keep questions short and direct</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Bad:“How would you evaluate the usability of the transactional interface?”</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Good:“How easy was it to complete your purchase?”</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Clarity reduces confusion and improves response accuracy.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 14 ─── -->
+  <section class="section" id="sec-14">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">14 / 36</div>
+        <h2>3. Avoid Leading and Biased Questions</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Do not influence users toward a specific answer.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Bad (Leading):“How much did you enjoy our fast and easy checkout?”</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Good (Neutral):“How was your checkout experience?”</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Neutral wording ensures honest responses.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 15 ─── -->
+  <section class="section" id="sec-15">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">15 / 36</div>
+        <h2>4. Use Closed-Ended Questions for Quantitative Data</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Multiple choice</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Rating scales (1–5, 1–10)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Yes/No</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">These are easier to analyze and compare.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example:“Rate your experience from 1 (Poor) to 5 (Excellent)”</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 16 ─── -->
+  <section class="section" id="sec-16">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">16 / 36</div>
+        <h2>5. Use Consistent Rating Scales</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day09/image23.jpg" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Stick to one scale type throughout the survey</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Clearly label all scale points</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example:1 – Very Difficult2 – Difficult3 – Neutral4 – Easy5 – Very Easy</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Inconsistent scales confuse users and affect data quality.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 17 ─── -->
+  <section class="section" id="sec-17">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">17 / 36</div>
+        <h2>6. Avoid Double-Barreled Questions</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Do not ask two things in one question.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Bad:“How satisfied are you with the app design and speed?”</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Good:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">“How satisfied are you with the app design?”</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">“How satisfied are you with the app speed?”</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Each question should measure only one thing.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 18 ─── -->
+  <section class="section" id="sec-18">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">18 / 36</div>
+        <h2>7. Keep the Survey Short</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Respect user time</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Focus only on essential questions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Ideal Length:5–10 questions (depending on context)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Short surveys improve completion rates and reduce drop-offs.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 19 ─── -->
+  <section class="section" id="sec-19">
+    <div class="section-header">
+      <div class="section-icon icon-pink">📌</div>
+      <div>
+        <div class="section-number">19 / 36</div>
+        <h2>8. Use Logical Question Order</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Start with easy, general questions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Move to specific or sensitive questions later</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Flow Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Overall experience</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Specific tasks (checkout, navigation)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Demographics (optional)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A logical flow improves user comfort and response quality.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 20 ─── -->
+  <section class="section" id="sec-20">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">20 / 36</div>
+        <h2>9. Include Optional Open-Ended Questions</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Even in quantitative surveys, add 1–2 open-ended questions:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example:“What is one thing we can improve?”</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This provides qualitative insights to support numerical data.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 21 ─── -->
+  <section class="section" id="sec-21">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">21 / 36</div>
+        <h2>10. Make It Mobile-Friendly</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day09/image3.jpg" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use large touch-friendly options</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Avoid long paragraphs</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Prefer one question per screen</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Most users take surveys on mobile, so usability is critical.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 22 ─── -->
+  <section class="section" id="sec-22">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">22 / 36</div>
+        <h2>11. Test the Survey Before Launch</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Run a pilot test with a few users</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Check for:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Confusing questions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Technical issues</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Completion time</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Testing ensures reliability before full rollout.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 23 ─── -->
+  <section class="section" id="sec-23">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">23 / 36</div>
+        <h2>12. Avoid Too Many Open-Ended Questions</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Hard to analyze at scale</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Time-consuming for users</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use them sparingly and only when deeper input is needed.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Summary</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">A well-designed survey should be:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Clear – Easy to understand</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Unbiased – Neutral wording</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Focused – Aligned with a goal</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Consistent – Uniform scales and structure</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Efficient – Short and user-friendly</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Good survey design ensures that the data you collect is accurate, reliable, and actionable, making it a powerful tool in quantitative research.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Behavioral Data</p>
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day09/image25.jpg" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Behavioral data refers to the actual actions users perform while interacting with a product (website, mobile app, or software).</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Instead of asking users what they think (like surveys), behavioral data shows what users actually do.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It is a key part of quantitative research and helps teams make decisions based on real usage patterns.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What Does Behavioral Data Answer?</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Behavioral data helps answer:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What are users doing inside the product?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Where are users clicking or tapping?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Where do users drop off?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">How long do users spend on a task?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Which features are most/least used?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Key Types of Behavioral Data</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 24 ─── -->
+  <section class="section" id="sec-24">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">24 / 36</div>
+        <h2>1. Click / Tap Data</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day09/image4.jpg" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tracks where users click (web) or tap (mobile).</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Often visualized using heatmaps.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Insight Example:Users are clicking on a non-clickable image → indicates a design confusion.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 25 ─── -->
+  <section class="section" id="sec-25">
+    <div class="section-header">
+      <div class="section-icon icon-pink">📌</div>
+      <div>
+        <div class="section-number">25 / 36</div>
+        <h2>2. Navigation Flow (User Journey)</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Shows the path users take across screens/pages.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Helps understand how users move through the product.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Insight Example:Users are skipping an important step → flow may not be intuitive.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 26 ─── -->
+  <section class="section" id="sec-26">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">26 / 36</div>
+        <h2>3. Scroll Behavior</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day09/image14.jpg" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tracks how far users scroll on a page.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Identifies whether important content is being seen.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Insight Example:Most users don’t scroll past 50% → important content should be moved up.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 27 ─── -->
+  <section class="section" id="sec-27">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">27 / 36</div>
+        <h2>4. Session Duration & Time on Task</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day09/image17.jpg" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Measures how long users spend:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">On the app</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">On a specific page</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Completing a task</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Insight Example:Very high time on task may indicate confusion or complexity.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 28 ─── -->
+  <section class="section" id="sec-28">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">28 / 36</div>
+        <h2>5. Drop-off & Funnel Data</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day09/image7.jpg" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tracks where users leave a process (funnel).</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Common in flows like signup, checkout, onboarding.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Insight Example:High drop-off at payment step → possible trust or usability issue.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 29 ─── -->
+  <section class="section" id="sec-29">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">29 / 36</div>
+        <h2>6. Feature Usage Data</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Measures how often features are used.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Helps identify:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Popular features</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Unused or ignored features</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Insight Example:A feature with low usage may need redesign or better visibility.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">How Behavioral Data is Collected</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Behavioral data is collected using analytics tools such as:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Product analytics tools (track events and user actions)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Heatmap tools (visualize clicks and scrolls)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Session recordings (replay user interactions)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">These tools automatically capture user behavior without interrupting the experience.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Advantages of Behavioral Data</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Objective and RealBased on actual user actions, not opinions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">ScalableCan track thousands or millions of users</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Continuous TrackingData is collected over time for ongoing insights</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Helps Identify Issues QuicklyHighlights drop-offs and problem areas</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Limitations of Behavioral Data</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Does Not Explain “Why”Only shows actions, not motivations</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Needs InterpretationData can be misleading without context</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Requires Tools and SetupNeeds proper tracking implementation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Best Practice: Combine with Qualitative Research</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Behavioral data is powerful, but incomplete on its own.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Example:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Behavioral data shows users drop off at checkout</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Qualitative research (interviews/usability testing) explains why</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Using both together gives a complete understanding:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Behavioral Data → What is happening</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Qualitative Research → Why it is happening</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Summary</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Behavioral data helps teams understand real user actions inside a product. By analyzing clicks, flows, time, and drop-offs, designers can identify issues and improve user experience.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">However, to make meaningful decisions, it should always be combined with qualitative insights to uncover the reasons behind user behavior.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Mixed-Method Research Approach</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Mixed-method research is an approach that combines both Qualitative and Quantitative research methods to gain a complete understanding of users.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Quantitative research tells you what is happening (data, metrics, trends)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Qualitative research explains why it is happening (thoughts, emotions, motivations)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Together, they provide strong, reliable, and actionable insights for better design decisions.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why Use Mixed-Method Research?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Reduces assumptions by validating insights from multiple sources</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Improves accuracy of findings</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Balances depth and scale</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Supports better decision-making</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Instead of relying on a single method, this approach ensures both data and human context are considered.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">How It Works (Step-by-Step)</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 30 ─── -->
+  <section class="section" id="sec-30">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">30 / 36</div>
+        <h2>1. Start with Quantitative Data (Identify the Problem)</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use analytics, surveys, or metrics</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Identify patterns, trends, or issues</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example:70% of users drop off at the payment step</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 31 ─── -->
+  <section class="section" id="sec-31">
+    <div class="section-header">
+      <div class="section-icon icon-pink">📌</div>
+      <div>
+        <div class="section-number">31 / 36</div>
+        <h2>2. Follow with Qualitative Research (Understand the Problem)</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day09/image1.jpg" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Conduct interviews or usability testing</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Explore user thoughts and emotions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Insight:Users feel the payment process is confusing and lacks trust signals</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 32 ─── -->
+  <section class="section" id="sec-32">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">32 / 36</div>
+        <h2>3. Design Solutions Based on Insights</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day09/image11.jpg" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Redesign flows or features</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Address identified pain points</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example:Simplify payment steps and add trust indicators</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 33 ─── -->
+  <section class="section" id="sec-33">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">33 / 36</div>
+        <h2>4. Validate Again with Quantitative Methods</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                  <img src="images/day09/image20.jpg" alt="Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                  
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use A/B testing or analytics</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Measure improvement</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Result:Conversion rate increases from 30% to 55%</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Common Mixed-Method Approaches</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 34 ─── -->
+  <section class="section" id="sec-34">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">34 / 36</div>
+        <h2>1. Sequential Approach (Most Common)</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Quantitative → Qualitative → Quantitative</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Identify → Understand → Validate</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use Case:Improving an existing product feature</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 35 ─── -->
+  <section class="section" id="sec-35">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">35 / 36</div>
+        <h2>2. Exploratory Approach</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Qualitative → Quantitative</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Explore first, then measure</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use Case:When entering a new problem space with no prior data</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 36 ─── -->
+  <section class="section" id="sec-36">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">36 / 36</div>
+        <h2>3. Concurrent Approach</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Run both methods at the same time</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use Case:When you need faster insights from both depth and scale</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Scenario (End-to-End)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Problem:Users are not completing food orders in an app</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Step 1 (Quantitative):Analytics shows high drop-off at checkout</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Step 2 (Qualitative):Usability testing reveals confusion in address selection</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Step 3 (Solution):Redesign address selection with auto-detect and clear labels</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Step 4 (Quantitative):Conversion rate improves after redesign</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Advantages of Mixed-Method Research</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Comprehensive UnderstandingCovers both behavior and reasoning</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Higher Confidence in DecisionsData is validated from multiple sources</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Better Problem-SolvingIdentifies issues and verifies solutions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Reduces BiasBalances subjective and objective insights</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Limitations of Mixed-Method Research</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Time-ConsumingRequires multiple research methods</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Resource IntensiveNeeds tools, participants, and analysis effort</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Complex to ExecuteRequires proper planning and coordination</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When to Use Mixed-Method Research</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When improving existing products</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When making high-impact decisions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When you need both data and user insights</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">During end-to-end UX design processes</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Summary</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Mixed-method research is one of the most effective approaches in UX design because it combines the strengths of both research types:</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Quantitative → Shows what is happening</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Qualitative → Explains why it is happening</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">By integrating both, teams can design solutions that are not only data-driven but also user-centered and meaningful.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:50px; padding-top:30px; border-top:1px solid var(--border);">
+    <a href="day-08-ux-research.html" class="btn-action" style="background:var(--bg3); color:var(--text-bright); border:1px solid var(--border); text-decoration:none; width:auto;">← Previous: UX Research</a>
+    <a href="day-10-contextual-ethnographic-research.html" class="btn-action btn-primary" style="text-decoration:none; width:auto;">Next: Contextual & Ethnographic-Re →</a>
+  </div>
+
+</main>
+
+<!-- ════════════════ SCRIPTS ════════════════ -->
+<script>
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(s => observer.observe(s));
+
+  const navItems = document.querySelectorAll('.nav-item');
+  const sectionEls = document.querySelectorAll('section.section');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navItems.forEach(n => n.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sectionEls.forEach(s => navObserver.observe(s));
+
+  const dotsContainer = document.getElementById('progressDots');
+  const totalTopics = 36;
+  for (let i = 0; i < totalTopics; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot-prog';
+    dotsContainer.appendChild(dot);
+  }
+
+  const progressObserver = new IntersectionObserver((entries) => {
+    const allDots = document.querySelectorAll('.dot-prog');
+    let maxIndex = 0;
+    sectionEls.forEach((s, i) => {
+      if (s.classList.contains('visible')) maxIndex = i;
+    });
+    allDots.forEach((d, i) => {
+      d.classList.toggle('filled', i <= maxIndex);
+    });
+  }, { threshold: 0.1 });
+
+  sectionEls.forEach(s => progressObserver.observe(s));
+</script>
+
+</body>
+</html>

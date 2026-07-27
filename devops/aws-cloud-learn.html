@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Module 04: Cloud Fundamentals (AWS Cloud) — Interactive Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ════════════════ SIDEBAR ════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; color:var(--accent); margin-bottom:10px;">← Back to Hub</a>
+    <div class="module-tag">Module 04</div>
+    <h1>Cloud Fundamentals (AWS Clou</h1>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Curriculum Topics</div>
+    <a class="nav-item active" href="#sec-1"><span class="dot"></span>Cloud Fundamentals (AWS Cloud)</a>
+    <a class="nav-item" href="#sec-2"><span class="dot"></span>Introduction to Cloud Computin</a>
+    <a class="nav-item" href="#sec-3"><span class="dot"></span>What is AWS?</a>
+    <a class="nav-item" href="#sec-4"><span class="dot"></span>Features</a>
+    <a class="nav-item" href="#sec-5"><span class="dot"></span>Architecture Understanding (Cl</a>
+    <a class="nav-item" href="#sec-6"><span class="dot"></span>Architecture documentation</a>
+    <a class="nav-item" href="#sec-7"><span class="dot"></span>Features of Route53</a>
+    <a class="nav-item" href="#sec-8"><span class="dot"></span>Introduction to AWS SNS</a>
+    <a class="nav-item" href="#sec-9"><span class="dot"></span>Introduction to AWS Cost Manag</a>
+    <a class="nav-item" href="#sec-10"><span class="dot"></span>Features</a>
+    <a class="nav-item" href="#sec-11"><span class="dot"></span>Introduction to Trusted Adviso</a>
+  </div>
+
+  <div class="progress-dots">
+    <p>// 11 topics</p>
+    <div class="dots-row" id="progressDots"></div>
+  </div>
+</nav>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main class="main">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">Module 04 <span class="cursor-blink"></span></div>
+    <h1>Module 04: <span class="highlight">Cloud Fundamentals (AWS Cloud)</span></h1>
+    <p>IAM, EC2, VPC subnets, S3/EBS storage, Route 53, RDS, Lambda, and CloudWatch. Master production DevOps workflows, cloud architecture, and hands-on execution with 24 embedded diagrams.</p>
+    <div class="hero-chips">
+      <span class="chip green">AWS IAM</span>
+      <span class="chip blue">EC2 &amp; VPC</span>
+      <span class="chip amber">S3 &amp; RDS</span>
+    </div>
+  </header>
+
+  
+  <!-- ─── SECTION 1 ─── -->
+  <section class="section" id="sec-1">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">01 / 11</div>
+        <h2>Cloud Fundamentals (AWS Cloud)</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">– AWS Cloud</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 2 ─── -->
+  <section class="section" id="sec-2">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">02 / 11</div>
+        <h2>Introduction to Cloud Computing and AWS</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cloud computing is the delivery of computing services like servers, storage, databases, and networking over the internet.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Simple idea: Instead of owning hardware, you rent resources online.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module04/image16.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 3 ─── -->
+  <section class="section" id="sec-3">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">03 / 11</div>
+        <h2>What is AWS?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Amazon Web Services (AWS) is a cloud platform that provides on-demand services like computing power, storage, and databases.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module04/image6.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Benefits of Cloud</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Pay only for what you use</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scalable resources</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">High availability</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">No physical hardware</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AWS Global Infrastructure</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AWS has a global network of data centers.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Components</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Regions → Geographic areas (e.g., Asia, US)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Availability Zones (AZs) → Data centers inside a region</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Edge Locations → Used for content delivery</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example: Hosting your app in multiple regions improves availability.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Identity and Access Management (IAM)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Amazon Web Services (AWS) Identity and Access Management (IAM) is a service that helps securely control access to AWS resources. You can manage the resources that can be accessed, and what action can be performed. It allows you to manage access to AWS Services &amp; Resources, such as</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Compute</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Storage</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Database</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Network</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Billing</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">other Application Services &amp; Resources in the AWS cloud</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module04/image23.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Key Concepts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Users → Instead of sharing your root user credentials with others, you can create individual IAM users within your account that correspond to users in your organization. IAM users are not separate accounts; they are users within your account.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module04/image9.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Groups → An IAM group is a collection of IAM users. You can organize IAM users into IAM groups and attach access control policies to a group. A user can belong to multiple groups. Groups cannot belong to other groups. Groups do not have security credentials and cannot access web services directly.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module04/image15.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Roles → A role does not have any credentials associated with it. An IAM user can assume a role to temporarily take on different permissions for a specific task. A role can be assigned to a federated user who signs in by using an external identity provider instead of IAM. AWS service role is a role that a service assumes to perform actions in your account on your behalf. This service role must include all the permissions required for the service to access the AWS resources that it needs.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module04/image17.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Policies → Most permission policies are JSON policy documents. The IAM console includes policy summary tables that describe the access level, resources, and conditions that are allowed or denied for each service in a policy. The policy summary table includes a list of services. Choose a service there to see the service summary. This summary table includes a list of the actions and associated permissions for the chosen service. You can choose an action from that table to view the action summary.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module04/image22.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">👉 Example: Give a developer access only to EC2, not databases.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">EC2 Instance Management</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity in the Amazon Web Services (AWS) Cloud. Using Amazon EC2 eliminates your need to invest in hardware up front, so you can develop and deploy applications faster.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 4 ─── -->
+  <section class="section" id="sec-4">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">04 / 11</div>
+        <h2>Features</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Launch instances (VMs)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Choose OS (Linux/Windows)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Configure CPU, RAM</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AMI</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Amazon Machine Image (AMI) is a template that contains a software configuration (for example, an operating system, an application server, and applications).</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">From an AMI, you launch an instance, which is a copy of the AMI running as a virtual server in the cloud.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Instance</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">An instance is a virtual server in the cloud.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">You can launch different types of instances from a single AMI.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">An instance type essentially determines the hardware of the host computer used for your instance.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Key Pair</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A key pair, consisting of a public key and a private key, is a set of security credentials that you use to prove your identity when connecting to an Amazon EC2 instance.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Amazon EC2 stores the public key on your instance, and you store the private key. For Linux instances, the private key allows you to securely SSH into your instance.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Security Group</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Security group acts as a virtual firewall for your EC2 instances to control incoming and outgoing traffic.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Inbound rules control the incoming traffic to your instance, and outbound rules control the outgoing traffic from your instance.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">You can add rules to each security group that allow traffic to or from its associated instances.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">You can modify the rules for a security group at any time.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tags</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A tag is a label that you assign to an AWS resource.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Each tag consists of a key and an optional value, both of which you define.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tags enable you to categorize your AWS resources in different ways, for example, by purpose, owner, or environment.\</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Instance Store</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">An instance store provides temporary block-level storage for your instance.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This storage is located on disks that are physically attached to the host computer.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Types of EC2 Computing Instances:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Computing is a very broad term, the nature of your task decides what kind of computing you need.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Therefore, AWS EC2 offers 5 types of instances which are as follows</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">General Instances: For applications that require a balance of performance and cost. E.g email responding systems, where you need a prompt response as well as it should be cost-effective since it doesn’t require much processing.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Compute Instances: For applications that require a lot of processing from the CPU. E.g analysis of data from a stream of data, like a Twitter stream</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Memory Instances: For applications that are heavy in nature, therefore, require a lot of RAM. E.g when your system needs a lot of applications running in the background i.e multitasking.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Storage Instances: For applications that are huge in size or have a data set that occupies a lot of space. E.g When your application is of huge size.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">GPU Instances: For applications that require some heavy graphics rendering. E.g 3D modeling etc. Now, every instance type has a set of instances which are optimized for different workloads: General Instances - t2, m4, m3 Compute Instances - c4, c3 Memory Instances - r3, x1 Storage Instances - i2, d2 GPU Instances - G2 Instances which are not a part of that group are limited to 5 Gbps speed in multi-flow traffic. Cluster Networking is ideal for a high-performance analytics system.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Dedicated Instances</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">1.They are the instances that run on single-tenant hardware dedicated to a single customer.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">2.They are perfect for workloads where a corporate policy or industry regulation requires that your instance should be isolated from any other customer’s instance, therefore they go for their own separate machines, and their instances are isolated at the hardware level.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Steps</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Launch EC2 instance</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Connect via SSH</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Install software</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">👉 Example:</h3>
+                <div class="code-block">
+                  ssh ec2-user@your-ip
+                </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Auto Scaling and Load Balancing</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Auto Scaling</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Amazon EC2 Auto Scaling helps you ensure that you have the correct number of Amazon EC2 instances available to handle the load for your application.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AWS Auto-Scaling is a mechanism that automatically permits you to increase or decrease your resources to meet demand based on custom-defined metrics and thresholds.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">👉 Example: Add servers when traffic increases.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module04/image3.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Load Balancer</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Elastic Load Balancing automatically distributes your incoming traffic across multiple targets, such as EC2 instances, containers, and IP addresses, in one or more Availability Zones.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Benefits of ELB</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A load balancer distributes workloads across multiple compute resources, such as virtual servers. Using a load balancer increases the availability and fault tolerance of your applications.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">You can add and remove compute resources from your load balancer as your needs change, without disrupting the overall flow of requests to your applications.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">You can configure health checks, which monitor the health of the compute resources, so that the load balancer sends requests only to the healthy ones.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">👉 Example: Avoids server overload.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Types of ELB</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Application Load Balancers</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Network Load Balancers</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Gateway Load Balancers</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Classic Load Balancers.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module04/image20.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Amazon Storage Services</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Types</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">S3 (Simple Storage Service)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Amazon S3 is a managed cloud storage solution that enables you to store data as objects in a bucket.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Amazon S3 is object-level storage.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Objects can be almost any data file, such as documents, images or videos.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Buckets are logical containers for objects.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When you add objects to a bucket, you must give them a unique name, which is called an object key.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Amazon S3 is designed to scale seamlessly and provide over 11 9s (99.999999999 percent) of durability.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Amazon S3 designed for an unstructured/unlimited way of store/process/retrieve data over web access from Anywhere at any time.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This is a global service unlike EC2 instances, not region-specific.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The data that you store in Amazon S3 isn’t associated with any particular server, and you don’t need manage any infrastructure by yourself</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This acts as a Version Control management system.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This is also used for static website hosting.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module04/image24.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">EBS (Elastic Block Storage)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Amazon Elastic Block Store (Amazon EBS) provides block level storage volumes for use with EC2 instances.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">EBS volumes behave like raw, unformatted block devices. Amazon EBS for data that must be quickly accessible and requires long-term persistence.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">EBS volumes are particularly well-suited for use as the primary storage for file systems, databases, or for any applications that require fine granular updates and access to raw, unformatted, block-level storage.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Amazon EBS Volume types:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">EBS provides different volume types to meet various performance and cost requirements:</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">General Purpose SSD (gp2/gp3): Provides a balance of price and performance for a wide range of workloads.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Provisioned IOPS SSD (io1/io2): Offers high-performance storage with customizable IOPS (Input/Output Operations Per Second) to meet demanding I/O requirements.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Throughput Optimized HDD (st1): Optimized for frequently accessed, throughput-intensive workloads, such as big data, data warehouses, and log processing.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cold HDD (sc1): Designed for less frequently accessed workloads, offering low-cost storage for large volumes of data.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module04/image8.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">EFS (Elastic File System)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">EFS is a file-level, fully managed, storage provided by AWS (Amazon Web Services) that can be accessed by multiple EC2 instances concurrently.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Just like the AWS EBS, EFS is specially designed for high throughput and low latency applications.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module04/image5.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">EFS Storage Classes</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Standard</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This is the default storage class for EFS.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The user is only charged for the amount of storage used.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This is recommended for storing frequently accessed files.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Infrequent Access</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cheaper storage space.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Recommended for rarely accessed files.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Increased latency when reading or writing files.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AWS Databases (RDS &amp; DynamoDB)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">RDS (Relational Database Service)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">SQL databases (MySQL, PostgreSQL)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Amazon Relational Database Service (Amazon RDS) is a web service that makes it easier to set up, operate, and scale a relational database in the AWS Cloud.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It provides cost-efficient, resizable capacity for an industry-standard relational database and manages common database administration tasks.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Benefits of AWS RDS</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Easy to use</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scalability</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">High availability</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cost-effective</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Components of AWS RDS</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DB instances</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DB engines</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DB Instance Class</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DB instance Storage</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">VPC</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Region and Availability Zones</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Security</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">👉 Example: Store structured data</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DynamoDB</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Amazon DynamoDB is a fully managed NoSQL database service offered by Amazon Web Services (AWS).</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It is designed for developers who need a fast, scalable, and highly available database for modern applications.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">it can store any amount of data and serve any amount of traffic, therefore, you can expect a good performance even when it scales up.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module04/image13.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Main Components</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Attributes</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This is the simplest element in DynamoDB that stores data without any further division. Each attribute has a name and a value.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DynamoDB supports various data types for attributes, including strings, numbers, binary data, lists, and maps. Attributes are used to store the actual data in your items.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Items</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Items are individual data records within a DynamoDB table.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tables</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tables are the highest-level data structures in DynamoDB. They are where you store your data.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Each table consists of items, and each item represents an individual data record.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tables are schema-less, meaning that items within a table do not need to have the same attributes, allowing flexibility in your data modeling.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">👉 Example: Store user session data</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">VPC and Cloud Networking</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Amazon Virtual Private Cloud (Amazon VPC) enables you to launch AWS resources into a virtual network that you've defined. This virtual network closely resembles a traditional network that you'd operate in your own data center, with the benefits of using the scalable infrastructure of AWS.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module04/image11.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Components</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Subnets</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Subnets are logical network segments within your VPC. They enable you to subdivide your VPC network into smaller networks inside a single Availability Zone.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">One subnet per Availability Zone because a subnet cannot span zones.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Public Subnet: A public subnet is associated with a route table that has a route to an internet gateway.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Private Subnet: A private subnet does not have an internet gateway on the route table that is associated with it. However, a NAT gateway can be a route on this route table.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AWS reserves the first four IP addresses and the last IP address of every subnet for internal purposes.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Route tables</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A route table holds the route and target information required to route traffic within the Amazon VPC.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">There are destinations and targets. Destinations hold IP addresses and ranges, and targets hold a service.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Each route table must be associated with a subnet.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A route table associates the subnet and gateways together.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module04/image12.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Internet Gateway</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">An internet gateway is a VPC component that enables communication between instances in a VPC and the internet.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module04/image21.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Security group</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A security group is a set of firewall rules that secure instances.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">They allow or block inbound and outbound traffic into an instance.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Security groups are stateful.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Stateful means that if requests from your instance are sent, the response traffic is allowed to flow back regardless of the inbound rules.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module04/image7.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 5 ─── -->
+  <section class="section" id="sec-5">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">05 / 11</div>
+        <h2>Architecture Understanding (Claude)</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Use Claude for:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">VPC architecture explanation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Route table troubleshooting</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Security Group analysis</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 6 ─── -->
+  <section class="section" id="sec-6">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">06 / 11</div>
+        <h2>Architecture documentation</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Exercise:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Upload AWS architecture diagram.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">Ask Claude:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Explain traffic flow between public and private subnet.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This teaches AI-assisted cloud architecture analysis.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DNS and Content Delivery</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Route 53</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service. You can use Route 53 to perform three main functions in any combination: domain registration, DNS routing, and health checking.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 7 ─── -->
+  <section class="section" id="sec-7">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📌</div>
+      <div>
+        <div class="section-number">07 / 11</div>
+        <h2>Features of Route53</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DNS Management</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Traffic Management</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Routing based on Latency</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Health Monitoring and Checks</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">DNS Failover</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Benefits of Route53</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Flexible</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cost-effective</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Highly Available and Reliable</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scalable</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module04/image14.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">👉 Example: Convert domain → IP address</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">CloudFront</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Amazon CloudFront is a web service that speeds up distribution of your static and dynamic web content, such as .html, .css, .js, and image files, to your users.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">CloudFront delivers your content through a worldwide network of data centers called edge locations.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When a user requests content that you're serving with CloudFront, the request is routed to the edge location that provides the lowest latency (time delay), so that content is delivered with the best possible performance.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">CDN</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A Content Delivery Network (CDN) is a system of distributed servers that deliver web content to users based on their geographic location. It reduces latency and speeds up load times by caching content closer to users. CDNs improve website performance and reliability, and help handle high traffic volumes efficiently.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">How AWS CloudFront Works</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Amazon CloudFront is a service provided by Amazon Web Services (AWS) that is used to deliver your content across the networks of servers located across the world; these servers are called edge locations. The content can be any of the following.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Images</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Videos</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Static and dynamic data.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The content that is delivered to the edge location will be stored in the origin servers and from the edge locations end users can access the content without latency.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module04/image4.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">👉 Example: Faster website loading worldwide</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Serverless Computing with Lambda</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AWS Lambda is a serverless computing service provided by Amazon Web Services (AWS). Users of AWS Lambda create functions, self-contained applications written in one of the supported languages and runtimes, and upload them to AWS Lambda, which executes those functions in an efficient and flexible manner.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Lambda functions can perform any kind of computing task, from serving web pages and processing streams of data to calling APIs and integrating with other AWS services.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module04/image18.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">👉 Simple idea: Run code only when needed.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Example Use Case</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Run script when file uploaded to S3</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AWS CI/CD and Deployment</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">CI/CD automates the build and deployment process.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Services</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">CodeBuild</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AWS CodeBuild is a fully managed build service in the cloud.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">CodeBuild compiles your source code, runs unit tests, and produces artifacts that are ready to deploy.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">CodeBuild eliminates the need to provision, manage, and scale your own build servers.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">It provides prepackaged build environments for popular programming languages and build tools such as Apache Maven, Gradle, and more.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">You can also customize build environments in CodeBuild to use your own build tools. CodeBuild scales automatically to meet peak build requests.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">CodeDeploy</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on-premises instances, serverless Lambda functions, or Amazon ECS services.</p><h3 style="font-family:var(--display);font-size:18px;color:var(--text-bright);margin:20px 0 10px;">You can deploy a nearly unlimited variety of application content, including:</h3><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Code</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Serverless AWS Lambda functions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Web and configuration files</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Executables</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Packages</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scripts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Multimedia files</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">CodePipeline</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AWS CodePipeline is a continuous delivery service you can use to model, visualize, and automate the steps required to release your software. You can quickly model and configure the different stages of a software release process. CodePipeline automates the steps required to release your software changes continuously.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module04/image2.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">👉 Example: Auto deploy after code push</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Monitoring and Logging in AWS</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">CloudWatch</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Amazon Cloud Watch monitors your Amazon Web Services (AWS) resources and the applications you run on AWS in real time. You can use Cloud Watch to collect and track metrics, which are variables you can measure for your resources and applications.</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module04/image19.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Monitor resources</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Set alarms</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">👉 Example: Alert when CPU usage is high</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">CloudTrail</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AWS CloudTrail is a governance and auditing service that records user activity and API calls across your AWS infrastructure. It provides a detailed, searchable log—who did what, when, and from where—to enable security analysis, resource tracking, and compliance reporting. It is enabled by default for the last 90 days of management events.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">👉 Example: Logs who accessed resources</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module04/image10.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AWS SNS (Amazon Simple Notification Service)</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 8 ─── -->
+  <section class="section" id="sec-8">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📌</div>
+      <div>
+        <div class="section-number">08 / 11</div>
+        <h2>Introduction to AWS SNS</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What is AWS SNS?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Messaging and Notification Services in AWS</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Publish-Subscribe (Pub/Sub) Architecture</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">SNS Use Cases in Cloud Environments</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">SNS Core Components</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Topics</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Publishers</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Subscribers</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Message Delivery Process</p>
+                    <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
+                      <img src="images/module04/image1.png" alt="Architecture Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
+                      
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">SNS Subscription Types</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Email Notifications</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">SMS Notifications</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">HTTP/HTTPS Endpoints</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AWS Lambda Integration</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Amazon SQS Integration</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">SNS Features</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Fan-Out Messaging Pattern</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Message Filtering</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Delivery Retries</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cross-Region Notifications</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Security and Access Control</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Monitoring SNS</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">CloudWatch Metrics for SNS</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Delivery Status Monitoring</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Failed Notification Analysis</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Hands-On Practice</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Create SNS Topic</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Create Email Subscription</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Publish Messages to Topic</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Integrate SNS with CloudWatch Alarm</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Trigger Email Notification from Alarm</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Test Multi-Subscriber Notifications</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AWS Cost Optimization and Best Practices</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 9 ─── -->
+  <section class="section" id="sec-9">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">09 / 11</div>
+        <h2>Introduction to AWS Cost Management</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Understanding AWS Pricing Models</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Pay-As-You-Go Pricing</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Reserved Capacity Pricing</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Savings Plans Overview</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Spot Pricing Model</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Free Tier Benefits and Limitations</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AWS Cost Optimization Fundamentals</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why Cost Optimization Matters</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cloud Financial Management Basics</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cost Optimization Pillars</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Identifying Cost Drivers</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AWS Pricing Models</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">On-Demand Instances</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 10 ─── -->
+  <section class="section" id="sec-10">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📌</div>
+      <div>
+        <div class="section-number">10 / 11</div>
+        <h2>Features</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Advantages</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use Cases</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Reserved Instances (RI)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Standard Reserved Instances</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Convertible Reserved Instances</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Savings Comparison</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Spot Instances</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Spot Market Concept</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Spot Pricing Benefits</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Fault-Tolerant Workloads</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Savings Plans</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Compute Savings Plans</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">EC2 Instance Savings Plans</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cost Benefits</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Comparison</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">On-Demand vs Reserved vs Spot vs Savings Plans</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Resource Optimization Strategies</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">EC2 Cost Optimization</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Right-Sizing Instances</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Identifying Underutilized Resources</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Stopping Unused Instances</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Auto Scaling Benefits</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Storage Cost Optimization</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">S3 Storage Classes</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Lifecycle Policies</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Intelligent Tiering</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">EBS Volume Optimization</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Snapshot Management</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Database Cost Optimization</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">RDS Right Sizing</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Reserved Database Instances</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Storage Optimization</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Resource Tagging and Cost Allocation</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Tagging Strategy</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Environment Tags</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Application Tags</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Owner Tags</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Department Tags</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cost Allocation Tags</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">User Defined Tags</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AWS Generated Tags</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Benefits of Tagging</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cost Tracking</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Resource Governance</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Budget Management</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AWS Budget Management</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AWS Budgets</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Creating Cost Budgets</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Usage Budgets</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Forecasting Costs</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Budget Alerts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Email Notifications</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">SNS Integration</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Threshold-Based Alerts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AWS Cost Monitoring Tools</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AWS Cost Explorer</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cost Analysis Dashboard</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Usage Trends</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Forecasting Future Costs</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Service-wise Cost Breakdown</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AWS Billing Dashboard</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Billing Overview</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Monthly Cost Analysis</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Invoice Management</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AWS Cost and Usage Reports (CUR)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Detailed Cost Reports</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Exporting Cost Data</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AWS Trusted Advisor</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 11 ─── -->
+  <section class="section" id="sec-11">
+    <div class="section-header">
+      <div class="section-icon icon-green">📌</div>
+      <div>
+        <div class="section-number">11 / 11</div>
+        <h2>Introduction to Trusted Advisor</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cost Optimization Checks</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Security Checks</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Performance Checks</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Fault Tolerance Checks</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cost Optimization Recommendations</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Idle EC2 Instances</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Underutilized Resources</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Unattached EBS Volumes</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Unused Load Balancers</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">AWS Cost Optimization Best Practices</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Compute Best Practices</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use Auto Scaling</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Choose Correct Instance Types</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use Spot Instances for Non-Critical Workloads</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Storage Best Practices</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Enable S3 Lifecycle Policies</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Delete Unused Snapshots</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Archive Old Data</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Network Best Practices</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Optimize Data Transfer Costs</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use CloudFront for Content Delivery</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Governance Best Practices</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Implement Tagging Standards</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Monitor Budgets Regularly</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Review Cost Reports Monthly</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:50px; padding-top:30px; border-top:1px solid var(--border);">
+    <a href="programming-scripting-learn.html" class="btn-action" style="background:var(--bg3); color:var(--text-bright); border:1px solid var(--border); text-decoration:none; width:auto;">← Previous: Module 03</a>
+    <a href="docker-containers-learn.html" class="btn-action btn-primary" style="text-decoration:none; width:auto;">Next: Module 05 →</a>
+  </div>
+
+</main>
+
+<!-- ════════════════ SCRIPTS ════════════════ -->
+<script>
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(s => observer.observe(s));
+
+  const navItems = document.querySelectorAll('.nav-item');
+  const sectionEls = document.querySelectorAll('section.section');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navItems.forEach(n => n.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sectionEls.forEach(s => navObserver.observe(s));
+
+  const dotsContainer = document.getElementById('progressDots');
+  const totalTopics = 11;
+  for (let i = 0; i < totalTopics; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot-prog';
+    dotsContainer.appendChild(dot);
+  }
+
+  const progressObserver = new IntersectionObserver((entries) => {
+    const allDots = document.querySelectorAll('.dot-prog');
+    let maxIndex = 0;
+    sectionEls.forEach((s, i) => {
+      if (s.classList.contains('visible')) maxIndex = i;
+    });
+    allDots.forEach((d, i) => {
+      d.classList.toggle('filled', i <= maxIndex);
+    });
+  }, { threshold: 0.1 });
+
+  sectionEls.forEach(s => progressObserver.observe(s));
+</script>
+
+</body>
+</html>
