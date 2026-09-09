@@ -20,18 +20,19 @@
   <div class="sidebar-nav">
     <div class="nav-section-label">Curriculum Topics</div>
     <a class="nav-item active" href="#sec-1"><span class="dot"></span>No-Code Builder Mastery</a>
-    <a class="nav-item" href="#sec-2"><span class="dot"></span>Part 1: Understanding Builder </a>
-    <a class="nav-item" href="#sec-3"><span class="dot"></span>Part 2 : Design to Builder Map</a>
-    <a class="nav-item" href="#sec-4"><span class="dot"></span>Part 3: Responsive Design in N</a>
-    <a class="nav-item" href="#sec-5"><span class="dot"></span>Part 4: Interaction &amp; Animatio</a>
-    <a class="nav-item" href="#sec-6"><span class="dot"></span>Part 5: Content Management</a>
-    <a class="nav-item" href="#sec-7"><span class="dot"></span>Part 6 : Common Challenges</a>
-    <a class="nav-item" href="#sec-8"><span class="dot"></span>Part 7 : Best Practices</a>
-    <a class="nav-item" href="#sec-9"><span class="dot"></span>Part 8 : Good vs Bad No-Code I</a>
+    <a class="nav-item" href="#sec-2"><span class="dot"></span>Part 1: Understanding Builder Lo</a>
+    <a class="nav-item" href="#sec-3"><span class="dot"></span>Part 2 : Design to Builder Mappi</a>
+    <a class="nav-item" href="#sec-4"><span class="dot"></span>Part 3: Responsive Design in No-</a>
+    <a class="nav-item" href="#sec-5"><span class="dot"></span>What Are Breakpoints?</a>
+    <a class="nav-item" href="#sec-6"><span class="dot"></span>Part 4: Interaction &amp; Animations</a>
+    <a class="nav-item" href="#sec-7"><span class="dot"></span>Part 5: Content Management</a>
+    <a class="nav-item" href="#sec-8"><span class="dot"></span>Part 6 : Common Challenges</a>
+    <a class="nav-item" href="#sec-9"><span class="dot"></span>Part 7 : Best Practices</a>
+    <a class="nav-item" href="#sec-10"><span class="dot"></span>Part 8 : Good vs Bad No-Code Imp</a>
   </div>
 
   <div class="progress-dots">
-    <p>// 9 topics</p>
+    <p>// 10 topics</p>
     <div class="dots-row" id="progressDots"></div>
   </div>
 </nav>
@@ -57,7 +58,7 @@
     <div class="section-header">
       <div class="section-icon icon-pink">📌</div>
       <div>
-        <div class="section-number">01 / 09</div>
+        <div class="section-number">01 / 10</div>
         <h2>No-Code Builder Mastery</h2>
       </div>
     </div>
@@ -73,7 +74,7 @@
     <div class="section-header">
       <div class="section-icon icon-blue">📌</div>
       <div>
-        <div class="section-number">02 / 09</div>
+        <div class="section-number">02 / 10</div>
         <h2>Part 1: Understanding Builder Logic</h2>
       </div>
     </div>
@@ -89,17 +90,17 @@
     <div class="section-header">
       <div class="section-icon icon-purple">📌</div>
       <div>
-        <div class="section-number">03 / 09</div>
+        <div class="section-number">03 / 10</div>
         <h2>Part 2 : Design to Builder Mapping</h2>
       </div>
     </div>
     <div class="info-block">
       <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">How Your Figma Designs Translate to a Builder</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Designers usually work in Figma or Sketch. When you move that design into a no-code tool, there is a translation process. Understanding this mapping prevents a lot of frustration.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Frames → Sections</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">In Figma, a Frame is a container for your design. In a no-code builder, this becomes a Section — a horizontal band on your webpage. Every Frame in your design should map to one Section in your builder.</p>
-                    <div style="overflow-x:auto; margin:20px 0;">
-                      <table class="cmd-table">
-                        <thead><tr><th>Figma / Design Tool</th><th>No-Code Builder</th></tr></thead><tbody><tr><td>Frame (outer container)</td><td>Section (full-width row)</td></tr><tr><td>Frame inside a Frame</td><td>Div / Container Block</td></tr><tr><td>Auto Layout Frame</td><td>Flexbox or Grid Container</td></tr><tr><td>Component</td><td>Reusable Symbol / Global Component</td></tr><tr><td>Text Style</td><td>Global Typography Class</td></tr><tr><td>Color Style</td><td>Design Token / CSS Variable</td></tr></tbody>
-                      </table>
-                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Components → Reusable Blocks</p>
+                        <div style="overflow-x:auto; margin:20px 0;">
+                          <table class="cmd-table">
+                            <thead><tr><th>Figma / Design Tool</th><th>No-Code Builder</th></tr></thead><tbody><tr><td>Frame (outer container)</td><td>Section (full-width row)</td></tr><tr><td>Frame inside a Frame</td><td>Div / Container Block</td></tr><tr><td>Auto Layout Frame</td><td>Flexbox or Grid Container</td></tr><tr><td>Component</td><td>Reusable Symbol / Global Component</td></tr><tr><td>Text Style</td><td>Global Typography Class</td></tr><tr><td>Color Style</td><td>Design Token / CSS Variable</td></tr></tbody>
+                          </table>
+                        </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Components → Reusable Blocks</p>
                 <div class="code-block">
                   In Figma you create Components to reuse UI elements. No-code tools have the same concept — usually called Symbols, Global Components, or CMS Templates. The key rule: if you use something more than once, make it a component.
                 </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Create a master component, then place instances (copies) across your project</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Editing the master updates all instances at once — saves huge amounts of time</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Most builders support component variants (e.g. Button: Primary / Secondary / Disabled)</p>
@@ -113,17 +114,12 @@
     <div class="section-header">
       <div class="section-icon icon-amber">📌</div>
       <div>
-        <div class="section-number">04 / 09</div>
+        <div class="section-number">04 / 10</div>
         <h2>Part 3: Responsive Design in No-Code</h2>
       </div>
     </div>
     <div class="info-block">
-      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Making Things Work on Every Screen</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Building for one screen size is easy. Building for all screen sizes — desktop, tablet, phone — is the skill that separates good no-code builders from great ones. The secret is understanding breakpoints.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What Are Breakpoints?</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A breakpoint is a screen width at which your layout changes behaviour. Think of it as a signal to the builder: 'when the screen is narrower than 768px, switch to a single column instead of three.'</p>
-                    <div style="overflow-x:auto; margin:20px 0;">
-                      <table class="cmd-table">
-                        <thead><tr><th>Desktop</th><th>1280px and above — full layout, multi-column, large fonts</th></tr></thead><tbody><tr><td>Tablet</td><td>768px – 1279px — some columns collapse, medium fonts</td></tr><tr><td>Mobile (large)</td><td>480px – 767px — single column, touch-friendly tap targets</td></tr><tr><td>Mobile (small)</td><td>Below 480px — maximum simplification, large text, stacked layout</td></tr></tbody>
-                      </table>
-                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Adaptive Layouts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">An adaptive layout responds to the screen size without you having to redesign everything from scratch. The key principles are:</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use flexible widths (%) instead of fixed widths (px) wherever possible</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Stack columns vertically on mobile — a 3-column grid becomes 1 column</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scale font sizes down for smaller screens — a 48px heading is too large on mobile</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Increase tap target sizes on mobile — buttons should be at least 44×44px</p>
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Making Things Work on Every Screen</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Building for one screen size is easy. Building for all screen sizes — desktop, tablet, phone — is the skill that separates good no-code builders from great ones. The secret is understanding breakpoints.</p>
     </div>
   </section>
 
@@ -134,17 +130,17 @@
     <div class="section-header">
       <div class="section-icon icon-cyan">📌</div>
       <div>
-        <div class="section-number">05 / 09</div>
-        <h2>Part 4: Interaction &amp; Animations</h2>
+        <div class="section-number">05 / 10</div>
+        <h2>What Are Breakpoints?</h2>
       </div>
     </div>
     <div class="info-block">
-      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Making Your Product Feel Alive</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Interactions and animations are what separate a static website from a living product. In no-code tools, you can add these without writing a single line of JavaScript — using triggers and actions.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Basic Interactions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">An interaction = Trigger + Action. Something happens (trigger), then the builder responds (action).</p>
-                    <div style="overflow-x:auto; margin:20px 0;">
-                      <table class="cmd-table">
-                        <thead><tr><th>Hover</th><th>Mouse moves over element → change colour, show tooltip, scale up</th></tr></thead><tbody><tr><td>Click / Tap</td><td>User clicks → open modal, navigate to page, submit form</td></tr><tr><td>Scroll</td><td>User scrolls past element → fade in, slide in from side</td></tr><tr><td>Page Load</td><td>Page finishes loading → hero text animates in</td></tr><tr><td>Mouse Move</td><td>Cursor moves → background element follows (parallax)</td></tr></tbody>
-                      </table>
-                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">User Flow Transitions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When a user moves between pages or states (e.g. from a product list to a product detail), the transition should feel smooth. No-code tools offer page transitions, modal animations, and state-based visibility.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Page transitions: fade, slide, or instant — keep it consistent across your site</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Show/Hide: toggle element visibility based on user actions (e.g. accordion, tabs)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">State changes: change a component's appearance based on interaction (e.g. active tab indicator)</p>
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A breakpoint is a screen width at which your layout changes behaviour. Think of it as a signal to the builder: 'when the screen is narrower than 768px, switch to a single column instead of three.'</p>
+                        <div style="overflow-x:auto; margin:20px 0;">
+                          <table class="cmd-table">
+                            <thead><tr><th>Desktop</th><th>1280px and above — full layout, multi-column, large fonts</th></tr></thead><tbody><tr><td>Tablet</td><td>768px – 1279px — some columns collapse, medium fonts</td></tr><tr><td>Mobile (large)</td><td>480px – 767px — single column, touch-friendly tap targets</td></tr><tr><td>Mobile (small)</td><td>Below 480px — maximum simplification, large text, stacked layout</td></tr></tbody>
+                          </table>
+                        </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Adaptive Layouts</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">An adaptive layout responds to the screen size without you having to redesign everything from scratch. The key principles are:</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use flexible widths (%) instead of fixed widths (px) wherever possible</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Stack columns vertically on mobile — a 3-column grid becomes 1 column</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Scale font sizes down for smaller screens — a 48px heading is too large on mobile</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Increase tap target sizes on mobile — buttons should be at least 44×44px</p>
     </div>
   </section>
 
@@ -155,17 +151,17 @@
     <div class="section-header">
       <div class="section-icon icon-green">📌</div>
       <div>
-        <div class="section-number">06 / 09</div>
-        <h2>Part 5: Content Management</h2>
+        <div class="section-number">06 / 10</div>
+        <h2>Part 4: Interaction &amp; Animations</h2>
       </div>
     </div>
     <div class="info-block">
-      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Dynamic vs Static Content</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This is one of the most important concepts in no-code. Understanding when to use static content and when to use dynamic (CMS-driven) content determines how scalable and maintainable your project is.</p>
-                    <div style="overflow-x:auto; margin:20px 0;">
-                      <table class="cmd-table">
-                        <thead><tr><th>Static Content</th><th>Dynamic Content (CMS)</th></tr></thead><tbody><tr><td>You type the text directly on the page</td><td>Content is stored in a database and displayed automatically</td></tr><tr><td>Works for: landing pages, about pages</td><td>Works for: blog posts, product listings, team directories</td></tr><tr><td>Changing content = editing the page manually</td><td>Changing content = updating the database, page updates itself</td></tr><tr><td>Simple to set up, hard to scale</td><td>Slightly more complex, scales to hundreds of items easily</td></tr><tr><td>No CMS setup needed</td><td>Requires defining a content type (Collection) with fields</td></tr></tbody>
-                      </table>
-                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When to Use Each</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Fixed content that rarely changes — hero taglines, footer text, company values Static:</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Repeating content — blog posts, team members, portfolio items, products, FAQs Dynamic:</p>
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Making Your Product Feel Alive</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Interactions and animations are what separate a static website from a living product. In no-code tools, you can add these without writing a single line of JavaScript — using triggers and actions.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Basic Interactions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">An interaction = Trigger + Action. Something happens (trigger), then the builder responds (action).</p>
+                        <div style="overflow-x:auto; margin:20px 0;">
+                          <table class="cmd-table">
+                            <thead><tr><th>Hover</th><th>Mouse moves over element → change colour, show tooltip, scale up</th></tr></thead><tbody><tr><td>Click / Tap</td><td>User clicks → open modal, navigate to page, submit form</td></tr><tr><td>Scroll</td><td>User scrolls past element → fade in, slide in from side</td></tr><tr><td>Page Load</td><td>Page finishes loading → hero text animates in</td></tr><tr><td>Mouse Move</td><td>Cursor moves → background element follows (parallax)</td></tr></tbody>
+                          </table>
+                        </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">User Flow Transitions</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When a user moves between pages or states (e.g. from a product list to a product detail), the transition should feel smooth. No-code tools offer page transitions, modal animations, and state-based visibility.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Page transitions: fade, slide, or instant — keep it consistent across your site</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Show/Hide: toggle element visibility based on user actions (e.g. accordion, tabs)</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">State changes: change a component's appearance based on interaction (e.g. active tab indicator)</p>
     </div>
   </section>
 
@@ -176,12 +172,17 @@
     <div class="section-header">
       <div class="section-icon icon-pink">📌</div>
       <div>
-        <div class="section-number">07 / 09</div>
-        <h2>Part 6 : Common Challenges</h2>
+        <div class="section-number">07 / 10</div>
+        <h2>Part 5: Content Management</h2>
       </div>
     </div>
     <div class="info-block">
-      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What Goes Wrong (And Why)</p>
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Dynamic vs Static Content</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">This is one of the most important concepts in no-code. Understanding when to use static content and when to use dynamic (CMS-driven) content determines how scalable and maintainable your project is.</p>
+                        <div style="overflow-x:auto; margin:20px 0;">
+                          <table class="cmd-table">
+                            <thead><tr><th>Static Content</th><th>Dynamic Content (CMS)</th></tr></thead><tbody><tr><td>You type the text directly on the page</td><td>Content is stored in a database and displayed automatically</td></tr><tr><td>Works for: landing pages, about pages</td><td>Works for: blog posts, product listings, team directories</td></tr><tr><td>Changing content = editing the page manually</td><td>Changing content = updating the database, page updates itself</td></tr><tr><td>Simple to set up, hard to scale</td><td>Slightly more complex, scales to hundreds of items easily</td></tr><tr><td>No CMS setup needed</td><td>Requires defining a content type (Collection) with fields</td></tr></tbody>
+                          </table>
+                        </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When to Use Each</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Fixed content that rarely changes — hero taglines, footer text, company values Static:</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Repeating content — blog posts, team members, portfolio items, products, FAQs Dynamic:</p>
     </div>
   </section>
 
@@ -192,17 +193,12 @@
     <div class="section-header">
       <div class="section-icon icon-blue">📌</div>
       <div>
-        <div class="section-number">08 / 09</div>
-        <h2>Part 7 : Best Practices</h2>
+        <div class="section-number">08 / 10</div>
+        <h2>Part 6 : Common Challenges</h2>
       </div>
     </div>
     <div class="info-block">
-      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">How the Best No-Code Builders Think</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">These are not rules — they are mental models. Internalise these and your no-code projects will be faster to build, easier to maintain, and far less likely to break.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Keep It Simple</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">No-code platforms are powerful, but power tempts you to over-engineer. The simpler your structure, the more robust your project.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use as few container levels as possible — 3-4 levels of nesting is usually enough</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">If you are fighting the builder to achieve a visual effect, reconsider the design</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A working simple version &gt; a broken complex version, every time</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Design with Constraints</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Unlike Figma, no-code builders have real limitations — browser rendering, load time, animation performance. Design with these in mind from day one.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Avoid massive background videos on mobile — they destroy load times</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Optimise all images before uploading — WebP format, under 200KB for most images</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Custom fonts add load time — stick to 2 fonts maximum</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Every interaction you add has a small performance cost — keep it purposeful</p>
-                    <div style="overflow-x:auto; margin:20px 0;">
-                      <table class="cmd-table">
-                        <thead><tr><th>Naming Convention</th><th>Always name your layers/sections descriptively. 'Section-Hero' not 'Section-5'. Future you will thank you.</th></tr></thead><tbody><tr><td>Version / Backup</td><td>Use the builder's backup/version history before major changes. One click can undo hours of work.</td></tr><tr><td>Style Consistency</td><td>Define all colours and fonts as global styles at the start. Never use one-off colour values inline.</td></tr><tr><td>Collaboration</td><td>If working with a team, agree on a naming system and component library before anyone touches the builder.</td></tr><tr><td>Client Handoff</td><td>Always test the editor experience before handing to a client. Can they update content without breaking the layout?</td></tr></tbody>
-                      </table>
-                    </div>
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">What Goes Wrong (And Why)</p>
     </div>
   </section>
 
@@ -213,26 +209,47 @@
     <div class="section-header">
       <div class="section-icon icon-purple">📌</div>
       <div>
-        <div class="section-number">09 / 09</div>
+        <div class="section-number">09 / 10</div>
+        <h2>Part 7 : Best Practices</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">How the Best No-Code Builders Think</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">These are not rules — they are mental models. Internalise these and your no-code projects will be faster to build, easier to maintain, and far less likely to break.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Keep It Simple</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">No-code platforms are powerful, but power tempts you to over-engineer. The simpler your structure, the more robust your project.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Use as few container levels as possible — 3-4 levels of nesting is usually enough</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">If you are fighting the builder to achieve a visual effect, reconsider the design</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">A working simple version &gt; a broken complex version, every time</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Design with Constraints</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Unlike Figma, no-code builders have real limitations — browser rendering, load time, animation performance. Design with these in mind from day one.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Avoid massive background videos on mobile — they destroy load times</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Optimise all images before uploading — WebP format, under 200KB for most images</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Custom fonts add load time — stick to 2 fonts maximum</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Every interaction you add has a small performance cost — keep it purposeful</p>
+                        <div style="overflow-x:auto; margin:20px 0;">
+                          <table class="cmd-table">
+                            <thead><tr><th>Naming Convention</th><th>Always name your layers/sections descriptively. 'Section-Hero' not 'Section-5'. Future you will thank you.</th></tr></thead><tbody><tr><td>Version / Backup</td><td>Use the builder's backup/version history before major changes. One click can undo hours of work.</td></tr><tr><td>Style Consistency</td><td>Define all colours and fonts as global styles at the start. Never use one-off colour values inline.</td></tr><tr><td>Collaboration</td><td>If working with a team, agree on a naming system and component library before anyone touches the builder.</td></tr><tr><td>Client Handoff</td><td>Always test the editor experience before handing to a client. Can they update content without breaking the layout?</td></tr></tbody>
+                          </table>
+                        </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 10 ─── -->
+  <section class="section" id="sec-10">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">10 / 10</div>
         <h2>Part 8 : Good vs Bad No-Code Implementations</h2>
       </div>
     </div>
     <div class="info-block">
       <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Side-by-Side Comparison</p>
-                    <div style="overflow-x:auto; margin:20px 0;">
-                      <table class="cmd-table">
-                        <thead><tr><th>Good No-Code Implementation</th><th>Bad No-Code Implementation</th></tr></thead><tbody><tr><td>All repeating elements are components</td><td>Elements are copy-pasted individually</td></tr><tr><td>Content uses CMS for any list/collection</td><td>All content is typed directly on the page</td></tr><tr><td>Layouts use flexible widths, work on all screens</td><td>Fixed pixel widths, breaks on mobile</td></tr><tr><td>2–3 fonts, one type scale used everywhere</td><td>5+ fonts, random sizes used inconsistently</td></tr><tr><td>Images are compressed, under 200KB</td><td>Unoptimised images, 2–5MB per image</td></tr><tr><td>Interactions are purposeful and consistent</td><td>Animations on every element, distracting</td></tr><tr><td>Global colour styles defined and reused</td><td>One-off colours typed inline everywhere</td></tr><tr><td>Editor view is clean, a client can update it</td><td>Deeply nested, impossible for non-dev to edit</td></tr><tr><td>Loads in under 2 seconds on mobile</td><td>Loads in 8+ seconds, high bounce rate</td></tr><tr><td>Tested on real devices before launch</td><td>Only tested on designer's own large monitor</td></tr></tbody>
-                      </table>
-                    </div>
-                            <div class="callout tip">
+                        <div style="overflow-x:auto; margin:20px 0;">
+                          <table class="cmd-table">
+                            <thead><tr><th>Good No-Code Implementation</th><th>Bad No-Code Implementation</th></tr></thead><tbody><tr><td>All repeating elements are components</td><td>Elements are copy-pasted individually</td></tr><tr><td>Content uses CMS for any list/collection</td><td>All content is typed directly on the page</td></tr><tr><td>Layouts use flexible widths, work on all screens</td><td>Fixed pixel widths, breaks on mobile</td></tr><tr><td>2–3 fonts, one type scale used everywhere</td><td>5+ fonts, random sizes used inconsistently</td></tr><tr><td>Images are compressed, under 200KB</td><td>Unoptimised images, 2–5MB per image</td></tr><tr><td>Interactions are purposeful and consistent</td><td>Animations on every element, distracting</td></tr><tr><td>Global colour styles defined and reused</td><td>One-off colours typed inline everywhere</td></tr><tr><td>Editor view is clean, a client can update it</td><td>Deeply nested, impossible for non-dev to edit</td></tr><tr><td>Loads in under 2 seconds on mobile</td><td>Loads in 8+ seconds, high bounce rate</td></tr><tr><td>Tested on real devices before launch</td><td>Only tested on designer's own large monitor</td></tr></tbody>
+                          </table>
+                        </div>
+                            <div class="callout tip" style="margin:20px 0;">
                               <span class="callout-icon">💡</span>
                               <span><strong>Key Takeaways</strong></span>
                             </div>
-                    <div style="overflow-x:auto; margin:20px 0;">
-                      <table class="cmd-table">
-                        <thead><tr><th>Module</th><th>Core Concept</th><th>Remember This</th></tr></thead><tbody><tr><td>01 Builder Logic</td><td>Components + Layout + Responsiveness</td><td>Learn the layout system first, always</td></tr><tr><td>02 Design Mapping</td><td>Frames → Sections, Components → Reusables</td><td>Componentise early, never copy-paste</td></tr><tr><td>03 Responsive Design</td><td>Breakpoints &amp; Adaptive Layouts</td><td>Test mobile as you build, not after</td></tr><tr><td>04 Interactions</td><td>Trigger → Action model</td><td>1-2 animation styles max, be consistent</td></tr><tr><td>05 Content Management</td><td>Static vs Dynamic (CMS)</td><td>5+ repeating items = use CMS</td></tr><tr><td>06 Common Challenges</td><td>Layout breaks + Inconsistent behaviour</td><td>Fixed px widths are the root of most evils</td></tr><tr><td>07 Best Practices</td><td>Simple structure + Design with constraints</td><td>Constrain what clients can edit</td></tr><tr><td>08 Good vs Bad</td><td>Quality shows in maintenance, not visuals</td><td>Test: phone + client + speed + interactions</td></tr></tbody>
-                      </table>
-                    </div>
+                        <div style="overflow-x:auto; margin:20px 0;">
+                          <table class="cmd-table">
+                            <thead><tr><th>Module</th><th>Core Concept</th><th>Remember This</th></tr></thead><tbody><tr><td>01 Builder Logic</td><td>Components + Layout + Responsiveness</td><td>Learn the layout system first, always</td></tr><tr><td>02 Design Mapping</td><td>Frames → Sections, Components → Reusables</td><td>Componentise early, never copy-paste</td></tr><tr><td>03 Responsive Design</td><td>Breakpoints &amp; Adaptive Layouts</td><td>Test mobile as you build, not after</td></tr><tr><td>04 Interactions</td><td>Trigger → Action model</td><td>1-2 animation styles max, be consistent</td></tr><tr><td>05 Content Management</td><td>Static vs Dynamic (CMS)</td><td>5+ repeating items = use CMS</td></tr><tr><td>06 Common Challenges</td><td>Layout breaks + Inconsistent behaviour</td><td>Fixed px widths are the root of most evils</td></tr><tr><td>07 Best Practices</td><td>Simple structure + Design with constraints</td><td>Constrain what clients can edit</td></tr><tr><td>08 Good vs Bad</td><td>Quality shows in maintenance, not visuals</td><td>Test: phone + client + speed + interactions</td></tr></tbody>
+                          </table>
+                        </div>
     </div>
   </section>
 
@@ -276,7 +293,7 @@
   sectionEls.forEach(s => navObserver.observe(s));
 
   const dotsContainer = document.getElementById('progressDots');
-  const totalTopics = 9;
+  const totalTopics = 10;
   for (let i = 0; i < totalTopics; i++) {
     const dot = document.createElement('div');
     dot.className = 'dot-prog';

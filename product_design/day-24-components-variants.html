@@ -20,18 +20,20 @@
   <div class="sidebar-nav">
     <div class="nav-section-label">Curriculum Topics</div>
     <a class="nav-item active" href="#sec-1"><span class="dot"></span>Components &amp; Variants</a>
-    <a class="nav-item" href="#sec-2"><span class="dot"></span>Part 1: Introduction to Compon</a>
-    <a class="nav-item" href="#sec-3"><span class="dot"></span>Part 2: From Screens to Compon</a>
-    <a class="nav-item" href="#sec-4"><span class="dot"></span>Part 3: Component Anatomy</a>
-    <a class="nav-item" href="#sec-5"><span class="dot"></span>Part 4: Types of Components</a>
-    <a class="nav-item" href="#sec-6"><span class="dot"></span>Part 5: Types of Components</a>
-    <a class="nav-item" href="#sec-7"><span class="dot"></span>Part 6: Variants in Components</a>
-    <a class="nav-item" href="#sec-8"><span class="dot"></span>Part 7: Component Consistency </a>
-    <a class="nav-item" href="#sec-9"><span class="dot"></span>Part 8: Breakdown of a Real Pr</a>
+    <a class="nav-item" href="#sec-2"><span class="dot"></span>Part 1: Introduction to Componen</a>
+    <a class="nav-item" href="#sec-3"><span class="dot"></span>Why are Components the Foundatio</a>
+    <a class="nav-item" href="#sec-4"><span class="dot"></span>Part 2: From Screens to Componen</a>
+    <a class="nav-item" href="#sec-5"><span class="dot"></span>Part 3: Component Anatomy</a>
+    <a class="nav-item" href="#sec-6"><span class="dot"></span>Part 4: Types of Components</a>
+    <a class="nav-item" href="#sec-7"><span class="dot"></span>Part 5: Types of Components</a>
+    <a class="nav-item" href="#sec-8"><span class="dot"></span>Part 6: Variants in Components</a>
+    <a class="nav-item" href="#sec-9"><span class="dot"></span>How Variant Sets Become Unmanage</a>
+    <a class="nav-item" href="#sec-10"><span class="dot"></span>Part 7: Component Consistency an</a>
+    <a class="nav-item" href="#sec-11"><span class="dot"></span>Part 8: Breakdown of a Real Prod</a>
   </div>
 
   <div class="progress-dots">
-    <p>// 9 topics</p>
+    <p>// 11 topics</p>
     <div class="dots-row" id="progressDots"></div>
   </div>
 </nav>
@@ -57,7 +59,7 @@
     <div class="section-header">
       <div class="section-icon icon-pink">📌</div>
       <div>
-        <div class="section-number">01 / 09</div>
+        <div class="section-number">01 / 11</div>
         <h2>Components &amp; Variants</h2>
       </div>
     </div>
@@ -73,7 +75,7 @@
     <div class="section-header">
       <div class="section-icon icon-blue">📌</div>
       <div>
-        <div class="section-number">02 / 09</div>
+        <div class="section-number">02 / 11</div>
         <h2>Part 1: Introduction to Components</h2>
       </div>
     </div>
@@ -82,16 +84,6 @@
                     <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
                       <img src="images/day24/image10.png" alt="Design Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
                       
-                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Why are Components the Foundation of Scalable UI ?</p>
-                    <div style="overflow-x:auto; margin:20px 0;">
-                      <table class="cmd-table">
-                        <thead><tr><th>Design Without Components</th><th>Design With Components</th></tr></thead><tbody><tr><td>Every button is drawn fresh for each screen</td><td>Every button is an instance of the master Button component</td></tr><tr><td>Updating the button style requires touching 200+ screens</td><td>Updating the button style requires one change to the master</td></tr><tr><td>Engineers interpret each button slightly differently</td><td>Engineers implement the same Button component everywhere</td></tr><tr><td>New team members copy the nearest button they can find</td><td>New team members use the library - same result every time</td></tr><tr><td>Consistency erodes with every new screen and every new designer</td><td>Consistency is enforced by the system, not by vigilance</td></tr><tr><td>A rebrand requires a full design audit and re-delivery</td><td>A rebrand requires updating token values - changes propagate automatically</td></tr></tbody>
-                      </table>
-                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Component Thinking vs Screen Thinking</p>
-                    <div style="overflow-x:auto; margin:20px 0;">
-                      <table class="cmd-table">
-                        <thead><tr><th>Screen Thinking</th><th>Component Thinking</th><th>The Shift</th></tr></thead><tbody><tr><td>"I need to design the dashboard."</td><td>"I need to design the Stat Card component that populates the dashboard."</td><td>From whole to part</td></tr><tr><td>"This section needs a heading and some text."</td><td>"This is a Section Header component with optional subtitles and action slot."</td><td>From element to pattern</td></tr><tr><td>"The button on this screen is blue."</td><td>"The button uses the Primary variant of the Button component, which references the brand-primary token."</td><td>From value to token</td></tr><tr><td>"I'll copy this card from the previous screen."</td><td>"I'll place an instance of the Card component from the library."</td><td>From copy-paste to instance</td></tr><tr><td>"This looks a bit different from the other screen."</td><td>"These two screens use the same component - they must look identical by design."</td><td>From visual check to system trust</td></tr></tbody>
-                      </table>
                     </div>
     </div>
   </section>
@@ -103,7 +95,33 @@
     <div class="section-header">
       <div class="section-icon icon-purple">📌</div>
       <div>
-        <div class="section-number">03 / 09</div>
+        <div class="section-number">03 / 11</div>
+        <h2>Why are Components the Foundation of Scalable UI ?</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      
+                        <div style="overflow-x:auto; margin:20px 0;">
+                          <table class="cmd-table">
+                            <thead><tr><th>Design Without Components</th><th>Design With Components</th></tr></thead><tbody><tr><td>Every button is drawn fresh for each screen</td><td>Every button is an instance of the master Button component</td></tr><tr><td>Updating the button style requires touching 200+ screens</td><td>Updating the button style requires one change to the master</td></tr><tr><td>Engineers interpret each button slightly differently</td><td>Engineers implement the same Button component everywhere</td></tr><tr><td>New team members copy the nearest button they can find</td><td>New team members use the library - same result every time</td></tr><tr><td>Consistency erodes with every new screen and every new designer</td><td>Consistency is enforced by the system, not by vigilance</td></tr><tr><td>A rebrand requires a full design audit and re-delivery</td><td>A rebrand requires updating token values - changes propagate automatically</td></tr></tbody>
+                          </table>
+                        </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Component Thinking vs Screen Thinking</p>
+                        <div style="overflow-x:auto; margin:20px 0;">
+                          <table class="cmd-table">
+                            <thead><tr><th>Screen Thinking</th><th>Component Thinking</th><th>The Shift</th></tr></thead><tbody><tr><td>"I need to design the dashboard."</td><td>"I need to design the Stat Card component that populates the dashboard."</td><td>From whole to part</td></tr><tr><td>"This section needs a heading and some text."</td><td>"This is a Section Header component with optional subtitles and action slot."</td><td>From element to pattern</td></tr><tr><td>"The button on this screen is blue."</td><td>"The button uses the Primary variant of the Button component, which references the brand-primary token."</td><td>From value to token</td></tr><tr><td>"I'll copy this card from the previous screen."</td><td>"I'll place an instance of the Card component from the library."</td><td>From copy-paste to instance</td></tr><tr><td>"This looks a bit different from the other screen."</td><td>"These two screens use the same component - they must look identical by design."</td><td>From visual check to system trust</td></tr></tbody>
+                          </table>
+                        </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 4 ─── -->
+  <section class="section" id="sec-4">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">04 / 11</div>
         <h2>Part 2: From Screens to Components - The Mindset Shift</h2>
       </div>
     </div>
@@ -122,12 +140,12 @@
 
   <div class="section-divider"></div>
 
-  <!-- ─── SECTION 4 ─── -->
-  <section class="section" id="sec-4">
+  <!-- ─── SECTION 5 ─── -->
+  <section class="section" id="sec-5">
     <div class="section-header">
-      <div class="section-icon icon-amber">📌</div>
+      <div class="section-icon icon-cyan">📌</div>
       <div>
-        <div class="section-number">04 / 09</div>
+        <div class="section-number">05 / 11</div>
         <h2>Part 3: Component Anatomy</h2>
       </div>
     </div>
@@ -141,22 +159,22 @@
                       <img src="images/day24/image7.png" alt="Design Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
                       
                     </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Behavior - Interactive vs Static</p>
-                    <div style="overflow-x:auto; margin:20px 0;">
-                      <table class="cmd-table">
-                        <thead><tr><th>Static Components</th><th>Interactive Components</th></tr></thead><tbody><tr><td>Display information, do not respond to interaction</td><td>Receive user input and change state in response to interaction</td></tr><tr><td>Examples: Labels, Badges, Dividers, Avatars, Skeletons, Illustrations</td><td>Examples: Buttons, Inputs, Checkboxes, Toggles, Dropdowns, Links</td></tr><tr><td>States: Default and Loading only (no hover, focus, or active)</td><td>States: Must define all interactive states: hover, active, focus, disabled</td></tr><tr><td>Accessibility: Roles are presentational (role="presentation") or informational (aria-label)</td><td>Accessibility: Must have keyboard access, visible focus indicator, ARIA role, and label</td></tr><tr><td>Design decision: Does this element need to communicate information about an action? If yes, it may need to become interactive.</td><td>Design decision: Every interactive element must be operable by keyboard alone, not just by mouse or touch.</td></tr></tbody>
-                      </table>
-                    </div>
+                        <div style="overflow-x:auto; margin:20px 0;">
+                          <table class="cmd-table">
+                            <thead><tr><th>Static Components</th><th>Interactive Components</th></tr></thead><tbody><tr><td>Display information, do not respond to interaction</td><td>Receive user input and change state in response to interaction</td></tr><tr><td>Examples: Labels, Badges, Dividers, Avatars, Skeletons, Illustrations</td><td>Examples: Buttons, Inputs, Checkboxes, Toggles, Dropdowns, Links</td></tr><tr><td>States: Default and Loading only (no hover, focus, or active)</td><td>States: Must define all interactive states: hover, active, focus, disabled</td></tr><tr><td>Accessibility: Roles are presentational (role="presentation") or informational (aria-label)</td><td>Accessibility: Must have keyboard access, visible focus indicator, ARIA role, and label</td></tr><tr><td>Design decision: Does this element need to communicate information about an action? If yes, it may need to become interactive.</td><td>Design decision: Every interactive element must be operable by keyboard alone, not just by mouse or touch.</td></tr></tbody>
+                          </table>
+                        </div>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
-  <!-- ─── SECTION 5 ─── -->
-  <section class="section" id="sec-5">
+  <!-- ─── SECTION 6 ─── -->
+  <section class="section" id="sec-6">
     <div class="section-header">
-      <div class="section-icon icon-cyan">📌</div>
+      <div class="section-icon icon-green">📌</div>
       <div>
-        <div class="section-number">05 / 09</div>
+        <div class="section-number">06 / 11</div>
         <h2>Part 4: Types of Components</h2>
       </div>
     </div>
@@ -175,12 +193,12 @@
 
   <div class="section-divider"></div>
 
-  <!-- ─── SECTION 6 ─── -->
-  <section class="section" id="sec-6">
+  <!-- ─── SECTION 7 ─── -->
+  <section class="section" id="sec-7">
     <div class="section-header">
-      <div class="section-icon icon-green">📌</div>
+      <div class="section-icon icon-pink">📌</div>
       <div>
-        <div class="section-number">06 / 09</div>
+        <div class="section-number">07 / 11</div>
         <h2>Part 5: Types of Components</h2>
       </div>
     </div>
@@ -190,22 +208,22 @@
                       <img src="images/day24/image12.png" alt="Design Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
                       
                     </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">When to Reuse vs When to Create New</p>
-                    <div style="overflow-x:auto; margin:20px 0;">
-                      <table class="cmd-table">
-                        <thead><tr><th>Reuse the Existing Component When...</th><th>Create a New Component When...</th></tr></thead><tbody><tr><td>The existing component satisfies the use case with a different property value</td><td>The new element serves a fundamentally different semantic purpose</td></tr><tr><td>The difference is only in content (different label, different icon)</td><td>The new element has a different anatomical structure that cannot fit the existing component's property model</td></tr><tr><td>A new variant can be added to the existing component without breaking existing usage</td><td>The existing component would require structural breaking changes to accommodate the new use case</td></tr><tr><td>The visual difference is minor and the semantic role is the same</td><td>The new element will appear in at least 3+ different screens or contexts</td></tr><tr><td>You are tempted to detach the instance and manually adjust - instead, propose a new variant through the design system process</td><td>The new element has unique interactive behaviour not present in any existing component</td></tr></tbody>
-                      </table>
-                    </div>
+                        <div style="overflow-x:auto; margin:20px 0;">
+                          <table class="cmd-table">
+                            <thead><tr><th>Reuse the Existing Component When...</th><th>Create a New Component When...</th></tr></thead><tbody><tr><td>The existing component satisfies the use case with a different property value</td><td>The new element serves a fundamentally different semantic purpose</td></tr><tr><td>The difference is only in content (different label, different icon)</td><td>The new element has a different anatomical structure that cannot fit the existing component's property model</td></tr><tr><td>A new variant can be added to the existing component without breaking existing usage</td><td>The existing component would require structural breaking changes to accommodate the new use case</td></tr><tr><td>The visual difference is minor and the semantic role is the same</td><td>The new element will appear in at least 3+ different screens or contexts</td></tr><tr><td>You are tempted to detach the instance and manually adjust - instead, propose a new variant through the design system process</td><td>The new element has unique interactive behaviour not present in any existing component</td></tr></tbody>
+                          </table>
+                        </div>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
-  <!-- ─── SECTION 7 ─── -->
-  <section class="section" id="sec-7">
+  <!-- ─── SECTION 8 ─── -->
+  <section class="section" id="sec-8">
     <div class="section-header">
-      <div class="section-icon icon-pink">📌</div>
+      <div class="section-icon icon-blue">📌</div>
       <div>
-        <div class="section-number">07 / 09</div>
+        <div class="section-number">08 / 11</div>
         <h2>Part 6: Variants in Components</h2>
       </div>
     </div>
@@ -218,31 +236,47 @@
                       <img src="images/day24/image6.png" alt="Design Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
                       
                     </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The Complete Variant Reference</p>
-                    <div style="overflow-x:auto; margin:20px 0;">
-                      <table class="cmd-table">
-                        <thead><tr><th>Variant</th><th>Specification</th><th>When to Use</th></tr></thead><tbody><tr><td>Size - Small</td><td>Height: 28-32px, Font: 12-13px, Padding: 8px 12px, Icon: 16px</td><td>Dense UIs, data tables, inline actions, toolbar buttons, tag actions. Anywhere space is constrained.</td></tr><tr><td>Size - Medium</td><td>Height: 36-40px, Font: 14px, Padding: 10px 16px, Icon: 20px</td><td>The default size for most UI contexts. Forms, cards, modal footers, settings pages.</td></tr><tr><td>Size - Large</td><td>Height: 44-48px, Font: 15-16px, Padding: 12px 20px, Icon: 24px</td><td>Primary CTAs, hero sections, onboarding flows, empty state actions. When the action must be unmissable.</td></tr><tr><td>Type - Primary</td><td>Filled background with brand primary colour. White label. High visual weight.</td><td>The main action on any view. One primary button per view - never two competing primary buttons.</td></tr><tr><td>Type - Secondary</td><td>Filled background with lower-priority colour (grey or secondary brand). Moderate visual weight.</td><td>Supporting action alongside primary. Cancel, Save Draft, Add Another.</td></tr><tr><td>Type - Ghost</td><td>No background. Coloured label and border-radius only. Low visual weight.</td><td>Tertiary actions, destructive confirmations where weight should be low, inline text actions.</td></tr><tr><td>Type - Outline</td><td>Transparent background. Coloured border. Coloured label. Medium-low visual weight.</td><td>Alternative to secondary. Popular in card footers, filter controls, and segmented selections.</td></tr><tr><td>Type - Danger / Destructive</td><td>Red background or red border/label. Signals irreversible action.</td><td>Delete, Remove, Deactivate. Dangerous actions that cannot be undone. Must be separated spatially from cancel.</td></tr><tr><td>Type - Link</td><td>No background, no border. Coloured underlined label. Inline text behaviour.</td><td>Inline actions within body copy. Footer links. Breadcrumb-style navigation within content.</td></tr><tr><td>State - Default</td><td>The component at rest. No user interaction has occurred.</td><td>All components must have a defined default state. This is the starting point for all other state definitions.</td></tr><tr><td>State - Hover</td><td>Subtle background change or opacity shift indicating interactivity. Not visible on touch devices.</td><td>Must be distinct from default but not dramatic. Use 10-15% background opacity increase or lightness shift.</td></tr><tr><td>State - Active / Pressed</td><td>Stronger visual depression: darker background, scale transform (0.97-0.99), or shadow removal.</td><td>Provides tactile feedback for clicks and taps. Duration: 100-150ms. Must be distinguishable from hover.</td></tr><tr><td>State - Focus</td><td>Visible focus ring for keyboard navigation. Required for WCAG 2.1 AA compliance.</td><td>3px offset focus ring in a high-contrast colour (often the brand primary or a system focus blue). Never remove outline:none without replacement.</td></tr><tr><td>State - Disabled</td><td>Reduced opacity (0.4-0.5) and non-interactive. Cursor: not-allowed.</td><td>Never hide disabled components. Users need to see that the action exists but is unavailable - and ideally understand why.</td></tr><tr><td>State - Loading</td><td>Spinner or skeleton replaces label. Component remains in place and size-locked during loading.</td><td>Prevent double-submission by disabling the component during loading. Preserve exact component dimensions during the loading state.</td></tr><tr><td>State - Error</td><td>Red border, red icon, error message below. Applicable to inputs, selects, and file uploads.</td><td>Error message must be adjacent to the field, not grouped at the top of the form. Use aria-describedby to associate error with field.</td></tr><tr><td>State - Success</td><td>Green indicator or checkmark. Typically transient - fades or transitions after 2-3 seconds.</td><td>Success states confirm completion. Use sparingly - only for actions where confirmation is necessary to prevent re-submission.</td></tr></tbody>
-                      </table>
-                    </div>
+                        <div style="overflow-x:auto; margin:20px 0;">
+                          <table class="cmd-table">
+                            <thead><tr><th>Variant</th><th>Specification</th><th>When to Use</th></tr></thead><tbody><tr><td>Size - Small</td><td>Height: 28-32px, Font: 12-13px, Padding: 8px 12px, Icon: 16px</td><td>Dense UIs, data tables, inline actions, toolbar buttons, tag actions. Anywhere space is constrained.</td></tr><tr><td>Size - Medium</td><td>Height: 36-40px, Font: 14px, Padding: 10px 16px, Icon: 20px</td><td>The default size for most UI contexts. Forms, cards, modal footers, settings pages.</td></tr><tr><td>Size - Large</td><td>Height: 44-48px, Font: 15-16px, Padding: 12px 20px, Icon: 24px</td><td>Primary CTAs, hero sections, onboarding flows, empty state actions. When the action must be unmissable.</td></tr><tr><td>Type - Primary</td><td>Filled background with brand primary colour. White label. High visual weight.</td><td>The main action on any view. One primary button per view - never two competing primary buttons.</td></tr><tr><td>Type - Secondary</td><td>Filled background with lower-priority colour (grey or secondary brand). Moderate visual weight.</td><td>Supporting action alongside primary. Cancel, Save Draft, Add Another.</td></tr><tr><td>Type - Ghost</td><td>No background. Coloured label and border-radius only. Low visual weight.</td><td>Tertiary actions, destructive confirmations where weight should be low, inline text actions.</td></tr><tr><td>Type - Outline</td><td>Transparent background. Coloured border. Coloured label. Medium-low visual weight.</td><td>Alternative to secondary. Popular in card footers, filter controls, and segmented selections.</td></tr><tr><td>Type - Danger / Destructive</td><td>Red background or red border/label. Signals irreversible action.</td><td>Delete, Remove, Deactivate. Dangerous actions that cannot be undone. Must be separated spatially from cancel.</td></tr><tr><td>Type - Link</td><td>No background, no border. Coloured underlined label. Inline text behaviour.</td><td>Inline actions within body copy. Footer links. Breadcrumb-style navigation within content.</td></tr><tr><td>State - Default</td><td>The component at rest. No user interaction has occurred.</td><td>All components must have a defined default state. This is the starting point for all other state definitions.</td></tr><tr><td>State - Hover</td><td>Subtle background change or opacity shift indicating interactivity. Not visible on touch devices.</td><td>Must be distinct from default but not dramatic. Use 10-15% background opacity increase or lightness shift.</td></tr><tr><td>State - Active / Pressed</td><td>Stronger visual depression: darker background, scale transform (0.97-0.99), or shadow removal.</td><td>Provides tactile feedback for clicks and taps. Duration: 100-150ms. Must be distinguishable from hover.</td></tr><tr><td>State - Focus</td><td>Visible focus ring for keyboard navigation. Required for WCAG 2.1 AA compliance.</td><td>3px offset focus ring in a high-contrast colour (often the brand primary or a system focus blue). Never remove outline:none without replacement.</td></tr><tr><td>State - Disabled</td><td>Reduced opacity (0.4-0.5) and non-interactive. Cursor: not-allowed.</td><td>Never hide disabled components. Users need to see that the action exists but is unavailable - and ideally understand why.</td></tr><tr><td>State - Loading</td><td>Spinner or skeleton replaces label. Component remains in place and size-locked during loading.</td><td>Prevent double-submission by disabling the component during loading. Preserve exact component dimensions during the loading state.</td></tr><tr><td>State - Error</td><td>Red border, red icon, error message below. Applicable to inputs, selects, and file uploads.</td><td>Error message must be adjacent to the field, not grouped at the top of the form. Use aria-describedby to associate error with field.</td></tr><tr><td>State - Success</td><td>Green indicator or checkmark. Typically transient - fades or transitions after 2-3 seconds.</td><td>Success states confirm completion. Use sparingly - only for actions where confirmation is necessary to prevent re-submission.</td></tr></tbody>
+                          </table>
+                        </div>
                     <div style="margin:20px 0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:rgba(0,0,0,0.3); text-align:center; padding:12px;">
                       <img src="images/day24/image11.png" alt="Design Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
                       
-                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Managing Variants at Scale</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The danger of variant systems is exponential growth. If a button has 5 types, 6 states, 3 sizes, and 4 icon positions, the complete matrix is 5x6x3x4 = 360 variants. Building and maintaining 360 individual variant frames is unsustainable.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">How Variant Sets Become Unmanageable</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Exponential growth: adding one new property dimension multiplies the entire variant set</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Maintenance debt: every design system update requires propagating to potentially hundreds of variant frames</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cognitive overload: a component with 200+ variants is not usable - designers cannot find what they need</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Naming collapse: with too many variants, the naming convention breaks down and variants cannot be distinguished by name</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Real example: A navigation component with 4 orientations x 3 densities x 5 states x 4 active-item styles = 240 variants. This is not a component system. This is a museum.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Balancing Flexibility vs Simplicity</p>
-                    <div style="overflow-x:auto; margin:20px 0;">
-                      <table class="cmd-table">
-                        <thead><tr><th>Too Much Flexibility</th><th>Too Much Simplicity</th></tr></thead><tbody><tr><td>Component accepts every possible variation without constraint</td><td>Component is completely rigid - only one possible form</td></tr><tr><td>No variant rules - designers can configure any combination</td><td>Every new context requires a new component</td></tr><tr><td>Result: Every instance looks different despite using the same component</td><td>Result: Component library proliferates with near-identical components</td></tr><tr><td>System becomes a tool for inconsistency, not against it</td><td>System becomes bureaucratic - designers work around it rather than with it</td></tr><tr><td>The component is "flexible" but provides no design direction</td><td>The component is "simple" but does not serve the actual variety of needs</td></tr></tbody>
-                      </table>
-                    </div>
+                    </div><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Managing Variants at Scale</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">The danger of variant systems is exponential growth. If a button has 5 types, 6 states, 3 sizes, and 4 icon positions, the complete matrix is 5x6x3x4 = 360 variants. Building and maintaining 360 individual variant frames is unsustainable.</p>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
-  <!-- ─── SECTION 8 ─── -->
-  <section class="section" id="sec-8">
+  <!-- ─── SECTION 9 ─── -->
+  <section class="section" id="sec-9">
     <div class="section-header">
-      <div class="section-icon icon-blue">📌</div>
+      <div class="section-icon icon-purple">📌</div>
       <div>
-        <div class="section-number">08 / 09</div>
+        <div class="section-number">09 / 11</div>
+        <h2>How Variant Sets Become Unmanageable</h2>
+      </div>
+    </div>
+    <div class="info-block">
+      <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Exponential growth: adding one new property dimension multiplies the entire variant set</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Maintenance debt: every design system update requires propagating to potentially hundreds of variant frames</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Cognitive overload: a component with 200+ variants is not usable - designers cannot find what they need</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Naming collapse: with too many variants, the naming convention breaks down and variants cannot be distinguished by name</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Real example: A navigation component with 4 orientations x 3 densities x 5 states x 4 active-item styles = 240 variants. This is not a component system. This is a museum.</p><p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;">Balancing Flexibility vs Simplicity</p>
+                        <div style="overflow-x:auto; margin:20px 0;">
+                          <table class="cmd-table">
+                            <thead><tr><th>Too Much Flexibility</th><th>Too Much Simplicity</th></tr></thead><tbody><tr><td>Component accepts every possible variation without constraint</td><td>Component is completely rigid - only one possible form</td></tr><tr><td>No variant rules - designers can configure any combination</td><td>Every new context requires a new component</td></tr><tr><td>Result: Every instance looks different despite using the same component</td><td>Result: Component library proliferates with near-identical components</td></tr><tr><td>System becomes a tool for inconsistency, not against it</td><td>System becomes bureaucratic - designers work around it rather than with it</td></tr><tr><td>The component is "flexible" but provides no design direction</td><td>The component is "simple" but does not serve the actual variety of needs</td></tr></tbody>
+                          </table>
+                        </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SECTION 10 ─── -->
+  <section class="section" id="sec-10">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📌</div>
+      <div>
+        <div class="section-number">10 / 11</div>
         <h2>Part 7: Component Consistency and Common Mistakes</h2>
       </div>
     </div>
@@ -260,12 +294,12 @@
 
   <div class="section-divider"></div>
 
-  <!-- ─── SECTION 9 ─── -->
-  <section class="section" id="sec-9">
+  <!-- ─── SECTION 11 ─── -->
+  <section class="section" id="sec-11">
     <div class="section-header">
-      <div class="section-icon icon-purple">📌</div>
+      <div class="section-icon icon-cyan">📌</div>
       <div>
-        <div class="section-number">09 / 09</div>
+        <div class="section-number">11 / 11</div>
         <h2>Part 8: Breakdown of a Real Product Component - The Button System Evolution</h2>
       </div>
     </div>
@@ -279,15 +313,15 @@
                       <img src="images/day24/image1.png" alt="Design Diagram" style="max-width:100%; max-height:500px; height:auto; border-radius:8px; display:inline-block;" />
                       
                     </div>
-                            <div class="callout tip">
+                            <div class="callout tip" style="margin:20px 0;">
                               <span class="callout-icon">💡</span>
                               <span><strong>Key Takeaways</strong></span>
                             </div>
-                    <div style="overflow-x:auto; margin:20px 0;">
-                      <table class="cmd-table">
-                        <thead><tr><th>Components</th><th>Self-contained, reusable UI building blocks with defined structure, properties, and behaviour. The atomic unit of a design system.</th></tr></thead><tbody><tr><td>Scalability</td><td>Components are the foundation of scalable UI. Without them, every new screen is a new problem. With them, every new screen is an assembly of solved problems.</td></tr><tr><td>Mindset Shift</td><td>Design component-first, not screen-first. Identify repeating patterns first. Build components. Assemble screens from components.</td></tr><tr><td>Component Anatomy</td><td>Every component has 6 layers: Container, Content Area, Label, Icon, Action Target, and Feedback Indicator. Every layer has rules.</td></tr><tr><td>Component Types</td><td>Basic (buttons, inputs, icons) and Complex (cards, modals, navigation). Know when to build atomic vs composite components.</td></tr><tr><td>DRY in Design</td><td>Every pattern has one source. Instances everywhere. No copy-paste. No detached instances. One update propagates to the entire product.</td></tr><tr><td>Variants</td><td>The defined set of all legitimate forms a component can take. Size, Type, and State are the three primary variant dimensions.</td></tr><tr><td>Variant Management</td><td>Avoid variant explosion through boolean properties, slot architecture, state overlays, and composition. Design for real use cases, not speculative ones.</td></tr><tr><td>Consistency</td><td>Visual, behavioural, naming, and documentation consistency together make a component system trustworthy and adopted.</td></tr><tr><td>Button Evolution</td><td>A component evolves through 7 stages: Hardcoded &gt; Shared Style &gt; Basic Component &gt; Variants &gt; Size System &gt; Token Integration &gt; Documentation. Most teams stop too early.</td></tr></tbody>
-                      </table>
-                    </div>
+                        <div style="overflow-x:auto; margin:20px 0;">
+                          <table class="cmd-table">
+                            <thead><tr><th>Components</th><th>Self-contained, reusable UI building blocks with defined structure, properties, and behaviour. The atomic unit of a design system.</th></tr></thead><tbody><tr><td>Scalability</td><td>Components are the foundation of scalable UI. Without them, every new screen is a new problem. With them, every new screen is an assembly of solved problems.</td></tr><tr><td>Mindset Shift</td><td>Design component-first, not screen-first. Identify repeating patterns first. Build components. Assemble screens from components.</td></tr><tr><td>Component Anatomy</td><td>Every component has 6 layers: Container, Content Area, Label, Icon, Action Target, and Feedback Indicator. Every layer has rules.</td></tr><tr><td>Component Types</td><td>Basic (buttons, inputs, icons) and Complex (cards, modals, navigation). Know when to build atomic vs composite components.</td></tr><tr><td>DRY in Design</td><td>Every pattern has one source. Instances everywhere. No copy-paste. No detached instances. One update propagates to the entire product.</td></tr><tr><td>Variants</td><td>The defined set of all legitimate forms a component can take. Size, Type, and State are the three primary variant dimensions.</td></tr><tr><td>Variant Management</td><td>Avoid variant explosion through boolean properties, slot architecture, state overlays, and composition. Design for real use cases, not speculative ones.</td></tr><tr><td>Consistency</td><td>Visual, behavioural, naming, and documentation consistency together make a component system trustworthy and adopted.</td></tr><tr><td>Button Evolution</td><td>A component evolves through 7 stages: Hardcoded &gt; Shared Style &gt; Basic Component &gt; Variants &gt; Size System &gt; Token Integration &gt; Documentation. Most teams stop too early.</td></tr></tbody>
+                          </table>
+                        </div>
     </div>
   </section>
 
@@ -331,7 +365,7 @@
   sectionEls.forEach(s => navObserver.observe(s));
 
   const dotsContainer = document.getElementById('progressDots');
-  const totalTopics = 9;
+  const totalTopics = 11;
   for (let i = 0; i < totalTopics; i++) {
     const dot = document.createElement('div');
     dot.className = 'dot-prog';
